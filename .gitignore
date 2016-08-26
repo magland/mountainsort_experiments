@@ -1,5 +1,10 @@
 # C++ objects and libs
 
+*.mda
+BIGFILES
+output
+*.log
+
 *.slo
 *.lo
 *.o
