@@ -1,0 +1,1 @@
+./compare.sh manclust2_firings.mda.prv msfirings1.accepted.mda.prv
