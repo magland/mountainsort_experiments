@@ -1,0 +1,29 @@
+{
+    "original_checksum": "a440db5a2da0006814c7949851295dd06fa3f902",
+    "original_path": "/tmp/mountainlab/tmp_long_term/6f22d0e9101904f730ada410af445d78222c5c19-timeseries_out",
+    "original_size": 11520020,
+    "processes": [
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "a440db5a2da0006814c7949851295dd06fa3f902",
+                    "original_path": "/mnt/xfs1/home/magland/dev/mountainsort_experiments/BIGFILES/martinez2009_3.mda",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "a440db5a2da0006814c7949851295dd06fa3f902",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/6f22d0e9101904f730ada410af445d78222c5c19-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+                "channels": "",
+                "t1": "-1",
+                "t2": "-1"
+            },
+            "processor_name": "extract_raw"
+        }
+    ]
+}

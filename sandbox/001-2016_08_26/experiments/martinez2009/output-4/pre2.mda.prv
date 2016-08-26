@@ -1,0 +1,70 @@
+{
+    "original_checksum": "7d68481f8dab716292f26cc9661514efbdf15fde",
+    "original_path": "/tmp/mountainlab/tmp_long_term/c41d96a63d5e53956dc4b0eb2a067704ba6e0f53-timeseries_out",
+    "original_size": 11520020,
+    "processes": [
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "ecc1c2c010ed146affacaaa776c41d690ec48ff0",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/390788ec637d8a997cde33bdca9a72b25cab69aa-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "7d68481f8dab716292f26cc9661514efbdf15fde",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/c41d96a63d5e53956dc4b0eb2a067704ba6e0f53-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+            },
+            "processor_name": "whiten"
+        },
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "ecc1c2c010ed146affacaaa776c41d690ec48ff0",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/f9a5b56a559fab751065570c81fecb00c3cd5477-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "ecc1c2c010ed146affacaaa776c41d690ec48ff0",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/390788ec637d8a997cde33bdca9a72b25cab69aa-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+                "freq_max": "8000",
+                "freq_min": "300",
+                "samplerate": "24000"
+            },
+            "processor_name": "bandpass_filter"
+        },
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "ecc1c2c010ed146affacaaa776c41d690ec48ff0",
+                    "original_path": "/mnt/xfs1/home/magland/dev/mountainsort_experiments/BIGFILES/martinez2009_4.mda",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "ecc1c2c010ed146affacaaa776c41d690ec48ff0",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/f9a5b56a559fab751065570c81fecb00c3cd5477-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+                "channels": "",
+                "t1": "-1",
+                "t2": "-1"
+            },
+            "processor_name": "extract_raw"
+        }
+    ]
+}

@@ -1,0 +1,51 @@
+{
+    "original_checksum": "290af680edec1dc47c108a099c25f4b69590fc7f",
+    "original_path": "/tmp/mountainlab/tmp_long_term/4c77775ee5d16bfa1c8eca92bd2aa87c72c7c422-timeseries_out",
+    "original_size": 11520020,
+    "processes": [
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "290af680edec1dc47c108a099c25f4b69590fc7f",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/199ff3b770072bc8405c09788293be62084cc112-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "290af680edec1dc47c108a099c25f4b69590fc7f",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/4c77775ee5d16bfa1c8eca92bd2aa87c72c7c422-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+                "freq_max": "8000",
+                "freq_min": "300",
+                "samplerate": "24000"
+            },
+            "processor_name": "bandpass_filter"
+        },
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "290af680edec1dc47c108a099c25f4b69590fc7f",
+                    "original_path": "/mnt/xfs1/home/magland/dev/mountainsort_experiments/BIGFILES/martinez2009_1.mda",
+                    "original_size": 11520020
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "290af680edec1dc47c108a099c25f4b69590fc7f",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/199ff3b770072bc8405c09788293be62084cc112-timeseries_out",
+                    "original_size": 11520020
+                }
+            },
+            "parameters": {
+                "channels": "",
+                "t1": "-1",
+                "t2": "-1"
+            },
+            "processor_name": "extract_raw"
+        }
+    ]
+}
