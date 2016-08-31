@@ -60,11 +60,11 @@ var datasets=[];
 	}
 }
 
-run_sorting(function() {
+//run_sorting(function() {
 	compile_results(function() {
 		process.exit(0);
 	});
-});
+//});
 
 function compile_results(callback) {
 	for (var d in datasets) {
@@ -89,8 +89,10 @@ function compile_results(callback) {
 					num_fp=0;
 				}
 
-				print_csv_matrix(CM);
-				console.log(algname+' '+dsname+' '+k+': num='+num+' fn='+num_fn+' fp='+num_fp);
+				//print_csv_matrix(CM);
+				//console.log(LM);
+				//console.log(algname+' '+dsname+' '+k+': num='+num+' fn='+num_fn+' fp='+num_fp);
+				console.log(algname+' '+dsname+' '+k+': '+num+' '+topct(num_fn/num)+' '+topct(num_fp/num));
 			}
 		}
 	}
@@ -259,7 +261,13 @@ function read_csv_matrix(path) {
 
 function read_csv_vector(path) {
 	var X=read_csv_matrix(path);
-	return X[0];
+	var Y=[];
+	for (var i in X) {
+		for (var j in X[i]) {
+			Y.push(X[i][j]);
+		}
+	}
+	return Y;
 }
 
 function print_csv_matrix(X) {
@@ -282,4 +290,8 @@ function col_sum(X,col) {
 		ret=ret+X[i][col];
 	}
 	return ret;
+}
+
+function topct(num) {
+	return Math.floor(num*1000)/10;
 }
