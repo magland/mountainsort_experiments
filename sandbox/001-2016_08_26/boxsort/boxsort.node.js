@@ -103,12 +103,12 @@ function apply_sorting(alg,ds,callback) {
 
 function compute_confusion_matrix(output_path,callback) {
 	var cmd='mountainprocess';
-	var args=['run-process','confusion_matrix'];
+	var args=['run-process','merge_firings'];
 	args.push('--firings1='+output_path+'/firings.mda');
 	args.push('--firings2='+output_path+'/firings_true.mda.prv');
-	args.push('--output='+output_path+'/confusion_matrix.csv');
-	args.push('--optimal_assignments='+output_path+'/optimal_assignments.csv');
-	args.push('--event_correspondence='+output_path+'/event_correspondence.mda');
+	args.push('--confusion_matrix='+output_path+'/confusion_matrix.csv');
+	args.push('--optimal_label_map='+output_path+'/optimal_label_map.csv');
+	args.push('--firings_merged='+output_path+'/firings_merged.mda');
 	args.push('--max_matching_offset=4');
 
 	run_process(cmd,args,function() {
