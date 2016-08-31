@@ -10,6 +10,15 @@ var outpath=CLP.namedParameters.outpath;
 
 mkdir_safe(outpath);
 
+var unit_numbers={
+	h1:[1],
+	m1:[2,3],
+	m2:[2,3],
+	m3:[2,3],
+	m4:[2,3],
+	m5:[2,3]
+};
+
 var algs=[];
 {
 	var txt=read_text_file(alglist_path);
@@ -52,8 +61,41 @@ var datasets=[];
 }
 
 run_sorting(function() {
-	process.exit(0);
+	compile_results(function() {
+		process.exit(0);
+	});
 });
+
+function compile_results(callback) {
+	for (var d in datasets) {
+		var dsname=datasets[d].name;
+		var ks=unit_numbers[dsname];
+		for (var ii in ks) {
+			var k=ks[ii];
+			for (var a in algs) {
+				var algname=algs[a].name;
+				var outpath0=outpath+'/'+algname+'-'+dsname;
+				var CM=read_csv_matrix(outpath0+'/confusion_matrix.csv');
+				var LM=read_csv_vector(outpath0+'/optimal_label_map.csv');
+
+				var num=row_sum(CM,k-1);
+				var num_fn,num_fp;
+				if (LM[k-1]>0) {
+					num_fn=num-CM[k-1][LM[k-1]-1];
+					num_fp=col_sum(CM,LM[k-1]-1)-CM[k-1][LM[k-1]-1];
+				}
+				else {
+					num_fn=num;
+					num_fp=0;
+				}
+
+				print_csv_matrix(CM);
+				console.log(algname+' '+dsname+' '+k+': num='+num+' fn='+num_fn+' fp='+num_fp);
+			}
+		}
+	}
+	callback();
+}
 
 function run_sorting(callback) {
 	var num_running=0;
@@ -103,12 +145,12 @@ function apply_sorting(alg,ds,callback) {
 
 function compute_confusion_matrix(output_path,callback) {
 	var cmd='mountainprocess';
-	var args=['run-process','confusion_matrix'];
-	args.push('--firings1='+output_path+'/firings.mda');
-	args.push('--firings2='+output_path+'/firings_true.mda.prv');
-	args.push('--output='+output_path+'/confusion_matrix.csv');
-	args.push('--optimal_assignments='+output_path+'/optimal_assignments.csv');
-	args.push('--event_correspondence='+output_path+'/event_correspondence.mda');
+	var args=['run-process','merge_firings'];
+	args.push('--firings1='+output_path+'/firings_true.mda.prv');
+	args.push('--firings2='+output_path+'/firings.mda');
+	args.push('--confusion_matrix='+output_path+'/confusion_matrix.csv');
+	args.push('--optimal_label_map='+output_path+'/optimal_label_map.csv');
+	args.push('--firings_merged='+output_path+'/firings_merged.mda');
 	args.push('--max_matching_offset=4');
 
 	run_process(cmd,args,function() {
@@ -182,4 +224,62 @@ function run_process(cmd,args,callback) {
 		console.log (data);
 		all_stderr+=data;
 	});
+}
+
+function transpose_matrix(X) {
+	if (X.length==0) return X;
+	var Y=[];
+	for (var i in X[0]) {
+		Y.push([]);
+	}
+	for (var j in X) {
+		for (var i in X[j]) {
+			Y[i].push(X[j][i]);
+		}
+	}
+	return Y;
+}
+
+function read_csv_matrix(path) {
+	var ret=[];
+	var txt=read_text_file(path);
+	var lines=txt.split('\n');
+	for (var i in lines) {
+		var vals=lines[i].split(',');
+		if (vals.length>0) {
+			var row=[];
+			for (var k=0; k<vals.length; k++) {
+				row.push(Number(vals[k]));
+			}
+			ret.push(row);
+		}
+	}
+	return transpose_matrix(ret); //this is because of a bad decision I made
+}
+
+function read_csv_vector(path) {
+	var X=read_csv_matrix(path);
+	return X[0];
+}
+
+function print_csv_matrix(X) {
+	var txt='';
+	for (var r=0; r<X.length; r++) {
+		console.log(X[r].join(','));
+	}
+}
+
+function row_sum(X,row) {
+	var ret=0;
+	for (var i in X[row]) {
+		ret=ret+X[row][i];
+	}
+	return ret;
+}
+function col_sum(X,col) {
+	var ret=0;
+	for (var i in X) {
+		ret=ret+X[i][col];
+	}
+	return ret;
 }
