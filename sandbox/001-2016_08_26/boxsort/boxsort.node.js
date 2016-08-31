@@ -1,6 +1,9 @@
 var fs=require('fs');
 var child_process=require('child_process');
 
+//Use: npm install console.table --save
+require('console.table');
+
 var CLP=new CLParams(process.argv);
 
 var alglist_path=CLP.unnamedParameters[0];
@@ -9,6 +12,18 @@ var basepath=CLP.namedParameters.basepath;
 var outpath=CLP.namedParameters.outpath;
 
 mkdir_safe(outpath);
+
+var alg_info={
+	ms1:{clip_size:1},
+	ms4:{clip_size:4},
+	ms10:{clip_size:10},
+	ms20:{clip_size:20},
+	ms40:{clip_size:40},
+	ms80:{clip_size:80},
+	ms160:{clip_size:160},
+	ms320:{clip_size:320},
+	ms640:{clip_size:640}
+};
 
 var unit_numbers={
 	h1:[1],
@@ -34,7 +49,7 @@ var algs=[];
 		}
 		else {
 			if (lines[i].trim()) {
-				throw 'problem in alglist file: '+lines[i].trim()
+				throw 'problem in alglist file: '+lines[i].trim();
 			}
 		}
 	}
@@ -60,18 +75,29 @@ var datasets=[];
 	}
 }
 
-//run_sorting(function() {
+if ('norun' in CLP.namedParameters) {
 	compile_results(function() {
 		process.exit(0);
 	});
-//});
+}
+else {
+	run_sorting(function() {
+		compile_results(function() {
+			process.exit(0);
+		});
+	});
+}
 
 function compile_results(callback) {
 	for (var d in datasets) {
 		var dsname=datasets[d].name;
 		var ks=unit_numbers[dsname];
+		console.log('');
+		console.log('######## DATASET: '+dsname);
+		console.log('');
 		for (var ii in ks) {
 			var k=ks[ii];
+			var table0=[];
 			for (var a in algs) {
 				var algname=algs[a].name;
 				var outpath0=outpath+'/'+algname+'-'+dsname;
@@ -92,8 +118,11 @@ function compile_results(callback) {
 				//print_csv_matrix(CM);
 				//console.log(LM);
 				//console.log(algname+' '+dsname+' '+k+': num='+num+' fn='+num_fn+' fp='+num_fp);
-				console.log(algname+' '+dsname+' '+k+': '+num+' '+topct(num_fn/num)+' '+topct(num_fp/num));
+				//console.log('  '+algname+' '+dsname+' '+k+': '+num+'\t'+topct(num_fn/num)+'\t'+topct(num_fp/num));
+				var clip_size=(alg_info[algname]||{}).clip_size||'';
+				table0.push({ALG:algname,clip_size:clip_size,DATASET:dsname,UNIT:k,num_events:num,false_neg:topct(num_fn/num),false_pos:topct(num_fp/num)});
 			}
+			console.table(table0);
 		}
 	}
 	callback();
@@ -293,5 +322,6 @@ function col_sum(X,col) {
 }
 
 function topct(num) {
-	return Math.floor(num*1000)/10;
+	if (num>1) return '>100%';
+	return Math.floor(num*100)+'%';
 }

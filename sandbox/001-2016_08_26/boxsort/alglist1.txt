@@ -1,6 +1,9 @@
+ms1 mountainsort_001.js --clip_size=1
+ms4 mountainsort_001.js --clip_size=4
 ms10 mountainsort_001.js --clip_size=10
 ms20 mountainsort_001.js --clip_size=20
 ms40 mountainsort_001.js --clip_size=40
 ms80 mountainsort_001.js --clip_size=80
 ms160 mountainsort_001.js --clip_size=160
 ms320 mountainsort_001.js --clip_size=320
+ms640 mountainsort_001.js --clip_size=640
