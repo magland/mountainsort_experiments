@@ -22,7 +22,7 @@ var alg_info={
 	ms80:{clip_size:80},
 	ms160:{clip_size:160},
 	ms320:{clip_size:320},
-	ms640:{clip_size:640}
+	ms640:{clip_size:640},
 };
 
 var unit_numbers={
@@ -31,7 +31,8 @@ var unit_numbers={
 	m2:[2,3],
 	m3:[2,3],
 	m4:[2,3],
-	m5:[2,3]
+	m5:[2,3],
+	nn:[1]
 };
 
 var algs=[];
@@ -99,29 +100,38 @@ function compile_results(callback) {
 			var k=ks[ii];
 			var table0=[];
 			for (var a in algs) {
+
 				var algname=algs[a].name;
 				var outpath0=outpath+'/'+algname+'-'+dsname;
 				var CM=read_csv_matrix(outpath0+'/confusion_matrix.csv');
 				var LM=read_csv_vector(outpath0+'/optimal_label_map.csv');
 
-				var num=row_sum(CM,k-1);
-				var num_fn,num_fp;
+				var num1=row_sum(CM,k-1);
+				var num2=col_sum(CM,LM[k-1]-1);
+				var num_fn,num_fp,num_fn_frac,num_fp_frac;
 				if (LM[k-1]>0) {
-					num_fn=num-CM[k-1][LM[k-1]-1];
+					num_fn=num1-CM[k-1][LM[k-1]-1];
 					num_fp=col_sum(CM,LM[k-1]-1)-CM[k-1][LM[k-1]-1];
+					num_fn_frac=num_fn/num1;
+					num_fp_frac=num_fp/num2;
 				}
 				else {
-					num_fn=num;
-					num_fp=0;
+					num_fn=NaN;
+					num_fp=NaN;
+					num_fn_frac=NaN;
+					num_fp_frac=NaN;
 				}
 
+				//console.log('@@@@@@@@@@@@ '+algname+' '+dsname+' '+k+' '+num_fn_frac+' '+num_fp_frac);
 				//print_csv_matrix(CM);
 				//console.log(LM);
 				//console.log(algname+' '+dsname+' '+k+': num='+num+' fn='+num_fn+' fp='+num_fp);
-				//console.log('  '+algname+' '+dsname+' '+k+': '+num+'\t'+topct(num_fn/num)+'\t'+topct(num_fp/num));
+				//console.log('  '+algname+' '+dsname+' '+k+': '+num+'\t'+topct(num_fn/num1)+'\t'+topct(num_fp/num2));
 				var clip_size=(alg_info[algname]||{}).clip_size||'';
-				table0.push({ALG:algname,clip_size:clip_size,DATASET:dsname,UNIT:k,num_events:num,false_neg:topct(num_fn/num),false_pos:topct(num_fp/num)});
+				table0.push({ALG:algname,clip_size:clip_size,DATASET:dsname,UNIT:k,num_events:num1,false_neg:topct(num_fn_frac),false_pos:topct(num_fp_frac)});
+				console.log(algname);
 			}
+			console.log(table0);
 			console.table(table0);
 		}
 	}
@@ -160,6 +170,10 @@ function apply_sorting(alg,ds,callback) {
 	args=['queue-script',basepath+'/algorithms/'+alg.script];
 	args.push('--raw='+basepath+'/datasets/'+ds.folder+'/raw.mda.prv');
 	args.push(basepath+'/datasets/'+ds.folder+'/params.json');
+	var geom_fname=basepath+'/datasets/'+ds.folder+'/geom.csv';
+	if (fs.existsSync(geom_fname)) {
+		args.push('--geom='+geom_fname);
+	}
 	args.push('--outpath='+outpath0);
 	var params0=alg.params.split(' ');
 	for (var i in params0) {
@@ -167,7 +181,7 @@ function apply_sorting(alg,ds,callback) {
 	}
 	console.log (cmd+' '+args.join(' '));
 	
-	run_process(cmd,args,function() {
+	make_system_call(cmd,args,function() {
 		compute_confusion_matrix(outpath0,function() {
 			callback();
 		});
@@ -182,9 +196,9 @@ function compute_confusion_matrix(output_path,callback) {
 	args.push('--confusion_matrix='+output_path+'/confusion_matrix.csv');
 	args.push('--optimal_label_map='+output_path+'/optimal_label_map.csv');
 	args.push('--firings_merged='+output_path+'/firings_merged.mda');
-	args.push('--max_matching_offset=4');
+	args.push('--max_matching_offset=10');
 
-	run_process(cmd,args,function() {
+	make_system_call(cmd,args,function() {
 		callback();
 	});
 }
@@ -231,7 +245,7 @@ function copy_file_sync(src,dst) {
 	fs.writeFileSync(dst,data);
 }
 
-function run_process(cmd,args,callback) {
+function make_system_call(cmd,args,callback) {
 	console.log('Running '+cmd+' '+args.join(' '));
 	var pp=child_process.spawn(cmd,args);
 	pp.stdout.setEncoding('utf8');
@@ -322,6 +336,7 @@ function col_sum(X,col) {
 }
 
 function topct(num) {
+	if (num==NaN) return 'NaN';
 	if (num>1) return '>100%';
 	return Math.floor(num*100)+'%';
 }

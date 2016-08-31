@@ -1,4 +1,4 @@
-ms1 mountainsort_001.js --clip_size=1
+ms1 mountainsort_001.js --clip_size=1 
 ms4 mountainsort_001.js --clip_size=4
 ms10 mountainsort_001.js --clip_size=10
 ms20 mountainsort_001.js --clip_size=20

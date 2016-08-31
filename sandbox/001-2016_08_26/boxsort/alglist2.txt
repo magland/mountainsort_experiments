@@ -1,1 +1,1 @@
-ms10 mountainsort_001.js --clip_size=10
+ms80 mountainsort_001.js --clip_size=80
