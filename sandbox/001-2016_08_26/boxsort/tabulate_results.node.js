@@ -1,20 +1,20 @@
 var fs=require('fs');
-var child_process=require('child_process');
 
 //Use: npm install console.table --save
 require('console.table');
 
 var CLP=new CLParams(process.argv);
 
-var command=CLP.unnamedParameters[0];
-var alglist_path=CLP.unnamedParameters[1];
+var alglist_path=CLP.unnamedParameters[0];
 var datasetlist_path=CLP.unnamedParameters[2];
 var outpath=CLP.namedParameters.outpath;
 
-if ((!command)||(!alglist_path)||(!datasetlist_path)||(!outpath)) {
+if ((!alglist_path)||(!datasetlist_path)||(!outpath)) {
 	print_usage();
 	process.exit(-1);
 }
+
+//finish!
 
 var basepath=__dirname+'/../../../../mountainsort_experiments';
 

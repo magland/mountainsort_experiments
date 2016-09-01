@@ -1,0 +1,54 @@
+What we would like to do....
+
+What is a dataset?
+
+Raw data array MxN (raw.mda)
+	M = # channels
+	N = # timepoints
+
+Geometry file (geom.csv)
+	Locations of electrodes
+
+Information needed by the algorithm (raw.json)
+	samplerate (eg 30 kHz)
+
+What is a spike sorting procedure?
+	A system that maps:
+		(raw.mda, geom.csv, raw.json) -> (firings.mda, annotations.json)
+	
+	firings.mda -- an array that contains a collection of events 
+	(time, label) pairs:
+		(t_1, k_1), ..., (t_L, k_L)
+		
+	annotations.json -- accompanying information
+		Which clusters are noise? Which clusters should be grouped together? Etc.
+
+The spike sorting algorithm has
+	A. Automated part
+	B. Manual/human part (to be minimized)
+
+MountainLab software suite
+* An automatic spike-sorting algorithm (mountainsort)
+* A visualization / manual annotation GUI (mountainview)
+* A framework for building and executing processing pipelines (mountainprocess)
+* Other tools for managing datasets and processing pipelines
+
+Types of activities
+
+-----------------------------------------------------
+* Sort a newly aquired dataset
+* Visualize results in the GUI
+* Perform minimal annotation (rejection/merging)
+* Save the results for further analysis
+-----------------------------------------------------
+
+-----------------------------------------------------
+* Compare two independent sortings of the same dataset
+	-- compare two different algorithms / sorting parameters
+	-- compare results from multiple human annotations
+-----------------------------------------------------
+
+-----------------------------------------------------
+* Compare sorting result with a known ground truth
+-----------------------------------------------------
+
