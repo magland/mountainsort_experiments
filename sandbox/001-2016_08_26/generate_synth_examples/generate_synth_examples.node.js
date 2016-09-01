@@ -5,20 +5,37 @@ var CLP=new CLParams(process.argv);
 
 var basepath=CLP.namedParameters.basepath;
 if (!basepath) {
-	console.log('No basepath specified');
+	console.log ('No basepath specified');
 	return;
 }
 var dspath=basepath+'/datasets';
 
-var dspath0=dspath+'/synth1';
-
+mkdir_safe(dspath+'/synth_examples');;
+var dspath0=dspath+'/synth_examples/'+(CLP.namedParameters['dsname']||'default');
 mkdir_safe(dspath0);
 
 cmd='mountainprocess';
-args=['run-process','synthesize_timeseries_001_matlab'];
-args.push('--waveforms='+dspath0+'/waveforms.mda');
-args.push('--timeseries='+dspath0+'/raw.mda');
-args.push('--firings_true='+dspath0+'/firings_true.mda');
+args='run-process synthesize_timeseries_001_matlab';
+args+=' --waveforms='+dspath0+'/waveforms.mda';
+args+=' --timeseries='+dspath0+'/raw.mda';
+args+=' --firings_true='+dspath0+'/firings_true.mda';
+
+var M0=CLP.namedParameters["M"]||5;
+var K0=CLP.namedParameters["K"]||20;
+var duration0=CLP.namedParameters["duration"]||600;
+var amp_variation_min=CLP.namedParameters["amp_variation_min"]||1;
+var amp_variation_max=CLP.namedParameters["amp_variation_max"]||1;
+var firing_rate_min=CLP.namedParameters["firing_rate_min"]||1;
+var firing_rate_max=CLP.namedParameters["firing_rate_max"]||1;
+var noise_level=CLP.namedParameters["noise_level"]||1;
+
+args+=" --M="+M0+" --T=800 --K="+K0+" --duration="+duration0+" --amp_variation_min="+amp_variation_min+" --amp_variation_max="+amp_variation_max;
+args+=" --firing_rate_min="+firing_rate_min+" --firing_rate_max="+firing_rate_max;
+args+=" --noise_level="+noise_level;
+
+if ('_force_run' in CLP.namedParameters) args+=" --_force_run"
+
+args=args.split(' ');
 
 params0={samplerate:30000};
 write_text_file(dspath0+'/params.json',JSON.stringify(params0));
@@ -28,7 +45,7 @@ make_system_call(cmd,args,function() {
 });
 
 function make_system_call(cmd,args,callback) {
-	console.log('Running '+cmd+' '+args.join(' '));
+	console.log ('Running '+cmd+' '+args.join(' '));
 	var pp=child_process.spawn(cmd,args);
 	pp.stdout.setEncoding('utf8');
 	pp.stderr.setEncoding('utf8');

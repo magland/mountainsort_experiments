@@ -6,7 +6,7 @@ function run_algorithm(params) {
 	params.clip_size=params.clip_size||50;
 	params.detect_threshold=params.detect_threshold||3.5;
 	params.detect_interval=params.detect_interval||10;
-	params.shell_increment=params.shell_increment||3;
+	if (!('shell_increment' in params)) params.shell_increment=0;
 	params.min_shell_size=params.min_shell_size||150;
 	params.samplerate=params.samplerate||30000;
 	params.sign=params.sign||0;
@@ -25,6 +25,7 @@ function run_algorithm(params) {
 	display_parameters(params);
 
 	var raw=params.raw;
+
 	var geom=params.geom;
 	var outpath=params.outpath;
 
@@ -84,13 +85,16 @@ function run_algorithm(params) {
 	}
 
 	extract_raw(raw,'@pre0',o_extract_raw);
+	bandpass_filter('@pre0','@pre1_filt',o_filter);
 	if (params.mask_threshold) {
-		bandpass_filter('@pre0','@pre1',o_filter);
-		mask_out_artifacts('@pre1','@pre1b',o_mask_out_artifacts);
+		mask_out_artifacts('@pre1_filt','@pre1_mask',o_mask_out_artifacts);
 	}
 	else {
-		bandpass_filter('@pre0','@pre1b',o_filter);
+		copy('@pre1_filt','@pre1_mask');	
 	}
+	if (!perturb_raw_data('@pre1_mask','@pre1b',params))
+		copy('@pre1_mask','@pre1b');
+	
 	if (params.use_whitening=='true')
 		whiten('@pre1b','@pre2',o_whiten);
 	else
@@ -111,6 +115,24 @@ function run_algorithm(params) {
 	copy('@firings3',outpath+'/firings.mda');
 
 	run_pipeline();
+}
+
+function perturb_raw_data(input,output,params) {
+	if (params.perturb_noise_level) {
+		normalize_channels(input,'@normalized',{});
+		add_noise('@normalized',output,{noise_level:params.perturb_noise_level});
+		return true;
+	}
+	else return false;
+}
+
+function add_noise(input,output,opts) {
+	var ret={};
+	ret.processor_name='add_noise';
+	ret.inputs={timeseries:input};
+	ret.outputs={timeseries_out:output};
+	ret.parameters=clone(opts);
+	PIPELINE.addProcess(ret);
 }
 
 function geom2adj(input,output,opts) {

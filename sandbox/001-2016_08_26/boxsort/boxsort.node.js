@@ -8,8 +8,15 @@ var CLP=new CLParams(process.argv);
 
 var alglist_path=CLP.unnamedParameters[0];
 var datasetlist_path=CLP.unnamedParameters[1];
-var basepath=CLP.namedParameters.basepath;
 var outpath=CLP.namedParameters.outpath;
+
+if ((!alglist_path)||(!datasetlist_path)||(!outpath)) {
+	print_usage();
+	process.exit(-1);
+}
+
+var basepath=__dirname+'/../../../../mountainsort_experiments';
+
 
 mkdir_safe(outpath);
 
@@ -32,7 +39,8 @@ var unit_numbers={
 	m3:[2,3],
 	m4:[2,3],
 	m5:[2,3],
-	nn:[1]
+	nn:[1],
+	synth1:[1,2,3,4,5]
 };
 
 var algs=[];
@@ -89,38 +97,102 @@ else {
 	});
 }
 
+function print_usage() {
+	console.log('boxsort.sh [alglist].txt [datasetlist].txt --outpath=output [--norun]');
+}
+
 function compile_results(callback) {
 	for (var d in datasets) {
 		var dsname=datasets[d].name;
-		var ks=unit_numbers[dsname];
-		console.log('');
-		console.log('######## DATASET: '+dsname);
-		console.log('');
-		for (var ii in ks) {
+		var ks=unit_numbers[dsname]||[];
+		console.log ('');
+		console.log ('######## DATASET: '+dsname);
+		console.log ('');
+		for (var ii=0; ii<=ks.length; ii++) {
 			var k=ks[ii];
+			if (ii==ks.length) k='all';
 			var table0=[];
 			for (var a in algs) {
-
 				var algname=algs[a].name;
 				var outpath0=outpath+'/'+algname+'-'+dsname;
 				var CM=read_csv_matrix(outpath0+'/confusion_matrix.csv');
 				var LM=read_csv_vector(outpath0+'/optimal_label_map.csv');
 
-				var num1=row_sum(CM,k-1);
-				var num2=col_sum(CM,LM[k-1]-1);
-				var num_fn,num_fp,num_fn_frac,num_fp_frac;
-				if (LM[k-1]>0) {
-					num_fn=num1-CM[k-1][LM[k-1]-1];
-					num_fp=col_sum(CM,LM[k-1]-1)-CM[k-1][LM[k-1]-1];
-					num_fn_frac=num_fn/num1;
-					num_fp_frac=num_fp/num2;
+				var Ntrue=0,Ncorrect=0,Nincorrect=0,Nmissed=0,Nextra=0;
+
+								
+				if (k=='all') {
+					var K1=CM.length-1;
+					var K2=CM[0].length-1;
+					var ks_to_consider=clone(ks);
+					if (ks_to_consider.length===0) {
+						for (var aa=1; aa<=K1; aa++) {
+							ks_to_consider.push(aa);
+						}
+					}
+
+					var ret=sub_confusion_matrix(CM,LM,ks_to_consider);
+					var CMb=ret.CMb;
+					var LMb=ret.LMb;
+					var K1b=CMb.length-1;
+					var K2b=CMb[0].length-1;
+					for (var k1b=1; k1b<=K1b; k1b++) {
+						Ntrue+=row_sum(CMb,k1b-1);
+						var k2b_match=LMb[k1b-1];
+						if (k2b_match) {
+							Ncorrect+=CMb[k1b-1][k2b_match-1];
+						}
+						for (var k2b=1; k2b<=K1b; k2b++) {
+							if (k2b!=k2b_match) {
+								Nincorrect+=CMb[k1b-1][k2b-1];
+							}
+						}
+						Nmissed+=CMb[k1b-1][K2b];
+					}
+					Nextra+=row_sum(CMb,K1b);
 				}
 				else {
-					num_fn=NaN;
-					num_fp=NaN;
-					num_fn_frac=NaN;
-					num_fp_frac=NaN;
+					var K1=CM.length-1;
+					var K2=CM[0].length-1;
+					var k1=k;
+					Ntrue+=row_sum(CM,k1-1);
+					var k2_match=LM[k1-1];
+					if (k2_match) {
+						Ncorrect+=CM[k1-1][k2_match-1];
+					}
+					for (var k2=1; k2<=K2; k2++) {
+						if (k2!=k2_match) {
+							Nincorrect+=CM[k1-1][k2-1];
+						}
+					}
+					Nmissed+=CM[k1-1][K2];
+					if (k2_match) {
+						Nextra+=col_sum(CM,k2_match-1)-CM[k1-1][k2_match-1];
+					}
 				}
+				var k_display=k;
+				if ((k=='all')&&(ks.length>0)) k_display=ks.join(',');
+				var clip_size=(alg_info[algname]||{}).clip_size||'';
+				var table_row={DATASET:dsname,ALG:algname,clip_size:clip_size,UNIT:k_display,Ntrue:Ntrue,Correct:topct(Ncorrect/Ntrue),Incorrect:topct(Nincorrect/Ntrue),Missed:topct(Nmissed/Ntrue)};
+				table_row.Extra=topct(Nextra/Ntrue);
+				table0.push(table_row);
+
+				/*
+				{
+					num1=row_sum(CM,k-1);
+					num2=col_sum(CM,LM[k-1]-1);
+					if (LM[k-1]>0) {
+						num_fn=num1-CM[k-1][LM[k-1]-1];
+						num_fp=col_sum(CM,LM[k-1]-1)-CM[k-1][LM[k-1]-1];
+						
+					}
+					else {
+						num_fn=NaN;
+						num_fp=NaN;
+					}	
+				}
+				var num_fn_frac=num_fn/num1;
+				var num_fp_frac=num_fp/num2;
 
 				//console.log('@@@@@@@@@@@@ '+algname+' '+dsname+' '+k+' '+num_fn_frac+' '+num_fp_frac);
 				//print_csv_matrix(CM);
@@ -129,9 +201,8 @@ function compile_results(callback) {
 				//console.log('  '+algname+' '+dsname+' '+k+': '+num+'\t'+topct(num_fn/num1)+'\t'+topct(num_fp/num2));
 				var clip_size=(alg_info[algname]||{}).clip_size||'';
 				table0.push({ALG:algname,clip_size:clip_size,DATASET:dsname,UNIT:k,num_events:num1,false_neg:topct(num_fn_frac),false_pos:topct(num_fp_frac)});
-				console.log(algname);
+				*/
 			}
-			console.log(table0);
 			console.table(table0);
 		}
 	}
@@ -142,7 +213,7 @@ function run_sorting(callback) {
 	var num_running=0;
 	for (var a in algs) {
 		for (var d in datasets) {
-			console.log('Applying '+algs[a].name+' to '+datasets[d].name);
+			console.log ('Applying '+algs[a].name+' to '+datasets[d].name);
 			num_running++;
 			apply_sorting(algs[a],datasets[d],function() {
 				num_running--;
@@ -151,7 +222,7 @@ function run_sorting(callback) {
 	}
 
 	function on_timeout() {
-		console.log('# algorithms running: '+num_running);
+		console.log ('# algorithms running: '+num_running);
 		if (num_running==0) {
 			callback();
 		}
@@ -164,13 +235,19 @@ function apply_sorting(alg,ds,callback) {
 	var outpath0=outpath+'/'+alg.name+'-'+ds.name;
 	mkdir_safe(outpath0);
 
+	copy_file_sync(basepath+'/datasets/'+ds.folder+'/firings_true.mda',outpath0+'/firings_true.mda');
 	copy_file_sync(basepath+'/datasets/'+ds.folder+'/firings_true.mda.prv',outpath0+'/firings_true.mda.prv');
+
+	var ds_folder=basepath+'/datasets/'+ds.folder;
 
 	var cmd='mountainprocess';
 	args=['queue-script',basepath+'/algorithms/'+alg.script];
-	args.push('--raw='+basepath+'/datasets/'+ds.folder+'/raw.mda.prv');
-	args.push(basepath+'/datasets/'+ds.folder+'/params.json');
-	var geom_fname=basepath+'/datasets/'+ds.folder+'/geom.csv';
+	if (fs.existsSync(ds_folder+"/raw.mda.prv"))
+		args.push('--raw='+ds_folder+'/raw.mda.prv');
+	else
+		args.push('--raw='+ds_folder+'/raw.mda');
+	args.push(ds_folder+'/params.json');
+	var geom_fname=ds_folder+'/geom.csv';
 	if (fs.existsSync(geom_fname)) {
 		args.push('--geom='+geom_fname);
 	}
@@ -182,7 +259,9 @@ function apply_sorting(alg,ds,callback) {
 	console.log (cmd+' '+args.join(' '));
 	
 	make_system_call(cmd,args,function() {
+		console.log('++++++++++++++++++++++++++++++++');
 		compute_confusion_matrix(outpath0,function() {
+			console.log('++++++++++++++++++++++++++++++++------');
 			callback();
 		});
 	});
@@ -191,7 +270,10 @@ function apply_sorting(alg,ds,callback) {
 function compute_confusion_matrix(output_path,callback) {
 	var cmd='mountainprocess';
 	var args=['run-process','merge_firings'];
-	args.push('--firings1='+output_path+'/firings_true.mda.prv');
+	if (fs.existsSync(output_path+"/firings_true.mda.prv"))
+		args.push('--firings1='+output_path+'/firings_true.mda.prv');
+	else
+		args.push('--firings1='+output_path+'/firings_true.mda');
 	args.push('--firings2='+output_path+'/firings.mda');
 	args.push('--confusion_matrix='+output_path+'/confusion_matrix.csv');
 	args.push('--optimal_label_map='+output_path+'/optimal_label_map.csv');
@@ -241,12 +323,13 @@ function CLParams(argv) {
 }
 
 function copy_file_sync(src,dst) {
+	if (!fs.existsSync(src)) return;
 	var data=fs.readFileSync(src);
 	fs.writeFileSync(dst,data);
 }
 
 function make_system_call(cmd,args,callback) {
-	console.log('Running '+cmd+' '+args.join(' '));
+	console.log ('Running '+cmd+' '+args.join(' '));
 	var pp=child_process.spawn(cmd,args);
 	pp.stdout.setEncoding('utf8');
 	pp.stderr.setEncoding('utf8');
@@ -262,11 +345,11 @@ function make_system_call(cmd,args,callback) {
 	var all_stdout='';
 	var all_stderr='';
 	pp.stdout.on('data',function(data) {
-		console.log (data);
+		console.log ('----'+data);
 		all_stdout+=data;
 	});
 	pp.stderr.on('data',function(data) {
-		console.log (data);
+		console.log ('===='+data);
 		all_stderr+=data;
 	});
 }
@@ -283,6 +366,52 @@ function transpose_matrix(X) {
 		}
 	}
 	return Y;
+}
+
+function sub_confusion_matrix(CM,LM,ks) {
+	var ks2=[];
+	var LMb=[];
+	for (var i in ks) {
+		var match=LM[ks[i]-1];
+		if (match) {
+			ks2.push(match);
+			LMb.push(ks2.length);
+		}
+		else {
+			LMb.push(0);
+		}
+	}
+	var K1b=ks.length;
+	var K2b=ks2.length;
+	var CMb=[];
+
+	for (var i1=0; i1<K1b; i1++) {
+		var tmp=[];
+		for (var i2=0; i2<K2b; i2++) {
+			tmp.push(CM[ks[i1]-1][ks2[i2]-1]);
+		}
+		tmp.push(0); //place-holder
+		CMb.push(tmp);
+	}
+	//last row
+	{
+		var tmp=[];
+		for (var i2=0; i2<K2b; i2++) {
+			tmp.push(0); //place-holder
+		}
+		tmp.push(0); //place-holder
+		CMb.push(tmp);
+	}
+	for (var i1=0; i1<K1b; i1++) {
+		CMb[i1][K2b]=row_sum(CM,ks[i1]-1)-row_sum(CMb,i1);
+	}
+	for (var i2=0; i2<K2b; i2++) {
+		CMb[K1b][i2]=col_sum(CM,ks2[i2]-1)-col_sum(CMb,i2);
+	}
+	return {
+		CMb:CMb,
+		LMb:LMb
+	}
 }
 
 function read_csv_matrix(path) {
@@ -316,7 +445,7 @@ function read_csv_vector(path) {
 function print_csv_matrix(X) {
 	var txt='';
 	for (var r=0; r<X.length; r++) {
-		console.log(X[r].join(','));
+		console.log (X[r].join(','));
 	}
 }
 
@@ -336,7 +465,11 @@ function col_sum(X,col) {
 }
 
 function topct(num) {
-	if (num==NaN) return 'NaN';
+	if (isNaN(num)) return '';
 	if (num>1) return '>100%';
 	return Math.floor(num*100)+'%';
+}
+
+function clone(X) {
+	return JSON.parse(JSON.stringify(X));
 }
