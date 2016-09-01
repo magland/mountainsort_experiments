@@ -1,0 +1,150 @@
+
+######## DATASET: h1
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          h1       1     849         89%        13%      
+ms4    4          h1       1     849         92%        80%      
+ms10   10         h1       1     849         92%        71%      
+ms20   20         h1       1     849         91%        61%      
+ms40   40         h1       1     849         91%        63%      
+ms80   80         h1       1     849         91%        64%      
+ms160  160        h1       1     849         91%        66%      
+ms320  320        h1       1     849         91%        63%      
+ms640  640        h1       1     849         91%        66%      
+
+
+######## DATASET: m1
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m1       2     126         53%        22%      
+ms4    4          m1       2     126         0%         46%      
+ms10   10         m1       2     126         0%         0%       
+ms20   20         m1       2     126         0%         0%       
+ms40   40         m1       2     126         0%         0%       
+ms80   80         m1       2     126         0%         0%       
+ms160  160        m1       2     126         0%         0%       
+ms320  320        m1       2     126         0%         0%       
+ms640  640        m1       2     126         0%         0%       
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m1       3     110         54%        31%      
+ms4    4          m1       3     110         NaN%       NaN%     
+ms10   10         m1       3     110         0%         0%       
+ms20   20         m1       3     110         0%         0%       
+ms40   40         m1       3     110         0%         0%       
+ms80   80         m1       3     110         0%         0%       
+ms160  160        m1       3     110         0%         0%       
+ms320  320        m1       3     110         0%         0%       
+ms640  640        m1       3     110         0%         0%       
+
+
+######## DATASET: m2
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m2       2     529         88%        29%      
+ms4    4          m2       2     529         0%         50%      
+ms10   10         m2       2     529         0%         0%       
+ms20   20         m2       2     529         0%         0%       
+ms40   40         m2       2     529         0%         0%       
+ms80   80         m2       2     529         0%         0%       
+ms160  160        m2       2     529         0%         0%       
+ms320  320        m2       2     529         0%         0%       
+ms640  640        m2       2     529         0%         0%       
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m2       3     529         89%        38%      
+ms4    4          m2       3     529         NaN%       NaN%     
+ms10   10         m2       3     529         0%         0%       
+ms20   20         m2       3     529         0%         0%       
+ms40   40         m2       3     529         0%         0%       
+ms80   80         m2       3     529         0%         0%       
+ms160  160        m2       3     529         0%         0%       
+ms320  320        m2       3     529         0%         0%       
+ms640  640        m2       3     529         0%         0%       
+
+
+######## DATASET: m3
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m3       2     565         99%        40%      
+ms4    4          m3       2     565         NaN%       NaN%     
+ms10   10         m3       2     565         1%         1%       
+ms20   20         m3       2     565         0%         1%       
+ms40   40         m3       2     565         0%         7%       
+ms80   80         m3       2     565         3%         5%       
+ms160  160        m3       2     565         0%         51%      
+ms320  320        m3       2     565         0%         52%      
+ms640  640        m3       2     565         1%         51%      
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m3       3     523         100%       NaN%     
+ms4    4          m3       3     523         NaN%       NaN%     
+ms10   10         m3       3     523         1%         4%       
+ms20   20         m3       3     523         0%         5%       
+ms40   40         m3       3     523         5%         6%       
+ms80   80         m3       3     523         3%         11%      
+ms160  160        m3       3     523         NaN%       NaN%     
+ms320  320        m3       3     523         NaN%       NaN%     
+ms640  640        m3       3     523         NaN%       NaN%     
+
+
+######## DATASET: m4
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m4       2     509         100%       NaN%     
+ms4    4          m4       2     509         NaN%       NaN%     
+ms10   10         m4       2     509         0%         4%       
+ms20   20         m4       2     509         1%         1%       
+ms40   40         m4       2     509         0%         4%       
+ms80   80         m4       2     509         0%         4%       
+ms160  160        m4       2     509         0%         3%       
+ms320  320        m4       2     509         1%         5%       
+ms640  640        m4       2     509         2%         6%       
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m4       3     541         97%        0%       
+ms4    4          m4       3     541         NaN%       NaN%     
+ms10   10         m4       3     541         4%         2%       
+ms20   20         m4       3     541         4%         2%       
+ms40   40         m4       3     541         5%         1%       
+ms80   80         m4       3     541         7%         0%       
+ms160  160        m4       3     541         6%         0%       
+ms320  320        m4       3     541         4%         1%       
+ms640  640        m4       3     541         4%         2%       
+
+
+######## DATASET: m5
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m5       2     62          46%        0%       
+ms4    4          m5       2     62          1%         47%      
+ms10   10         m5       2     62          0%         0%       
+ms20   20         m5       2     62          1%         0%       
+ms40   40         m5       2     62          0%         0%       
+ms80   80         m5       2     62          0%         0%       
+ms160  160        m5       2     62          0%         0%       
+ms320  320        m5       2     62          1%         0%       
+ms640  640        m5       2     62          3%         0%       
+
+ALG    clip_size  DATASET  UNIT  num_events  false_neg  false_pos
+-----  ---------  -------  ----  ----------  ---------  ---------
+ms1    1          m5       3     56          53%        0%       
+ms4    4          m5       3     56          NaN%       NaN%     
+ms10   10         m5       3     56          3%         0%       
+ms20   20         m5       3     56          1%         0%       
+ms40   40         m5       3     56          0%         0%       
+ms80   80         m5       3     56          0%         0%       
+ms160  160        m5       3     56          0%         0%       
+ms320  320        m5       3     56          0%         0%       
+ms640  640        m5       3     56          0%         0%       
+
