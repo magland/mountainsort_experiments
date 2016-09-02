@@ -11,7 +11,7 @@ var dsname=CLP.unnamedParameters[1];
 var alglist_path=CLP.namedParameters.alglist;
 var dslist_path=CLP.namedParameters.dslist;
 var outpath=CLP.namedParameters.outpath;
-var firings_name=CLP.namedParameters.firings_name||'firings.mda'; //or firings.annotated.mda
+var firings_name=CLP.namedParameters.firings_name||'firings.mda'; //or firings.curated.mda
 console.log(firings_name);
 
 if ((!algname)||(!dsname)||(!firings_name)||(!alglist_path)||(!dslist_path)||(!outpath)) {
