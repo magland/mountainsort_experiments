@@ -30,6 +30,45 @@ exports.read_algs_from_text_file=function(file_path) {
 	return algs;
 }
 
+exports.read_datasets_from_text_file=function(file_path) {
+	var datasets=[];
+	{
+		var txt=common.read_text_file(file_path);
+		var lines=txt.split('\n');
+		for (var i in lines) {
+			if (lines[i].trim().slice(0,1)!='#') {
+				var vals=lines[i].trim().split(' ');
+				if (vals.length==2) {
+					datasets.push({
+						name:vals[0],
+						folder:vals[1]
+					});
+				}
+				else {
+					if (lines[i].trim()) {
+						throw 'problem in datasetlist file: '+lines[i].trim();
+					}
+				}
+			}
+		}
+	}
+	return datasets;
+};
+
+exports.find_alg=function(algs,algname) {
+	for (var i in algs) {
+		if (algs[i].name==algname) return algs[i];
+	}
+	return null;
+};
+
+exports.find_ds=function(datasets,dsname) {
+	for (var i in datasets) {
+		if (datasets[i].name==dsname) return datasets[i];
+	}
+	return null;
+};
+
 exports.CLParams=function(argv) {
 	this.unnamedParameters=[];
 	this.namedParameters={};
@@ -104,7 +143,7 @@ exports.make_system_call=function(cmd,args,callback) {
 	var done=false;
 	pp.on('close', function(code) {
   		done=true;
-		callback();
+		if (callback) callback();
 		s_num_system_calls_running--;
 	});
 	pp.on('error',function(err) {
@@ -147,33 +186,6 @@ exports.transpose_matrix=function(X) {
 		}
 	}
 	return Y;
-}
-
-
-
-exports.read_datasets_from_text_file=function(file_path) {
-	var datasets=[];
-	{
-		var txt=common.read_text_file(file_path);
-		var lines=txt.split('\n');
-		for (var i in lines) {
-			if (lines[i].trim().slice(0,1)!='#') {
-				var vals=lines[i].trim().split(' ');
-				if (vals.length==2) {
-					datasets.push({
-						name:vals[0],
-						folder:vals[1]
-					});
-				}
-				else {
-					if (lines[i].trim()) {
-						throw 'problem in datasetlist file: '+lines[i].trim();
-					}
-				}
-			}
-		}
-	}
-	return datasets;
 }
 
 exports.read_csv_matrix=function(path) {

@@ -1,2 +1,1 @@
-ms80 mountainsort_001.js --clip_size=80
-ms80_noise mountainsort_001.js --clip_size=80 --perturb_noise_level=0.5
+ms mountainsort_001.js

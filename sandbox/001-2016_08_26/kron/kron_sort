@@ -1,15 +1,19 @@
 #!/usr/bin/env node
 
+function print_usage() {
+	console.log ('kron_sort [algnames] [dsnames] --outpath=[output(default)]');
+}
+
 var fs=require('fs');
-var common=require(__dirname+'/boxsort_common.node.js');
+var common=require(__dirname+'/common.node.js');
 
 var CLP=new common.CLParams(process.argv);
 
 var algnames=CLP.unnamedParameters[0];
 var dsnames=CLP.unnamedParameters[1];
-var outpath=CLP.namedParameters.outpath;
-var alglist_path=CLP.namedParameters.alglist;
-var dslist_path=CLP.namedParameters.dslist;
+var outpath=CLP.namedParameters.outpath||'output';
+var alglist_path='alglist.txt';
+var dslist_path='dslist.txt';
 
 if ((!algnames)||(!dsnames)||(!outpath)||(!alglist_path)||(!dslist_path)) {
 	print_usage();
@@ -38,10 +42,6 @@ for (var a in algs) {
 common.wait_for_system_calls_to_finish(function() {
 
 });
-
-function print_usage() {
-	console.log ('nodejs boxsort2.node.js [algnames|all] [dsnames|all] --outpath=[output] --alglist=[alglist.txt] --dslist=[dslist.txt]');
-}
 
 function apply_sorting(alg,ds,callback) {
 	var outpath0=outpath+'/'+alg.name+'-'+ds.name;

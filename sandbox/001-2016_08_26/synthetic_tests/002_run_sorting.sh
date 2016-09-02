@@ -2,8 +2,8 @@
 
 print_usage()
 {
-	echo "Usage: [].sh [algname|all] [dsname|all]"
-	echo "Example: [].sh ms example1"
+	echo "Usage: [].sh [algnames|all] [dsnames|all]"
+	echo "Example: [].sh ms example1,example2"
 }
 
 alg=$1

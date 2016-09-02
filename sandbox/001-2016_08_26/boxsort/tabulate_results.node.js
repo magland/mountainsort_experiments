@@ -8,15 +8,15 @@ require('console.table');
 
 var CLP=new common.CLParams(process.argv);
 
-var algname=CLP.unnamedParameters[0];
-var dsname=CLP.unnamedParameters[1];
+var algnames=CLP.unnamedParameters[0];
+var dsnames=CLP.unnamedParameters[1];
 var alglist_path=CLP.namedParameters.alglist;
 var dslist_path=CLP.namedParameters.dslist;
 var outpath=CLP.namedParameters.outpath;
 var firings_name=CLP.namedParameters.firings_name||'firings.mda'; //or firings.curated.mda
 console.log(firings_name);
 
-if ((!algname)||(!dsname)||(!firings_name)||(!alglist_path)||(!dslist_path)||(!outpath)) {
+if ((!algnames)||(!dsnames)||(!firings_name)||(!alglist_path)||(!dslist_path)||(!outpath)) {
 	print_usage();
 	process.exit(-1);
 }
@@ -37,11 +37,10 @@ function print_usage() {
 function compute_confusion_matrices(callback) {
 	for (var a in algs) {
 		var algname0=algs[a].name;
-		console.log(algname0);
-		if ((algname=='all')||(algname==algname0)) {
+		if (common.contains_alg(algnames,algs[a])) {
 			for (var d in datasets) {
 				var dsname0=datasets[d].name;
-				if ((dsname=='all')||(dsname==dsname0)) {
+				if (common.contains_ds(dsnames,datasets[d])) {
 					var outpath0=outpath+'/'+algname0+'-'+dsname0;
 					compute_confusion_matrix(outpath0,firings_name,function() {});
 				}
@@ -54,14 +53,14 @@ function compute_confusion_matrices(callback) {
 function tabulate_results(callback) {
 	for (var d in datasets) {
 		var dsname0=datasets[d].name;
-		if ((dsname=='all')||(dsname==dsname0)) {
+		if (common.contains_ds(dsnames,datasets[d])) {
 			console.log ('');
 			console.log ('######## DATASET: '+dsname0);
 			console.log ('');
 			var table0=[];
 			for (var a in algs) {
 				var algname0=algs[a].name;
-				if ((algname=='all')||(algname==algname0)) {
+				if (common.contains_alg(algnames,algs[a])) {
 					var outpath0=outpath+'/'+algname0+'-'+dsname0;
 					var CM=common.read_csv_matrix(outpath0+'/confusion_matrix.csv');
 					var LM=common.read_csv_vector(outpath0+'/optimal_label_map.csv');

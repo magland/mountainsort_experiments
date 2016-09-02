@@ -1,0 +1,6 @@
+> kron_sort ms franklab_tetrode
+> kron_view ms franklab_tetrode
+
+In mountainview, reject and merge clusters and save the firings.curated.mda in the default location.
+
+> kron_view ms franklab_tetrode --firings_name=firings.curated.mda
