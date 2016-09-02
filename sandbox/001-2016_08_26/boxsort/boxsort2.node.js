@@ -3,11 +3,15 @@ var common=require(__dirname+'/boxsort_common.node.js');
 
 var CLP=new common.CLParams(process.argv);
 
-var alglist_path=CLP.unnamedParameters[0];
-var datasetlist_path=CLP.unnamedParameters[1];
+var algname=CLP.unnamedParameters[0];
+var dsname=CLP.unnamedParameters[1];
 var outpath=CLP.namedParameters.outpath;
+var alglist_path=CLP.namedParameters.alglist;
+var dslist_path=CLP.namedParameters.dslist;
 
-if ((!alglist_path)||(!datasetlist_path)||(!outpath)) {
+console.log(algname+' '+dsname+' '+outpath+' '+alglist_path+' '+dslist_path);
+
+if ((!algname)||(!dsname)||(!outpath)||(!alglist_path)||(!dslist_path)) {
 	print_usage();
 	process.exit(-1);
 }
@@ -16,25 +20,29 @@ common.mkdir_safe(outpath);
 var basepath=__dirname+'/../../../../mountainsort_experiments';
 
 var algs=common.read_algs_from_text_file(alglist_path);
-var datasets=common.read_datasets_from_text_file(datasetlist_path);
+var datasets=common.read_datasets_from_text_file(dslist_path);
 
-run_sorting(function() {
+console.log(algs);
+console.log(datasets);
+
+for (var a in algs) {
+	var algname0=algs[a].name;
+	if ((algname=='all')||(algname==algname0)) {
+		for (var d in datasets) {
+			var dsname0=datasets[d].name;
+			if ((dsname=='all')||(dsname==dsname0)) {
+				apply_sorting(algs[a],datasets[d]);
+			}
+		}
+	}
+}
+
+common.wait_for_system_calls_to_finish(function() {
 
 });
 
 function print_usage() {
-	console.log ('nodejs boxsort1.node.js [alglist].txt [dslist].txt --outpath=[output]');
-}
-
-function run_sorting(callback) {
-	console.log(algs);
-	console.log(datasets);
-	for (var a in algs) {
-		for (var d in datasets) {
-			apply_sorting(algs[a],datasets[d]);
-		}
-	}
-	common.wait_for_system_calls_to_finish(callback);
+	console.log ('nodejs boxsort2.node.js [algname|*] [dsname|*] --outpath=[output] --alglist=[alglist.txt] --dslist=[dslist.txt]');
 }
 
 function apply_sorting(alg,ds,callback) {

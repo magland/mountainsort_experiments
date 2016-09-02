@@ -1,2 +1,4 @@
 #!/bin/bash
-nodejs ../boxsort/boxsort1.node.js alglist.txt dslist.txt --outpath=$PWD/output "$@"
+algname=$1
+dsname=$2
+nodejs ../boxsort/boxsort2.node.js $algname $dsname --outpath=$PWD/output --alglist=$PWD/alglist.txt --dslist=$PWD/dslist.txt "$@"

@@ -1,0 +1,1 @@
+echo "view the README.txt in this directory"
