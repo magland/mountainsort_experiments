@@ -1,6 +1,18 @@
 #!/bin/bash
-algname=$1
-dsname=$2
-firings_name=$3
 
-nodejs ../boxsort/tabulate_results.node.js $algname $dsname --firings_name=$firings_name --outpath=$PWD/output --alglist=$PWD/alglist.txt --dslist=$PWD/dslist.txt  "$@"
+print_usage()
+{
+	echo "Usage: [].sh [algname|all] [dsname|all] [firings.mda|firings.curated.mda|optional]"
+	echo "Example: [].sh ms example1"
+}
+
+alg=$1
+ds=$2
+firings_name=${3:-firings.mda}
+
+if [ -z $alg ] || [ -z $ds ] || [ -z $firings_name ] ; then
+	print_usage
+	exit -1
+fi;
+
+nodejs ../boxsort/tabulate_results.node.js $alg $ds --firings_name=$firings_name --outpath=$PWD/output --alglist=$PWD/alglist.txt --dslist=$PWD/dslist.txt  "$@"

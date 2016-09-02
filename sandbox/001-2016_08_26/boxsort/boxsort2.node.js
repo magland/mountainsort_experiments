@@ -42,7 +42,7 @@ common.wait_for_system_calls_to_finish(function() {
 });
 
 function print_usage() {
-	console.log ('nodejs boxsort2.node.js [algname|*] [dsname|*] --outpath=[output] --alglist=[alglist.txt] --dslist=[dslist.txt]');
+	console.log ('nodejs boxsort2.node.js [algname|all] [dsname|all] --outpath=[output] --alglist=[alglist.txt] --dslist=[dslist.txt]');
 }
 
 function apply_sorting(alg,ds,callback) {
