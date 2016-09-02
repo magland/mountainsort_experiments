@@ -2,7 +2,7 @@
 
 print_usage()
 {
-	echo "Usage: [].sh [algname|all] [dsname|all] [firings.mda|firings.curated.mda|optional]"
+	echo "Usage: [].sh [algname] [dsname] [firings.mda|firings.curated.mda|optional]"
 	echo "Example: [].sh ms example1"
 }
 

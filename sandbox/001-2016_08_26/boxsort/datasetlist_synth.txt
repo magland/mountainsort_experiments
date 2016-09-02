@@ -1,3 +1,0 @@
-ex1 synth_examples/example1
-ex2 synth_examples/example2
-ex3 synth_examples/example3
