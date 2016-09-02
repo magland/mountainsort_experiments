@@ -1,5 +1,4 @@
 #!/bin/bash
-node="/usr/bin/env node"
 
 print_usage()
 {
@@ -16,4 +15,4 @@ if [ -z $alg ] || [ -z $ds ] || [ -z $firings_name ] ; then
 	exit -1
 fi;
 
-$node ../boxsort/tabulate_results.node.js $alg $ds --firings_name=$firings_name --outpath=$PWD/output --alglist=$PWD/alglist.txt --dslist=$PWD/dslist.txt  "$@"
+../boxsort/tabulate_results.node.js $alg $ds --firings_name=$firings_name --outpath=$PWD/output --alglist=$PWD/alglist.txt --dslist=$PWD/dslist.txt  "$@"

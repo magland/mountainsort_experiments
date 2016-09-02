@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 var fs=require('fs');
 var common=require(__dirname+'/boxsort_common.node.js');
 
