@@ -21,6 +21,7 @@ function run_algorithm(params) {
 	params.use_whitening=params.use_whitening||'true';
 	if (params.mask_threshold===null) params.mask_threshold=6; //to mask out artifacts. Use 0 to not mask out artifacts
 	params.cluster_num_threads=params.cluster_num_threads||0;
+	params.isocut_threshold=params.isocut_threshold||1.5;
 
 	display_parameters(params);
 
@@ -64,7 +65,8 @@ function run_algorithm(params) {
 		num_features2:params.num_features2,
 		detect_interval:params.detect_interval,
 		consolidation_factor:params.consolidation_factor,
-		num_threads:params.cluster_num_threads
+		num_threads:params.cluster_num_threads,
+		isocut_threshold:params.isocut_threshold
 	};
 	var o_merge_across_channels_v2={
 		clip_size:params.clip_size

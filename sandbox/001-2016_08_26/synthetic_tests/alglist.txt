@@ -1,1 +1,10 @@
 ms mountainsort_001.js
+ms1 mountainsort_001.js --isocut_threshold=1
+ms3 mountainsort_001.js --isocut_threshold=3
+ms5 mountainsort_001.js --isocut_threshold=5
+ms10 mountainsort_001.js --isocut_threshold=10
+ms_f4000 mountainsort_001.js --freq_max=4000
+ms_f2000 mountainsort_001.js --freq_max=2000
+ms_f1000 mountainsort_001.js --freq_max=1000
+ms_f500 mountainsort_001.js --freq_max=500
+ms_sign1 mountainsort_001.js --sign=1
