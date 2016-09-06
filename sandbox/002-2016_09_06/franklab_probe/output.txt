@@ -1,0 +1,1025 @@
+[ { name: 'ms', script: 'mountainsort_001.js', arguments: '' } ]
+[ { name: 'probe', folder: 'neuron_paper/probe' },
+  { name: 'klustakwik_probe',
+    folder: 'neuron_paper/klustakwik_probe' } ]
+@@@@@@@@@@@@@@@@@@@@2
+[ '/home/magland/dev/mountainsort_experiments/datasets' ]
+Running mountainprocess queue-script /home/magland/dev/mountainsort_experiments/algorithms/mountainsort_001.js --raw=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/raw.mda.prv /home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/params.json --geom=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/geom.csv --_force_run=1 --outpath=output/ms-klustakwik_probe 
+====resolve_prv_file mlcommon.cpp 708 "/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/raw.mda.prv"
+
+====resolve_prv_file mlcommon.cpp 710 "{\n    \"original_checksum\": \"59ba8042a7709796633d84cec4b99f1685083f69\",\n    \"original_path\": \"FL_ms11d45_18chan.raw.mda\",\n    \"original_size\": 1950066704\n}\n"
+resolve_prv_file mlcommon.cpp 721
+resolve_prv_file mlcommon.cpp 723
+Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----Creating output corresponding to FL_ms11d45_18chan.raw.mda
+Found file with checksum 59ba8042a7709796633d84cec4b99f1685083f69
+Resolved: /home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/raw.mda.prv --> /home/magland/dev/mountainsort_experiments/BIGFILES/FL_ms11d45_18chan.raw.mda
+
+----Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Debug: "Loading parameter file: /home/magland/tmp/mountainlab/tmp_short_term/95ZAPW4M8T98BTXUVY2V.par" ((null):0, (null))
+SCRIPT: adj_radius = 80
+SCRIPT: geom = /home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/geom.csv
+SCRIPT: outpath = output/ms-klustakwik_probe
+SCRIPT: raw = /home/magland/dev/mountainsort_experiments/BIGFILES/FL_ms11d45_18chan.raw.mda
+SCRIPT: samplerate = 30000
+SCRIPT: clip_size = 50
+SCRIPT: detect_threshold = 3.5
+SCRIPT: detect_interval = 10
+SCRIPT: shell_increment = 0
+SCRIPT: min_shell_size = 150
+SCRIPT: sign = 0
+SCRIPT: freq_min = 300
+SCRIPT: freq_max = 8000
+SCRIPT: num_features = 10
+SCRIPT: num_features2 = 10
+SCRIPT: consolidation_factor = 0.9
+SCRIPT: channels = 
+SCRIPT: timerange = -1,-1
+SCRIPT: use_whitening = true
+SCRIPT: cluster_num_threads = 0
+SCRIPT: isocut_threshold = 1.5
+Queuing process geom2adj
+Queuing process geom2adj
+geom2adj:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----Queuing process extract_raw
+geom2adj:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+Writing prv file: /home/magland/dev/mountainsort_experiments/BIGFILES/FL_ms11d45_18chan.raw.mda -> output/ms-klustakwik_probe/raw.mda.prv
+geom2adj:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp geom2adj --input=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/geom.csv --output=/home/magland/tmp/mountainlab/tmp_long_term/01433a794f862848c4c8032d6341efb47e3742d2-output --channels= --radius=80 .
+RUNNING geom2adj
+Elapsed time for processor geom2adj: 0 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: geom2adj
+---------------------------------------------------------------
+
+Process finished: geom2adj
+extract_raw:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+geom2adj:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp geom2adj --input=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/klustakwik_probe/geom.csv --output=output/ms-klustakwik_probe/AM.csv --channels= --radius=80 .
+RUNNING geom2adj
+Elapsed time for processor geom2adj: 0 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: geom2adj
+---------------------------------------------------------------
+
+Process finished: geom2adj
+
+----extract_raw:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp extract_raw --timeseries=/home/magland/dev/mountainsort_experiments/BIGFILES/FL_ms11d45_18chan.raw.mda --timeseries_out=/home/magland/tmp/mountainlab/tmp_long_term/f30185cad30f0df5ea99a5405a8bd172e6d52012-timeseries_out --channels= --t1=-1 --t2=-1 .
+RUNNING extract_raw
+
+----extract_raw:: extract raw 0/54168519 (0%)
+
+----extract_raw:: extract raw 18444260/54168519 (34%)
+
+----extract_raw:: extract raw 36110750/54168519 (66%)
+
+----extract_raw:: extract raw 53832795/54168519 (99%)
+
+----extract_raw:: Elapsed time for processor extract_raw: 18.884 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: extract_raw
+Peak usage: 30 MB RAM / 101% CPU
+---------------------------------------------------------------
+
+Process finished: extract_raw
+Writing prv file: /home/magland/tmp/mountainlab/tmp_long_term/f30185cad30f0df5ea99a5405a8bd172e6d52012-timeseries_out -> output/ms-klustakwik_probe/pre0.mda.prv
+Computing checksum for file /home/magland/tmp/mountainlab/tmp_long_term/f30185cad30f0df5ea99a5405a8bd172e6d52012-timeseries_out
+
+----b3c4de315b22e699fe9134025521be5423714286 -- Elapsed: 7.452 sec
+Queuing process bandpass_filter
+
+----bandpass_filter:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----bandpass_filter:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp bandpass_filter --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/f30185cad30f0df5ea99a5405a8bd172e6d52012-timeseries_out --timeseries_out=/home/magland/tmp/mountainlab/tmp_long_term/19ba3048f9440a72e99f4890196b4479a562422a-timeseries_out --chunk_overlap_size= --freq_max=8000 --freq_min=300 --freq_wid= --processing_chunk_size= --samplerate=30000 .
+RUNNING bandpass_filter
+
+----bandpass_filter:: 1000000/54168519 (1%) - Elapsed(s): RC:4.346, BPF:8.221, GC:0.311, WC:0.22, Total:9.41, 12 threads
+
+----bandpass_filter:: 3000000/54168519 (5%) - Elapsed(s): RC:4.939, BPF:25.515, GC:0.747, WC:0.783, Total:10.571, 12 threads
+
+----bandpass_filter:: 10000000/54168519 (18%) - Elapsed(s): RC:9.25, BPF:98.26, GC:3.817, WC:2.734, Total:16.877, 12 threads
+
+----bandpass_filter:: 14000000/54168519 (25%) - Elapsed(s): RC:11.725, BPF:140.911, GC:5.424, WC:3.721, Total:22.796, 12 threads
+
+----bandpass_filter:: 22000000/54168519 (40%) - Elapsed(s): RC:16.577, BPF:221.216, GC:8.656, WC:6.023, Total:29.951, 12 threads
+
+----bandpass_filter:: 28000000/54168519 (51%) - Elapsed(s): RC:20.671, BPF:278.151, GC:10.959, WC:7.786, Total:35.808, 12 threads
+
+----bandpass_filter:: 34000000/54168519 (62%) - Elapsed(s): RC:24.396, BPF:335.808, GC:13.644, WC:9.771, Total:42.253, 12 threads
+
+----bandpass_filter:: 39168519/54168519 (72%) - Elapsed(s): RC:27.655, BPF:397.306, GC:16.264, WC:10.973, Total:47.438, 12 threads
+
+----bandpass_filter:: 45168519/54168519 (83%) - Elapsed(s): RC:29.638, BPF:456.837, GC:18.457, WC:12.197, Total:52.625, 12 threads
+
+----bandpass_filter:: 51168519/54168519 (94%) - Elapsed(s): RC:30.614, BPF:508.123, GC:19.571, WC:13.309, Total:57.81, 12 threads
+
+----bandpass_filter:: 54168519/54168519 (100%) - Elapsed(s): RC:30.614, BPF:524.317, GC:19.696, WC:13.522, Total:59.721, 12 threads
+Elapsed time for processor bandpass_filter: 59.724 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: bandpass_filter
+Peak usage: 11539 MB RAM / 976% CPU
+---------------------------------------------------------------
+
+Process finished: bandpass_filter
+
+----Queuing process copy
+copy:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----copy:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/home/magland/tmp/mountainlab/tmp_long_term/19ba3048f9440a72e99f4890196b4479a562422a-timeseries_out --output=/home/magland/tmp/mountainlab/tmp_long_term/bad3ae71187229c5b2f84e64cbffb297a5702503-output .
+RUNNING copy
+
+----copy:: Elapsed time for processor copy: 2.656 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak usage: 10 MB RAM / 101% CPU
+---------------------------------------------------------------
+
+Process finished: copy
+Queuing process copy
+
+----copy:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----copy:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/home/magland/tmp/mountainlab/tmp_long_term/bad3ae71187229c5b2f84e64cbffb297a5702503-output --output=/home/magland/tmp/mountainlab/tmp_long_term/b6b4ad6823651b99da7788feaab88ac36a471ee7-output .
+RUNNING copy
+
+----copy:: Elapsed time for processor copy: 2.778 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak usage: 10 MB RAM / 101% CPU
+---------------------------------------------------------------
+
+Process finished: copy
+Writing prv file: /home/magland/tmp/mountainlab/tmp_long_term/b6b4ad6823651b99da7788feaab88ac36a471ee7-output -> output/ms-klustakwik_probe/pre1b.mda.prv
+
+----Computing checksum for file /home/magland/tmp/mountainlab/tmp_long_term/b6b4ad6823651b99da7788feaab88ac36a471ee7-output
+
+----b946b0dc76f679ec8a656dbfa63dc8fdac89f00b -- Elapsed: 7.531 sec
+Computing checksum for file /home/magland/tmp/mountainlab/tmp_long_term/bad3ae71187229c5b2f84e64cbffb297a5702503-output
+
+----b946b0dc76f679ec8a656dbfa63dc8fdac89f00b -- Elapsed: 7.327 sec
+Computing checksum for file /home/magland/tmp/mountainlab/tmp_long_term/19ba3048f9440a72e99f4890196b4479a562422a-timeseries_out
+
+----b946b0dc76f679ec8a656dbfa63dc8fdac89f00b -- Elapsed: 7.236 sec
+
+----Queuing process whiten
+whiten:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----whiten:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp whiten --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/b6b4ad6823651b99da7788feaab88ac36a471ee7-output --timeseries_out=/home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out .
+RUNNING whiten
+
+----whiten:: 54168519/54168519 (100%)
+
+----whiten:: 32168519/54168519 (59%)
+
+----whiten:: 54168519/54168519 (100%)
+Elapsed time for processor whiten: 13.059 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: whiten
+Peak usage: 1367 MB RAM / 448% CPU
+---------------------------------------------------------------
+
+Process finished: whiten
+Writing prv file: /home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out -> output/ms-klustakwik_probe/pre2.mda.prv
+Computing checksum for file /home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out
+
+----a5097849585702d74f3e64139d302568b8c931f7 -- Elapsed: 7.332 sec
+Queuing process detect
+
+----detect:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----detect:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp detect --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out --detect_out=/home/magland/tmp/mountainlab/tmp_long_term/1a10c67f83c2f05450f137e038fffc3969892104-detect_out --clip_size=50 --detect_interval=10 --detect_threshold=3.5 --individual_channels=1 --sign=0 .
+RUNNING detect
+
+----detect:: 29000000/54168519 (53%)
+
+----detect:: 54168519/54168519 (100%)
+Detected 1024985 events.
+Elapsed time for processor detect: 8.883 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: detect
+Peak usage: 1368 MB RAM / 718% CPU
+---------------------------------------------------------------
+
+Process finished: detect
+
+----Queuing process branch_cluster_v2
+branch_cluster_v2:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----branch_cluster_v2:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp branch_cluster_v2 --adjacency_matrix=/home/magland/tmp/mountainlab/tmp_long_term/01433a794f862848c4c8032d6341efb47e3742d2-output --detect=/home/magland/tmp/mountainlab/tmp_long_term/1a10c67f83c2f05450f137e038fffc3969892104-detect_out --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out --firings_out=/home/magland/tmp/mountainlab/tmp_long_term/fe1d3cb6806b6b6976e857b48493904e3c2034c0-firings_out --clip_size=50 --consolidation_factor=0.8999999761581421 --detect_interval=10 --isocut_threshold=1.5 --min_shell_size=150 --num_features=10 --num_features2=10 --num_pca_representatives= --num_threads=0 --shell_increment=0 .
+RUNNING branch_cluster_v2
+Starting branch_cluster_v2 --------------------
+#events = 1024985
+
+----branch_cluster_v2:: do_branch_cluster_v2 3x50x62344 (channel 1)
+Channel 1: NEGATIVES (13314)
+do_branch_cluster_v2 3x50x13314 (channel 1)
+
+----branch_cluster_v2:: do_branch_cluster_v2 4x50x38476 (channel 18)
+Channel 18: NEGATIVES (16724)
+do_branch_cluster_v2 4x50x16724 (channel 18)
+
+----branch_cluster_v2:: Channel 1: K=3
+do_branch_cluster_v2 3x50x10928 (channel 1)
+
+----branch_cluster_v2:: do_branch_cluster_v2 3x50x1984 (channel 1)
+do_branch_cluster_v2 3x50x402 (channel 1)
+Channel 1: POSITIVES (49030)
+do_branch_cluster_v2 3x50x49030 (channel 1)
+
+----branch_cluster_v2:: Channel 18: K=5
+do_branch_cluster_v2 4x50x15217 (channel 18)
+
+----branch_cluster_v2:: do_branch_cluster_v2 4x50x197 (channel 18)
+do_branch_cluster_v2 4x50x602 (channel 18)
+do_branch_cluster_v2 8x50x42004 (channel 11)
+Channel 11: NEGATIVES (6808)
+do_branch_cluster_v2 8x50x6808 (channel 11)
+do_branch_cluster_v2 4x50x493 (channel 18)
+
+----branch_cluster_v2:: do_branch_cluster_v2 4x50x215 (channel 18)
+do_branch_cluster_v2 6x50x71067 (channel 17)
+Channel 17: NEGATIVES (14253)
+do_branch_cluster_v2 6x50x14253 (channel 17)
+Channel 18: POSITIVES (21752)
+do_branch_cluster_v2 4x50x21752 (channel 18)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x72214 (channel 16)
+Channel 16: NEGATIVES (8454)
+do_branch_cluster_v2 6x50x8454 (channel 16)
+do_branch_cluster_v2 5x50x49720 (channel 3)
+Channel 3: NEGATIVES (8949)
+do_branch_cluster_v2 5x50x8949 (channel 3)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x33887 (channel 13)
+Channel 13: NEGATIVES (8677)
+do_branch_cluster_v2 8x50x8677 (channel 13)
+
+----branch_cluster_v2:: Channel 11: K=5
+do_branch_cluster_v2 8x50x4806 (channel 11)
+
+----branch_cluster_v2:: Channel 17: K=5
+do_branch_cluster_v2 6x50x13064 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x61565 (channel 15)
+Channel 15: NEGATIVES (13014)
+do_branch_cluster_v2 7x50x13014 (channel 15)
+
+----branch_cluster_v2:: Channel 11: K=2
+do_branch_cluster_v2 8x50x4548 (channel 11)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x258 (channel 11)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x322 (channel 11)
+Channel 1: K=3
+do_branch_cluster_v2 3x50x45886 (channel 1)
+do_branch_cluster_v2 8x50x366 (channel 11)
+do_branch_cluster_v2 8x50x1033 (channel 11)
+do_branch_cluster_v2 6x50x183 (channel 17)
+
+----branch_cluster_v2:: Channel 13: K=4
+do_branch_cluster_v2 8x50x2105 (channel 13)
+do_branch_cluster_v2 6x50x182 (channel 17)
+do_branch_cluster_v2 6x50x85 (channel 17)
+do_branch_cluster_v2 6x50x739 (channel 17)
+Channel 11: K=2
+do_branch_cluster_v2 8x50x1003 (channel 11)
+
+----branch_cluster_v2:: Channel 17: POSITIVES (56814)
+do_branch_cluster_v2 6x50x56814 (channel 17)
+do_branch_cluster_v2 8x50x30 (channel 11)
+do_branch_cluster_v2 8x50x281 (channel 11)
+Channel 11: POSITIVES (35196)
+do_branch_cluster_v2 8x50x35196 (channel 11)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x70676 (channel 9)
+Channel 9: NEGATIVES (12119)
+do_branch_cluster_v2 8x50x12119 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x53650 (channel 7)
+Channel 7: NEGATIVES (11545)
+do_branch_cluster_v2 7x50x11545 (channel 7)
+
+----branch_cluster_v2:: Channel 16: K=3
+do_branch_cluster_v2 6x50x3601 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x4348 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x51589 (channel 5)
+Channel 5: NEGATIVES (13387)
+do_branch_cluster_v2 7x50x13387 (channel 5)
+
+----branch_cluster_v2:: Channel 15: K=3
+do_branch_cluster_v2 7x50x12387 (channel 15)
+Channel 13: K=6
+do_branch_cluster_v2 8x50x272 (channel 13)
+do_branch_cluster_v2 8x50x63132 (channel 14)
+Channel 14: NEGATIVES (13819)
+do_branch_cluster_v2 8x50x13819 (channel 14)
+do_branch_cluster_v2 8x50x270 (channel 13)
+do_branch_cluster_v2 8x50x197 (channel 13)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x892 (channel 13)
+do_branch_cluster_v2 8x50x372 (channel 13)
+do_branch_cluster_v2 8x50x102 (channel 13)
+do_branch_cluster_v2 8x50x6041 (channel 13)
+
+----branch_cluster_v2:: Channel 18: K=3
+do_branch_cluster_v2 4x50x18519 (channel 18)
+
+----branch_cluster_v2:: Channel 5: K=5
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x8409 (channel 5)
+
+----branch_cluster_v2:: Channel 13: K=2
+do_branch_cluster_v2 8x50x5622 (channel 13)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x2355 (channel 5)
+
+----branch_cluster_v2:: Channel 15: K=2
+do_branch_cluster_v2 7x50x11909 (channel 15)
+do_branch_cluster_v2 8x50x419 (channel 13)
+Channel 5: K=2
+do_branch_cluster_v2 7x50x1911 (channel 5)
+do_branch_cluster_v2 8x50x441 (channel 13)
+do_branch_cluster_v2 8x50x90 (channel 13)
+
+----branch_cluster_v2:: Channel 13: POSITIVES (25210)
+do_branch_cluster_v2 8x50x25210 (channel 13)
+do_branch_cluster_v2 7x50x444 (channel 5)
+do_branch_cluster_v2 7x50x1037 (channel 5)
+
+----branch_cluster_v2:: do_branch_cluster_v2 4x50x2724 (channel 18)
+do_branch_cluster_v2 7x50x1138 (channel 5)
+Channel 5: K=2
+do_branch_cluster_v2 7x50x1019 (channel 5)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x119 (channel 5)
+do_branch_cluster_v2 4x50x509 (channel 18)
+do_branch_cluster_v2 7x50x448 (channel 5)
+Channel 5: POSITIVES (38202)
+do_branch_cluster_v2 7x50x38202 (channel 5)
+Splitting clusters for channel 18
+
+----branch_cluster_v2:: Channel 16: K=2
+do_branch_cluster_v2 6x50x1438 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x2910 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x478 (channel 15)
+do_branch_cluster_v2 7x50x342 (channel 15)
+Channel 16: K=3
+do_branch_cluster_v2 6x50x1943 (channel 16)
+do_branch_cluster_v2 7x50x285 (channel 15)
+
+----branch_cluster_v2:: Channel 15: POSITIVES (48551)
+do_branch_cluster_v2 7x50x48551 (channel 15)
+do_branch_cluster_v2 6x50x861 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x106 (channel 16)
+do_branch_cluster_v2 6x50x505 (channel 16)
+Channel 16: POSITIVES (63760)
+do_branch_cluster_v2 6x50x63760 (channel 16)
+
+----branch_cluster_v2:: Channel 3: K=5
+do_branch_cluster_v2 5x50x7387 (channel 3)
+Channel 7: K=6
+do_branch_cluster_v2 7x50x1014 (channel 7)
+
+----branch_cluster_v2:: Channel 7: K=3
+do_branch_cluster_v2 7x50x961 (channel 7)
+do_branch_cluster_v2 7x50x27 (channel 7)
+do_branch_cluster_v2 7x50x26 (channel 7)
+do_branch_cluster_v2 7x50x7652 (channel 7)
+
+----branch_cluster_v2:: do_branch_cluster_v2 3x50x2995 (channel 1)
+
+----branch_cluster_v2:: do_branch_cluster_v2 3x50x149 (channel 1)
+Splitting clusters for channel 1
+
+----branch_cluster_v2:: Channel 3: K=2
+do_branch_cluster_v2 5x50x7233 (channel 3)
+do_branch_cluster_v2 7x50x2018 (channel 7)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x173 (channel 7)
+Split clusters for channel 18: 8->8 clusters
+do_branch_cluster_v2 7x50x579 (channel 7)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x109 (channel 7)
+Channel 7: POSITIVES (42105)
+do_branch_cluster_v2 7x50x42105 (channel 7)
+
+----branch_cluster_v2:: Channel 11: K=4
+do_branch_cluster_v2 8x50x21705 (channel 11)
+
+----branch_cluster_v2:: Channel 18: Using 3 of 8 clusters.
+
+----branch_cluster_v2:: Channel 14: K=5
+do_branch_cluster_v2 8x50x11695 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x154 (channel 3)
+do_branch_cluster_v2 5x50x371 (channel 3)
+do_branch_cluster_v2 5x50x281 (channel 3)
+do_branch_cluster_v2 5x50x857 (channel 3)
+do_branch_cluster_v2 5x50x53 (channel 3)
+
+----branch_cluster_v2:: Channel 3: POSITIVES (40771)
+do_branch_cluster_v2 5x50x40771 (channel 3)
+
+----branch_cluster_v2:: Channel 9: K=8
+do_branch_cluster_v2 8x50x6392 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x349 (channel 11)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x10335 (channel 11)
+Channel 14: K=2
+do_branch_cluster_v2 8x50x9285 (channel 14)
+
+----branch_cluster_v2:: Channel 9: K=4
+do_branch_cluster_v2 8x50x5863 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x2410 (channel 14)
+do_branch_cluster_v2 8x50x101 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x273 (channel 9)
+do_branch_cluster_v2 8x50x155 (channel 9)
+do_branch_cluster_v2 8x50x1419 (channel 9)
+do_branch_cluster_v2 8x50x1144 (channel 14)
+do_branch_cluster_v2 8x50x324 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x210 (channel 14)
+Channel 9: K=2
+do_branch_cluster_v2 8x50x1083 (channel 9)
+do_branch_cluster_v2 8x50x446 (channel 14)
+Channel 14: POSITIVES (49313)
+do_branch_cluster_v2 8x50x49313 (channel 14)
+do_branch_cluster_v2 8x50x336 (channel 9)
+do_branch_cluster_v2 8x50x2170 (channel 9)
+
+----branch_cluster_v2:: Channel 13: K=5
+do_branch_cluster_v2 8x50x19425 (channel 13)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x539 (channel 9)
+Channel 9: K=3
+do_branch_cluster_v2 8x50x166 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x205 (channel 9)
+do_branch_cluster_v2 8x50x168 (channel 9)
+do_branch_cluster_v2 8x50x201 (channel 9)
+do_branch_cluster_v2 8x50x540 (channel 9)
+do_branch_cluster_v2 8x50x664 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x194 (channel 9)
+Channel 9: POSITIVES (58557)
+do_branch_cluster_v2 8x50x58557 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x2807 (channel 11)
+
+----branch_cluster_v2:: Splitting clusters for channel 11
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x2236 (channel 13)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x2850 (channel 13)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x404 (channel 13)
+do_branch_cluster_v2 8x50x295 (channel 13)
+Splitting clusters for channel 13
+
+----branch_cluster_v2:: Split clusters for channel 11: 11->11 clusters
+
+----branch_cluster_v2:: Split clusters for channel 13: 15->15 clusters
+
+----branch_cluster_v2:: Channel 11: Using 3 of 11 clusters.
+
+----branch_cluster_v2:: Channel 13: Using 4 of 15 clusters.
+
+----branch_cluster_v2:: Split clusters for channel 1: 6->6 clusters
+
+----branch_cluster_v2:: Channel 1: Using 2 of 6 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x49121 (channel 2)
+Channel 2: NEGATIVES (14483)
+do_branch_cluster_v2 5x50x14483 (channel 2)
+
+----branch_cluster_v2:: Channel 3: K=6
+do_branch_cluster_v2 5x50x25664 (channel 3)
+
+----branch_cluster_v2:: Channel 2: K=5
+do_branch_cluster_v2 5x50x13054 (channel 2)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x57644 (channel 12)
+Channel 12: NEGATIVES (26459)
+do_branch_cluster_v2 8x50x26459 (channel 12)
+do_branch_cluster_v2 5x50x557 (channel 2)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x584 (channel 2)
+do_branch_cluster_v2 5x50x222 (channel 2)
+do_branch_cluster_v2 5x50x66 (channel 2)
+Channel 2: POSITIVES (34638)
+do_branch_cluster_v2 5x50x34638 (channel 2)
+
+----branch_cluster_v2:: Channel 3: K=3
+do_branch_cluster_v2 5x50x22842 (channel 3)
+
+----branch_cluster_v2:: Channel 12: POSITIVES (31185)
+do_branch_cluster_v2 8x50x31185 (channel 12)
+
+----branch_cluster_v2:: Splitting clusters for channel 12
+
+----branch_cluster_v2:: Split clusters for channel 12: 2->2 clusters
+
+----branch_cluster_v2:: Channel 12: Using 2 of 2 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x2461 (channel 3)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x361 (channel 3)
+do_branch_cluster_v2 5x50x5314 (channel 3)
+
+----branch_cluster_v2:: Channel 2: K=5
+do_branch_cluster_v2 5x50x7493 (channel 2)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x2859 (channel 3)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x5560 (channel 3)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x24534 (channel 2)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x1155 (channel 3)
+do_branch_cluster_v2 5x50x219 (channel 3)
+Splitting clusters for channel 3
+
+----branch_cluster_v2:: Channel 7: K=7
+do_branch_cluster_v2 7x50x11736 (channel 7)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x1543 (channel 2)
+
+----branch_cluster_v2:: do_branch_cluster_v2 5x50x471 (channel 2)
+do_branch_cluster_v2 5x50x597 (channel 2)
+Splitting clusters for channel 2
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x14544 (channel 7)
+
+----branch_cluster_v2:: Channel 7: K=2
+do_branch_cluster_v2 7x50x14148 (channel 7)
+
+----branch_cluster_v2:: Channel 5: K=4
+do_branch_cluster_v2 7x50x6286 (channel 5)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x30410 (channel 5)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x396 (channel 7)
+Channel 7: K=2
+do_branch_cluster_v2 7x50x377 (channel 7)
+Split clusters for channel 3: 14->14 clusters
+do_branch_cluster_v2 7x50x19 (channel 7)
+do_branch_cluster_v2 7x50x11166 (channel 7)
+
+----branch_cluster_v2:: Split clusters for channel 2: 10->10 clusters
+
+----branch_cluster_v2:: Channel 3: Using 5 of 14 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x2808 (channel 7)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x504 (channel 7)
+do_branch_cluster_v2 7x50x359 (channel 7)
+Channel 7: K=2
+do_branch_cluster_v2 7x50x203 (channel 7)
+do_branch_cluster_v2 7x50x156 (channel 7)
+do_branch_cluster_v2 7x50x988 (channel 7)
+
+----branch_cluster_v2:: Splitting clusters for channel 7
+
+----branch_cluster_v2:: Channel 15: K=13
+do_branch_cluster_v2 7x50x611 (channel 15)
+Channel 2: Using 1 of 10 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x29285 (channel 15)
+
+----branch_cluster_v2:: Channel 14: K=6
+do_branch_cluster_v2 8x50x46734 (channel 14)
+
+----branch_cluster_v2:: Channel 5: K=2
+do_branch_cluster_v2 7x50x29995 (channel 5)
+
+----branch_cluster_v2:: Split clusters for channel 7: 18->18 clusters
+
+----branch_cluster_v2:: Channel 15: K=3
+do_branch_cluster_v2 7x50x27746 (channel 15)
+
+----branch_cluster_v2:: Channel 7: Using 4 of 18 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x75632 (channel 4)
+
+----branch_cluster_v2:: Channel 4: NEGATIVES (23869)
+do_branch_cluster_v2 7x50x23869 (channel 4)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x415 (channel 5)
+do_branch_cluster_v2 7x50x775 (channel 5)
+do_branch_cluster_v2 7x50x731 (channel 5)
+
+----branch_cluster_v2:: Splitting clusters for channel 5
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x30 (channel 15)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x1509 (channel 15)
+do_branch_cluster_v2 7x50x278 (channel 15)
+do_branch_cluster_v2 7x50x392 (channel 15)
+do_branch_cluster_v2 7x50x10882 (channel 15)
+
+----branch_cluster_v2:: Channel 17: K=9
+do_branch_cluster_v2 6x50x33894 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x73 (channel 15)
+do_branch_cluster_v2 7x50x1931 (channel 15)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x82 (channel 15)
+do_branch_cluster_v2 7x50x1326 (channel 15)
+do_branch_cluster_v2 7x50x136 (channel 15)
+do_branch_cluster_v2 7x50x1222 (channel 15)
+
+----branch_cluster_v2:: Channel 15: K=2
+do_branch_cluster_v2 7x50x461 (channel 15)
+do_branch_cluster_v2 7x50x761 (channel 15)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x1156 (channel 15)
+do_branch_cluster_v2 7x50x1177 (channel 15)
+
+----branch_cluster_v2:: Splitting clusters for channel 15
+Channel 4: K=4
+do_branch_cluster_v2 7x50x14100 (channel 4)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x7907 (channel 4)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x146 (channel 4)
+do_branch_cluster_v2 7x50x1716 (channel 4)
+
+----branch_cluster_v2:: Channel 4: K=2
+do_branch_cluster_v2 7x50x1409 (channel 4)
+do_branch_cluster_v2 7x50x307 (channel 4)
+Channel 4: POSITIVES (51763)
+do_branch_cluster_v2 7x50x51763 (channel 4)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x639 (channel 17)
+do_branch_cluster_v2 6x50x10202 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x62220 (channel 8)
+Channel 8: NEGATIVES (8834)
+do_branch_cluster_v2 8x50x8834 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x1187 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x4114 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x1263 (channel 17)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x475 (channel 17)
+do_branch_cluster_v2 6x50x3293 (channel 17)
+
+----branch_cluster_v2:: Split clusters for channel 5: 12->12 clusters
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x1747 (channel 17)
+Splitting clusters for channel 17
+
+----branch_cluster_v2:: Channel 5: Using 3 of 12 clusters.
+
+----branch_cluster_v2:: Split clusters for channel 15: 20->20 clusters
+
+----branch_cluster_v2:: Channel 15: Using 8 of 20 clusters.
+
+----branch_cluster_v2:: Channel 8: K=11
+do_branch_cluster_v2 8x50x2930 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x46834 (channel 6)
+Channel 6: NEGATIVES (13081)
+do_branch_cluster_v2 7x50x13081 (channel 6)
+Channel 8: K=2
+do_branch_cluster_v2 8x50x2075 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x855 (channel 8)
+do_branch_cluster_v2 8x50x1291 (channel 8)
+Channel 8: K=2
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x1133 (channel 8)
+Channel 8: K=2
+do_branch_cluster_v2 8x50x1043 (channel 8)
+do_branch_cluster_v2 8x50x90 (channel 8)
+do_branch_cluster_v2 8x50x158 (channel 8)
+do_branch_cluster_v2 8x50x2234 (channel 8)
+
+----branch_cluster_v2:: Channel 8: K=3
+do_branch_cluster_v2 8x50x1866 (channel 8)
+
+----branch_cluster_v2:: Channel 16: K=11
+do_branch_cluster_v2 6x50x244 (channel 16)
+do_branch_cluster_v2 6x50x42972 (channel 16)
+do_branch_cluster_v2 8x50x125 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x243 (channel 8)
+do_branch_cluster_v2 8x50x210 (channel 8)
+do_branch_cluster_v2 8x50x104 (channel 8)
+do_branch_cluster_v2 8x50x16 (channel 8)
+do_branch_cluster_v2 8x50x201 (channel 8)
+do_branch_cluster_v2 8x50x1385 (channel 8)
+
+----branch_cluster_v2:: Channel 8: K=2
+do_branch_cluster_v2 8x50x482 (channel 8)
+do_branch_cluster_v2 8x50x903 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x38 (channel 8)
+do_branch_cluster_v2 8x50x158 (channel 8)
+do_branch_cluster_v2 8x50x267 (channel 8)
+Channel 8: POSITIVES (53386)
+do_branch_cluster_v2 8x50x53386 (channel 8)
+Channel 9: K=11
+do_branch_cluster_v2 8x50x18722 (channel 9)
+
+----branch_cluster_v2:: Channel 6: K=6
+do_branch_cluster_v2 7x50x7063 (channel 6)
+
+----branch_cluster_v2:: Split clusters for channel 17: 14->14 clusters
+
+----branch_cluster_v2:: Channel 6: K=2
+do_branch_cluster_v2 7x50x7005 (channel 6)
+Channel 9: K=2
+do_branch_cluster_v2 8x50x18535 (channel 9)
+
+----branch_cluster_v2:: Channel 17: Using 4 of 14 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x58 (channel 6)
+do_branch_cluster_v2 7x50x3361 (channel 6)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x644 (channel 6)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x362 (channel 6)
+do_branch_cluster_v2 7x50x1449 (channel 6)
+do_branch_cluster_v2 7x50x202 (channel 6)
+
+----branch_cluster_v2:: Channel 6: POSITIVES (33753)
+do_branch_cluster_v2 7x50x33753 (channel 6)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x187 (channel 9)
+do_branch_cluster_v2 8x50x843 (channel 9)
+Channel 9: K=2
+do_branch_cluster_v2 8x50x783 (channel 9)
+do_branch_cluster_v2 8x50x60 (channel 9)
+do_branch_cluster_v2 8x50x21641 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x1852 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x234 (channel 16)
+do_branch_cluster_v2 6x50x155 (channel 16)
+do_branch_cluster_v2 6x50x14873 (channel 16)
+do_branch_cluster_v2 8x50x2060 (channel 9)
+do_branch_cluster_v2 8x50x3239 (channel 9)
+
+----branch_cluster_v2:: Channel 9: K=2
+do_branch_cluster_v2 8x50x2710 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x529 (channel 9)
+Channel 4: K=5
+do_branch_cluster_v2 7x50x48646 (channel 4)
+do_branch_cluster_v2 8x50x1018 (channel 9)
+do_branch_cluster_v2 8x50x5886 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x1298 (channel 16)
+do_branch_cluster_v2 6x50x1439 (channel 16)
+
+----branch_cluster_v2:: do_branch_cluster_v2 6x50x312 (channel 16)
+do_branch_cluster_v2 6x50x71 (channel 16)
+do_branch_cluster_v2 6x50x1649 (channel 16)
+do_branch_cluster_v2 6x50x513 (channel 16)
+Splitting clusters for channel 16
+
+----branch_cluster_v2:: Channel 9: K=4
+do_branch_cluster_v2 8x50x2247 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x3508 (channel 9)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x21 (channel 9)
+do_branch_cluster_v2 8x50x110 (channel 9)
+do_branch_cluster_v2 8x50x270 (channel 9)
+do_branch_cluster_v2 8x50x1045 (channel 9)
+do_branch_cluster_v2 8x50x1981 (channel 9)
+Splitting clusters for channel 9
+
+----branch_cluster_v2:: Channel 4: K=2
+do_branch_cluster_v2 7x50x45073 (channel 4)
+
+----branch_cluster_v2:: Channel 14: K=8
+do_branch_cluster_v2 8x50x35769 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x3573 (channel 4)
+Split clusters for channel 9: 31->33 clusters
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x984 (channel 4)
+Channel 14: K=3
+do_branch_cluster_v2 8x50x34700 (channel 14)
+do_branch_cluster_v2 7x50x296 (channel 4)
+do_branch_cluster_v2 7x50x269 (channel 4)
+do_branch_cluster_v2 7x50x1568 (channel 4)
+
+----branch_cluster_v2:: Channel 4: K=2
+do_branch_cluster_v2 7x50x261 (channel 4)
+do_branch_cluster_v2 7x50x1307 (channel 4)
+Splitting clusters for channel 4
+
+----branch_cluster_v2:: Channel 9: Using 9 of 33 clusters.
+
+----branch_cluster_v2:: Split clusters for channel 16: 17->18 clusters
+
+----branch_cluster_v2:: Channel 16: Using 4 of 18 clusters.
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x349 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x720 (channel 14)
+do_branch_cluster_v2 8x50x338 (channel 14)
+do_branch_cluster_v2 8x50x5877 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x314 (channel 14)
+do_branch_cluster_v2 8x50x264 (channel 14)
+do_branch_cluster_v2 8x50x3916 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x66 (channel 14)
+do_branch_cluster_v2 8x50x190 (channel 14)
+do_branch_cluster_v2 8x50x1975 (channel 14)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x478 (channel 14)
+do_branch_cluster_v2 8x50x9 (channel 14)
+do_branch_cluster_v2 8x50x21 (channel 14)
+do_branch_cluster_v2 8x50x96 (channel 14)
+Splitting clusters for channel 14
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x63210 (channel 10)
+Channel 10: NEGATIVES (12272)
+do_branch_cluster_v2 8x50x12272 (channel 10)
+
+----branch_cluster_v2:: Split clusters for channel 4: 12->12 clusters
+
+----branch_cluster_v2:: Channel 4: Using 6 of 12 clusters.
+
+----branch_cluster_v2:: Split clusters for channel 14: 21->21 clusters
+
+----branch_cluster_v2:: Channel 14: Using 6 of 21 clusters.
+
+----branch_cluster_v2:: Channel 10: K=5
+do_branch_cluster_v2 8x50x577 (channel 10)
+do_branch_cluster_v2 8x50x7958 (channel 10)
+
+----branch_cluster_v2:: Channel 10: K=3
+do_branch_cluster_v2 8x50x6800 (channel 10)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x117 (channel 10)
+do_branch_cluster_v2 8x50x1041 (channel 10)
+do_branch_cluster_v2 8x50x2958 (channel 10)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x200 (channel 10)
+do_branch_cluster_v2 8x50x579 (channel 10)
+Channel 10: POSITIVES (50938)
+do_branch_cluster_v2 8x50x50938 (channel 10)
+
+----branch_cluster_v2:: Channel 6: K=6
+do_branch_cluster_v2 7x50x28257 (channel 6)
+
+----branch_cluster_v2:: Channel 6: K=2
+do_branch_cluster_v2 7x50x27507 (channel 6)
+
+----branch_cluster_v2:: Channel 8: K=10
+do_branch_cluster_v2 8x50x3829 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x13938 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x26547 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x750 (channel 6)
+do_branch_cluster_v2 7x50x735 (channel 6)
+do_branch_cluster_v2 7x50x663 (channel 6)
+do_branch_cluster_v2 7x50x180 (channel 6)
+
+----branch_cluster_v2:: do_branch_cluster_v2 7x50x3789 (channel 6)
+do_branch_cluster_v2 7x50x129 (channel 6)
+Splitting clusters for channel 6
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x1988 (channel 8)
+
+----branch_cluster_v2:: Channel 8: K=2
+do_branch_cluster_v2 8x50x1837 (channel 8)
+do_branch_cluster_v2 8x50x151 (channel 8)
+do_branch_cluster_v2 8x50x34 (channel 8)
+do_branch_cluster_v2 8x50x63 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x4339 (channel 8)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x14 (channel 8)
+do_branch_cluster_v2 8x50x227 (channel 8)
+do_branch_cluster_v2 8x50x2407 (channel 8)
+
+----branch_cluster_v2:: Splitting clusters for channel 8
+
+----branch_cluster_v2:: Split clusters for channel 6: 14->14 clusters
+
+----branch_cluster_v2:: Channel 6: Using 3 of 14 clusters.
+
+----branch_cluster_v2:: Split clusters for channel 8: 28->28 clusters
+
+----branch_cluster_v2:: Channel 8: Using 6 of 28 clusters.
+
+----branch_cluster_v2:: Channel 10: K=4
+do_branch_cluster_v2 8x50x41045 (channel 10)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x3830 (channel 10)
+
+----branch_cluster_v2:: do_branch_cluster_v2 8x50x1838 (channel 10)
+do_branch_cluster_v2 8x50x4225 (channel 10)
+
+----branch_cluster_v2:: Splitting clusters for channel 10
+
+----branch_cluster_v2:: Split clusters for channel 10: 11->11 clusters
+
+----branch_cluster_v2:: Channel 10: Using 3 of 11 clusters.
+
+----branch_cluster_v2:: Reordering labels...
+
+----branch_cluster_v2:: Found 76 clusters and 828265 events
+Elapsed time for processor branch_cluster_v2: 216.264 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: branch_cluster_v2
+Peak usage: 1564 MB RAM / 1069% CPU
+---------------------------------------------------------------
+
+Process finished: branch_cluster_v2
+Queuing process merge_across_channels_v2
+
+----merge_across_channels_v2:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----merge_across_channels_v2:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp merge_across_channels_v2 --firings=/home/magland/tmp/mountainlab/tmp_long_term/fe1d3cb6806b6b6976e857b48493904e3c2034c0-firings_out --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out --firings_out=/home/magland/tmp/mountainlab/tmp_long_term/7bbe4fb61b96dd01717c1bd5c1a232920de987a3-firings_out --clip_size=50 .
+RUNNING merge_across_channels_v2
+
+----merge_across_channels_v2:: Using 828265 of 828265 events after 0 redundant clusters removed
+Elapsed time for processor merge_across_channels_v2: 6.531 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: merge_across_channels_v2
+Peak usage: 74 MB RAM / 101% CPU
+---------------------------------------------------------------
+
+Process finished: merge_across_channels_v2
+Queuing process fit_stage
+
+----fit_stage:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+
+----fit_stage:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp fit_stage --firings=/home/magland/tmp/mountainlab/tmp_long_term/7bbe4fb61b96dd01717c1bd5c1a232920de987a3-firings_out --timeseries=/home/magland/tmp/mountainlab/tmp_long_term/016973a66ebea75e14e26504e0f37035c2194707-timeseries_out --firings_out=/home/magland/tmp/mountainlab/tmp_long_term/5ba8295311984a17661e2047f6a96d015016e4c9-firings_out --clip_size=50 --min_shell_size=150 --neglogprior= --shell_increment=0 --use_old= .
+RUNNING fit_stage
+
+----fit_stage:: Starting fit stage
+
+----fit_stage:: 1000000/54168519 (1%) - Elapsed(s): RC:3.571, SLD:0.037, KERNEL:0.816, GLD:0, Total:6.551, 12 threads
+
+----fit_stage:: 10000000/54168519 (18%) - Elapsed(s): RC:5.668, SLD:0.06, KERNEL:9.505, GLD:0, Total:8.674, 12 threads
+
+----fit_stage:: 17000000/54168519 (31%) - Elapsed(s): RC:6.776, SLD:0.071, KERNEL:16.059, GLD:0, Total:9.795, 12 threads
+
+----fit_stage:: 20000000/54168519 (36%) - Elapsed(s): RC:7.883, SLD:0.081, KERNEL:18.647, GLD:0, Total:10.913, 12 threads
+
+----fit_stage:: 26000000/54168519 (47%) - Elapsed(s): RC:8.962, SLD:0.09, KERNEL:24.249, GLD:0, Total:12.003, 12 threads
+
+----fit_stage:: 28000000/54168519 (51%) - Elapsed(s): RC:9.956, SLD:0.097, KERNEL:25.937, GLD:0, Total:13.005, 12 threads
+
+----fit_stage:: 29000000/54168519 (53%) - Elapsed(s): RC:11.185, SLD:0.105, KERNEL:26.813, GLD:0, Total:14.242, 12 threads
+
+----fit_stage:: 37000000/54168519 (68%) - Elapsed(s): RC:13.539, SLD:0.126, KERNEL:33.69, GLD:0, Total:16.618, 12 threads
+
+----fit_stage:: 46000000/54168519 (84%) - Elapsed(s): RC:14.775, SLD:0.14, KERNEL:41.379, GLD:0, Total:17.879, 12 threads
+
+----fit_stage:: 54168519/54168519 (100%) - Elapsed(s): RC:15.074, SLD:0.143, KERNEL:48.914, GLD:0, Total:18.979, 12 threads
+
+----fit_stage:: using 604569/828265 events (72.9922%)
+Elapsed time for processor fit_stage: 19.176 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: fit_stage
+Peak usage: 2075 MB RAM / 373% CPU
+---------------------------------------------------------------
+
+Process finished: fit_stage
+
+----Queuing process copy
+
+----copy:: Debug: ::::::::::::::::::::::::::::::::::::::::: queue_pript true ((null):0, (null))
+copy:: Loaded 40 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/home/magland/tmp/mountainlab/tmp_long_term/5ba8295311984a17661e2047f6a96d015016e4c9-firings_out --output=output/ms-klustakwik_probe/firings.mda .
+RUNNING copy
+Elapsed time for processor copy: 0.02 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+---------------------------------------------------------------
+
+Process finished: copy
+
