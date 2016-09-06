@@ -1,6 +1,8 @@
 Be sure that the following are installed and setup properly
 	mountainlab
 	nodejs
+	If needed do this:
+		> sudo ln -s /usr/bin/nodejs /usr/bin/node
 
 For the tabulation step you need the console.table module. Run:
 	> npm install console.table

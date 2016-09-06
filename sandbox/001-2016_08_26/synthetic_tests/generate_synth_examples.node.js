@@ -40,7 +40,7 @@ if ('_force_run' in CLP.namedParameters) args+=" --_force_run"
 
 args=args.split(' ');
 
-params0={samplerate:30000};
+params0={samplerate:30000,sign:1};
 write_text_file(dspath0+'/params.json',JSON.stringify(params0));
 
 make_system_call(cmd,args,function() {
