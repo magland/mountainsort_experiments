@@ -1,2 +1,4 @@
 kron_sort ms_thr2_5_nf30 harris
 kron_view ms_thr2_5_nf30 harris
+kron_tabulate_comparison ms_thr2_5_nf30 harris --firings1_name=firings_true.mda.prv
+kron_view_comparison ms_thr2_5_nf30 harris --firings1_name=firings_true.mda.prv

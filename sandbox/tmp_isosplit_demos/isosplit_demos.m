@@ -96,7 +96,7 @@ subplot(2,3,3);
     plot(linspace(0,1,N1),X1,'b',linspace(0,1,N1),X1_fit,'r');
     leg=legend('Sample','Best unimodal fit','Location','North');
     set(leg,'FontSize',20);
-    format_hist(gca,'Cumulative density function');
+    format_hist(gca,'Cumulative distribution function');
 subplot(2,3,4);
     hist2(X2,200);
     format_hist(gca,'Bimodal sample');

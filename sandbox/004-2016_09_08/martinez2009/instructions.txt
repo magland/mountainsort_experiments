@@ -2,3 +2,4 @@ kron_sort ms martinez1
 kron_view ms martinez1
 
 repeat for martinez2 ... martinez5
+kron_tabulate_comparison ms martinez1

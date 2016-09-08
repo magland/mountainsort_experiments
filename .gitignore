@@ -3,6 +3,9 @@
 *.mda
 BIGFILES
 output
+console_output.txt
+tmp
+*.tmp
 *.log
 
 *.slo
