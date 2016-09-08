@@ -1,0 +1,8 @@
+franklab_tetrode neuron_paper/tetrode
+mountainsort1 neuron_paper/tetrode/mountainsort/sort1
+mountainsort2 neuron_paper/tetrode/mountainsort/sort2
+mountainsort3 neuron_paper/tetrode/mountainsort/sort3
+manclust1 neuron_paper/tetrode_comparison_with_manual/manclust1
+manclust2 neuron_paper/tetrode_comparison_with_manual/manclust2
+manclust3 neuron_paper/tetrode_comparison_with_manual/manclust3
+
