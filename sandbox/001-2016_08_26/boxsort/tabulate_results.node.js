@@ -27,7 +27,10 @@ var algs=common.read_algs_from_text_file(alglist_path);
 var datasets=common.read_datasets_from_text_file(dslist_path);
 
 compute_confusion_matrices(function() {
-	tabulate_results();
+	tabulate_results(1);
+	tabulate_results(2);
+	tabulate_results(3);
+	tabulate_results(0);
 });
 
 function print_usage() {
@@ -50,7 +53,7 @@ function compute_confusion_matrices(callback) {
 	common.wait_for_system_calls_to_finish(callback);
 }
 
-function tabulate_results(callback) {
+function tabulate_results(k) { //use k=0 for all
 	for (var d in datasets) {
 		var dsname0=datasets[d].name;
 		if (common.contains_ds(dsnames,datasets[d])) {
@@ -62,8 +65,10 @@ function tabulate_results(callback) {
 				var algname0=algs[a].name;
 				if (common.contains_alg(algnames,algs[a])) {
 					var outpath0=outpath+'/'+algname0+'-'+dsname0;
-					var CM=common.read_csv_matrix(outpath0+'/confusion_matrix.csv');
+					var CM_orig=common.read_csv_matrix(outpath0+'/confusion_matrix.csv');
 					var LM=common.read_csv_vector(outpath0+'/optimal_label_map.csv');
+
+					var CM=reduce_confusion_matrix(CM_orig,LM,k);
 
 					//var Ntrue=0,Ndetect=0,Ncorrect=0,Nincorrect=0,Nmissed=0,Nextra=0;
 					var K1=CM.length-1;
@@ -110,28 +115,55 @@ function tabulate_results(callback) {
 						Nextra+=val;
 					}
 
-					var k_display='all';
-					var table_row={
-						DATASET:dsname0,
-						ALG:algname0,
-						UNIT:k_display,
-						Ntrue:Ntrue,
-						Ndetect:Ndetect,
-						Ktrue:K1,
-						Kdetect:K2,
-						Correct:common.topct(Ncorrect/Ndetect),
-						Incorrect:common.topct(Nincorrect/Ndetect),
-						Extra:common.topct(Nextra/Ndetect),
-						Missed:common.topct(Nmissed/Ntrue)
-					};
+					var k_display=k||'all';
+					var table_row={};
+					table_row.DATASET=dsname0;
+					table_row.ALG=algname0;
+					table_row.UNIT=k_display;
+					table_row.Ntrue=Ntrue;
+					table_row.Ndetect=Ndetect;
+					if (k==0) {
+						table_row.Ktrue=K1;
+						table_row.Kdetect=K2;
+					}
+					table_row.Correct_detect=common.topct(Ncorrect/Ndetect);
+					table_row.Incorrect_detect=common.topct(Nincorrect/Ndetect);
+					table_row.Extra_detect=common.topct(Nextra/Ndetect);
+					table_row.Correct_true=common.topct(Ncorrect/Ntrue);
+					table_row.Incorrect_true=common.topct(Nincorrect/Ntrue);
+					table_row.Missed_true=common.topct(Nmissed/Ntrue);
 					table0.push(table_row);
 				}
 			}
 			console.table(table0);
 		}
 	}
-	
-	if (callback) callback();
+}
+
+function reduce_confusion_matrix(CM_orig,LM,k) {
+	if (k===0) return CM_orig;
+
+	var K1=CM_orig.length-1;
+	var K2=CM_orig[0].length-1;
+
+	var CM=[];
+	for (var i1=1; i1<=K1+1; i1++) {
+		var row=[];
+		for (var i2=1; i2<=K2+1; i2++) {
+			row.push(0);
+		}
+		CM.push(row);
+	}
+
+	var k2=LM[k-1];
+	for (var i1=1; i1<=K1+1; i1++) {
+		for (var i2=1; i2<=K2+1; i2++) {
+			if ((i1==k)||(i2==k2)) {
+				CM[i1-1][i2-1]=CM_orig[i1-1][i2-1];
+			}
+		}
+	}
+	return CM;
 }
 
 function compute_confusion_matrix(output_path,callback) {
