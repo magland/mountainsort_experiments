@@ -1,2 +1,2 @@
-kron_sort ms franklab_tetrode
-kron_view ms franklab_tetrode
+kron_run ms franklab_tetrode
+kron_view results ms franklab_tetrode
