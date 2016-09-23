@@ -1,1 +1,1 @@
-ms mountainsort_001.pipeline
+ms mountainsort_001.pipeline --detect_threshold=3 --adjacency_radius=80

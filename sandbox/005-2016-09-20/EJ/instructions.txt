@@ -1,26 +1,10 @@
-*** Install and configure mountainlab
+Download and install mountainlab
 
-*** Generate the synthetic data
-./001_generate_synthetic_data
+Open matlab
+run mountainlab_setup.m from the mountainlab directory
+Parse the data using jfm_parse.m
 
-This will create two folders: examples and BIGFILES
+From a terminal:
 
-*** Run sorting and view results
-kron_run ms example1
-kron_view results ms example1
-kron_view ground_truth example1
-kron_view compare_truth ms example1
-kron_view table_truth ms example1
-
-*** Repeat this with example1 replaced by example2...example5
-
-*** Run processing with different sorting parameters
-kron_run ms_nf3 example1
-kron_run ms_nf30 example1
-(see pipelines.txt)
-
-*** Run batch processing
-kron_run ms,ms_nf3,ms_nf30 example1,example2,example5 --all_pairs
-
-*** View more result tables
-kron_view table_truth ms,ms_nf3,ms_nf30 example1,example2,example5 --all_pairs
+kron-run ms ds1
+kron-view results ms ds1

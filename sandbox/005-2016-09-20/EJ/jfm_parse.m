@@ -2,7 +2,7 @@ function jfm_parse
 
 mfile_path=fileparts(mfilename('fullpath'))
 
-raw_path = '/disk1/prvdata/EJ/'
+raw_path = '/home/magland/prvdata/EJ/'
 
 jar_file = strcat(raw_path, 'Vision/Vision.jar')
 javaaddpath(jar_file)
@@ -22,7 +22,8 @@ rawFile = edu.ucsc.neurobiology.vision.io.RawDataFile(full_path)
 % gets data from sample 0 to 20000 (first second) across all electrodes
 time_len  = 60*5; % in seconds
 samplingRate = 20000;
-channels=[131,132,138,139,140,147,148];
+%channels=[131,132,138,139,140,147,148];
+channels=101:120;
 
 raw=zeros(length(channels),samplingRate*time_len);
 for s=1:time_len
