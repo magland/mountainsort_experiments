@@ -20,17 +20,16 @@ rawFile = edu.ucsc.neurobiology.vision.io.RawDataFile(full_path)
 % the geometry of the electrodes is in 'Electrode positions' folder.
 
 % gets data from sample 0 to 20000 (first second) across all electrodes
-time_len  = 60*5; % in seconds
+time_len  = 60*20; % in seconds
 samplingRate = 20000;
 %channels=[131,132,138,139,140,147,148];
 channels=101:120;
 
 raw=zeros(length(channels),samplingRate*time_len);
 for s=1:time_len
-    disp(s);
+    fprintf('Parsing raw data: %d / %d seconds\n',s,time_len);
     data_len = samplingRate * 1; % 1 = one second
     data = rawFile.getData(data_len*(s-1)+1, data_len); % start time, length of datasets
-    disp(size(data));
     raw(:,data_len*(s-1)+1:data_len*s)=data(:,channels)';
 end
 
