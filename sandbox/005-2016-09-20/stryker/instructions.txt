@@ -1,0 +1,10 @@
+Download and install mountainlab
+
+Open matlab
+run mountainlab_setup.m from the mountainlab directory
+Parse the data using jfm_parse.m
+
+From a terminal:
+
+kron-run ms ds1
+kron-view results ms ds1
