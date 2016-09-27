@@ -1,0 +1,579 @@
+{
+    "cluster_attributes": {
+        "1": {
+            "metrics": {
+                "firing_rate": 0.00144011,
+                "num_events": 4,
+                "peak_amp": 228.577,
+                "peak_noise": 249.847
+            }
+        },
+        "10": {
+            "metrics": {
+                "firing_rate": 5.14515,
+                "num_events": 14291,
+                "peak_amp": 5.94235,
+                "peak_noise": 1.28924
+            }
+        },
+        "11": {
+            "metrics": {
+                "firing_rate": 3.56751,
+                "num_events": 9909,
+                "peak_amp": 4.11778,
+                "peak_noise": 1.42428
+            }
+        },
+        "12": {
+            "metrics": {
+                "firing_rate": 2.09752,
+                "num_events": 5826,
+                "peak_amp": 5.18789,
+                "peak_noise": 3.71473
+            }
+        },
+        "13": {
+            "metrics": {
+                "firing_rate": 0.0313224,
+                "num_events": 87,
+                "peak_amp": 28.9372,
+                "peak_noise": 8.36249
+            }
+        },
+        "14": {
+            "metrics": {
+                "firing_rate": 0.0093607,
+                "num_events": 26,
+                "peak_amp": 68.2274,
+                "peak_noise": 39.5977
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "15": {
+            "metrics": {
+                "firing_rate": 0.00252019,
+                "num_events": 7,
+                "peak_amp": 68.4306,
+                "peak_noise": 48.9786
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "16": {
+            "metrics": {
+                "firing_rate": 0.643728,
+                "num_events": 1788,
+                "peak_amp": 25.3312,
+                "peak_noise": 3.5399
+            }
+        },
+        "17": {
+            "metrics": {
+                "firing_rate": 0.00252019,
+                "num_events": 7,
+                "peak_amp": 132.112,
+                "peak_noise": 113.4
+            }
+        },
+        "18": {
+            "metrics": {
+                "firing_rate": 0.524559,
+                "num_events": 1457,
+                "peak_amp": 18.4455,
+                "peak_noise": 3.17143
+            }
+        },
+        "19": {
+            "metrics": {
+                "firing_rate": 0.474516,
+                "num_events": 1318,
+                "peak_amp": 17.0162,
+                "peak_noise": 3.91616
+            }
+        },
+        "2": {
+            "metrics": {
+                "firing_rate": 0.026282,
+                "num_events": 73,
+                "peak_amp": 58.1902,
+                "peak_noise": 29.3248
+            }
+        },
+        "20": {
+            "metrics": {
+                "firing_rate": 0.156612,
+                "num_events": 435,
+                "peak_amp": 15.7061,
+                "peak_noise": 5.24163
+            }
+        },
+        "21": {
+            "metrics": {
+                "firing_rate": 0.288382,
+                "num_events": 801,
+                "peak_amp": 9.56396,
+                "peak_noise": 3.37615
+            }
+        },
+        "22": {
+            "metrics": {
+                "firing_rate": 0.0842463,
+                "num_events": 234,
+                "peak_amp": 10.128,
+                "peak_noise": 6.13516
+            }
+        },
+        "23": {
+            "metrics": {
+                "firing_rate": 1.17333,
+                "num_events": 3259,
+                "peak_amp": 8.52915,
+                "peak_noise": 2.22107
+            }
+        },
+        "24": {
+            "metrics": {
+                "firing_rate": 0.0363627,
+                "num_events": 101,
+                "peak_amp": 10.1918,
+                "peak_noise": 3.32893
+            }
+        },
+        "25": {
+            "metrics": {
+                "firing_rate": 26.4033,
+                "num_events": 73337,
+                "peak_amp": 5.67331,
+                "peak_noise": 1.88763
+            }
+        },
+        "26": {
+            "metrics": {
+                "firing_rate": 1.50419,
+                "num_events": 4178,
+                "peak_amp": 4.08256,
+                "peak_noise": 1.7444
+            }
+        },
+        "27": {
+            "metrics": {
+                "firing_rate": 3.69028,
+                "num_events": 10250,
+                "peak_amp": 4.37434,
+                "peak_noise": 2.53401
+            }
+        },
+        "28": {
+            "metrics": {
+                "firing_rate": 0.00216016,
+                "num_events": 6,
+                "peak_amp": 76.3984,
+                "peak_noise": 125.61
+            }
+        },
+        "29": {
+            "metrics": {
+                "firing_rate": 0.00360027,
+                "num_events": 10,
+                "peak_amp": 117.605,
+                "peak_noise": 188.64
+            }
+        },
+        "3": {
+            "metrics": {
+                "firing_rate": 0.0691252,
+                "num_events": 192,
+                "peak_amp": 19.5111,
+                "peak_noise": 8.18135
+            }
+        },
+        "30": {
+            "metrics": {
+                "firing_rate": 0.105128,
+                "num_events": 292,
+                "peak_amp": 23.8076,
+                "peak_noise": 36.3705
+            }
+        },
+        "31": {
+            "metrics": {
+                "firing_rate": 1.83758,
+                "num_events": 5104,
+                "peak_amp": 14.9464,
+                "peak_noise": 2.16883
+            }
+        },
+        "32": {
+            "metrics": {
+                "firing_rate": 0.418351,
+                "num_events": 1162,
+                "peak_amp": 9.26463,
+                "peak_noise": 2.23659
+            }
+        },
+        "33": {
+            "metrics": {
+                "firing_rate": 0.831302,
+                "num_events": 2309,
+                "peak_amp": 8.07138,
+                "peak_noise": 1.9515
+            }
+        },
+        "34": {
+            "metrics": {
+                "firing_rate": 0.623927,
+                "num_events": 1733,
+                "peak_amp": 5.23694,
+                "peak_noise": 1.69062
+            }
+        },
+        "35": {
+            "metrics": {
+                "firing_rate": 0.916269,
+                "num_events": 2545,
+                "peak_amp": 4.47375,
+                "peak_noise": 1.57846
+            }
+        },
+        "36": {
+            "metrics": {
+                "firing_rate": 0.909428,
+                "num_events": 2526,
+                "peak_amp": 4.44935,
+                "peak_noise": 2.10432
+            }
+        },
+        "37": {
+            "metrics": {
+                "firing_rate": 3.61971,
+                "num_events": 10054,
+                "peak_amp": 3.9575,
+                "peak_noise": 1.48012
+            }
+        },
+        "38": {
+            "metrics": {
+                "firing_rate": 1.22949,
+                "num_events": 3415,
+                "peak_amp": 4.30162,
+                "peak_noise": 3.56413
+            }
+        },
+        "39": {
+            "metrics": {
+                "firing_rate": 0.000360027,
+                "num_events": 1,
+                "peak_amp": 215.36,
+                "peak_noise": 0.0429645
+            }
+        },
+        "4": {
+            "metrics": {
+                "firing_rate": 0.946511,
+                "num_events": 2629,
+                "peak_amp": 12.8788,
+                "peak_noise": 3.74725
+            }
+        },
+        "40": {
+            "metrics": {
+                "firing_rate": 0.207736,
+                "num_events": 577,
+                "peak_amp": 19.2314,
+                "peak_noise": 3.39795
+            }
+        },
+        "41": {
+            "metrics": {
+                "firing_rate": 0.00180014,
+                "num_events": 5,
+                "peak_amp": 86.3859,
+                "peak_noise": 70.4992
+            }
+        },
+        "42": {
+            "metrics": {
+                "firing_rate": 1.48655,
+                "num_events": 4129,
+                "peak_amp": 16.8963,
+                "peak_noise": 4.5031
+            }
+        },
+        "43": {
+            "metrics": {
+                "firing_rate": 0.13825,
+                "num_events": 384,
+                "peak_amp": 14.5921,
+                "peak_noise": 5.30111
+            }
+        },
+        "44": {
+            "metrics": {
+                "firing_rate": 2.27213,
+                "num_events": 6311,
+                "peak_amp": 13.428,
+                "peak_noise": 2.54603
+            }
+        },
+        "45": {
+            "metrics": {
+                "firing_rate": 5.84036,
+                "num_events": 16222,
+                "peak_amp": 13.205,
+                "peak_noise": 2.23739
+            }
+        },
+        "46": {
+            "metrics": {
+                "firing_rate": 1.22157,
+                "num_events": 3393,
+                "peak_amp": 10.4388,
+                "peak_noise": 2.64742
+            }
+        },
+        "47": {
+            "metrics": {
+                "firing_rate": 0.0223217,
+                "num_events": 62,
+                "peak_amp": 12.9358,
+                "peak_noise": 4.95821
+            }
+        },
+        "48": {
+            "metrics": {
+                "firing_rate": 2.51983,
+                "num_events": 6999,
+                "peak_amp": 8.95715,
+                "peak_noise": 1.5801
+            }
+        },
+        "49": {
+            "metrics": {
+                "firing_rate": 3.04619,
+                "num_events": 8461,
+                "peak_amp": 7.43539,
+                "peak_noise": 2.18709
+            }
+        },
+        "5": {
+            "metrics": {
+                "firing_rate": 1.71517,
+                "num_events": 4764,
+                "peak_amp": 9.93684,
+                "peak_noise": 2.82298
+            }
+        },
+        "50": {
+            "metrics": {
+                "firing_rate": 0.0907268,
+                "num_events": 252,
+                "peak_amp": 9.75296,
+                "peak_noise": 6.38433
+            }
+        },
+        "51": {
+            "metrics": {
+                "firing_rate": 2.95906,
+                "num_events": 8219,
+                "peak_amp": 4.29655,
+                "peak_noise": 1.65856
+            }
+        },
+        "52": {
+            "metrics": {
+                "firing_rate": 8.07685,
+                "num_events": 22434,
+                "peak_amp": 4.44386,
+                "peak_noise": 1.34803
+            }
+        },
+        "53": {
+            "metrics": {
+                "firing_rate": 0.00216016,
+                "num_events": 6,
+                "peak_amp": 43.9097,
+                "peak_noise": 41.1007
+            }
+        },
+        "54": {
+            "metrics": {
+                "firing_rate": 0.00216016,
+                "num_events": 6,
+                "peak_amp": 90.4215,
+                "peak_noise": 86.6968
+            }
+        },
+        "6": {
+            "metrics": {
+                "firing_rate": 0.497197,
+                "num_events": 1381,
+                "peak_amp": 8.75436,
+                "peak_noise": 2.89269
+            }
+        },
+        "7": {
+            "metrics": {
+                "firing_rate": 0.435993,
+                "num_events": 1211,
+                "peak_amp": 9.01183,
+                "peak_noise": 2.6238
+            }
+        },
+        "8": {
+            "metrics": {
+                "firing_rate": 0.769018,
+                "num_events": 2136,
+                "peak_amp": 8.23371,
+                "peak_noise": 2.72418
+            }
+        },
+        "9": {
+            "metrics": {
+                "firing_rate": 0.123129,
+                "num_events": 342,
+                "peak_amp": 8.61576,
+                "peak_noise": 3.45741
+            }
+        }
+    },
+    "cluster_order_scores": [
+    ],
+    "cluster_order_scores_name": "",
+    "cluster_pair_attributes": {
+    },
+    "clusters_subset": [
+    ],
+    "current_timeseries_name": "Preprocessed Data",
+    "electrode_geometry": {
+        "coordinates": [
+        ]
+    },
+    "firings": {
+        "original_checksum": "244faf76f74b93a30a6d6273f000ee599dff0258",
+        "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "original_path": "output/ms--npt/firings.mda",
+        "original_size": 5919860
+    },
+    "mlproxy_url": "",
+    "options": {
+        "amp_thresh_display": 3,
+        "cc_bin_size_msec": 0.5,
+        "cc_log_time_constant_msec": 1,
+        "cc_max_dt_msec": 100,
+        "cc_max_est_data_size": 10000,
+        "clip_size": 100,
+        "curation_program": "for (var i in clusters) {\n\tif (clusters[i].metrics.peak_amp<6)\n\t\tclusters[i].tags.insert('rejected');\n}",
+        "discrim_hist_method": "centroid",
+        "timeseries_for_spikespray": ""
+    },
+    "samplerate": 30000,
+    "timeseries": {
+        "Filtered Data": {
+            "data": {
+                "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/BIGFILES/neuron_paper/tetrode/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Filtered Data"
+        },
+        "Preprocessed Data": {
+            "data": {
+                "original_checksum": "1554a1300d34926a06df0e33796a951b5ecc3016",
+                "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "1554a1300d34926a06df0e33796a951b5ecc3016",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                        },
+                        "processor_name": "whiten"
+                    },
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/BIGFILES/neuron_paper/tetrode/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Preprocessed Data"
+        },
+        "Raw Data": {
+            "data": {
+                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                "original_size": 666616580
+            },
+            "name": "Raw Data"
+        }
+    },
+    "view_merged": true,
+    "visibility_rule": {
+        "hide_rejected": true,
+        "subset": [
+        ],
+        "use_subset": false,
+        "view_all_tagged": true,
+        "view_all_untagged": true,
+        "view_tags": [
+        ]
+    },
+    "visible_channels": [
+    ]
+}
