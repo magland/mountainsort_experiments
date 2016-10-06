@@ -419,6 +419,7 @@
         "Filtered Data": {
             "data": {
                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                "original_checksum_1000": "",
                 "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                 "original_size": 1333233140,
                 "processes": [
@@ -433,6 +434,7 @@
                         "outputs": {
                             "timeseries_out": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_checksum_1000": "",
                                 "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
@@ -450,7 +452,8 @@
         },
         "Preprocessed Data": {
             "data": {
-                "original_checksum": "6a1f1ed751282f1d21ab04e5ed57630acb67f74d",
+                "original_checksum": "6654b8d783e2ed5b2e7300cc87cf9a9e2c9f4c2f",
+                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
                 "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
                 "original_size": 1333233140,
                 "processes": [
@@ -458,13 +461,15 @@
                         "inputs": {
                             "timeseries": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_checksum_1000": "",
                                 "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
                         },
                         "outputs": {
                             "timeseries_out": {
-                                "original_checksum": "6a1f1ed751282f1d21ab04e5ed57630acb67f74d",
+                                "original_checksum": "6654b8d783e2ed5b2e7300cc87cf9a9e2c9f4c2f",
+                                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
                                 "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
@@ -484,6 +489,7 @@
                         "outputs": {
                             "timeseries_out": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
+                                "original_checksum_1000": "",
                                 "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
@@ -502,6 +508,7 @@
         "Raw Data": {
             "data": {
                 "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                "original_checksum_1000": "",
                 "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
                 "original_size": 666616580
             },
