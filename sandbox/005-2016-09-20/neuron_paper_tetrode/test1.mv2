@@ -2,398 +2,386 @@
     "cluster_attributes": {
         "1": {
             "metrics": {
-                "firing_rate": 0.00252019,
-                "num_events": 7,
-                "peak_amp": 171.776,
-                "peak_noise": 218.494
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.00144011,
+                "num_events": 4,
+                "peak_amp": 228.577,
+                "peak_noise": 249.847
+            }
         },
         "10": {
             "metrics": {
-                "firing_rate": 0.2603,
-                "num_events": 723,
-                "peak_amp": 7.03437,
-                "peak_noise": 2.51257
+                "firing_rate": 0.742376,
+                "num_events": 2062,
+                "peak_amp": 8.31296,
+                "peak_noise": 2.67676
             }
         },
         "11": {
             "metrics": {
-                "firing_rate": 5.20887,
-                "num_events": 14468,
-                "peak_amp": 6.02716,
-                "peak_noise": 1.69372
+                "firing_rate": 0.162372,
+                "num_events": 451,
+                "peak_amp": 7.75111,
+                "peak_noise": 2.22493
             }
         },
         "12": {
             "metrics": {
-                "firing_rate": 3.76084,
-                "num_events": 10446,
-                "peak_amp": 4.35839,
-                "peak_noise": 1.64243
+                "firing_rate": 0.192975,
+                "num_events": 536,
+                "peak_amp": 6.85209,
+                "peak_noise": 2.21659
             }
         },
         "13": {
             "metrics": {
-                "firing_rate": 2.10436,
-                "num_events": 5845,
-                "peak_amp": 5.2117,
-                "peak_noise": 3.87303
+                "firing_rate": 0.13393,
+                "num_events": 372,
+                "peak_amp": 10.5917,
+                "peak_noise": 11.4941
             }
         },
         "14": {
             "metrics": {
-                "firing_rate": 0.0306023,
-                "num_events": 85,
-                "peak_amp": 27.7921,
-                "peak_noise": 10.7615
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 5.18763,
+                "num_events": 14409,
+                "peak_amp": 5.92863,
+                "peak_noise": 1.27927
+            }
         },
         "15": {
             "metrics": {
-                "firing_rate": 0.0093607,
-                "num_events": 26,
-                "peak_amp": 68.2274,
-                "peak_noise": 39.5977
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 3.60567,
+                "num_events": 10015,
+                "peak_amp": 4.14785,
+                "peak_noise": 1.48248
+            }
         },
         "16": {
             "metrics": {
-                "firing_rate": 0.00288022,
-                "num_events": 8,
-                "peak_amp": 155.361,
-                "peak_noise": 143.846
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 2.03415,
+                "num_events": 5650,
+                "peak_amp": 4.96017,
+                "peak_noise": 3.37087
+            }
         },
         "17": {
             "metrics": {
-                "firing_rate": 0.638328,
-                "num_events": 1773,
-                "peak_amp": 25.3637,
-                "peak_noise": 3.52261
+                "firing_rate": 0.0216016,
+                "num_events": 60,
+                "peak_amp": 36.1323,
+                "peak_noise": 14.2306
             }
         },
         "18": {
             "metrics": {
-                "firing_rate": 0.00216016,
-                "num_events": 6,
-                "peak_amp": 127.07,
-                "peak_noise": 108.17
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.0298822,
+                "num_events": 83,
+                "peak_amp": 28.2374,
+                "peak_noise": 10.9849
+            }
         },
         "19": {
             "metrics": {
-                "firing_rate": 0.52636,
-                "num_events": 1462,
-                "peak_amp": 18.3843,
-                "peak_noise": 6.00012
+                "firing_rate": 0.00324024,
+                "num_events": 9,
+                "peak_amp": 68.3756,
+                "peak_noise": 75.6011
             }
         },
         "2": {
             "metrics": {
-                "firing_rate": 0.0561642,
-                "num_events": 156,
-                "peak_amp": 36.308,
-                "peak_noise": 17.8761
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.00144011,
+                "num_events": 4,
+                "peak_amp": 75.8782,
+                "peak_noise": 33.4233
+            }
         },
         "20": {
             "metrics": {
-                "firing_rate": 0.520959,
-                "num_events": 1447,
-                "peak_amp": 16.7225,
-                "peak_noise": 4.1011
+                "firing_rate": 0.00648049,
+                "num_events": 18,
+                "peak_amp": 78.2346,
+                "peak_noise": 49.3415
             }
         },
         "21": {
             "metrics": {
-                "firing_rate": 0.124929,
-                "num_events": 347,
-                "peak_amp": 15.7453,
-                "peak_noise": 2.80775
+                "firing_rate": 0.648769,
+                "num_events": 1802,
+                "peak_amp": 25.3197,
+                "peak_noise": 3.6398
             }
         },
         "22": {
             "metrics": {
-                "firing_rate": 0.356067,
-                "num_events": 989,
-                "peak_amp": 9.53936,
-                "peak_noise": 2.96199
+                "firing_rate": 0.5296,
+                "num_events": 1471,
+                "peak_amp": 18.4453,
+                "peak_noise": 5.98601
             }
         },
         "23": {
             "metrics": {
-                "firing_rate": 1.20177,
-                "num_events": 3338,
-                "peak_amp": 8.58627,
-                "peak_noise": 3.30132
+                "firing_rate": 0.00324024,
+                "num_events": 9,
+                "peak_amp": 114.511,
+                "peak_noise": 102.706
             }
         },
         "24": {
             "metrics": {
-                "firing_rate": 0.0784859,
-                "num_events": 218,
-                "peak_amp": 10.1907,
-                "peak_noise": 3.67788
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.472356,
+                "num_events": 1312,
+                "peak_amp": 17.0101,
+                "peak_noise": 3.93848
+            }
         },
         "25": {
             "metrics": {
-                "firing_rate": 26.7777,
-                "num_events": 74377,
-                "peak_amp": 5.66332,
-                "peak_noise": 1.88148
+                "firing_rate": 0.13645,
+                "num_events": 379,
+                "peak_amp": 15.5078,
+                "peak_noise": 3.87644
             }
         },
         "26": {
             "metrics": {
-                "firing_rate": 1.60788,
-                "num_events": 4466,
-                "peak_amp": 4.17485,
-                "peak_noise": 2.54341
+                "firing_rate": 0.308543,
+                "num_events": 857,
+                "peak_amp": 9.61519,
+                "peak_noise": 2.48903
             }
         },
         "27": {
             "metrics": {
-                "firing_rate": 3.84797,
-                "num_events": 10688,
-                "peak_amp": 4.35365,
-                "peak_noise": 1.58142
+                "firing_rate": 1.19061,
+                "num_events": 3307,
+                "peak_amp": 8.52007,
+                "peak_noise": 4.57224
             }
         },
         "28": {
+            "metrics": {
+                "firing_rate": 0.0435633,
+                "num_events": 121,
+                "peak_amp": 10.2221,
+                "peak_noise": 7.65171
+            }
+        },
+        "29": {
+            "metrics": {
+                "firing_rate": 26.8332,
+                "num_events": 74531,
+                "peak_amp": 5.67229,
+                "peak_noise": 1.88654
+            }
+        },
+        "3": {
+            "metrics": {
+                "firing_rate": 0.0554442,
+                "num_events": 154,
+                "peak_amp": 36.5398,
+                "peak_noise": 17.8735
+            }
+        },
+        "30": {
+            "metrics": {
+                "firing_rate": 1.52723,
+                "num_events": 4242,
+                "peak_amp": 4.11491,
+                "peak_noise": 1.92162
+            }
+        },
+        "31": {
+            "metrics": {
+                "firing_rate": 3.04115,
+                "num_events": 8447,
+                "peak_amp": 4.59072,
+                "peak_noise": 3.06733
+            }
+        },
+        "32": {
             "metrics": {
                 "firing_rate": 0.000720054,
                 "num_events": 2,
                 "peak_amp": 341.951,
                 "peak_noise": 321.446
-            },
-            "tags": [
-                "rejected"
-            ]
-        },
-        "29": {
-            "metrics": {
-                "firing_rate": 0.105488,
-                "num_events": 293,
-                "peak_amp": 23.2788,
-                "peak_noise": 13.7223
-            },
-            "tags": [
-                "rejected"
-            ]
-        },
-        "3": {
-            "metrics": {
-                "firing_rate": 0.118809,
-                "num_events": 330,
-                "peak_amp": 15.392,
-                "peak_noise": 11.7993
-            }
-        },
-        "30": {
-            "metrics": {
-                "firing_rate": 1.82138,
-                "num_events": 5059,
-                "peak_amp": 14.9368,
-                "peak_noise": 3.81495
-            }
-        },
-        "31": {
-            "metrics": {
-                "firing_rate": 6.00813,
-                "num_events": 16688,
-                "peak_amp": 5.23516,
-                "peak_noise": 1.92983
-            }
-        },
-        "32": {
-            "metrics": {
-                "firing_rate": 0.860465,
-                "num_events": 2390,
-                "peak_amp": 4.68118,
-                "peak_noise": 4.24537
             }
         },
         "33": {
             "metrics": {
-                "firing_rate": 0.00432032,
-                "num_events": 12,
-                "peak_amp": 40.6744,
-                "peak_noise": 46.7819
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.0921669,
+                "num_events": 256,
+                "peak_amp": 24.6016,
+                "peak_noise": 15.407
+            }
         },
         "34": {
             "metrics": {
-                "firing_rate": 0.00144011,
-                "num_events": 4,
-                "peak_amp": 111.263,
-                "peak_noise": 129.443
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 1.85198,
+                "num_events": 5144,
+                "peak_amp": 14.9528,
+                "peak_noise": 2.04811
+            }
         },
         "35": {
             "metrics": {
-                "firing_rate": 0.198375,
-                "num_events": 551,
-                "peak_amp": 19.4427,
-                "peak_noise": 3.54321
+                "firing_rate": 6.19715,
+                "num_events": 17213,
+                "peak_amp": 5.26442,
+                "peak_noise": 2.39353
             }
         },
         "36": {
             "metrics": {
-                "firing_rate": 1.3789,
-                "num_events": 3830,
-                "peak_amp": 17.1786,
-                "peak_noise": 5.23383
+                "firing_rate": 1.39042,
+                "num_events": 3862,
+                "peak_amp": 4.2362,
+                "peak_noise": 3.38768
             }
         },
         "37": {
             "metrics": {
-                "firing_rate": 0.181454,
-                "num_events": 504,
-                "peak_amp": 14.7914,
-                "peak_noise": 2.50421
+                "firing_rate": 0.00252019,
+                "num_events": 7,
+                "peak_amp": 71.8504,
+                "peak_noise": 73.8955
             }
         },
         "38": {
             "metrics": {
-                "firing_rate": 2.09104,
-                "num_events": 5808,
-                "peak_amp": 13.4478,
-                "peak_noise": 2.54076
+                "firing_rate": 0.176053,
+                "num_events": 489,
+                "peak_amp": 19.7154,
+                "peak_noise": 9.25561
             }
         },
         "39": {
             "metrics": {
-                "firing_rate": 5.74315,
-                "num_events": 15952,
-                "peak_amp": 13.3041,
-                "peak_noise": 2.26272
+                "firing_rate": 1.45919,
+                "num_events": 4053,
+                "peak_amp": 17.1382,
+                "peak_noise": 4.4125
             }
         },
         "4": {
             "metrics": {
-                "firing_rate": 0.947591,
-                "num_events": 2632,
-                "peak_amp": 12.8925,
-                "peak_noise": 3.76829
+                "firing_rate": 0.142571,
+                "num_events": 396,
+                "peak_amp": 14.6708,
+                "peak_noise": 3.16382
             }
         },
         "40": {
             "metrics": {
-                "firing_rate": 1.3897,
-                "num_events": 3860,
-                "peak_amp": 10.2178,
-                "peak_noise": 2.42677
+                "firing_rate": 0.13213,
+                "num_events": 367,
+                "peak_amp": 14.484,
+                "peak_noise": 5.27335
             }
         },
         "41": {
             "metrics": {
-                "firing_rate": 2.51803,
-                "num_events": 6994,
-                "peak_amp": 8.76153,
-                "peak_noise": 1.49066
+                "firing_rate": 2.29409,
+                "num_events": 6372,
+                "peak_amp": 13.3709,
+                "peak_noise": 2.52529
             }
         },
         "42": {
             "metrics": {
-                "firing_rate": 2.9677,
-                "num_events": 8243,
-                "peak_amp": 8.31634,
-                "peak_noise": 2.45456
+                "firing_rate": 5.87132,
+                "num_events": 16308,
+                "peak_amp": 13.2392,
+                "peak_noise": 2.24768
             }
         },
         "43": {
             "metrics": {
-                "firing_rate": 3.19056,
-                "num_events": 8862,
-                "peak_amp": 4.42095,
-                "peak_noise": 1.66506
+                "firing_rate": 1.46747,
+                "num_events": 4076,
+                "peak_amp": 10.0267,
+                "peak_noise": 2.26837
             }
         },
         "44": {
             "metrics": {
-                "firing_rate": 7.91015,
-                "num_events": 21971,
-                "peak_amp": 4.46195,
-                "peak_noise": 1.32801
+                "firing_rate": 2.57167,
+                "num_events": 7143,
+                "peak_amp": 8.96518,
+                "peak_noise": 1.58581
             }
         },
         "45": {
             "metrics": {
-                "firing_rate": 0.00180014,
-                "num_events": 5,
-                "peak_amp": 90.3061,
-                "peak_noise": 94.8616
-            },
-            "tags": [
-                "rejected"
-            ]
+                "firing_rate": 0.0777658,
+                "num_events": 216,
+                "peak_amp": 10.4921,
+                "peak_noise": 11.2798
+            }
+        },
+        "46": {
+            "metrics": {
+                "firing_rate": 2.48383,
+                "num_events": 6899,
+                "peak_amp": 7.58489,
+                "peak_noise": 3.13764
+            }
+        },
+        "47": {
+            "metrics": {
+                "firing_rate": 3.14304,
+                "num_events": 8730,
+                "peak_amp": 4.39104,
+                "peak_noise": 1.70011
+            }
+        },
+        "48": {
+            "metrics": {
+                "firing_rate": 8.06389,
+                "num_events": 22398,
+                "peak_amp": 4.44044,
+                "peak_noise": 1.33609
+            }
         },
         "5": {
             "metrics": {
-                "firing_rate": 1.3195,
-                "num_events": 3665,
-                "peak_amp": 9.86392,
-                "peak_noise": 2.73478
+                "firing_rate": 0.945431,
+                "num_events": 2626,
+                "peak_amp": 12.8808,
+                "peak_noise": 3.74606
             }
         },
         "6": {
             "metrics": {
-                "firing_rate": 0.428072,
-                "num_events": 1189,
-                "peak_amp": 9.20933,
-                "peak_noise": 2.89168
+                "firing_rate": 1.0034,
+                "num_events": 2787,
+                "peak_amp": 9.94363,
+                "peak_noise": 1.99322
             }
         },
         "7": {
             "metrics": {
-                "firing_rate": 0.420872,
-                "num_events": 1169,
-                "peak_amp": 9.03608,
-                "peak_noise": 2.59005
+                "firing_rate": 0.380909,
+                "num_events": 1058,
+                "peak_amp": 9.0304,
+                "peak_noise": 3.3055
             }
         },
         "8": {
             "metrics": {
-                "firing_rate": 0.637968,
-                "num_events": 1772,
-                "peak_amp": 8.68525,
-                "peak_noise": 2.74022
+                "firing_rate": 0.495757,
+                "num_events": 1377,
+                "peak_amp": 8.90589,
+                "peak_noise": 2.95461
             }
         },
         "9": {
             "metrics": {
-                "firing_rate": 0.177133,
-                "num_events": 492,
-                "peak_amp": 8.14215,
-                "peak_noise": 2.47439
+                "firing_rate": 0.433473,
+                "num_events": 1204,
+                "peak_amp": 8.96731,
+                "peak_noise": 2.57563
             }
         }
     },
@@ -410,10 +398,10 @@
         ]
     },
     "firings": {
-        "original_checksum": "e77109e03d19917ef2a5256fd00d4b0a0182d7f6",
+        "original_checksum": "04bbb3ae8c37a285abc5e9a92fe11d2bc1c33a03",
         "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
         "original_path": "output/ms--npt/firings.mda",
-        "original_size": 5835668
+        "original_size": 5838932
     },
     "mlproxy_url": "",
     "options": {
@@ -432,14 +420,14 @@
             "data": {
                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
                 "original_checksum_1000": "",
-                "original_path": "/tmp/mountainlab/tmp_long_term/5e8e19fa00ba917c864c06e5e954c5995846eacc-bandpass_filter-timeseries_out.tmp",
+                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                 "original_size": 1333233140,
                 "processes": [
                     {
                         "inputs": {
                             "timeseries": {
                                 "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
-                                "original_path": "/tmp/mountainlab/tmp_short_term/ms.1475146917855.140085514004352.476707713.tmp.parallel_download",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/BIGFILES/neuron_paper/tetrode/20160426_kanye_02_r1.nt16.mda",
                                 "original_size": 666616580
                             }
                         },
@@ -447,7 +435,7 @@
                             "timeseries_out": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
                                 "original_checksum_1000": "",
-                                "original_path": "/tmp/mountainlab/tmp_long_term/5e8e19fa00ba917c864c06e5e954c5995846eacc-bandpass_filter-timeseries_out.tmp",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
                         },
@@ -464,9 +452,9 @@
         },
         "Preprocessed Data": {
             "data": {
-                "original_checksum": "7f63ea3ca02167d6ca2c7d485daa35e0e07a8602",
+                "original_checksum": "6654b8d783e2ed5b2e7300cc87cf9a9e2c9f4c2f",
                 "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-                "original_path": "/tmp/mountainlab/tmp_long_term/fbf2c8d0a262986bd82b48ab3e3e46013029ce3a-whiten-timeseries_out.tmp",
+                "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
                 "original_size": 1333233140,
                 "processes": [
                     {
@@ -474,15 +462,15 @@
                             "timeseries": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
                                 "original_checksum_1000": "",
-                                "original_path": "/tmp/mountainlab/tmp_long_term/5e8e19fa00ba917c864c06e5e954c5995846eacc-bandpass_filter-timeseries_out.tmp",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
                         },
                         "outputs": {
                             "timeseries_out": {
-                                "original_checksum": "7f63ea3ca02167d6ca2c7d485daa35e0e07a8602",
+                                "original_checksum": "6654b8d783e2ed5b2e7300cc87cf9a9e2c9f4c2f",
                                 "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-                                "original_path": "/tmp/mountainlab/tmp_long_term/fbf2c8d0a262986bd82b48ab3e3e46013029ce3a-whiten-timeseries_out.tmp",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/c470dacc7ea5907878e504529698ed1325b90d40-whiten-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
                         },
@@ -494,7 +482,7 @@
                         "inputs": {
                             "timeseries": {
                                 "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
-                                "original_path": "/tmp/mountainlab/tmp_short_term/ms.1475146917855.140085514004352.476707713.tmp.parallel_download",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/BIGFILES/neuron_paper/tetrode/20160426_kanye_02_r1.nt16.mda",
                                 "original_size": 666616580
                             }
                         },
@@ -502,7 +490,7 @@
                             "timeseries_out": {
                                 "original_checksum": "499b24584081b1841f7d880ed90b118519555a78",
                                 "original_checksum_1000": "",
-                                "original_path": "/tmp/mountainlab/tmp_long_term/5e8e19fa00ba917c864c06e5e954c5995846eacc-bandpass_filter-timeseries_out.tmp",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/a0bcd3c824480e7f5735b93bfcfaec52e7a068b4-bandpass_filter-timeseries_out.tmp",
                                 "original_size": 1333233140
                             }
                         },

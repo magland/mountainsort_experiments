@@ -392,7 +392,13 @@ if (data_present)
     end
 
     % Scale voltage levels appropriately.
+    
+    % jfm took out the scaling so we can store raw as 16-bit unsigned!
     amplifier_data = 0.195 * (amplifier_data - 32768); % units = microvolts
+    
+    
+    
+    
     aux_input_data = 37.4e-6 * aux_input_data; % units = volts
     supply_voltage_data = 74.8e-6 * supply_voltage_data; % units = volts
     if (eval_board_mode == 1)

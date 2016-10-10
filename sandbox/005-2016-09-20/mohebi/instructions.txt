@@ -1,0 +1,6 @@
+Install mountainlab according to the online instructions.
+
+Be sure the raw data are on your computer somewhere in a directory pointed to in the mountainlab.user.json prv search paths.
+
+kron-run ms_thr2.5 ds1
+kron-view results ms_thr2.5 ds1
