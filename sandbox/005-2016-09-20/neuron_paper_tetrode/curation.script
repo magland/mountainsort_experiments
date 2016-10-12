@@ -8,7 +8,7 @@ for (var i in clusters) {
 
 console.log('\nnoise_overlap');
 for (var i in clusters) {	
-	if (clusters[i].metric('noise_overlap')>0.1) {
+	if (clusters[i].metric('noise_overlap')>0.05) {
 		console.log('REJECT: '+clusters[i].k());
 		clusters[i].addTag('rejected');
 	}
@@ -46,5 +46,6 @@ for (var i in clusters) {
 	if (iso<0.95) {
 		console.log('MUA: '+clusters[i].k()+' <--> '+clusters[i].metric('overlap_cluster')+' ('+iso+')');
 		clusters[i].addTag('MUA');
+		clusters[i].addTag('rejected');
 	}
 }
