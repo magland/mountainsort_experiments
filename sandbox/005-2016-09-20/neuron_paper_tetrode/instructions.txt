@@ -1,4 +1,4 @@
 *** Install and configure mountainlab
 
 kron-run ms npt
-kron-view results ms npt --curation=curation.script
+kron-view results ms npt
