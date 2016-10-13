@@ -1,0 +1,4 @@
+*** Install and configure mountainlab
+
+kron-run ms npp
+kron-view results ms npp

@@ -1,2 +1,4 @@
 npt neuron_paper/tetrode
-
+man1 neuron_paper/tetrode_comparison_with_manual/manclust1
+man2 neuron_paper/tetrode_comparison_with_manual/manclust2
+man3 neuron_paper/tetrode_comparison_with_manual/manclust3

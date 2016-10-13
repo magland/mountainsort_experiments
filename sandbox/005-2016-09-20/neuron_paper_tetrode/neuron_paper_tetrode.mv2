@@ -1,0 +1,1144 @@
+{
+    "cluster_attributes": {
+        "1": {
+            "metrics": {
+                "SNR": 1.7450615448082663,
+                "firing_rate": 0.0586844,
+                "isolation": 0.9832061,
+                "noise_overlap": 0,
+                "num_events": 163,
+                "overlap_cluster": 24,
+                "peak_amp": 36.3786,
+                "peak_noise": 20.8466
+            },
+            "tags": [
+                "low_snr",
+                "rare",
+                "rejected"
+            ]
+        },
+        "10": {
+            "metrics": {
+                "SNR": 1.3403020934455916,
+                "firing_rate": 2.07664,
+                "isolation": 0.9250881,
+                "noise_overlap": 0.140717,
+                "num_events": 5768,
+                "overlap_cluster": 36,
+                "peak_amp": 5.23266,
+                "peak_noise": 3.90409
+            },
+            "tags": [
+                "MUA",
+                "low_snr",
+                "noise",
+                "rejected"
+            ]
+        },
+        "11": {
+            "metrics": {
+                "SNR": 5.290751070679337,
+                "firing_rate": 0.0288022,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 80,
+                "overlap_cluster": 0,
+                "peak_amp": 27.3635,
+                "peak_noise": 5.17195
+            },
+            "tags": [
+                "rare",
+                "rejected"
+            ]
+        },
+        "12": {
+            "metrics": {
+                "SNR": 0.893917596528772,
+                "firing_rate": 0.00252019,
+                "isolation": 1,
+                "noise_overlap": 0.342857,
+                "num_events": 7,
+                "overlap_cluster": 0,
+                "peak_amp": 77.236,
+                "peak_noise": 86.4017
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "13": {
+            "metrics": {
+                "SNR": 1.6155576530174462,
+                "firing_rate": 0.00972073,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 27,
+                "overlap_cluster": 0,
+                "peak_amp": 69.6643,
+                "peak_noise": 43.1209
+            },
+            "tags": [
+                "low_snr",
+                "rare",
+                "rejected"
+            ]
+        },
+        "14": {
+            "metrics": {
+                "SNR": 1.107191510719151,
+                "firing_rate": 0.00252019,
+                "isolation": 1,
+                "noise_overlap": 0.385714,
+                "num_events": 7,
+                "overlap_cluster": 0,
+                "peak_amp": 169.862,
+                "peak_noise": 153.417
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "15": {
+            "metrics": {
+                "SNR": 5.1466162058670815,
+                "firing_rate": 0.640848,
+                "isolation": 0.9609283,
+                "noise_overlap": 0.00352526,
+                "num_events": 1780,
+                "overlap_cluster": 18,
+                "peak_amp": 25.3757,
+                "peak_noise": 4.93056
+            },
+            "tags": [
+            ]
+        },
+        "16": {
+            "metrics": {
+                "SNR": 1.3575021579307678,
+                "firing_rate": 0.00216016,
+                "isolation": 1,
+                "noise_overlap": 0.483333,
+                "num_events": 6,
+                "overlap_cluster": 0,
+                "peak_amp": 136.824,
+                "peak_noise": 100.791
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "17": {
+            "metrics": {
+                "SNR": 6.049622523064383,
+                "firing_rate": 0.512679,
+                "isolation": 1,
+                "noise_overlap": 0.00117509,
+                "num_events": 1424,
+                "overlap_cluster": 0,
+                "peak_amp": 18.4064,
+                "peak_noise": 3.04257
+            },
+            "tags": [
+            ]
+        },
+        "18": {
+            "metrics": {
+                "SNR": 2.8849354730033987,
+                "firing_rate": 0.466595,
+                "isolation": 1,
+                "noise_overlap": 0.000587544,
+                "num_events": 1296,
+                "overlap_cluster": 0,
+                "peak_amp": 17.2979,
+                "peak_noise": 5.99594
+            },
+            "tags": [
+            ]
+        },
+        "19": {
+            "metrics": {
+                "SNR": 3.5396855806615206,
+                "firing_rate": 0.13249,
+                "isolation": 0.9752396,
+                "noise_overlap": 0.00239617,
+                "num_events": 368,
+                "overlap_cluster": 20,
+                "peak_amp": 15.7047,
+                "peak_noise": 4.43675
+            },
+            "tags": [
+            ]
+        },
+        "2": {
+            "metrics": {
+                "SNR": 1.374929325087202,
+                "firing_rate": 0.126009,
+                "isolation": 0.9727723,
+                "noise_overlap": 0.00825083,
+                "num_events": 350,
+                "overlap_cluster": 5,
+                "peak_amp": 15.8066,
+                "peak_noise": 11.4963
+            },
+            "tags": [
+                "low_snr",
+                "rejected"
+            ]
+        },
+        "20": {
+            "metrics": {
+                "SNR": 3.9506489181989473,
+                "firing_rate": 0.318984,
+                "isolation": 0.9820288,
+                "noise_overlap": 0.0114571,
+                "num_events": 886,
+                "overlap_cluster": 19,
+                "peak_amp": 9.72871,
+                "peak_noise": 2.46256
+            },
+            "tags": [
+            ]
+        },
+        "21": {
+            "metrics": {
+                "SNR": 1.8599423291943742,
+                "firing_rate": 0.0565242,
+                "isolation": 0.9849326,
+                "noise_overlap": 0.0214116,
+                "num_events": 157,
+                "overlap_cluster": 15,
+                "peak_amp": 11.0621,
+                "peak_noise": 5.94755
+            },
+            "tags": [
+                "low_snr",
+                "rare",
+                "rejected"
+            ]
+        },
+        "22": {
+            "metrics": {
+                "SNR": 3.836729920703815,
+                "firing_rate": 1.20069,
+                "isolation": 1,
+                "noise_overlap": 0.016745,
+                "num_events": 3335,
+                "overlap_cluster": 0,
+                "peak_amp": 8.53024,
+                "peak_noise": 2.22331
+            },
+            "tags": [
+            ]
+        },
+        "23": {
+            "metrics": {
+                "SNR": 2.996181532985112,
+                "firing_rate": 26.8872,
+                "isolation": 0.9876616,
+                "noise_overlap": 0.0411281,
+                "num_events": 74681,
+                "overlap_cluster": 34,
+                "peak_amp": 5.67306,
+                "peak_noise": 1.89343
+            },
+            "tags": [
+            ]
+        },
+        "24": {
+            "metrics": {
+                "SNR": 1.535420117077273,
+                "firing_rate": 1.54848,
+                "isolation": 0.9891304,
+                "noise_overlap": 0.199177,
+                "num_events": 4301,
+                "overlap_cluster": 23,
+                "peak_amp": 4.16257,
+                "peak_noise": 2.71103
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rejected"
+            ]
+        },
+        "25": {
+            "metrics": {
+                "SNR": 2.1675802776858215,
+                "firing_rate": 2.97958,
+                "isolation": 1,
+                "noise_overlap": 0.0987074,
+                "num_events": 8276,
+                "overlap_cluster": 0,
+                "peak_amp": 4.45247,
+                "peak_noise": 2.05412
+            },
+            "tags": [
+                "noise",
+                "rejected"
+            ]
+        },
+        "26": {
+            "metrics": {
+                "SNR": 0.6153625054826096,
+                "firing_rate": 0.00144011,
+                "isolation": 1,
+                "noise_overlap": 0.6,
+                "num_events": 4,
+                "overlap_cluster": 0,
+                "peak_amp": 65.9404,
+                "peak_noise": 107.157
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "27": {
+            "metrics": {
+                "SNR": 6368.813050892729,
+                "firing_rate": 0.000360027,
+                "isolation": 1,
+                "noise_overlap": 1,
+                "num_events": 1,
+                "overlap_cluster": 0,
+                "peak_amp": 619.953,
+                "peak_noise": 0.097342
+            },
+            "tags": [
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "28": {
+            "metrics": {
+                "SNR": 0.4598442681483365,
+                "firing_rate": 0.00360027,
+                "isolation": 1,
+                "noise_overlap": 0.33,
+                "num_events": 10,
+                "overlap_cluster": 0,
+                "peak_amp": 47.0085,
+                "peak_noise": 102.227
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "29": {
+            "metrics": {
+                "SNR": 1.5828061895602397,
+                "firing_rate": 0.101528,
+                "isolation": 0.9897488,
+                "noise_overlap": 0.0117888,
+                "num_events": 282,
+                "overlap_cluster": 6,
+                "peak_amp": 23.9458,
+                "peak_noise": 15.1287
+            },
+            "tags": [
+                "low_snr",
+                "rejected"
+            ]
+        },
+        "3": {
+            "metrics": {
+                "SNR": 3.438067659692689,
+                "firing_rate": 0.950111,
+                "isolation": 1,
+                "noise_overlap": 0.00146886,
+                "num_events": 2639,
+                "overlap_cluster": 0,
+                "peak_amp": 12.8702,
+                "peak_noise": 3.74344
+            },
+            "tags": [
+            ]
+        },
+        "30": {
+            "metrics": {
+                "SNR": 7.389955745218902,
+                "firing_rate": 1.81526,
+                "isolation": 0.980611,
+                "noise_overlap": 0.00587544,
+                "num_events": 5042,
+                "overlap_cluster": 32,
+                "peak_amp": 14.962,
+                "peak_noise": 2.02464
+            },
+            "tags": [
+            ]
+        },
+        "31": {
+            "metrics": {
+                "SNR": 5.4456747159510535,
+                "firing_rate": 0.448954,
+                "isolation": 0.9709166,
+                "noise_overlap": 0.00499412,
+                "num_events": 1247,
+                "overlap_cluster": 6,
+                "peak_amp": 9.21675,
+                "peak_noise": 1.69249
+            },
+            "tags": [
+            ]
+        },
+        "32": {
+            "metrics": {
+                "SNR": 4.107305501896688,
+                "firing_rate": 0.763257,
+                "isolation": 0.9826675,
+                "noise_overlap": 0.0305523,
+                "num_events": 2120,
+                "overlap_cluster": 30,
+                "peak_amp": 8.2073,
+                "peak_noise": 1.99822
+            },
+            "tags": [
+            ]
+        },
+        "33": {
+            "metrics": {
+                "SNR": 3.085424485118921,
+                "firing_rate": 0.721494,
+                "isolation": 0.9062867,
+                "noise_overlap": 0.0235018,
+                "num_events": 2004,
+                "overlap_cluster": 32,
+                "peak_amp": 5.08913,
+                "peak_noise": 1.64941
+            },
+            "tags": [
+                "MUA",
+                "rejected"
+            ]
+        },
+        "34": {
+            "metrics": {
+                "SNR": 2.525987889029714,
+                "firing_rate": 1.76269,
+                "isolation": 1,
+                "noise_overlap": 0.128378,
+                "num_events": 4896,
+                "overlap_cluster": 0,
+                "peak_amp": 4.48426,
+                "peak_noise": 1.77525
+            },
+            "tags": [
+                "noise",
+                "rejected"
+            ]
+        },
+        "35": {
+            "metrics": {
+                "SNR": 2.6276714070072296,
+                "firing_rate": 3.65031,
+                "isolation": 0.9817861,
+                "noise_overlap": 0.291716,
+                "num_events": 10139,
+                "overlap_cluster": 46,
+                "peak_amp": 3.96894,
+                "peak_noise": 1.51044
+            },
+            "tags": [
+                "noise",
+                "rejected"
+            ]
+        },
+        "36": {
+            "metrics": {
+                "SNR": 1.2080313631082245,
+                "firing_rate": 1.22085,
+                "isolation": 0.930376,
+                "noise_overlap": 0.0699177,
+                "num_events": 3391,
+                "overlap_cluster": 10,
+                "peak_amp": 4.33554,
+                "peak_noise": 3.58893
+            },
+            "tags": [
+                "MUA",
+                "low_snr",
+                "noise",
+                "rejected"
+            ]
+        },
+        "37": {
+            "metrics": {
+                "SNR": 2.1760220439533833,
+                "firing_rate": 0.189014,
+                "isolation": 0.9891304,
+                "noise_overlap": 0.00763807,
+                "num_events": 525,
+                "overlap_cluster": 38,
+                "peak_amp": 19.4109,
+                "peak_noise": 8.92036
+            },
+            "tags": [
+            ]
+        },
+        "38": {
+            "metrics": {
+                "SNR": 3.7653029030523597,
+                "firing_rate": 1.54128,
+                "isolation": 0.9776733,
+                "noise_overlap": 0.010282,
+                "num_events": 4281,
+                "overlap_cluster": 43,
+                "peak_amp": 16.9468,
+                "peak_noise": 4.50078
+            },
+            "tags": [
+            ]
+        },
+        "39": {
+            "metrics": {
+                "SNR": 5.323655871563252,
+                "firing_rate": 2.33118,
+                "isolation": 1,
+                "noise_overlap": 0.00381904,
+                "num_events": 6475,
+                "overlap_cluster": 0,
+                "peak_amp": 13.496,
+                "peak_noise": 2.5351
+            },
+            "tags": [
+            ]
+        },
+        "4": {
+            "metrics": {
+                "SNR": 3.596290063065229,
+                "firing_rate": 1.46855,
+                "isolation": 0.9768977,
+                "noise_overlap": 0.000881316,
+                "num_events": 4079,
+                "overlap_cluster": 2,
+                "peak_amp": 9.72275,
+                "peak_noise": 2.70355
+            },
+            "tags": [
+            ]
+        },
+        "40": {
+            "metrics": {
+                "SNR": 5.9339887011719625,
+                "firing_rate": 5.70895,
+                "isolation": 1,
+                "noise_overlap": 0.00440658,
+                "num_events": 15857,
+                "overlap_cluster": 0,
+                "peak_amp": 13.2557,
+                "peak_noise": 2.23386
+            },
+            "tags": [
+            ]
+        },
+        "41": {
+            "metrics": {
+                "SNR": 3.6806881078469362,
+                "firing_rate": 0.0349226,
+                "isolation": 1,
+                "noise_overlap": 0.0191874,
+                "num_events": 97,
+                "overlap_cluster": 0,
+                "peak_amp": 15.388,
+                "peak_noise": 4.18074
+            },
+            "tags": [
+                "rare",
+                "rejected"
+            ]
+        },
+        "42": {
+            "metrics": {
+                "SNR": 4.1314261810855575,
+                "firing_rate": 1.67521,
+                "isolation": 1,
+                "noise_overlap": 0.00763807,
+                "num_events": 4653,
+                "overlap_cluster": 0,
+                "peak_amp": 9.67894,
+                "peak_noise": 2.34276
+            },
+            "tags": [
+            ]
+        },
+        "43": {
+            "metrics": {
+                "SNR": 5.710802017348172,
+                "firing_rate": 2.48959,
+                "isolation": 0.9864865,
+                "noise_overlap": 0.020564,
+                "num_events": 6915,
+                "overlap_cluster": 38,
+                "peak_amp": 8.93415,
+                "peak_noise": 1.56443
+            },
+            "tags": [
+            ]
+        },
+        "44": {
+            "metrics": {
+                "SNR": 3.7918045905932853,
+                "firing_rate": 1.3969,
+                "isolation": 0.8504700000000001,
+                "noise_overlap": 0.0226204,
+                "num_events": 3880,
+                "overlap_cluster": 46,
+                "peak_amp": 8.33924,
+                "peak_noise": 2.19928
+            },
+            "tags": [
+                "MUA",
+                "rejected"
+            ]
+        },
+        "45": {
+            "metrics": {
+                "SNR": 1.6962421273500354,
+                "firing_rate": 0.122409,
+                "isolation": 1,
+                "noise_overlap": 0.0114747,
+                "num_events": 340,
+                "overlap_cluster": 0,
+                "peak_amp": 10.097,
+                "peak_noise": 5.95257
+            },
+            "tags": [
+                "low_snr",
+                "rejected"
+            ]
+        },
+        "46": {
+            "metrics": {
+                "SNR": 2.7025282806323068,
+                "firing_rate": 3.74608,
+                "isolation": 0.859283,
+                "noise_overlap": 0.235605,
+                "num_events": 10405,
+                "overlap_cluster": 44,
+                "peak_amp": 5.13402,
+                "peak_noise": 1.89971
+            },
+            "tags": [
+                "MUA",
+                "noise",
+                "rejected"
+            ]
+        },
+        "47": {
+            "metrics": {
+                "SNR": 3.338918358453424,
+                "firing_rate": 7.91411,
+                "isolation": 1,
+                "noise_overlap": 0.10282,
+                "num_events": 21982,
+                "overlap_cluster": 0,
+                "peak_amp": 4.4439,
+                "peak_noise": 1.33094
+            },
+            "tags": [
+                "noise",
+                "rejected"
+            ]
+        },
+        "48": {
+            "metrics": {
+                "SNR": 0.9253727870134222,
+                "firing_rate": 0.00180014,
+                "isolation": 1,
+                "noise_overlap": 0.52,
+                "num_events": 5,
+                "overlap_cluster": 0,
+                "peak_amp": 39.7666,
+                "peak_noise": 42.9736
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "49": {
+            "metrics": {
+                "SNR": 1.0429553997893812,
+                "firing_rate": 0.00216016,
+                "isolation": 1,
+                "noise_overlap": 0.433333,
+                "num_events": 6,
+                "overlap_cluster": 0,
+                "peak_amp": 90.421,
+                "peak_noise": 86.6969
+            },
+            "tags": [
+                "low_snr",
+                "noise",
+                "rare",
+                "rejected"
+            ]
+        },
+        "5": {
+            "metrics": {
+                "SNR": 3.043019621610015,
+                "firing_rate": 0.492877,
+                "isolation": 0.9653349,
+                "noise_overlap": 0.0123384,
+                "num_events": 1369,
+                "overlap_cluster": 7,
+                "peak_amp": 8.92825,
+                "peak_noise": 2.93401
+            },
+            "tags": [
+            ]
+        },
+        "6": {
+            "metrics": {
+                "SNR": 3.4272494133926963,
+                "firing_rate": 0.412591,
+                "isolation": 0.9350764,
+                "noise_overlap": 0.00381904,
+                "num_events": 1146,
+                "overlap_cluster": 7,
+                "peak_amp": 9.11429,
+                "peak_noise": 2.65936
+            },
+            "tags": [
+                "MUA",
+                "rejected"
+            ]
+        },
+        "7": {
+            "metrics": {
+                "SNR": 2.958844490969449,
+                "firing_rate": 0.7971,
+                "isolation": 0.9371328,
+                "noise_overlap": 0.00587544,
+                "num_events": 2214,
+                "overlap_cluster": 6,
+                "peak_amp": 8.25346,
+                "peak_noise": 2.78942
+            },
+            "tags": [
+                "MUA",
+                "rejected"
+            ]
+        },
+        "8": {
+            "metrics": {
+                "SNR": 3.625555595707007,
+                "firing_rate": 5.24883,
+                "isolation": 1,
+                "noise_overlap": 0.0161575,
+                "num_events": 14579,
+                "overlap_cluster": 0,
+                "peak_amp": 6.0198,
+                "peak_noise": 1.66038
+            },
+            "tags": [
+            ]
+        },
+        "9": {
+            "metrics": {
+                "SNR": 2.5372294221882488,
+                "firing_rate": 3.70144,
+                "isolation": 0.9571093,
+                "noise_overlap": 0.340482,
+                "num_events": 10281,
+                "overlap_cluster": 33,
+                "peak_amp": 4.38144,
+                "peak_noise": 1.72686
+            },
+            "tags": [
+                "noise",
+                "rejected"
+            ]
+        }
+    },
+    "cluster_order_scores": [
+    ],
+    "cluster_order_scores_name": "",
+    "cluster_pair_attributes": {
+        "pair_10_23": {
+            "metrics": {
+                "overlap": 0.010282
+            }
+        },
+        "pair_10_25": {
+            "metrics": {
+                "overlap": 0.036134
+            }
+        },
+        "pair_10_36": {
+            "metrics": {
+                "overlap": 0.0749119
+            }
+        },
+        "pair_15_18": {
+            "metrics": {
+                "overlap": 0.0390717
+            }
+        },
+        "pair_15_21": {
+            "metrics": {
+                "overlap": 0.0111023
+            }
+        },
+        "pair_19_20": {
+            "metrics": {
+                "overlap": 0.0247604
+            }
+        },
+        "pair_1_24": {
+            "metrics": {
+                "overlap": 0.0167939
+            }
+        },
+        "pair_20_19": {
+            "metrics": {
+                "overlap": 0.0179712
+            }
+        },
+        "pair_21_15": {
+            "metrics": {
+                "overlap": 0.0150674
+            }
+        },
+        "pair_21_22": {
+            "metrics": {
+                "overlap": 0.0142744
+            }
+        },
+        "pair_23_24": {
+            "metrics": {
+                "overlap": 0.0114571
+            }
+        },
+        "pair_23_34": {
+            "metrics": {
+                "overlap": 0.0123384
+            }
+        },
+        "pair_24_23": {
+            "metrics": {
+                "overlap": 0.0108696
+            }
+        },
+        "pair_29_6": {
+            "metrics": {
+                "overlap": 0.0102512
+            }
+        },
+        "pair_2_4": {
+            "metrics": {
+                "overlap": 0.0235149
+            }
+        },
+        "pair_2_5": {
+            "metrics": {
+                "overlap": 0.0272277
+            }
+        },
+        "pair_30_32": {
+            "metrics": {
+                "overlap": 0.019389
+            }
+        },
+        "pair_31_33": {
+            "metrics": {
+                "overlap": 0.0199765
+            }
+        },
+        "pair_31_6": {
+            "metrics": {
+                "overlap": 0.0290834
+            }
+        },
+        "pair_31_7": {
+            "metrics": {
+                "overlap": 0.0138073
+            }
+        },
+        "pair_32_30": {
+            "metrics": {
+                "overlap": 0.0173325
+            }
+        },
+        "pair_33_32": {
+            "metrics": {
+                "overlap": 0.0937133
+            }
+        },
+        "pair_33_9": {
+            "metrics": {
+                "overlap": 0.0434783
+            }
+        },
+        "pair_35_46": {
+            "metrics": {
+                "overlap": 0.0182139
+            }
+        },
+        "pair_36_10": {
+            "metrics": {
+                "overlap": 0.069624
+            }
+        },
+        "pair_36_25": {
+            "metrics": {
+                "overlap": 0.0411281
+            }
+        },
+        "pair_37_38": {
+            "metrics": {
+                "overlap": 0.0108696
+            }
+        },
+        "pair_38_43": {
+            "metrics": {
+                "overlap": 0.0223267
+            }
+        },
+        "pair_43_38": {
+            "metrics": {
+                "overlap": 0.0135135
+            }
+        },
+        "pair_44_43": {
+            "metrics": {
+                "overlap": 0.0472973
+            }
+        },
+        "pair_44_46": {
+            "metrics": {
+                "overlap": 0.14953
+            }
+        },
+        "pair_46_35": {
+            "metrics": {
+                "overlap": 0.0170388
+            }
+        },
+        "pair_46_43": {
+            "metrics": {
+                "overlap": 0.0173325
+            }
+        },
+        "pair_46_44": {
+            "metrics": {
+                "overlap": 0.140717
+            }
+        },
+        "pair_4_2": {
+            "metrics": {
+                "overlap": 0.0231023
+            }
+        },
+        "pair_4_5": {
+            "metrics": {
+                "overlap": 0.0135135
+            }
+        },
+        "pair_5_2": {
+            "metrics": {
+                "overlap": 0.0334158
+            }
+        },
+        "pair_5_4": {
+            "metrics": {
+                "overlap": 0.010282
+            }
+        },
+        "pair_5_6": {
+            "metrics": {
+                "overlap": 0.0132197
+            }
+        },
+        "pair_5_7": {
+            "metrics": {
+                "overlap": 0.0346651
+            }
+        },
+        "pair_6_31": {
+            "metrics": {
+                "overlap": 0.0211516
+            }
+        },
+        "pair_6_5": {
+            "metrics": {
+                "overlap": 0.0105758
+            }
+        },
+        "pair_6_7": {
+            "metrics": {
+                "overlap": 0.0649236
+            }
+        },
+        "pair_7_31": {
+            "metrics": {
+                "overlap": 0.0176263
+            }
+        },
+        "pair_7_5": {
+            "metrics": {
+                "overlap": 0.0396592
+            }
+        },
+        "pair_7_6": {
+            "metrics": {
+                "overlap": 0.0628672
+            }
+        },
+        "pair_9_33": {
+            "metrics": {
+                "overlap": 0.0428907
+            }
+        }
+    },
+    "clusters_subset": [
+    ],
+    "current_timeseries_name": "Preprocessed Data",
+    "electrode_geometry": {
+        "coordinates": [
+        ]
+    },
+    "firings": {
+        "original_checksum": "76f46671f5fb63423d920fc502e7fc899e66e730",
+        "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "original_path": "output/ms--npt/firings.mda",
+        "original_size": 5850644
+    },
+    "mlproxy_url": "",
+    "options": {
+        "amp_thresh_display": 3,
+        "cc_bin_size_msec": 0.5,
+        "cc_log_time_constant_msec": 1,
+        "cc_max_dt_msec": 100,
+        "cc_max_est_data_size": 10000,
+        "clip_size": 100,
+        "curation_program": "// Initialize\nfor (var i in clusters) {\n\tclusters[i].removeTag('rejected');\n\tclusters[i].removeTag('MUA');\n\tclusters[i].removeTag('rare');\n\tclusters[i].removeTag('low_snr');\n\tclusters[i].removeTag('noise');\n\tclusters[i].setMetric('isolation',1);\n\tclusters[i].setMetric('overlap_cluster',0);\n}\n\nconsole.log('\\nnoise_overlap');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('noise_overlap')>0.05) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('noise');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nSNR');\nfor (var i in clusters) {\t\n\tvar denom=clusters[i].metric('peak_noise')||1;\n\tvar snr=clusters[i].metric('peak_amp')/denom;\n\tclusters[i].setMetric('SNR',snr);\n\tif (snr<2) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('low_snr');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nfiring_rate');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('firing_rate')<0.1) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('rare');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nIsolation');\nfor (var i in clusterPairs) {\n\tvar CP=clusterPairs[i];\n\tvar overlap=CP.metric('overlap');\n\tif (1-overlap<CP.cluster1().metric('isolation')) {\n\t\tCP.cluster1().setMetric('isolation',1-overlap);\n\t\tCP.cluster1().setMetric('overlap_cluster',CP.cluster2().k());\n\t}\n}\n\nconsole.log('\\nMUA');\nfor (var i in clusters) {\t\n\tvar iso=clusters[i].metric('isolation');\n\tif (iso<0.95) {\n\t\tconsole.log('MUA: '+clusters[i].k()+' <--> '+clusters[i].metric('overlap_cluster')+' ('+iso+')');\n\t\tclusters[i].addTag('MUA');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n",
+        "discrim_hist_method": "centroid",
+        "timeseries_for_spikespray": ""
+    },
+    "samplerate": 30000,
+    "timeseries": {
+        "Filtered Data": {
+            "data": {
+                "original_checksum": "5f9da41df0fee26eb8404a8f6e4729e2352d7e15",
+                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "5f9da41df0fee26eb8404a8f6e4729e2352d7e15",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Filtered Data"
+        },
+        "Preprocessed Data": {
+            "data": {
+                "original_checksum": "33568cfec0311ab353be8b0616c6120ce0408832",
+                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "5f9da41df0fee26eb8404a8f6e4729e2352d7e15",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "33568cfec0311ab353be8b0616c6120ce0408832",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                        },
+                        "processor_name": "whiten"
+                    },
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "5f9da41df0fee26eb8404a8f6e4729e2352d7e15",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Preprocessed Data"
+        },
+        "Raw Data": {
+            "data": {
+                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                "original_size": 666616580
+            },
+            "name": "Raw Data"
+        }
+    },
+    "view_merged": false,
+    "visibility_rule": {
+        "hide_rejected": true,
+        "subset": [
+        ],
+        "use_subset": false,
+        "view_all_tagged": true,
+        "view_all_untagged": true,
+        "view_tags": [
+        ]
+    },
+    "visible_channels": [
+    ]
+}

@@ -2,625 +2,996 @@
     "cluster_attributes": {
         "1": {
             "metrics": {
-                "firing_rate": 0.00450938,
-                "num_events": 25,
+                "SNR": 1.2454703286449609,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.008,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 162.844,
                 "peak_noise": 130.749
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "10": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "11": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "12": {
             "metrics": {
+                "SNR": 2.4553282044283717,
                 "firing_rate": 0.174603,
+                "isolation": 1,
+                "noise_overlap": 0.00117509,
                 "num_events": 968,
+                "overlap_cluster": 0,
                 "peak_amp": 11.5149,
                 "peak_noise": 4.68976
             },
             "tags": [
-                "rejected"
             ]
         },
         "13": {
             "metrics": {
-                "firing_rate": 6.34939,
-                "num_events": 35201,
+                "SNR": 2.9130894164508314,
+                "firing_rate": 0,
+                "isolation": 0.783784,
+                "noise_overlap": 0.0681551,
+                "num_events": 0,
+                "overlap_cluster": 14,
                 "peak_amp": 3.11552,
                 "peak_noise": 1.06949
             },
             "tags": [
+                "MUA",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "14": {
             "metrics": {
-                "firing_rate": 12.3449,
-                "num_events": 68440,
+                "SNR": 2.8766963010732876,
+                "firing_rate": 0,
+                "isolation": 0.77879,
+                "noise_overlap": 0.0875441,
+                "num_events": 0,
+                "overlap_cluster": 13,
                 "peak_amp": 3.12251,
                 "peak_noise": 1.08545
             },
             "tags": [
+                "MUA",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "15": {
             "metrics": {
-                "firing_rate": 1.13041,
-                "num_events": 6267,
+                "SNR": 1.5149466381125998,
+                "firing_rate": 0,
+                "isolation": 0.9720917,
+                "noise_overlap": 0.120153,
+                "num_events": 0,
+                "overlap_cluster": 37,
                 "peak_amp": 3.42384,
                 "peak_noise": 2.26004
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "16": {
             "metrics": {
-                "firing_rate": 0.00721501,
-                "num_events": 40,
+                "SNR": 0.690823729359263,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0075,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 26.1769,
                 "peak_noise": 37.8923
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "17": {
             "metrics": {
-                "firing_rate": 0.00198413,
-                "num_events": 11,
+                "SNR": 0.952270640824346,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.218182,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 110.99,
                 "peak_noise": 116.553
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "18": {
             "metrics": {
-                "firing_rate": 0.004329,
-                "num_events": 24,
+                "SNR": 1.2473292487937402,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0708333,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 176.305,
                 "peak_noise": 141.346
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "19": {
             "metrics": {
-                "firing_rate": 0.0364358,
-                "num_events": 202,
+                "SNR": 1.4170683007435967,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.00370142,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 20.5815,
                 "peak_noise": 14.524
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "2": {
             "metrics": {
-                "firing_rate": 0.001443,
-                "num_events": 8,
+                "SNR": 2.1301819470509114,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.275,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 264.477,
                 "peak_noise": 124.157
             },
             "tags": [
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "20": {
             "metrics": {
-                "firing_rate": 28.3333,
-                "num_events": 157080,
+                "SNR": 5.0094236489521276,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0740306,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 5.91117,
                 "peak_noise": 1.18001
-            }
+            },
+            "tags": [
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "21": {
             "metrics": {
+                "SNR": 2.3520810148134026,
                 "firing_rate": 0.3079,
+                "isolation": 0.9888367,
+                "noise_overlap": 0.00587544,
                 "num_events": 1707,
+                "overlap_cluster": 20,
                 "peak_amp": 5.30486,
                 "peak_noise": 2.25539
             },
             "tags": [
-                "rejected"
             ]
         },
         "22": {
             "metrics": {
+                "SNR": 2.1037844438438977,
                 "firing_rate": 0.664502,
+                "isolation": 0.9618096,
+                "noise_overlap": 0.00440658,
                 "num_events": 3684,
+                "overlap_cluster": 24,
                 "peak_amp": 4.20374,
                 "peak_noise": 1.99818
             },
             "tags": [
-                "rejected"
             ]
         },
         "23": {
             "metrics": {
+                "SNR": 3.923851595813413,
                 "firing_rate": 13.3759,
+                "isolation": 0.989718,
+                "noise_overlap": 0.0417156,
                 "num_events": 74156,
+                "overlap_cluster": 43,
                 "peak_amp": 4.85867,
                 "peak_noise": 1.23824
-            }
+            },
+            "tags": [
+            ]
         },
         "24": {
             "metrics": {
-                "firing_rate": 4.69895,
-                "num_events": 26051,
+                "SNR": 2.610319471563292,
+                "firing_rate": 0,
+                "isolation": 0.9618096,
+                "noise_overlap": 0.176263,
+                "num_events": 0,
+                "overlap_cluster": 22,
                 "peak_amp": 3.14165,
                 "peak_noise": 1.20355
             },
             "tags": [
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "25": {
             "metrics": {
-                "firing_rate": 11.1326,
-                "num_events": 61719,
+                "SNR": 2.9697356480422608,
+                "firing_rate": 0,
+                "isolation": 0.893948,
+                "noise_overlap": 0.17215,
+                "num_events": 0,
+                "overlap_cluster": 27,
                 "peak_amp": 4.02515,
                 "peak_noise": 1.35539
-            }
+            },
+            "tags": [
+                "MUA",
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "26": {
             "metrics": {
-                "firing_rate": 0.00829726,
-                "num_events": 46,
+                "SNR": 0.8400493790825628,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0347826,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 10.2754,
                 "peak_noise": 12.2319
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "27": {
             "metrics": {
-                "firing_rate": 20.4825,
-                "num_events": 113555,
+                "SNR": 3.768530567503638,
+                "firing_rate": 0,
+                "isolation": 0.890129,
+                "noise_overlap": 0.0537603,
+                "num_events": 0,
+                "overlap_cluster": 25,
                 "peak_amp": 5.87887,
                 "peak_noise": 1.55999
-            }
+            },
+            "tags": [
+                "MUA",
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "28": {
             "metrics": {
-                "firing_rate": 0.258838,
-                "num_events": 1435,
+                "SNR": 1.8337870061264168,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.00910693,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 4.99872,
                 "peak_noise": 2.7259
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "29": {
             "metrics": {
-                "firing_rate": 0.187951,
-                "num_events": 1042,
+                "SNR": 1.5288627850465306,
+                "firing_rate": 0,
+                "isolation": 0.9567766,
+                "noise_overlap": 0.00264395,
+                "num_events": 0,
+                "overlap_cluster": 30,
                 "peak_amp": 5.76314,
                 "peak_noise": 3.76956
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "3": {
             "metrics": {
-                "firing_rate": 0.121392,
-                "num_events": 673,
+                "SNR": 1.8403909039090391,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 24.5383,
                 "peak_noise": 13.3332
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "30": {
             "metrics": {
-                "firing_rate": 0.0306638,
-                "num_events": 170,
+                "SNR": 1.4146375425860773,
+                "firing_rate": 0,
+                "isolation": 0.9750916,
+                "noise_overlap": 0.018315,
+                "num_events": 0,
+                "overlap_cluster": 15,
                 "peak_amp": 7.61945,
                 "peak_noise": 5.38615
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "31": {
             "metrics": {
-                "firing_rate": 0.0128066,
-                "num_events": 71,
+                "SNR": 1.0802806871276467,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 31.0975,
                 "peak_noise": 28.7865
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "32": {
             "metrics": {
-                "firing_rate": 0.00180375,
-                "num_events": 10,
+                "SNR": 1.1563597962970273,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.21,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 117.167,
                 "peak_noise": 101.324
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "33": {
             "metrics": {
-                "firing_rate": 0.00180375,
-                "num_events": 10,
+                "SNR": 1.7494968743415773,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.05,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 168.56,
                 "peak_noise": 96.3477
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "34": {
             "metrics": {
-                "firing_rate": 0.0223665,
-                "num_events": 124,
+                "SNR": 1.8569042774941646,
+                "firing_rate": 0,
+                "isolation": 0.9899497,
+                "noise_overlap": 0.0130653,
+                "num_events": 0,
+                "overlap_cluster": 56,
                 "peak_amp": 74.3848,
                 "peak_noise": 40.0585
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "35": {
             "metrics": {
+                "SNR": 4.605994546180969,
                 "firing_rate": 36.125,
+                "isolation": 1,
+                "noise_overlap": 0.00910693,
                 "num_events": 200277,
+                "overlap_cluster": 0,
                 "peak_amp": 11.8743,
                 "peak_noise": 2.57801
-            }
+            },
+            "tags": [
+            ]
         },
         "36": {
             "metrics": {
+                "SNR": 3.821242680546519,
                 "firing_rate": 21.5898,
+                "isolation": 0.9864865,
+                "noise_overlap": 0.00440658,
                 "num_events": 119694,
+                "overlap_cluster": 15,
                 "peak_amp": 6.34311,
                 "peak_noise": 1.65996
-            }
+            },
+            "tags": [
+            ]
         },
         "37": {
             "metrics": {
-                "firing_rate": 2.25577,
-                "num_events": 12506,
+                "SNR": 1.4034334094510785,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0252644,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 4.49879,
                 "peak_noise": 3.20556
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "38": {
             "metrics": {
-                "firing_rate": 7.79582,
-                "num_events": 43220,
+                "SNR": 3.0981160781513193,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.063161,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 3.99121,
                 "peak_noise": 1.28827
-            }
+            },
+            "tags": [
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "39": {
             "metrics": {
+                "SNR": 5.153330729505707,
                 "firing_rate": 20.096,
+                "isolation": 0.9888367,
+                "noise_overlap": 0.027027,
                 "num_events": 111412,
+                "overlap_cluster": 42,
                 "peak_amp": 5.93741,
                 "peak_noise": 1.15215
-            }
+            },
+            "tags": [
+            ]
         },
         "4": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "40": {
             "metrics": {
-                "firing_rate": 0.001443,
-                "num_events": 8,
+                "SNR": 1.5540438397581255,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.225,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 203.544,
                 "peak_noise": 130.977
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "41": {
             "metrics": {
-                "firing_rate": 0.00234488,
-                "num_events": 13,
+                "SNR": 1.4026404388121807,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.153846,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 185.394,
                 "peak_noise": 132.175
             },
             "tags": [
+                "low_snr",
+                "noise",
+                "rare",
                 "rejected"
             ]
         },
         "42": {
             "metrics": {
-                "firing_rate": 2.6241,
-                "num_events": 14548,
+                "SNR": 0.8669986221446678,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0472973,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 3.73138,
                 "peak_noise": 4.30379
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "43": {
             "metrics": {
-                "firing_rate": 13.2729,
-                "num_events": 73585,
+                "SNR": 3.1427570053512506,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.407756,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 3.67646,
                 "peak_noise": 1.16982
-            }
+            },
+            "tags": [
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "44": {
             "metrics": {
-                "firing_rate": 8.29076,
-                "num_events": 45964,
+                "SNR": 3.8370740171815436,
+                "firing_rate": 0,
+                "isolation": 0.9430082,
+                "noise_overlap": 0.0402468,
+                "num_events": 0,
+                "overlap_cluster": 43,
                 "peak_amp": 5.39554,
                 "peak_noise": 1.40616
-            }
+            },
+            "tags": [
+                "MUA",
+                "rare",
+                "rejected"
+            ]
         },
         "45": {
             "metrics": {
-                "firing_rate": 0.160173,
-                "num_events": 888,
+                "SNR": 1.5216799590253898,
+                "firing_rate": 0,
+                "isolation": 0.9762045,
+                "noise_overlap": 0.00293772,
+                "num_events": 0,
+                "overlap_cluster": 53,
                 "peak_amp": 10.3984,
                 "peak_noise": 6.8335
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "46": {
             "metrics": {
-                "firing_rate": 0.120491,
-                "num_events": 668,
+                "SNR": 1.8412710685016238,
+                "firing_rate": 0,
+                "isolation": 0.9753231,
+                "noise_overlap": 0.00646298,
+                "num_events": 0,
+                "overlap_cluster": 56,
                 "peak_amp": 10.4786,
                 "peak_noise": 5.69096
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "47": {
             "metrics": {
-                "firing_rate": 0.0689033,
-                "num_events": 382,
+                "SNR": 1.4620222100794884,
+                "firing_rate": 0,
+                "isolation": 0.9788299,
+                "noise_overlap": 0.00384911,
+                "num_events": 0,
+                "overlap_cluster": 55,
                 "peak_amp": 10.5152,
                 "peak_noise": 7.19223
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "48": {
             "metrics": {
-                "firing_rate": 0.143038,
-                "num_events": 793,
+                "SNR": 1.7293584242888695,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.00675676,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 10.5159,
                 "peak_noise": 6.08081
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "49": {
             "metrics": {
-                "firing_rate": 0.122655,
-                "num_events": 680,
+                "SNR": 1.8626960101766945,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.00117509,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 10.5282,
                 "peak_noise": 5.65213
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "5": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "50": {
             "metrics": {
+                "SNR": 5.212953114524366,
                 "firing_rate": 38.3598,
+                "isolation": 0.9850176,
+                "noise_overlap": 0.016745,
                 "num_events": 212667,
+                "overlap_cluster": 58,
                 "peak_amp": 10.3413,
                 "peak_noise": 1.98377
-            }
+            },
+            "tags": [
+            ]
         },
         "51": {
             "metrics": {
+                "SNR": 2.0405396139737393,
                 "firing_rate": 0.157648,
+                "isolation": 0.9720917,
+                "noise_overlap": 0,
                 "num_events": 874,
+                "overlap_cluster": 59,
                 "peak_amp": 11.9041,
                 "peak_noise": 5.8338
             },
             "tags": [
-                "rejected"
             ]
         },
         "52": {
             "metrics": {
-                "firing_rate": 0.118506,
-                "num_events": 657,
+                "SNR": 1.7246026212724541,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 11.0571,
                 "peak_noise": 6.41139
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "53": {
             "metrics": {
-                "firing_rate": 0.185786,
-                "num_events": 1030,
+                "SNR": 1.6182885331262704,
+                "firing_rate": 0,
+                "isolation": 0.9803173,
+                "noise_overlap": 0.00470035,
+                "num_events": 0,
+                "overlap_cluster": 45,
                 "peak_amp": 11.3376,
                 "peak_noise": 7.00592
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "54": {
             "metrics": {
-                "firing_rate": 0.129509,
-                "num_events": 718,
+                "SNR": 1.74257992272291,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.0117509,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 11.329,
                 "peak_noise": 6.50128
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "55": {
             "metrics": {
-                "firing_rate": 0.122294,
-                "num_events": 678,
+                "SNR": 1.924565273967127,
+                "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0.00293772,
+                "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 11.3145,
                 "peak_noise": 5.87899
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "56": {
             "metrics": {
-                "firing_rate": 0.132215,
-                "num_events": 733,
+                "SNR": 1.8497734032006798,
+                "firing_rate": 0,
+                "isolation": 0.9744418,
+                "noise_overlap": 0.00822562,
+                "num_events": 0,
+                "overlap_cluster": 46,
                 "peak_amp": 11.4939,
                 "peak_noise": 6.21368
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "57": {
             "metrics": {
-                "firing_rate": 0.101732,
-                "num_events": 564,
+                "SNR": 1.9734897484819836,
+                "firing_rate": 0,
+                "isolation": 0.9861432,
+                "noise_overlap": 0.00411281,
+                "num_events": 0,
+                "overlap_cluster": 47,
                 "peak_amp": 11.5639,
                 "peak_noise": 5.85962
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "58": {
             "metrics": {
-                "firing_rate": 32.101,
-                "num_events": 177968,
+                "SNR": 6.55811792041824,
+                "firing_rate": 0,
+                "isolation": 0.983255,
+                "noise_overlap": 0.0716804,
+                "num_events": 0,
+                "overlap_cluster": 50,
                 "peak_amp": 11.2898,
                 "peak_noise": 1.7215
-            }
+            },
+            "tags": [
+                "noise",
+                "rare",
+                "rejected"
+            ]
         },
         "59": {
             "metrics": {
+                "SNR": 2.119199467064486,
                 "firing_rate": 0.145743,
+                "isolation": 0.9685664,
+                "noise_overlap": 0.00910693,
                 "num_events": 808,
+                "overlap_cluster": 51,
                 "peak_amp": 12.7565,
                 "peak_noise": 6.01949
             },
             "tags": [
-                "rejected"
             ]
         },
         "6": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "60": {
             "metrics": {
-                "firing_rate": 0.179834,
-                "num_events": 997,
+                "SNR": 1.663610957684476,
+                "isolation": 1,
+                "noise_overlap": 0.0141011,
+                "overlap_cluster": 0,
                 "peak_amp": 20.1801,
                 "peak_noise": 12.1303
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "7": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         },
         "8": {
             "metrics": {
+                "SNR": 2.3468166057990927,
                 "firing_rate": 0.335498,
+                "isolation": 1,
+                "noise_overlap": 0.00293772,
                 "num_events": 1860,
+                "overlap_cluster": 0,
                 "peak_amp": 11.6825,
                 "peak_noise": 4.97802
             },
             "tags": [
-                "rejected"
             ]
         },
         "9": {
             "metrics": {
+                "SNR": 0,
                 "firing_rate": 0,
+                "isolation": 1,
+                "noise_overlap": 0,
                 "num_events": 0,
+                "overlap_cluster": 0,
                 "peak_amp": 0,
                 "peak_noise": 0
             },
             "tags": [
+                "low_snr",
+                "rare",
                 "rejected"
             ]
         }
@@ -629,6 +1000,186 @@
     ],
     "cluster_order_scores_name": "",
     "cluster_pair_attributes": {
+        "pair_13_14": {
+            "metrics": {
+                "overlap": 0.216216
+            }
+        },
+        "pair_13_24": {
+            "metrics": {
+                "overlap": 0.0185076
+            }
+        },
+        "pair_14_13": {
+            "metrics": {
+                "overlap": 0.22121
+            }
+        },
+        "pair_14_24": {
+            "metrics": {
+                "overlap": 0.0176263
+            }
+        },
+        "pair_15_25": {
+            "metrics": {
+                "overlap": 0.0237955
+            }
+        },
+        "pair_15_30": {
+            "metrics": {
+                "overlap": 0.0124542
+            }
+        },
+        "pair_15_36": {
+            "metrics": {
+                "overlap": 0.0111633
+            }
+        },
+        "pair_15_37": {
+            "metrics": {
+                "overlap": 0.0279083
+            }
+        },
+        "pair_21_20": {
+            "metrics": {
+                "overlap": 0.0111633
+            }
+        },
+        "pair_22_24": {
+            "metrics": {
+                "overlap": 0.0381904
+            }
+        },
+        "pair_23_43": {
+            "metrics": {
+                "overlap": 0.010282
+            }
+        },
+        "pair_24_22": {
+            "metrics": {
+                "overlap": 0.0381904
+            }
+        },
+        "pair_24_38": {
+            "metrics": {
+                "overlap": 0.0138073
+            }
+        },
+        "pair_25_27": {
+            "metrics": {
+                "overlap": 0.106052
+            }
+        },
+        "pair_27_25": {
+            "metrics": {
+                "overlap": 0.109871
+            }
+        },
+        "pair_29_30": {
+            "metrics": {
+                "overlap": 0.0432234
+            }
+        },
+        "pair_30_15": {
+            "metrics": {
+                "overlap": 0.0249084
+            }
+        },
+        "pair_34_56": {
+            "metrics": {
+                "overlap": 0.0100503
+            }
+        },
+        "pair_36_15": {
+            "metrics": {
+                "overlap": 0.0135135
+            }
+        },
+        "pair_36_37": {
+            "metrics": {
+                "overlap": 0.010282
+            }
+        },
+        "pair_39_42": {
+            "metrics": {
+                "overlap": 0.0111633
+            }
+        },
+        "pair_44_43": {
+            "metrics": {
+                "overlap": 0.0569918
+            }
+        },
+        "pair_44_58": {
+            "metrics": {
+                "overlap": 0.010282
+            }
+        },
+        "pair_45_53": {
+            "metrics": {
+                "overlap": 0.0237955
+            }
+        },
+        "pair_46_56": {
+            "metrics": {
+                "overlap": 0.0246769
+            }
+        },
+        "pair_47_55": {
+            "metrics": {
+                "overlap": 0.0211701
+            }
+        },
+        "pair_47_57": {
+            "metrics": {
+                "overlap": 0.0207852
+            }
+        },
+        "pair_50_58": {
+            "metrics": {
+                "overlap": 0.0149824
+            }
+        },
+        "pair_51_59": {
+            "metrics": {
+                "overlap": 0.0279083
+            }
+        },
+        "pair_53_45": {
+            "metrics": {
+                "overlap": 0.0196827
+            }
+        },
+        "pair_56_46": {
+            "metrics": {
+                "overlap": 0.0255582
+            }
+        },
+        "pair_57_47": {
+            "metrics": {
+                "overlap": 0.0138568
+            }
+        },
+        "pair_57_49": {
+            "metrics": {
+                "overlap": 0.0114571
+            }
+        },
+        "pair_58_44": {
+            "metrics": {
+                "overlap": 0.0120447
+            }
+        },
+        "pair_58_50": {
+            "metrics": {
+                "overlap": 0.016745
+            }
+        },
+        "pair_59_51": {
+            "metrics": {
+                "overlap": 0.0314336
+            }
+        }
     },
     "clusters_subset": [
     ],
@@ -638,10 +1189,10 @@
         ]
     },
     "firings": {
-        "original_checksum": "f52795bbde5795d7e127a1ab386b4bed43187784",
+        "original_checksum": "806b52c14fad92cbdb296fd66b70c8c238769674",
         "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
-        "original_path": "output/ms_thr2.5--ds1/firings.mda",
-        "original_size": 37845884
+        "original_path": "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/mohebi/output/ms_thr2.5--ds1/firings.curated.mda",
+        "original_size": 17474588
     },
     "mlproxy_url": "",
     "options": {
@@ -651,6 +1202,7 @@
         "cc_max_dt_msec": 100,
         "cc_max_est_data_size": 10000,
         "clip_size": 100,
+        "curation_program": "// Initialize\nfor (var i in clusters) {\n\tclusters[i].removeTag('rejected');\n\tclusters[i].removeTag('MUA');\n\tclusters[i].removeTag('rare');\n\tclusters[i].removeTag('low_snr');\n\tclusters[i].removeTag('noise');\n\tclusters[i].setMetric('isolation',1);\n\tclusters[i].setMetric('overlap_cluster',0);\n}\n\nconsole.log('\\nnoise_overlap');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('noise_overlap')>0.05) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('noise');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nSNR');\nfor (var i in clusters) {\t\n\tvar denom=clusters[i].metric('peak_noise')||1;\n\tvar snr=clusters[i].metric('peak_amp')/denom;\n\tclusters[i].setMetric('SNR',snr);\n\tif (snr<2) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('low_snr');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nfiring_rate');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('firing_rate')<0.1) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('rare');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nIsolation');\nfor (var i in clusterPairs) {\n\tvar CP=clusterPairs[i];\n\tvar overlap=CP.metric('overlap');\n\tif (1-overlap<CP.cluster1().metric('isolation')) {\n\t\tCP.cluster1().setMetric('isolation',1-overlap);\n\t\tCP.cluster1().setMetric('overlap_cluster',CP.cluster2().k());\n\t}\n}\n\nconsole.log('\\nMUA');\nfor (var i in clusters) {\t\n\tvar iso=clusters[i].metric('isolation');\n\tif (iso<0.95) {\n\t\tconsole.log('MUA: '+clusters[i].k()+' <--> '+clusters[i].metric('overlap_cluster')+' ('+iso+')');\n\t\tclusters[i].addTag('MUA');\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n",
         "discrim_hist_method": "centroid",
         "timeseries_for_spikespray": ""
     },
@@ -665,9 +1217,11 @@
                     {
                         "inputs": {
                             "timeseries": {
-                                "original_checksum": "527b9f45f3d6547f9d75d23782707a38d09e4542",
-                                "original_path": "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/mohebi/./datasets/IM553_20150402_14-03-06_t24/raw.mda.prv",
-                                "original_size": 292
+                                "original_checksum": "850ae457f79f5b377c19af41aea8ff931cd826af",
+                                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                                "original_path": "/home/magland/prvdata/mohebi/IM553_20150402_14-03-06_t24_raw.mda",
+                                "original_size": 1330560012,
+                                "prv_version": 0.1
                             }
                         },
                         "outputs": {
@@ -716,9 +1270,11 @@
                     {
                         "inputs": {
                             "timeseries": {
-                                "original_checksum": "527b9f45f3d6547f9d75d23782707a38d09e4542",
-                                "original_path": "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/mohebi/./datasets/IM553_20150402_14-03-06_t24/raw.mda.prv",
-                                "original_size": 292
+                                "original_checksum": "850ae457f79f5b377c19af41aea8ff931cd826af",
+                                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                                "original_path": "/home/magland/prvdata/mohebi/IM553_20150402_14-03-06_t24_raw.mda",
+                                "original_size": 1330560012,
+                                "prv_version": 0.1
                             }
                         },
                         "outputs": {
