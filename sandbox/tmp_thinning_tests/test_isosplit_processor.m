@@ -2,13 +2,13 @@ function test_isosplit_processor
 
 close all;
 
-N0=15000;
+N0=3000;
 %KNN=100;
 num_noise_dims=0;
 
-A1.N=N0*2; A1.center=[0,0]; A1.cov=[1,0;0,1];
-A2.N=N0/2; A2.center=[4.5,0]; A2.cov=[1,0;0,3];
-A3.N=N0/2; A3.center=[-5,5]; A3.cov=[3,1;1,3];
+A1.N=N0*4; A1.center=[0,0]; A1.cov=[1,0;0,1];
+A2.N=N0/2; A2.center=[5.5,0]; A2.cov=[1,0;0,3];
+A3.N=N0/2; A3.center=[-6,5]; A3.cov=[3,1;1,3];
 A4.N=N0/2; A4.center=[0,-8]; A4.cov=[0.5,0;0,0.5];
 AA={A1,A2,A3,A4};
 for j=1:length(AA)
@@ -23,33 +23,41 @@ end;
 [X,labels]=create_multimodal_nd(AA);
 N=size(X,2);
 
-desired_num=1500;
+desired_num=N/20;
 
 %fig0; ms_view_clusters(X(1:2,:),labels);
 
 tic;
-labels2=isosplit2(X);
-toc
-fig0; ms_view_clusters(X(1:2,:),labels2);
+%labels2=isosplit2(X);
+%toc
+%fig0; ms_view_clusters(X(1:2,:),labels2);
 
 tic;
-labels3=isosplit2_wrapper(X);
-toc
-fig0; ms_view_clusters(X(1:2,:),labels3);
+%labels3=isosplit2_wrapper(X);
+%toc
+%fig0; ms_view_clusters(X(1:2,:),labels3);
 
-W=ones(1,N);
-%W=ones(1,N)+rand(1,N)*5;
-tic;
-labels4=isosplit2_w_wrapper(X,W);
-toc
-fig0; ms_view_clusters(X(1:2,:),labels4);
-
-[inds_thin,W_thin]=thin(X,desired_num);
+[inds_thin,W_thin]=thin2(X,desired_num);
 X_thin=X(:,inds_thin);
 tic;
-labels5=isosplit2_w_wrapper(X_thin,W_thin);
+labels5=isosplit2_wrapper(X_thin);
 toc
 fig0; ms_view_clusters(X_thin(1:2,:),labels5);
+%figure; hist(W_thin,200);
+title(sprintf('%g',size(X_thin,2)/size(X,2)));
+
+%figure; plot3(X_thin(1,:),X_thin(2,:),W_thin,'r.');
+
+
+% W=ones(1,N);
+% %W=ones(1,N)+rand(1,N)*5;
+% tic;
+% labels4=isosplit2_w_wrapper(X,W);
+% toc
+% fig0; ms_view_clusters(X(1:2,:),labels4);
+
+% if density <10 thinning=1
+% if density < 20 thinning = 2
 
 function labels=isosplit2_wrapper(X)
 X_path=make_temp_mda_path;
