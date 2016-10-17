@@ -10,7 +10,7 @@ for k=1:KNN
     dists(k,:)=compute_dists(X,X(:,nearest_inds(:,k)));
 end;
 dists_sorted=sort(dists(:));
-figure; plot(dists_sorted);
+%figure; plot(dists_sorted);
 
 for aaa=0.05:0.05:0.95
     cutoff=dists_sorted(ceil(length(dists_sorted)*aaa));

@@ -4,7 +4,6 @@ close all;
 
 N0=1500;
 %KNN=100;
-desired_num=1000;
 num_noise_dims=0;
 
 A1.N=N0*2; A1.center=[0,0]; A1.cov=[1,0;0,1];
@@ -24,36 +23,39 @@ end;
 [X,labels]=create_multimodal_nd(AA);
 N=size(X,2);
 
-figure; ms_view_clusters(X(1:2,:),labels);
+desired_num=N;
+
+%fig0; ms_view_clusters(X(1:2,:),labels);
 
 tic;
 labels2=isosplit2(X);
 toc
-figure; ms_view_clusters(X(1:2,:),labels2);
+%fig0; ms_view_clusters(X(1:2,:),labels2);
 
 tic;
 labels3=isosplit2_wrapper(X);
 toc
-figure; ms_view_clusters(X(1:2,:),labels3);
+%fig0; ms_view_clusters(X(1:2,:),labels3);
 
 W=ones(1,N);
+%W=ones(1,N)+rand(1,N)*5;
 tic;
 labels4=isosplit2_w_wrapper(X,W);
 toc
-figure; ms_view_clusters(X(1:2,:),labels4);
+fig0; ms_view_clusters(X(1:2,:),labels4);
 
 [inds_thin,W_thin]=thin(X,desired_num);
 X_thin=X(:,inds_thin);
 tic;
 labels5=isosplit2_w_wrapper(X_thin,W_thin);
 toc
-figure; ms_view_clusters(X_thin(1:2,:),labels5);
+%fig0; ms_view_clusters(X_thin(1:2,:),labels5);
 
 function labels=isosplit2_wrapper(X)
 X_path=make_temp_mda_path;
 labels_path=make_temp_mda_path;
 writemda32(X,X_path);
-cmd=sprintf('mountainprocess run-process isosplit2 --data=%s --labels=%s --_force_run',X_path,labels_path);
+cmd=sprintf('%s isosplit2 --data=%s --labels=%s',mscmd_exe,X_path,labels_path);
 disp(cmd);
 system(cmd);
 labels=readmda(labels_path);
@@ -66,7 +68,7 @@ W_path=make_temp_mda_path;
 labels_path=make_temp_mda_path;
 writemda32(X,X_path);
 writemda32(W,W_path);
-cmd=sprintf('mountainprocess run-process isosplit2 --data=%s --labels=%s --_force_run',X_path,labels_path);
+cmd=sprintf('%s isosplit2_w --data=%s --weights=%s --labels=%s',mscmd_exe,X_path,W_path,labels_path);
 disp(cmd);
 system(cmd);
 labels=readmda(labels_path);
@@ -80,3 +82,5 @@ if ~exist(dir,'dir'), mkdir(dir); end     % note can handle creation of parents
 fname = [dir,'/',num2str(randi(1e15)),'.mda'];  % random filename
 
 
+function fig0
+figure;
