@@ -2,7 +2,7 @@ function test_isosplit_processor
 
 close all;
 
-N0=1500;
+N0=15000;
 %KNN=100;
 num_noise_dims=0;
 
@@ -23,19 +23,19 @@ end;
 [X,labels]=create_multimodal_nd(AA);
 N=size(X,2);
 
-desired_num=N;
+desired_num=1500;
 
 %fig0; ms_view_clusters(X(1:2,:),labels);
 
 tic;
 labels2=isosplit2(X);
 toc
-%fig0; ms_view_clusters(X(1:2,:),labels2);
+fig0; ms_view_clusters(X(1:2,:),labels2);
 
 tic;
 labels3=isosplit2_wrapper(X);
 toc
-%fig0; ms_view_clusters(X(1:2,:),labels3);
+fig0; ms_view_clusters(X(1:2,:),labels3);
 
 W=ones(1,N);
 %W=ones(1,N)+rand(1,N)*5;
@@ -49,7 +49,7 @@ X_thin=X(:,inds_thin);
 tic;
 labels5=isosplit2_w_wrapper(X_thin,W_thin);
 toc
-%fig0; ms_view_clusters(X_thin(1:2,:),labels5);
+fig0; ms_view_clusters(X_thin(1:2,:),labels5);
 
 function labels=isosplit2_wrapper(X)
 X_path=make_temp_mda_path;
