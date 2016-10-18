@@ -30,6 +30,7 @@ if (~isfield(opts,'verbose')) opts.verbose=0; end;
 if (~isfield(opts,'verbose3')) opts.verbose3=0; end;
 if (~isfield(opts,'whiten_at_each_comparison')) opts.whiten_at_each_comparison=1; end;
 if (~isfield(opts,'repeat_tolerance')) opts.repeat_tolerance=0.2; end;
+if (~isfield(opts,'max_iterations')) opts.max_iterations=inf; end;
 
 if numel(size(X))~=2, error('X must be a 2D array'); end
 [M,N]=size(X);
@@ -60,6 +61,9 @@ attempted_comparisons.weighted_counts2=[];
 
 while 1
     info.num_iterations=info.num_iterations+1;
+    if (info.num_iterations>opts.max_iterations)
+        break;
+    end;
     [k1,k2]=find_next_comparison(active_labels,centers,weighted_counts,attempted_comparisons,opts.repeat_tolerance);
     if (k1<0) break; end;
     if (opts.return_iterations)
@@ -85,6 +89,7 @@ while 1
     [do_merge,labels0,info0]=test_redistribute(X(:,inds1),weights(inds1),X(:,inds2),weights(inds2),opts);
     if (opts.return_iterations)
         iteration_info.projection=info0.projection;
+        iteration_info.projection_weights=info0.projection_weights;
         iteration_info.projection_cutpoint=info0.cutpoint;
         iteration_info.projection_labels=info0.labels;
     end
@@ -261,6 +266,7 @@ labels=zeros(1,N);
 labels(ii1)=1;
 labels(ii2)=2;
 info.projection=XX;
+info.projection_weights=WW;
 info.cutpoint=cutpoint;
 info.labels=labels;
 
