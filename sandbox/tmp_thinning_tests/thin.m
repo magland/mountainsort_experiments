@@ -26,9 +26,9 @@ rnd=rand(1,N);
 inds=find(rnd<probs);
 weights=1./probs(inds);
 
-expected_frac=sum(probs)/N
-actual_frac=length(inds)/N
-desired_frac=desired_num/N
+%expected_frac=sum(probs)/N
+%actual_frac=length(inds)/N
+%desired_frac=desired_num/N
 
 %figure; plot(dists_sorted);
 %figure; hist(counts,0:KNN);
