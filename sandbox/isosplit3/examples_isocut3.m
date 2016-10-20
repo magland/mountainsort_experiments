@@ -4,7 +4,7 @@ example1
 
 function example1
 
-N0=100;
+N0=500;
 
 opts.show_updown=0;
 
@@ -26,14 +26,14 @@ function plot_result(samples,info,opts)
 dip_score=info.dip_score;
 cutpoint=info.cutpoint;
 result=info.best_trial;
-bar(info.bin_centers,info.counts,'g');
+bar(info.bin_centers,info.weighted_counts,'g');
 hold on;
 if (opts.show_updown)
     plot(info.bin_centers(result.indices),result.fit_control,'b','LineWidth',1);
 end;
 plot(info.bin_centers(result.indices),result.fit,'r','LineWidth',2);
 vline(info.cutpoint);
-title(sprintf('dip score = %g, N = %d, #bins = %d',round2(dip_score),length(samples),length(info.counts)));
+title(sprintf('dip score = %g, N = %d, #bins = %d',round2(dip_score),length(samples),length(info.weighted_counts)));
 drawnow;
 
 function y=round2(x)

@@ -1,4 +1,4 @@
-function [labels,output]=isosplit3(X,weights,opts)
+function [labels,output]=isosplit3(X,opts)
 
 if (nargin<1)
     test_isosplit3;
@@ -6,14 +6,25 @@ if (nargin<1)
 end;
 
 if (nargin<2)
+    opts=struct;
+end;
+
+if (isfield(opts,'weights'))
+    weights=opts.weights;
+else
     weights=[];
 end;
 if (length(weights)==0)
     weights=ones(size(X));
 end;
 
-if (nargin<3)
-    opts=struct;
+if (isfield(opts,'diameters'))
+    diameters=opts.diameters;
+else
+    diameters=[];
+end;
+if (length(diameters)==0)
+    diameters=zeros(size(X));
 end;
 
 if (~isfield(opts,'return_iterations'))
@@ -86,10 +97,11 @@ while 1
     attempted_comparisons.centers2=cat(2,attempted_comparisons.centers2,centers(:,k1));
     attempted_comparisons.weighted_counts1(end+1)=sum(weights(inds2));
     attempted_comparisons.weighted_counts2(end+1)=sum(weights(inds1));
-    [do_merge,labels0,info0]=test_redistribute(X(:,inds1),weights(inds1),X(:,inds2),weights(inds2),opts);
+    [do_merge,labels0,info0]=test_redistribute(X(:,inds1),weights(inds1),diameters(inds1),X(:,inds2),weights(inds2),diameters(inds2),opts);
     if (opts.return_iterations)
         iteration_info.projection=info0.projection;
         iteration_info.projection_weights=info0.projection_weights;
+        iteration_info.projection_diameters=info0.projection_diameters;
         iteration_info.projection_cutpoint=info0.cutpoint;
         iteration_info.projection_labels=info0.labels;
         iteration_info.dip_score=info0.dip_score;
@@ -224,7 +236,7 @@ centroid1b=compute_cluster_centroid(X1b,weights1);
 centroid2b=compute_cluster_centroid(X2b,weights2);
 V=centroid2b-centroid1b;
 
-function [do_merge,labels,info]=test_redistribute(X1,weights1,X2,weights2,opts)
+function [do_merge,labels,info]=test_redistribute(X1,weights1,diameters1,X2,weights2,diameters2,opts)
 if opts.whiten_at_each_comparison
     [X1,X2,V]=whiten_two_clusters(X1,weights1,X2,weights2);
 else
@@ -238,14 +250,21 @@ else
 end;
 XX=V'*cat(2,X1,X2); %Project onto the line connecting the centroids
 WW=cat(2,weights1,weights2);
+DD=cat(2,diameters1,diameters2);
+info.projection=XX;
+info.projection_weights=WW;
+info.projection_diameters=DD;
 N=length(XX);
 if (N<=5) %avoid a crash - 2/22/2016 jfm
     do_merge=1;
-    labels=ones(1,N);
+    labels=ones(1,N);    
+    info.cutpoint=0;
+    info.labels=labels;
+    info.dip_score=0;
     return;
 end;
 %XXs=sort(XX);
-[dip_score,cutpoint]=isocut3(XX,WW); %This is the core procedure -- split based on isotonic regression
+[dip_score,cutpoint]=isocut3(XX,WW,DD); %This is the core procedure -- split based on isotonic regression
 if (dip_score>opts.isocut_threshold)
 	%It was a statistically significant split -- so let's redistribute!
 	ii1=find(XX<=cutpoint);
@@ -259,8 +278,6 @@ end;
 labels=zeros(1,N);
 labels(ii1)=1;
 labels(ii2)=2;
-info.projection=XX;
-info.projection_weights=WW;
 info.cutpoint=cutpoint;
 info.labels=labels;
 info.dip_score=dip_score;
@@ -351,7 +368,7 @@ ms_view_clusters(samples,labels); title('isosplit2');
 drawnow;
 
 tic;
-[labels,info]=isosplit3(samples,[],opts);
+[labels,info]=isosplit3(samples,opts);
 fprintf('isosplit3: num clusters = %d, num iterations = %d, elapsed = %g\n',max(labels),info.num_iterations,toc);
 figure;
 ms_view_clusters(samples,labels); title('isosplit3');
@@ -362,7 +379,9 @@ samples_thin=samples(:,inds_thin);
 
 tic;
 opts.return_iterations=1;
-[labels_thin,info]=isosplit3(samples_thin,weights_thin,opts);
+opts.weights=weights_thin;
+opts.diameters=[];
+[labels_thin,info]=isosplit3(samples_thin,opts);
 fprintf('thin isosplit3: num clusters = %d, num iterations = %d, elapsed = %g\n',max(labels),info.num_iterations,toc);
 figure;
 ms_view_clusters(samples_thin,labels_thin); title('thin isosplit3');
@@ -371,7 +390,9 @@ drawnow;
 %show_iterations(samples_thin,info);
 
 tic;
-[labels_thin,info]=isosplit3(samples_thin,[],opts);
+opts.weights=[];
+opts.diameters=[];
+[labels_thin,info]=isosplit3(samples_thin,opts);
 fprintf('thin isosplit3 - unweighted: num clusters = %d, num iterations = %d, elapsed = %g\n',max(labels),info.num_iterations,toc);
 figure;
 ms_view_clusters(samples_thin,labels_thin); title('thin isosplit3 - unweighted');

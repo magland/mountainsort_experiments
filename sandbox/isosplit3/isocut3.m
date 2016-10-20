@@ -1,35 +1,44 @@
-function [dip_score,cutpoint,info]=isocut3(samples,weights,opts)
+function [dip_score,cutpoint,info]=isocut3(samples,weights,diameters,opts)
 
 if nargin<1, test_isocut3; return; end;
 if nargin<2, weights=[]; end;
 if (length(weights)==0) weights=ones(size(samples)); end;
-if nargin<3, opts=struct; end;
+if nargin<3, diameters=[]; end;
+if (length(diameters)==0) diameters=zeros(size(samples)); end;
+if nargin<4, opts=struct; end;
 
 tic;
 
 desired_num_crit_pts=10;
 separation_interval=10;
 
-num_bins=determine_optimal_num_bins(samples,weights,desired_num_crit_pts,separation_interval);
+num_bins=determine_optimal_num_bins(samples,weights,diameters,desired_num_crit_pts,separation_interval);
 
-[counts,weighted_counts,bin_centers]=compute_hist(samples,weights,num_bins);
-num_bins=length(counts);
+[weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,num_bins);
+num_bins=length(bin_centers);
 
 critical_inds=find_local_maxima(weighted_counts,separation_interval);
-critical_inds=sort([critical_inds,0,num_bins+1]);
+critical_inds=sort(critical_inds);
+if (length(critical_inds)==0)
+    error('No critical indices found!');
+end;
+% Is it really important to put in the first and last indices?
+% I don't think it is.
+%if (critical_inds(1)~=1) critical_inds=[1,critical_inds]; end;
+%if (critical_inds(end)~=num_bins) critical_inds=[critical_inds,num_bins]; end;
 
 dip_scores=[];
 trials={};
 for j1=1:length(critical_inds)
     for j2=j1+1:length(critical_inds)
-        i1=critical_inds(j1)+1;
-        i2=critical_inds(j2)-1;
+        i1=critical_inds(j1);
+        i2=critical_inds(j2);
         if (i2>i1)
             fit=jisotonic(weighted_counts(i1:i2),'downup');
             fit_control=jisotonic(weighted_counts(i1:i2),'updown');
 
-            ks=compute_ks2(counts(i1:i2),fit,weighted_counts(i1:i2));
-            ks_control=compute_ks2(counts(i1:i2),fit_control,weighted_counts(i1:i2));
+            ks=compute_ks2(fit,weighted_counts(i1:i2));
+            ks_control=compute_ks2(fit_control,weighted_counts(i1:i2));
 
             trial.indices=i1:i2;
             trial.ks=ks;
@@ -47,16 +56,22 @@ for j1=1:length(critical_inds)
     end;
 end;
 
-[~,best_ind]=max(dip_scores); best_ind=best_ind(1);
-best_trial=trials{best_ind};
-dip_score=dip_scores(best_ind);
-cutpoint=best_trial.cutpoint;
+if (~isempty(dip_scores))
+    [~,best_ind]=max(dip_scores); best_ind=best_ind(1);
+    best_trial=trials{best_ind};
+    dip_score=dip_scores(best_ind);
+    cutpoint=best_trial.cutpoint;
+else
+    best_ind=0;
+    best_trial=struct;
+    dip_score=0;
+    cutpoint=0;
+end;
 
 if (nargout>=3)
     info.dip_score=dip_score;
     info.cutpoint=cutpoint;
     info.dip_range=best_trial.dip_range;
-    info.counts=counts;
     info.weighted_counts=weighted_counts;
     info.bin_centers=bin_centers;
     info.critical_inds=critical_inds;
@@ -64,9 +79,9 @@ if (nargout>=3)
     info.elapsed_time=toc;
 end;
 
-function num_bins=determine_optimal_num_bins(samples,weights,desired_num_crit_pts,separation_interval)
+function num_bins=determine_optimal_num_bins(samples,weights,diameters,desired_num_crit_pts,separation_interval)
 for num=10:10:length(samples)
-    [counts,weighted_counts]=compute_hist(samples,weights,num);
+    [weighted_counts]=compute_hist(samples,weights,diameters,num);
     inds=find_local_maxima(weighted_counts,separation_interval);
     if (length(inds)>=desired_num_crit_pts)
         num_bins=num;
@@ -75,14 +90,28 @@ for num=10:10:length(samples)
 end
 num_bins=length(samples);
 
-function [counts,weighted_counts,bin_centers]=compute_hist(samples,weights,num_bins)
+function [weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,num_bins)
 minval=min(samples);
 maxval=max(samples);
 bin_width=(maxval-minval)/(num_bins-2);
-bin_indices=round((samples-minval)/bin_width)+1;
-counts=accumarray(bin_indices',1,[num_bins,1])';
-weighted_counts=accumarray(bin_indices',weights',[num_bins,1])';
-bin_centers=minval+bin_width*(0:num_bins-1);
+
+bin_ints_lower=round((samples-diameters/2)/bin_width);
+bin_ints_upper=round((samples+diameters/2)/bin_width);
+bin_spans=bin_ints_upper-bin_ints_lower+1;
+
+min_bin_int=min(bin_ints_lower);
+max_bin_int=max(bin_ints_upper);
+bin_centers=(min_bin_int:max_bin_int)*bin_width; % question: is it bad to snap to a grid here?
+num_bins=length(bin_centers);
+
+bin_inds_lower=bin_ints_lower-min_bin_int+1;
+bin_inds_upper=bin_ints_upper-min_bin_int+1;
+
+weighted_counts=zeros(1,num_bins);
+for offset=0:(max(bin_spans)-1)
+    to_use=find(bin_inds_lower+offset<=bin_inds_upper);
+    weighted_counts=weighted_counts+accumarray(bin_inds_lower(to_use)'+offset,weights(to_use)'./bin_spans(to_use)',[num_bins,1])';
+end;
 
 function inds=find_local_maxima(X,interval,threshold)
 if (nargin<3) threshold=-inf; end;
@@ -98,8 +127,8 @@ for tt=candidates
         best_val=X(best_ind);
     end;
     if (X(tt)>=best_val)
+        use_it(best_ind)=0; %important to do this first in case best_ind=tt=1 (fixed 10/20/16)
         use_it(tt)=1;
-        use_it(best_ind)=0;
         best_ind=tt;
         best_val=X(tt);
     end;
@@ -107,13 +136,12 @@ end;
 
 inds=find(use_it==1);
 
-function [ks,ks_ind]=compute_ks2(counts_for_normalization,weighted_counts1,weighted_counts2)
-normalization_count_forward=cumsum(counts_for_normalization);
-normalization_count_reverse=cumsum(counts_for_normalization(end:-1:1));
-normalization_count=min(normalization_count_forward,normalization_count_reverse(end:-1:1));
+function [ks,ks_ind]=compute_ks2(weighted_counts1,weighted_counts2)
 S1=cumsum(weighted_counts1)/sum(weighted_counts1);
 S2=cumsum(weighted_counts2)/sum(weighted_counts2);
-[ks,ks_ind]=max(abs(S1-S2).*sqrt(2*normalization_count));
+%[ks,ks_ind]=max(abs(S1-S2).*sqrt(2*normalization_count));
+[ks,ks_ind]=max(abs(S1-S2));
+ks=ks*sqrt((sum(weighted_counts1)+sum(weighted_counts2))/2);
 ks_ind=ks_ind(1);
 
 function y=round2(x)
@@ -148,7 +176,7 @@ for trial=1:num_trials
         hold on;
         plot(info.bin_centers(result.indices),result.fit_control,'b','LineWidth',1);
         plot(info.bin_centers(result.indices),result.fit,'r','LineWidth',2);
-        title(sprintf('dip score = %g, N = %d, #bins = %d',round2(dip_score),length(samples),length(info.counts)));
+        title(sprintf('dip score = %g, N = %d, #bins = %d',round2(dip_score),length(samples),length(info.weighted_counts)));
         drawnow;
     end;
 end;
