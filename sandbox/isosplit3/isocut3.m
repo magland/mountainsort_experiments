@@ -161,6 +161,11 @@ bin_spans=bin_ints_upper-bin_ints_lower+1;
 
 min_bin_int=min(bin_ints_lower);
 max_bin_int=max(bin_ints_upper);
+disp([min_bin_int,max_bin_int]);
+min(samples)
+max(samples)
+max(diameters)
+bin_width
 bin_centers=(min_bin_int:max_bin_int)*bin_width; % question: is it bad to snap to a grid here?
 num_bins=length(bin_centers);
 

@@ -6,7 +6,7 @@ rng(2);
 
 N0=1e4;
 approx_num_parcels=300;
-num_noise_dims=5;
+num_noise_dims=8;
 
 A1.N=N0*2; A1.center=[0,0]; A1.cov=[1,0;0,1];
 A2.N=N0/2; A2.center=[4.5,0]; A2.cov=[1,0;0,2.5];
@@ -28,7 +28,7 @@ N=size(X,2);
 figure; ms_view_clusters(X(1:2,:),labels);
 
 disp('Computing parcelation');
-[parcel_labels,parcels]=compute_parcelation(X,approx_num_parcels,3);
+[parcel_labels,parcels]=compute_parcelation(X,approx_num_parcels,2);
 disp('Done computing parcelation');
 
 disp('Getting parcel diameters');
@@ -58,6 +58,7 @@ legend(gca,'off');
 title('After thinning');
 
 isosplit_opts=struct;
+isosplit_opts.isocut_threshold=1.5;
 
 inds=find(diameters>0);
 if (~isempty(inds))
@@ -68,7 +69,7 @@ end;
 
 disp('unweighted isosplit3');
 isosplit_labels=isosplit3(X_thin,isosplit_opts);
-figure; ms_view_clusters(X_thin,isosplit_labels);
+figure; ms_view_clusters(X_thin(1:2,:),isosplit_labels);
 title('Unweighted iso-split clustering');
 
 disp('weighted isosplit3');
@@ -76,11 +77,11 @@ isosplit_opts.weights=parcel_sizes;
 isosplit_opts.diameters=diameters;
 isosplit_opts.return_iterations=1;
 [isosplit_labels,iso_info]=isosplit3(X_thin,isosplit_opts);
-figure; ms_view_clusters(X_thin,isosplit_labels);
+figure; ms_view_clusters(X_thin(1:2,:),isosplit_labels);
 title('Weighted iso-split clustering');
 drawnow;
 
-%show_iterations(X_thin,iso_info);
+show_iterations(X_thin,iso_info);
 
 
 function ret=compute_parcel_representative_inds(X,parcels)
@@ -151,15 +152,33 @@ end;
 
 function ret=split_parcel(X,P,K)
 ret={};
-Y=X(:,P.inds);
-labels=local_kmeans_sorber(Y,K);
-for k=1:K
-    inds_k=find(labels==k);
-    if (length(inds_k)==0)
-        warning(sprintf('Problem splitting parcel. N=%d, max_k=%d',size(Y,2),max(labels)));
-    end;
-    ret{end+1}=create_parcel(X,P.inds(inds_k));
-end
+if (length(P.inds)<=1)
+    error('Cannot split parcel with fewer than two points.');
+end;
+
+mins=min(X(:,P.inds),[],2);
+maxs=max(X(:,P.inds),[],2);
+diams=maxs-mins;
+[~,iii]=max(diams); iii=iii(1);
+cut=(maxs(iii)+mins(iii))/2;
+inds1=find(X(iii,P.inds)<cut);
+inds2=find(X(iii,P.inds)>=cut);
+if (length(inds1)==0)||(length(inds2)==0)
+    inds1=1:ceil(length(P.inds)/2);
+    inds2=ceil(length(P.inds)/2)+1:length(P.inds);
+end;
+ret{1}=create_parcel(X,P.inds(inds1));
+ret{2}=create_parcel(X,P.inds(inds2));
+
+% Y=X(:,P.inds);
+% labels=local_kmeans_sorber(Y,K);
+% for k=1:K
+%     inds_k=find(labels==k);
+%     if (length(inds_k)==0)
+%         warning(sprintf('Problem splitting parcel. N=%d, max_k=%d',size(Y,2),max(labels)));
+%     end;
+%     ret{end+1}=create_parcel(X,P.inds(inds_k));
+% end
 
 function show_iterations(X,info)
 for j=1:length(info.iterations)
@@ -191,7 +210,7 @@ maxs=max(Y,[],2);
 ret.inds=inds;
 % Important: need a better estimate of the size
 % Probably diameter is best
-ret.diameter=max(maxs-mins);
+ret.diameter=mean(maxs-mins); %???????????????????????
 
 
 function view_clusters_1d_w(X,W,labels)

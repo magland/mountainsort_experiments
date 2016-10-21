@@ -97,6 +97,9 @@ while 1
     attempted_comparisons.centers2=cat(2,attempted_comparisons.centers2,centers(:,k1));
     attempted_comparisons.weighted_counts1(end+1)=sum(weights(inds2));
     attempted_comparisons.weighted_counts2(end+1)=sum(weights(inds1));
+    disp('------------------------------------------------');
+    [min(X(:,inds1)),max(X(:,inds1))]
+    disp('===================================================');
     [do_merge,labels0,info0]=test_redistribute(X(:,inds1),weights(inds1),diameters(inds1),X(:,inds2),weights(inds2),diameters(inds2),opts);
     if (opts.return_iterations)
         iteration_info.projection=info0.projection;
@@ -221,7 +224,7 @@ N=N1+N2;
 if (N>=M)
     % TODO: Incorporate weights into the whitening!!!
     [U,D,V] = svd(Y,'econ');
-    D(D~=0)=1./D(D~=0);
+    D(D~=0)=1./D(D~=0); %% Problem here if one of the singular values is close to zero!!!!
     % Amd apply it to the original (non-mean subtracted) data
     X1b=sqrt(N-1)*U*D(1:M,1:M)*(U'*X1);
     X2b=sqrt(N-1)*U*D(1:M,1:M)*(U'*X2);
@@ -237,11 +240,12 @@ centroid2b=compute_cluster_centroid(X2b,weights2);
 V=centroid2b-centroid1b;
 
 function [do_merge,labels,info]=test_redistribute(X1,weights1,diameters1,X2,weights2,diameters2,opts)
-if opts.whiten_at_each_comparison
-    [X1,X2,V]=whiten_two_clusters(X1,weights1,X2,weights2);
-else
-    V=compute_cluster_center(X2)-compute_cluster_center(X1);
-end;
+% There was some numerical instability in the whitening -- one of the singular values was close to zero (or was equal to zero) -- fix this
+%if opts.whiten_at_each_comparison
+%    [X1,X2,V]=whiten_two_clusters(X1,weights1,X2,weights2);
+%else
+    V=compute_cluster_center(X2,weights2)-compute_cluster_center(X1,weights1);
+%end;
 
 if (sum(V.^2)==0)
 	warning('isosplit: vector V is null.');
