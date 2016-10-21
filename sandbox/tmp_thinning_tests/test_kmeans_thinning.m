@@ -4,9 +4,9 @@ close all;
 
 rng(2);
 
-N0=1e3;
-approx_num_parcels=500;
-num_noise_dims=0;
+N0=1e4;
+approx_num_parcels=300;
+num_noise_dims=5;
 
 A1.N=N0*2; A1.center=[0,0]; A1.cov=[1,0;0,1];
 A2.N=N0/2; A2.center=[4.5,0]; A2.cov=[1,0;0,2.5];
@@ -15,7 +15,7 @@ A4.N=ceil(N0/16); A4.center=[0,-8]; A4.cov=[0.5,0;0,0.5];
 AA={A1,A2,A3,A4};
 for j=1:length(AA)
     M=length(AA{j}.center);
-    center2=rand(1,M+num_noise_dims)*10;
+    center2=rand(1,M+num_noise_dims)*0;
     center2(1:M)=AA{j}.center;
     AA{j}.center=center2;
     cov2=eye(M+num_noise_dims);
@@ -46,32 +46,41 @@ figure; hist(pointwise_sizes,80);
 title('Thinning factors');
 disp(sum(1./pointwise_sizes)) % should be around the number of parcels, obviously
 
-%disp('Plotting data with parcel labels');
-%figure; ms_view_clusters(X(1:2,:),parcel_labels);
-%legend(gca,'off');
+disp('Plotting data with parcel labels');
+figure; ms_view_clusters(X(1:2,:),parcel_labels);
+legend(gca,'off');
 
 disp('Computing parcel representatives');
 representative_inds=compute_parcel_representative_inds(X,parcels);
 X_thin=X(:,representative_inds);
-figure; ms_view_clusters(X_thin,labels(representative_inds));
+figure; ms_view_clusters(X_thin(1:2,:),labels(representative_inds));
 legend(gca,'off');
 title('After thinning');
 
+isosplit_opts=struct;
+
+inds=find(diameters>0);
+if (~isempty(inds))
+    average_diameter=mean(diameters(inds));
+    isosplit_opts.bin_width=average_diameter/6;
+    fprintf('Using bin width: %g\n',isosplit_opts.bin_width);
+end;
+
 disp('unweighted isosplit3');
-isosplit_labels=isosplit3(X_thin,struct);
+isosplit_labels=isosplit3(X_thin,isosplit_opts);
 figure; ms_view_clusters(X_thin,isosplit_labels);
 title('Unweighted iso-split clustering');
 
 disp('weighted isosplit3');
-iso_opts.weights=parcel_sizes;
-iso_opts.diameters=diameters;
-iso_opts.return_iterations=1;
-[isosplit_labels,iso_info]=isosplit3(X_thin,iso_opts);
+isosplit_opts.weights=parcel_sizes;
+isosplit_opts.diameters=diameters;
+isosplit_opts.return_iterations=1;
+[isosplit_labels,iso_info]=isosplit3(X_thin,isosplit_opts);
 figure; ms_view_clusters(X_thin,isosplit_labels);
 title('Weighted iso-split clustering');
 drawnow;
 
-show_iterations(X_thin,iso_info);
+%show_iterations(X_thin,iso_info);
 
 
 function ret=compute_parcel_representative_inds(X,parcels)

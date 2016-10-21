@@ -4,12 +4,12 @@ example1
 
 function example1
 
-N0=500;
+N0=20;
 
 opts.show_updown=0;
 
 fA=figure;
-for j=1:9
+for j=1:16
     pops=[N0,N0,N0];
     centers=[-3,0,1+0.5*j];
     spreads=[1,1,1];
@@ -18,7 +18,7 @@ for j=1:9
     [dip_score,cutpoint,info]=isocut3(samples);
 
     figure(fA);
-    subplot(3,3,j);
+    subplot(4,4,j);
     plot_result(samples,info,opts);
 end;
 

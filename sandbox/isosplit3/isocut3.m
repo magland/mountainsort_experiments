@@ -9,23 +9,34 @@ if nargin<4, opts=struct; end;
 
 tic;
 
-desired_num_crit_pts=10;
-separation_interval=10;
+%desired_num_crit_pts=10;
+%separation_interval=10;
+%num_bins=determine_optimal_num_bins(samples,weights,diameters,desired_num_crit_pts,separation_interval);
+%[weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,num_bins);
+%num_bins=length(bin_centers);
+%critical_inds=find_local_maxima(weighted_counts,separation_interval);
+%critical_inds=sort(critical_inds);
+%if (length(critical_inds)==0)
+%    error('No critical indices found!');
+%end;
 
-num_bins=determine_optimal_num_bins(samples,weights,diameters,desired_num_crit_pts,separation_interval);
-
-[weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,num_bins);
-num_bins=length(bin_centers);
-
-critical_inds=find_local_maxima(weighted_counts,separation_interval);
-critical_inds=sort(critical_inds);
-if (length(critical_inds)==0)
-    error('No critical indices found!');
+%bin_width=compute_optimal_bin_width(samples,weights,diameters);
+if (isfield(opts,'bin_width'))
+    bin_width=opts.bin_width;
+else
+    minval=min(samples-diameters/2);
+    maxval=max(samples+diameters/2);
+    if (maxval==minval)
+        bin_width=1;
+    else
+        bin_width=(maxval-minval)/100;
+    end
 end;
-% Is it really important to put in the first and last indices?
-% I don't think it is.
-%if (critical_inds(1)~=1) critical_inds=[1,critical_inds]; end;
-%if (critical_inds(end)~=num_bins) critical_inds=[critical_inds,num_bins]; end;
+[weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,bin_width);
+num_bins=length(bin_centers);
+fprintf('isocut: Using %d bins\n',num_bins);
+interval=10;
+critical_inds=get_critical_inds(weighted_counts,interval);
 
 dip_scores=[];
 trials={};
@@ -63,7 +74,12 @@ if (~isempty(dip_scores))
     cutpoint=best_trial.cutpoint;
 else
     best_ind=0;
-    best_trial=struct;
+    best_trial.indices=[];
+    best_trial.ks=0;
+    best_trial.ks_control=0;
+    best_trial.fit=[];
+    best_trial.fit_control=[];
+    best_trial.dip_range=[0,0];
     dip_score=0;
     cutpoint=0;
 end;
@@ -79,6 +95,17 @@ if (nargout>=3)
     info.elapsed_time=toc;
 end;
 
+function ret=get_critical_inds(weighted_counts,interval)
+ret=[1];
+j1=2;
+while (j1<length(weighted_counts))
+    j2=min(j1+interval-1,length(weighted_counts)-1);
+    [~,ii]=max(weighted_counts(j1:j2)); ii=ii(1);
+    ret(end+1)=j1+ii-1;
+    j1=j1+interval;
+end;
+ret=[ret,length(weighted_counts)];
+
 function num_bins=determine_optimal_num_bins(samples,weights,diameters,desired_num_crit_pts,separation_interval)
 for num=10:10:length(samples)
     [weighted_counts]=compute_hist(samples,weights,diameters,num);
@@ -90,10 +117,43 @@ for num=10:10:length(samples)
 end
 num_bins=length(samples);
 
-function [weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,num_bins)
-minval=min(samples);
-maxval=max(samples);
-bin_width=(maxval-minval)/(num_bins-2);
+function bin_width=compute_optimal_bin_width(samples,weights,diameters)
+% Not sure about this function!
+minval=min(samples-diameters/2);
+maxval=max(samples+diameters/2);
+if (maxval==minval)
+    bin_width=1;
+    return;
+end
+bin_width=(maxval-minval)/100;
+return;
+golden_bin_width=(maxval-minval)/1000;
+[golden_hist,golden_bin_centers]=compute_hist(samples,weights,diameters,golden_bin_width);
+factor=1;
+done=0;
+ks_threshold=0.5; %Not sure if this is a good criteria!!
+while 1
+    trial_factor=ceil(factor*1.5);
+    trial_hist=downsample_hist(golden_hist,trial_factor);
+    ks0=compute_ks2(golden_hist,trial_hist);
+    if ((ks0>=ks_threshold)||(golden_bin_width*factor>(maxval-minval)/3))
+        bin_width=golden_bin_width*factor;
+        factor
+        return;
+    end;
+    factor=trial_factor;
+end;
+
+function Y=downsample_hist(X,factor)
+N=length(X);
+N2=ceil(N/factor)*factor;
+X2=zeros(1,N2);
+X2(1:N)=X;
+Y2=reshape(repmat(mean(reshape(X2,factor,N2/factor),1),factor,1),1,N2);
+Y=Y2(1:N); %Does not handle the last few bins quite right, if N is not divisible by factor
+
+
+function [weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,bin_width)
 
 bin_ints_lower=round((samples-diameters/2)/bin_width);
 bin_ints_upper=round((samples+diameters/2)/bin_width);

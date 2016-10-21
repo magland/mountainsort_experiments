@@ -1,6 +1,6 @@
 function test_multiplicity_spread
 
-M=18;
+M=10;
 num_points=1e7;
 epsilon=1;
 
@@ -13,3 +13,4 @@ figure; hist(vals,100);
 
 tt=linspace(-1,1,1000);
 figure; plot(tt,sqrt(1-tt.^2).^(M-1));
+

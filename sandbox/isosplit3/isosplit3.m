@@ -264,7 +264,11 @@ if (N<=5) %avoid a crash - 2/22/2016 jfm
     return;
 end;
 %XXs=sort(XX);
-[dip_score,cutpoint]=isocut3(XX,WW,DD); %This is the core procedure -- split based on isotonic regression
+isocut_opts=struct;
+if (isfield(opts,'bin_width'))
+    isocut_opts.bin_width=opts.bin_width;
+end;
+[dip_score,cutpoint]=isocut3(XX,WW,DD,isocut_opts); %This is the core procedure -- split based on isotonic regression
 if (dip_score>opts.isocut_threshold)
 	%It was a statistically significant split -- so let's redistribute!
 	ii1=find(XX<=cutpoint);
