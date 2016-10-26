@@ -15,7 +15,7 @@ else
     weights=[];
 end;
 if (length(weights)==0)
-    weights=ones(size(X));
+    weights=ones(1,size(X,2));
 end;
 
 if (isfield(opts,'diameters'))
@@ -97,9 +97,6 @@ while 1
     attempted_comparisons.centers2=cat(2,attempted_comparisons.centers2,centers(:,k1));
     attempted_comparisons.weighted_counts1(end+1)=sum(weights(inds2));
     attempted_comparisons.weighted_counts2(end+1)=sum(weights(inds1));
-    disp('------------------------------------------------');
-    [min(X(:,inds1)),max(X(:,inds1))]
-    disp('===================================================');
     [do_merge,labels0,info0]=test_redistribute(X(:,inds1),weights(inds1),diameters(inds1),X(:,inds2),weights(inds2),diameters(inds2),opts);
     if (opts.return_iterations)
         iteration_info.projection=info0.projection;

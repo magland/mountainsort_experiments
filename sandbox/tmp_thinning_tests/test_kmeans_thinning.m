@@ -2,16 +2,21 @@ function test_kmeans_thinning
 
 close all;
 
-rng(2);
+rng(6);
 
-N0=1e4;
-approx_num_parcels=300;
-num_noise_dims=8;
+N0=1e5;
+%approx_num_parcels=600;
+num_noise_dims=0;
+p_opts.max_parcel_diameter=2;
+bin_width=1;
 
 A1.N=N0*2; A1.center=[0,0]; A1.cov=[1,0;0,1];
 A2.N=N0/2; A2.center=[4.5,0]; A2.cov=[1,0;0,2.5];
-A3.N=N0/2; A3.center=[-5,5]; A3.cov=[2.5,1;1,2.5];
-A4.N=ceil(N0/16); A4.center=[0,-8]; A4.cov=[0.5,0;0,0.5];
+%A3.N=N0/2; A3.center=[-5,5]; A3.cov=[2.5,1;1,2.5];
+%A4.N=ceil(N0/16); A4.center=[0,-8]; A4.cov=[0.5,0;0,0.5];
+A3.N=1000; A3.center=[-5,5]; A3.cov=[2.5,1;1,2.5];
+A4.N=100; A4.center=[0,-8]; A4.cov=[0.5,0;0,0.5];
+
 AA={A1,A2,A3,A4};
 for j=1:length(AA)
     M=length(AA{j}.center);
@@ -28,44 +33,68 @@ N=size(X,2);
 figure; ms_view_clusters(X(1:2,:),labels);
 
 disp('Computing parcelation');
-[parcel_labels,parcels]=compute_parcelation(X,approx_num_parcels,2);
+[parcel_labels,parcels]=compute_parcelation(X,p_opts);
 disp('Done computing parcelation');
+fprintf('Created %d parcels.\n',length(parcels));
 
 disp('Getting parcel diameters');
 [diameters,pointwise_diameters]=get_parcel_diameters(parcels,N);
-figure; hist(diameters,40);
-title('Parcel diameters');
-figure; hist(pointwise_diameters,80);
-title('Pointwise parcel diameters');
+% figure; hist(diameters,40);
+% title('Parcel diameters');
+% figure; hist(pointwise_diameters,80);
+% title('Pointwise parcel diameters');
 
-disp('Getting parcel sizes');
-[parcel_sizes,pointwise_sizes]=get_parcel_sizes(parcels,N);
-figure; hist(parcel_sizes,40);
-title('Parcel sizes');
-figure; hist(pointwise_sizes,80);
-title('Thinning factors');
-disp(sum(1./pointwise_sizes)) % should be around the number of parcels, obviously
+ disp('Getting parcel sizes');
+ [parcel_sizes,pointwise_sizes]=get_parcel_sizes(parcels,N);
+% figure; hist(parcel_sizes,40);
+% title('Parcel sizes');
+% figure; hist(pointwise_sizes,80);
+% title('Thinning factors');
+% disp(sum(1./pointwise_sizes)) % should be around the number of parcels, obviously
 
-disp('Plotting data with parcel labels');
-figure; ms_view_clusters(X(1:2,:),parcel_labels);
+%disp('Plotting data with parcel labels');
+%figure; ms_view_clusters(X(1:2,:),parcel_labels);
+%legend(gca,'off');
+
+% disp('Computing parcel representatives');
+% representative_inds=compute_parcel_representative_inds(X,parcels);
+% X_thin=X(:,representative_inds);
+% figure; ms_view_clusters(X_thin(1:2,:),labels(representative_inds));
+% legend(gca,'off');
+% title(sprintf('After thinning (N=%d)',size(X_thin,2)));
+
+desired_num_pts=2000;
+factor=1000;
+while 1
+    probs=min(1,parcel_sizes./diameters*factor);
+    probs=probs(parcel_labels);
+    expected_num_pts=sum(probs);
+    disp(expected_num_pts);
+    if (expected_num_pts<=desired_num_pts)
+        break;
+    else
+        factor=factor/1.5;
+    end;
+end;
+
+figure; hist(probs,100);
+
+disp(expected_num_pts)
+disp(factor);
+
+inds_to_use=find(rand(1,size(X,2))<=probs);
+X_thin=X(:,inds_to_use);
+weights=1./probs(inds_to_use);
+
+figure; ms_view_clusters(X_thin(1:2,:),labels(inds_to_use));
 legend(gca,'off');
-
-disp('Computing parcel representatives');
-representative_inds=compute_parcel_representative_inds(X,parcels);
-X_thin=X(:,representative_inds);
-figure; ms_view_clusters(X_thin(1:2,:),labels(representative_inds));
-legend(gca,'off');
-title('After thinning');
+title(sprintf('After thinning2 (N=%d)',size(X_thin,2)));
 
 isosplit_opts=struct;
 isosplit_opts.isocut_threshold=1.5;
+isosplit_opts.bin_width=bin_width;
 
-inds=find(diameters>0);
-if (~isempty(inds))
-    average_diameter=mean(diameters(inds));
-    isosplit_opts.bin_width=average_diameter/6;
-    fprintf('Using bin width: %g\n',isosplit_opts.bin_width);
-end;
+fprintf('Using bin width: %g\n',isosplit_opts.bin_width);
 
 disp('unweighted isosplit3');
 isosplit_labels=isosplit3(X_thin,isosplit_opts);
@@ -73,15 +102,15 @@ figure; ms_view_clusters(X_thin(1:2,:),isosplit_labels);
 title('Unweighted iso-split clustering');
 
 disp('weighted isosplit3');
-isosplit_opts.weights=parcel_sizes;
-isosplit_opts.diameters=diameters;
+isosplit_opts.weights=weights;
+%isosplit_opts.diameters=diameters;
 isosplit_opts.return_iterations=1;
 [isosplit_labels,iso_info]=isosplit3(X_thin,isosplit_opts);
 figure; ms_view_clusters(X_thin(1:2,:),isosplit_labels);
 title('Weighted iso-split clustering');
 drawnow;
 
-show_iterations(X_thin,iso_info);
+%show_iterations(X_thin,iso_info,isosplit_opts.bin_width);
 
 
 function ret=compute_parcel_representative_inds(X,parcels)
@@ -100,20 +129,33 @@ dists_to_centroid=sqrt(sum((X-repmat(centroid,1,N)).^2));
 [~,closest_ind]=min(dists_to_centroid);
 ret=closest_ind(1);
 
-function [labels,parcels]=compute_parcelation(X,num_parcels,K)
+function [labels,parcels]=compute_parcelation(X,opts)
+if (~isfield(opts,'max_parcel_diameter'))
+    opts.max_parcel_diameter=inf;
+end;
+if (~isfield(opts,'max_num_parcels'))
+    opts.max_num_parcels=inf;
+end;
+if (~isfield(opts,'K'))
+    opts.K=2;
+end;
 N=size(X,2);
 parcels={};
 parcels{end+1}=create_parcel(X,1:N);
 something_changed=1;
-while ((length(parcels)<num_parcels)&&(length(parcels)<N)&&(something_changed)) %Better check needed to avoid infinite loop
+while ((length(parcels)<opts.max_num_parcels)&& (length(parcels)<N) &&(something_changed))
     disp(length(parcels));
     something_changed=0;
-    num_to_split=min(10,length(parcels));
-    parcel_inds=select_parcels_to_split(parcels,num_to_split,N);
+    if (opts.max_num_parcels<inf)
+        num_to_split=min(10,length(parcels));
+        parcel_inds=select_parcels_to_split_1(parcels,num_to_split,N);
+    else
+        parcel_inds=select_parcels_to_split_2(parcels,opts.max_parcel_diameter,N);
+    end;
     for j=1:length(parcel_inds)
         ind0=parcel_inds(j);
         if (length(parcels{ind0}.inds)>1)
-            new_parcels=split_parcel(X,parcels{ind0},min(K,length(parcels{ind0}.inds)));
+            new_parcels=split_parcel(X,parcels{ind0},min(opts.K,length(parcels{ind0}.inds)));
             if (length(new_parcels)>1)
                 parcels{ind0}=new_parcels{1};
                 for k=2:length(new_parcels)
@@ -129,10 +171,14 @@ for j=1:length(parcels)
     labels(parcels{j}.inds)=j;
 end;
 
-function ret=select_parcels_to_split(parcels,num,N)
+function ret=select_parcels_to_split_1(parcels,num,N)
 diameters=get_parcel_diameters(parcels,N);
 [~,inds]=sort(diameters,'descend');
 ret=inds(1:num);
+
+function ret=select_parcels_to_split_2(parcels,max_diam,N)
+diameters=get_parcel_diameters(parcels,N);
+ret=find(diameters>max_diam);
 
 function [diameters,pointwise_diameters]=get_parcel_diameters(parcels,N)
 diameters=zeros(1,length(parcels));
@@ -156,31 +202,31 @@ if (length(P.inds)<=1)
     error('Cannot split parcel with fewer than two points.');
 end;
 
-mins=min(X(:,P.inds),[],2);
-maxs=max(X(:,P.inds),[],2);
-diams=maxs-mins;
-[~,iii]=max(diams); iii=iii(1);
-cut=(maxs(iii)+mins(iii))/2;
-inds1=find(X(iii,P.inds)<cut);
-inds2=find(X(iii,P.inds)>=cut);
-if (length(inds1)==0)||(length(inds2)==0)
-    inds1=1:ceil(length(P.inds)/2);
-    inds2=ceil(length(P.inds)/2)+1:length(P.inds);
-end;
-ret{1}=create_parcel(X,P.inds(inds1));
-ret{2}=create_parcel(X,P.inds(inds2));
+% mins=min(X(:,P.inds),[],2);
+% maxs=max(X(:,P.inds),[],2);
+% diams=maxs-mins;
+% [~,iii]=max(diams); iii=iii(1);
+% cut=(maxs(iii)+mins(iii))/2;
+% inds1=find(X(iii,P.inds)<cut);
+% inds2=find(X(iii,P.inds)>=cut);
+% if (length(inds1)==0)||(length(inds2)==0)
+%     inds1=1:ceil(length(P.inds)/2);
+%     inds2=ceil(length(P.inds)/2)+1:length(P.inds);
+% end;
+% ret{1}=create_parcel(X,P.inds(inds1));
+% ret{2}=create_parcel(X,P.inds(inds2));
 
-% Y=X(:,P.inds);
-% labels=local_kmeans_sorber(Y,K);
-% for k=1:K
-%     inds_k=find(labels==k);
-%     if (length(inds_k)==0)
-%         warning(sprintf('Problem splitting parcel. N=%d, max_k=%d',size(Y,2),max(labels)));
-%     end;
-%     ret{end+1}=create_parcel(X,P.inds(inds_k));
-% end
+Y=X(:,P.inds);
+labels=local_kmeans_sorber(Y,K);
+for k=1:K
+    inds_k=find(labels==k);
+    if (length(inds_k)==0)
+        warning(sprintf('Problem splitting parcel. N=%d, max_k=%d',size(Y,2),max(labels)));
+    end;
+    ret{end+1}=create_parcel(X,P.inds(inds_k));
+end
 
-function show_iterations(X,info)
+function show_iterations(X,info,bin_width)
 for j=1:length(info.iterations)
     tmp=info.iterations{j};
     f=figure; set(f,'position',[100,100,2000,600]);
@@ -189,7 +235,7 @@ for j=1:length(info.iterations)
         set(gca,'xtick',[]); set(gca,'ytick',[]); xlabel(''); ylabel('');
         title(sprintf('Iteration %d',j), 'FontSize', 20);
     subplot(1,2,2);
-        view_clusters_1d_w(tmp.projection,tmp.projection_weights,tmp.projection_labels);
+        view_clusters_1d_w(tmp.projection,tmp.projection_weights,tmp.projection_labels,bin_width);
         if (max(tmp.projection_labels)>1)
             vline0(tmp.projection_cutpoint,'k-');
         end;
@@ -210,12 +256,11 @@ maxs=max(Y,[],2);
 ret.inds=inds;
 % Important: need a better estimate of the size
 % Probably diameter is best
-ret.diameter=mean(maxs-mins); %???????????????????????
+ret.diameter=max(maxs-mins); %???????????????????????
 
-
-function view_clusters_1d_w(X,W,labels)
+function view_clusters_1d_w(X,W,labels,bin_width)
 K=max(labels);
-bin_width=(max(X(:))-min(X(:)))/100;
+%bin_width=(max(X(:))-min(X(:)))/100;
 bin_ints=round(X/bin_width);
 i1=min(bin_ints);
 i2=max(bin_ints);

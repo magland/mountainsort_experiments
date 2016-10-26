@@ -1,0 +1,29 @@
+{
+    "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+    "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+    "original_size": 1333233140,
+    "processes": [
+        {
+            "inputs": {
+                "timeseries": {
+                    "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                    "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                    "original_size": 666616580
+                }
+            },
+            "outputs": {
+                "timeseries_out": {
+                    "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                    "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                    "original_size": 1333233140
+                }
+            },
+            "parameters": {
+                "freq_max": "8000",
+                "freq_min": "300",
+                "samplerate": "30000"
+            },
+            "processor_name": "bandpass_filter"
+        }
+    ]
+}

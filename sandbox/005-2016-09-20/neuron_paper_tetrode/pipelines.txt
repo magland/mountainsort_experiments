@@ -1,1 +1,2 @@
 ms mountainsort_001.pipeline --curation=curation.script
+msb mountainsort_001b.pipeline --curation=curation.script --mask_out_artifacts_threshold=6 --mask_out_artifacts_interval=100

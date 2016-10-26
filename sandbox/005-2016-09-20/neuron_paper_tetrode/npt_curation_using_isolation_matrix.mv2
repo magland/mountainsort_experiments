@@ -1,0 +1,1758 @@
+{
+    "cluster_attributes": {
+        "1": {
+            "metrics": {
+                "firing_rate": 0.00288022,
+                "isolation": 1,
+                "noise_overlap": 0,
+                "num_events": 8,
+                "peak_amp": 166.445,
+                "peak_noise": 203.68
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "10": {
+            "metrics": {
+                "firing_rate": 0.426992,
+                "isolation": 0.751265,
+                "noise_overlap": 0.00252951,
+                "num_events": 1186,
+                "peak_amp": 9.06807,
+                "peak_noise": 3.60343
+            },
+            "tags": [
+            ]
+        },
+        "11": {
+            "metrics": {
+                "firing_rate": 0.112328,
+                "isolation": 0.358974,
+                "noise_overlap": 0.00641026,
+                "num_events": 312,
+                "peak_amp": 8.6471,
+                "peak_noise": 13.2953
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "12": {
+            "metrics": {
+                "firing_rate": 0.165972,
+                "isolation": 0.70282,
+                "noise_overlap": 0.021692,
+                "num_events": 461,
+                "peak_amp": 7.90401,
+                "peak_noise": 3.74358
+            },
+            "tags": [
+            ]
+        },
+        "13": {
+            "metrics": {
+                "firing_rate": 0.325464,
+                "isolation": 0.571903,
+                "noise_overlap": 0.00884956,
+                "num_events": 904,
+                "peak_amp": 7.61833,
+                "peak_noise": 2.19703
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "14": {
+            "metrics": {
+                "firing_rate": 0.242298,
+                "isolation": 0.717682,
+                "noise_overlap": 0.0208024,
+                "num_events": 673,
+                "peak_amp": 7.02945,
+                "peak_noise": 2.50978
+            },
+            "tags": [
+            ]
+        },
+        "15": {
+            "metrics": {
+                "firing_rate": 5.09762,
+                "isolation": 0.950632,
+                "noise_overlap": 0.0184335,
+                "num_events": 14159,
+                "peak_amp": 5.93713,
+                "peak_noise": 1.25609
+            },
+            "tags": [
+            ]
+        },
+        "16": {
+            "metrics": {
+                "firing_rate": 0.152651,
+                "isolation": 0.589623,
+                "noise_overlap": 0.176887,
+                "num_events": 424,
+                "peak_amp": 8.02584,
+                "peak_noise": 3.7565
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "17": {
+            "metrics": {
+                "firing_rate": 3.83717,
+                "isolation": 0.719741,
+                "noise_overlap": 0.11794,
+                "num_events": 10658,
+                "peak_amp": 4.45216,
+                "peak_noise": 1.62829
+            },
+            "tags": [
+                "MUA",
+                "rejected"
+            ]
+        },
+        "18": {
+            "metrics": {
+                "firing_rate": 2.04603,
+                "isolation": 0.645962,
+                "noise_overlap": 0.207637,
+                "num_events": 5683,
+                "peak_amp": 4.67554,
+                "peak_noise": 3.07782
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "19": {
+            "metrics": {
+                "firing_rate": 0.0522039,
+                "isolation": 0.862069,
+                "noise_overlap": 0.0275862,
+                "num_events": 145,
+                "peak_amp": 27.066,
+                "peak_noise": 10.8049
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "2": {
+            "metrics": {
+                "firing_rate": 0.0298822,
+                "isolation": 0.771084,
+                "noise_overlap": 0.0240964,
+                "num_events": 83,
+                "peak_amp": 55.8194,
+                "peak_noise": 34.0393
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "20": {
+            "metrics": {
+                "firing_rate": 0.0284421,
+                "isolation": 0.911392,
+                "noise_overlap": 0.0126582,
+                "num_events": 79,
+                "peak_amp": 27.5109,
+                "peak_noise": 6.71168
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "21": {
+            "metrics": {
+                "firing_rate": 0.00756057,
+                "isolation": 0.809524,
+                "noise_overlap": 0.047619,
+                "num_events": 21,
+                "peak_amp": 84.0186,
+                "peak_noise": 72.2343
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "22": {
+            "metrics": {
+                "firing_rate": 0.00180014,
+                "isolation": 0.8,
+                "noise_overlap": 0,
+                "num_events": 5,
+                "peak_amp": 131.729,
+                "peak_noise": 122.503
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "23": {
+            "metrics": {
+                "firing_rate": 0.631487,
+                "isolation": 0.935576,
+                "noise_overlap": 0.0022805,
+                "num_events": 1754,
+                "peak_amp": 25.4362,
+                "peak_noise": 3.50509
+            },
+            "tags": [
+            ]
+        },
+        "24": {
+            "metrics": {
+                "firing_rate": 0.00324024,
+                "isolation": 0.666667,
+                "noise_overlap": 0.111111,
+                "num_events": 9,
+                "peak_amp": 114.511,
+                "peak_noise": 102.706
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "25": {
+            "metrics": {
+                "firing_rate": 0.53248,
+                "isolation": 0.97904,
+                "noise_overlap": 0.00270453,
+                "num_events": 1479,
+                "peak_amp": 18.4493,
+                "peak_noise": 5.57813
+            },
+            "tags": [
+            ]
+        },
+        "26": {
+            "metrics": {
+                "firing_rate": 0.52996,
+                "isolation": 0.889266,
+                "noise_overlap": 0.00883152,
+                "num_events": 1472,
+                "peak_amp": 16.6469,
+                "peak_noise": 4.17002
+            },
+            "tags": [
+            ]
+        },
+        "27": {
+            "metrics": {
+                "firing_rate": 0.13825,
+                "isolation": 0.924479,
+                "noise_overlap": 0,
+                "num_events": 384,
+                "peak_amp": 15.5384,
+                "peak_noise": 2.95864
+            },
+            "tags": [
+            ]
+        },
+        "28": {
+            "metrics": {
+                "firing_rate": 0.196935,
+                "isolation": 0.661792,
+                "noise_overlap": 0.00365631,
+                "num_events": 547,
+                "peak_amp": 9.79399,
+                "peak_noise": 2.18758
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "29": {
+            "metrics": {
+                "firing_rate": 1.15713,
+                "isolation": 0.942128,
+                "noise_overlap": 0.0096453,
+                "num_events": 3214,
+                "peak_amp": 8.5341,
+                "peak_noise": 2.17776
+            },
+            "tags": [
+            ]
+        },
+        "3": {
+            "metrics": {
+                "firing_rate": 0.00720054,
+                "isolation": 0.6,
+                "noise_overlap": 0,
+                "num_events": 20,
+                "peak_amp": 18.1579,
+                "peak_noise": 4.78863
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "30": {
+            "metrics": {
+                "firing_rate": 26.5322,
+                "isolation": 0.964774,
+                "noise_overlap": 0.0124975,
+                "num_events": 73695,
+                "peak_amp": 5.68371,
+                "peak_noise": 1.89019
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "31": {
+            "metrics": {
+                "firing_rate": 1.5906,
+                "isolation": 0.490041,
+                "noise_overlap": 0.354006,
+                "num_events": 4418,
+                "peak_amp": 4.08393,
+                "peak_noise": 1.66861
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "32": {
+            "metrics": {
+                "firing_rate": 3.37453,
+                "isolation": 0.662221,
+                "noise_overlap": 0.248586,
+                "num_events": 9373,
+                "peak_amp": 4.52279,
+                "peak_noise": 2.6775
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "33": {
+            "metrics": {
+                "firing_rate": 0.00288022,
+                "isolation": 0.625,
+                "noise_overlap": 0,
+                "num_events": 8,
+                "peak_amp": 187.017,
+                "peak_noise": 176.301
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "34": {
+            "metrics": {
+                "firing_rate": 0.101528,
+                "isolation": 0.900709,
+                "noise_overlap": 0,
+                "num_events": 282,
+                "peak_amp": 24.2824,
+                "peak_noise": 19.2643
+            },
+            "tags": [
+            ]
+        },
+        "35": {
+            "metrics": {
+                "firing_rate": 1.82282,
+                "isolation": 0.972151,
+                "noise_overlap": 0.00335769,
+                "num_events": 5063,
+                "peak_amp": 14.948,
+                "peak_noise": 2.03286
+            },
+            "tags": [
+            ]
+        },
+        "36": {
+            "metrics": {
+                "firing_rate": 0.0777658,
+                "isolation": 0.666667,
+                "noise_overlap": 0.0462963,
+                "num_events": 216,
+                "peak_amp": 8.60438,
+                "peak_noise": 3.39126
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "37": {
+            "metrics": {
+                "firing_rate": 5.95125,
+                "isolation": 0.794616,
+                "noise_overlap": 0.092196,
+                "num_events": 16530,
+                "peak_amp": 5.2678,
+                "peak_noise": 1.9653
+            },
+            "tags": [
+            ]
+        },
+        "38": {
+            "metrics": {
+                "firing_rate": 0.923109,
+                "isolation": 0.711778,
+                "noise_overlap": 0.117005,
+                "num_events": 2564,
+                "peak_amp": 4.4299,
+                "peak_noise": 4.08548
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "39": {
+            "metrics": {
+                "firing_rate": 0.203775,
+                "isolation": 0.800353,
+                "noise_overlap": 0.00176678,
+                "num_events": 566,
+                "peak_amp": 19.251,
+                "peak_noise": 3.39228
+            },
+            "tags": [
+            ]
+        },
+        "4": {
+            "metrics": {
+                "firing_rate": 0.13285,
+                "isolation": 0.723577,
+                "noise_overlap": 0.0216802,
+                "num_events": 369,
+                "peak_amp": 14.2801,
+                "peak_noise": 2.6585
+            },
+            "tags": [
+            ]
+        },
+        "40": {
+            "metrics": {
+                "firing_rate": 1.46675,
+                "isolation": 0.905498,
+                "noise_overlap": 0.00368189,
+                "num_events": 4074,
+                "peak_amp": 17.0009,
+                "peak_noise": 5.05768
+            },
+            "tags": [
+            ]
+        },
+        "41": {
+            "metrics": {
+                "firing_rate": 2.29085,
+                "isolation": 0.692755,
+                "noise_overlap": 0.00408612,
+                "num_events": 6363,
+                "peak_amp": 13.4154,
+                "peak_noise": 2.54999
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "42": {
+            "metrics": {
+                "firing_rate": 5.88392,
+                "isolation": 0.894205,
+                "noise_overlap": 0.00275347,
+                "num_events": 16343,
+                "peak_amp": 13.1602,
+                "peak_noise": 2.23548
+            },
+            "tags": [
+                "MUA"
+            ]
+        },
+        "43": {
+            "metrics": {
+                "firing_rate": 0.13645,
+                "isolation": 0.48285,
+                "noise_overlap": 0.0237467,
+                "num_events": 379,
+                "peak_amp": 14.1589,
+                "peak_noise": 5.77634
+            },
+            "tags": [
+            ]
+        },
+        "44": {
+            "metrics": {
+                "firing_rate": 0.000720054,
+                "isolation": 0,
+                "noise_overlap": 0,
+                "num_events": 2,
+                "peak_amp": 159.649,
+                "peak_noise": 157.08
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "45": {
+            "metrics": {
+                "firing_rate": 1.35262,
+                "isolation": 0.698696,
+                "noise_overlap": 0.00638808,
+                "num_events": 3757,
+                "peak_amp": 10.272,
+                "peak_noise": 2.59884
+            },
+            "tags": [
+            ]
+        },
+        "46": {
+            "metrics": {
+                "firing_rate": 2.43522,
+                "isolation": 0.881283,
+                "noise_overlap": 0.00340035,
+                "num_events": 6764,
+                "peak_amp": 8.90459,
+                "peak_noise": 1.52182
+            },
+            "tags": [
+            ]
+        },
+        "47": {
+            "metrics": {
+                "firing_rate": 2.39094,
+                "isolation": 0.747327,
+                "noise_overlap": 0.0105406,
+                "num_events": 6641,
+                "peak_amp": 7.96239,
+                "peak_noise": 2.30333
+            },
+            "tags": [
+            ]
+        },
+        "48": {
+            "metrics": {
+                "firing_rate": 0.052564,
+                "isolation": 0.479452,
+                "noise_overlap": 0.0479452,
+                "num_events": 146,
+                "peak_amp": 11.0997,
+                "peak_noise": 5.30023
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "49": {
+            "metrics": {
+                "firing_rate": 0.00144011,
+                "isolation": 0.5,
+                "noise_overlap": 0,
+                "num_events": 4,
+                "peak_amp": 97.695,
+                "peak_noise": 71.2184
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "5": {
+            "metrics": {
+                "firing_rate": 0.949751,
+                "isolation": 0.982183,
+                "noise_overlap": 0.00189538,
+                "num_events": 2638,
+                "peak_amp": 12.8857,
+                "peak_noise": 4.9175
+            },
+            "tags": [
+            ]
+        },
+        "50": {
+            "metrics": {
+                "firing_rate": 0.0360027,
+                "isolation": 0.52,
+                "noise_overlap": 0.06,
+                "num_events": 100,
+                "peak_amp": 6.27679,
+                "peak_noise": 9.38647
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "51": {
+            "metrics": {
+                "firing_rate": 3.14808,
+                "isolation": 0.786825,
+                "noise_overlap": 0.0922919,
+                "num_events": 8744,
+                "peak_amp": 4.49603,
+                "peak_noise": 1.67623
+            },
+            "tags": [
+            ]
+        },
+        "52": {
+            "metrics": {
+                "firing_rate": 8.05129,
+                "isolation": 0.841435,
+                "noise_overlap": 0.115503,
+                "num_events": 22363,
+                "peak_amp": 4.44334,
+                "peak_noise": 1.35335
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "53": {
+            "metrics": {
+                "firing_rate": 0.00216016,
+                "isolation": 0.333333,
+                "noise_overlap": 0,
+                "num_events": 6,
+                "peak_amp": 90.4215,
+                "peak_noise": 86.6968
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "6": {
+            "metrics": {
+                "firing_rate": 0.206296,
+                "isolation": 0.691099,
+                "noise_overlap": 0,
+                "num_events": 573,
+                "peak_amp": 10.118,
+                "peak_noise": 2.78
+            },
+            "tags": [
+            ]
+        },
+        "7": {
+            "metrics": {
+                "firing_rate": 1.31266,
+                "isolation": 0.87932,
+                "noise_overlap": 0.00959956,
+                "num_events": 3646,
+                "peak_amp": 9.80116,
+                "peak_noise": 2.74823
+            },
+            "tags": [
+            ]
+        },
+        "8": {
+            "metrics": {
+                "firing_rate": 0.0680451,
+                "isolation": 0.698413,
+                "noise_overlap": 0.021164,
+                "num_events": 189,
+                "peak_amp": 18.6106,
+                "peak_noise": 8.23474
+            },
+            "tags": [
+                "rejected"
+            ]
+        },
+        "9": {
+            "metrics": {
+                "firing_rate": 0.336625,
+                "isolation": 0.624599,
+                "noise_overlap": 0.00213904,
+                "num_events": 935,
+                "peak_amp": 9.33088,
+                "peak_noise": 2.654
+            },
+            "tags": [
+                "MUA"
+            ]
+        }
+    },
+    "cluster_order_scores": [
+    ],
+    "cluster_order_scores_name": "",
+    "cluster_pair_attributes": {
+        "pair_10_13": {
+            "metrics": {
+                "isolation_matrix": 0.0421585
+            }
+        },
+        "pair_10_17": {
+            "metrics": {
+                "isolation_matrix": 0.0193929
+            }
+        },
+        "pair_10_37": {
+            "metrics": {
+                "isolation_matrix": 0.0430017
+            }
+        },
+        "pair_10_9": {
+            "metrics": {
+                "isolation_matrix": 0.109612
+            }
+        },
+        "pair_11_12": {
+            "metrics": {
+                "isolation_matrix": 0.0320513
+            }
+        },
+        "pair_11_13": {
+            "metrics": {
+                "isolation_matrix": 0.0288462
+            }
+        },
+        "pair_11_15": {
+            "metrics": {
+                "isolation_matrix": 0.108974
+            }
+        },
+        "pair_11_17": {
+            "metrics": {
+                "isolation_matrix": 0.336538
+            }
+        },
+        "pair_11_37": {
+            "metrics": {
+                "isolation_matrix": 0.0192308
+            }
+        },
+        "pair_11_6": {
+            "metrics": {
+                "isolation_matrix": 0.0737179
+            }
+        },
+        "pair_12_11": {
+            "metrics": {
+                "isolation_matrix": 0.0130152
+            }
+        },
+        "pair_12_14": {
+            "metrics": {
+                "isolation_matrix": 0.0824295
+            }
+        },
+        "pair_12_17": {
+            "metrics": {
+                "isolation_matrix": 0.0867679
+            }
+        },
+        "pair_12_45": {
+            "metrics": {
+                "isolation_matrix": 0.0130152
+            }
+        },
+        "pair_12_51": {
+            "metrics": {
+                "isolation_matrix": 0.0238612
+            }
+        },
+        "pair_12_7": {
+            "metrics": {
+                "isolation_matrix": 0.0130152
+            }
+        },
+        "pair_13_10": {
+            "metrics": {
+                "isolation_matrix": 0.0265487
+            }
+        },
+        "pair_13_11": {
+            "metrics": {
+                "isolation_matrix": 0.0309735
+            }
+        },
+        "pair_13_17": {
+            "metrics": {
+                "isolation_matrix": 0.121681
+            }
+        },
+        "pair_13_37": {
+            "metrics": {
+                "isolation_matrix": 0.0564159
+            }
+        },
+        "pair_13_6": {
+            "metrics": {
+                "isolation_matrix": 0.0165929
+            }
+        },
+        "pair_13_9": {
+            "metrics": {
+                "isolation_matrix": 0.160398
+            }
+        },
+        "pair_14_12": {
+            "metrics": {
+                "isolation_matrix": 0.0430906
+            }
+        },
+        "pair_14_17": {
+            "metrics": {
+                "isolation_matrix": 0.0371471
+            }
+        },
+        "pair_14_29": {
+            "metrics": {
+                "isolation_matrix": 0.0356612
+            }
+        },
+        "pair_14_30": {
+            "metrics": {
+                "isolation_matrix": 0.013373
+            }
+        },
+        "pair_14_51": {
+            "metrics": {
+                "isolation_matrix": 0.013373
+            }
+        },
+        "pair_14_7": {
+            "metrics": {
+                "isolation_matrix": 0.105498
+            }
+        },
+        "pair_15_17": {
+            "metrics": {
+                "isolation_matrix": 0.0167385
+            }
+        },
+        "pair_16_15": {
+            "metrics": {
+                "isolation_matrix": 0.0566038
+            }
+        },
+        "pair_16_17": {
+            "metrics": {
+                "isolation_matrix": 0.0872642
+            }
+        },
+        "pair_16_31": {
+            "metrics": {
+                "isolation_matrix": 0.0283019
+            }
+        },
+        "pair_16_52": {
+            "metrics": {
+                "isolation_matrix": 0.0235849
+            }
+        },
+        "pair_17_15": {
+            "metrics": {
+                "isolation_matrix": 0.0312441
+            }
+        },
+        "pair_17_37": {
+            "metrics": {
+                "isolation_matrix": 0.0427848
+            }
+        },
+        "pair_17_51": {
+            "metrics": {
+                "isolation_matrix": 0.0165134
+            }
+        },
+        "pair_17_52": {
+            "metrics": {
+                "isolation_matrix": 0.0176393
+            }
+        },
+        "pair_18_30": {
+            "metrics": {
+                "isolation_matrix": 0.0226993
+            }
+        },
+        "pair_18_32": {
+            "metrics": {
+                "isolation_matrix": 0.0309696
+            }
+        },
+        "pair_18_38": {
+            "metrics": {
+                "isolation_matrix": 0.0473342
+            }
+        },
+        "pair_18_52": {
+            "metrics": {
+                "isolation_matrix": 0.0253387
+            }
+        },
+        "pair_19_18": {
+            "metrics": {
+                "isolation_matrix": 0.0344828
+            }
+        },
+        "pair_19_20": {
+            "metrics": {
+                "isolation_matrix": 0.0137931
+            }
+        },
+        "pair_19_21": {
+            "metrics": {
+                "isolation_matrix": 0.0137931
+            }
+        },
+        "pair_19_32": {
+            "metrics": {
+                "isolation_matrix": 0.0137931
+            }
+        },
+        "pair_20_18": {
+            "metrics": {
+                "isolation_matrix": 0.0253165
+            }
+        },
+        "pair_20_30": {
+            "metrics": {
+                "isolation_matrix": 0.0379747
+            }
+        },
+        "pair_20_51": {
+            "metrics": {
+                "isolation_matrix": 0.0126582
+            }
+        },
+        "pair_21_33": {
+            "metrics": {
+                "isolation_matrix": 0.047619
+            }
+        },
+        "pair_21_40": {
+            "metrics": {
+                "isolation_matrix": 0.047619
+            }
+        },
+        "pair_21_44": {
+            "metrics": {
+                "isolation_matrix": 0.047619
+            }
+        },
+        "pair_22_34": {
+            "metrics": {
+                "isolation_matrix": 0.2
+            }
+        },
+        "pair_23_26": {
+            "metrics": {
+                "isolation_matrix": 0.0496009
+            }
+        },
+        "pair_24_2": {
+            "metrics": {
+                "isolation_matrix": 0.111111
+            }
+        },
+        "pair_24_22": {
+            "metrics": {
+                "isolation_matrix": 0.111111
+            }
+        },
+        "pair_25_23": {
+            "metrics": {
+                "isolation_matrix": 0.0108181
+            }
+        },
+        "pair_26_23": {
+            "metrics": {
+                "isolation_matrix": 0.0815217
+            }
+        },
+        "pair_27_28": {
+            "metrics": {
+                "isolation_matrix": 0.0130208
+            }
+        },
+        "pair_27_29": {
+            "metrics": {
+                "isolation_matrix": 0.0338542
+            }
+        },
+        "pair_28_27": {
+            "metrics": {
+                "isolation_matrix": 0.0109689
+            }
+        },
+        "pair_28_29": {
+            "metrics": {
+                "isolation_matrix": 0.117002
+            }
+        },
+        "pair_28_30": {
+            "metrics": {
+                "isolation_matrix": 0.182815
+            }
+        },
+        "pair_29_30": {
+            "metrics": {
+                "isolation_matrix": 0.0208463
+            }
+        },
+        "pair_2_1": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_15": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_16": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_17": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_23": {
+            "metrics": {
+                "isolation_matrix": 0.0240964
+            }
+        },
+        "pair_2_31": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_33": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_42": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_45": {
+            "metrics": {
+                "isolation_matrix": 0.0120482
+            }
+        },
+        "pair_2_5": {
+            "metrics": {
+                "isolation_matrix": 0.0481928
+            }
+        },
+        "pair_2_8": {
+            "metrics": {
+                "isolation_matrix": 0.0361446
+            }
+        },
+        "pair_30_37": {
+            "metrics": {
+                "isolation_matrix": 0.0119954
+            }
+        },
+        "pair_31_17": {
+            "metrics": {
+                "isolation_matrix": 0.0260299
+            }
+        },
+        "pair_31_30": {
+            "metrics": {
+                "isolation_matrix": 0.0226347
+            }
+        },
+        "pair_31_37": {
+            "metrics": {
+                "isolation_matrix": 0.0316885
+            }
+        },
+        "pair_31_51": {
+            "metrics": {
+                "isolation_matrix": 0.017655
+            }
+        },
+        "pair_31_52": {
+            "metrics": {
+                "isolation_matrix": 0.0488909
+            }
+        },
+        "pair_32_18": {
+            "metrics": {
+                "isolation_matrix": 0.0349941
+            }
+        },
+        "pair_32_38": {
+            "metrics": {
+                "isolation_matrix": 0.0172837
+            }
+        },
+        "pair_32_52": {
+            "metrics": {
+                "isolation_matrix": 0.0141897
+            }
+        },
+        "pair_33_1": {
+            "metrics": {
+                "isolation_matrix": 0.125
+            }
+        },
+        "pair_33_39": {
+            "metrics": {
+                "isolation_matrix": 0.125
+            }
+        },
+        "pair_33_53": {
+            "metrics": {
+                "isolation_matrix": 0.125
+            }
+        },
+        "pair_34_35": {
+            "metrics": {
+                "isolation_matrix": 0.0921986
+            }
+        },
+        "pair_35_37": {
+            "metrics": {
+                "isolation_matrix": 0.016591
+            }
+        },
+        "pair_36_10": {
+            "metrics": {
+                "isolation_matrix": 0.0324074
+            }
+        },
+        "pair_36_25": {
+            "metrics": {
+                "isolation_matrix": 0.0138889
+            }
+        },
+        "pair_36_26": {
+            "metrics": {
+                "isolation_matrix": 0.0138889
+            }
+        },
+        "pair_36_30": {
+            "metrics": {
+                "isolation_matrix": 0.0324074
+            }
+        },
+        "pair_36_35": {
+            "metrics": {
+                "isolation_matrix": 0.087963
+            }
+        },
+        "pair_36_37": {
+            "metrics": {
+                "isolation_matrix": 0.0555556
+            }
+        },
+        "pair_36_7": {
+            "metrics": {
+                "isolation_matrix": 0.0231481
+            }
+        },
+        "pair_37_17": {
+            "metrics": {
+                "isolation_matrix": 0.0356322
+            }
+        },
+        "pair_37_30": {
+            "metrics": {
+                "isolation_matrix": 0.0339988
+            }
+        },
+        "pair_37_52": {
+            "metrics": {
+                "isolation_matrix": 0.014882
+            }
+        },
+        "pair_38_18": {
+            "metrics": {
+                "isolation_matrix": 0.0897036
+            }
+        },
+        "pair_38_32": {
+            "metrics": {
+                "isolation_matrix": 0.0573323
+            }
+        },
+        "pair_38_52": {
+            "metrics": {
+                "isolation_matrix": 0.0105304
+            }
+        },
+        "pair_39_40": {
+            "metrics": {
+                "isolation_matrix": 0.0759717
+            }
+        },
+        "pair_39_42": {
+            "metrics": {
+                "isolation_matrix": 0.102473
+            }
+        },
+        "pair_3_10": {
+            "metrics": {
+                "isolation_matrix": 0.1
+            }
+        },
+        "pair_3_14": {
+            "metrics": {
+                "isolation_matrix": 0.05
+            }
+        },
+        "pair_3_30": {
+            "metrics": {
+                "isolation_matrix": 0.05
+            }
+        },
+        "pair_3_4": {
+            "metrics": {
+                "isolation_matrix": 0.1
+            }
+        },
+        "pair_3_45": {
+            "metrics": {
+                "isolation_matrix": 0.05
+            }
+        },
+        "pair_3_7": {
+            "metrics": {
+                "isolation_matrix": 0.05
+            }
+        },
+        "pair_40_42": {
+            "metrics": {
+                "isolation_matrix": 0.0333824
+            }
+        },
+        "pair_40_46": {
+            "metrics": {
+                "isolation_matrix": 0.0279823
+            }
+        },
+        "pair_41_42": {
+            "metrics": {
+                "isolation_matrix": 0.247682
+            }
+        },
+        "pair_41_46": {
+            "metrics": {
+                "isolation_matrix": 0.0105296
+            }
+        },
+        "pair_41_47": {
+            "metrics": {
+                "isolation_matrix": 0.0331605
+            }
+        },
+        "pair_42_41": {
+            "metrics": {
+                "isolation_matrix": 0.0465031
+            }
+        },
+        "pair_42_45": {
+            "metrics": {
+                "isolation_matrix": 0.0121765
+            }
+        },
+        "pair_42_47": {
+            "metrics": {
+                "isolation_matrix": 0.0288809
+            }
+        },
+        "pair_43_39": {
+            "metrics": {
+                "isolation_matrix": 0.0105541
+            }
+        },
+        "pair_43_40": {
+            "metrics": {
+                "isolation_matrix": 0.118734
+            }
+        },
+        "pair_43_41": {
+            "metrics": {
+                "isolation_matrix": 0.0211082
+            }
+        },
+        "pair_43_42": {
+            "metrics": {
+                "isolation_matrix": 0.129288
+            }
+        },
+        "pair_43_45": {
+            "metrics": {
+                "isolation_matrix": 0.0738786
+            }
+        },
+        "pair_43_46": {
+            "metrics": {
+                "isolation_matrix": 0.060686
+            }
+        },
+        "pair_43_47": {
+            "metrics": {
+                "isolation_matrix": 0.0527704
+            }
+        },
+        "pair_44_24": {
+            "metrics": {
+                "isolation_matrix": 0.5
+            }
+        },
+        "pair_44_35": {
+            "metrics": {
+                "isolation_matrix": 0.5
+            }
+        },
+        "pair_45_42": {
+            "metrics": {
+                "isolation_matrix": 0.117115
+            }
+        },
+        "pair_45_46": {
+            "metrics": {
+                "isolation_matrix": 0.0146393
+            }
+        },
+        "pair_45_47": {
+            "metrics": {
+                "isolation_matrix": 0.115784
+            }
+        },
+        "pair_45_51": {
+            "metrics": {
+                "isolation_matrix": 0.0218259
+            }
+        },
+        "pair_46_40": {
+            "metrics": {
+                "isolation_matrix": 0.0103489
+            }
+        },
+        "pair_46_42": {
+            "metrics": {
+                "isolation_matrix": 0.0146363
+            }
+        },
+        "pair_46_47": {
+            "metrics": {
+                "isolation_matrix": 0.0646067
+            }
+        },
+        "pair_47_41": {
+            "metrics": {
+                "isolation_matrix": 0.0115946
+            }
+        },
+        "pair_47_42": {
+            "metrics": {
+                "isolation_matrix": 0.0564674
+            }
+        },
+        "pair_47_45": {
+            "metrics": {
+                "isolation_matrix": 0.0380967
+            }
+        },
+        "pair_47_46": {
+            "metrics": {
+                "isolation_matrix": 0.0748381
+            }
+        },
+        "pair_47_51": {
+            "metrics": {
+                "isolation_matrix": 0.0590273
+            }
+        },
+        "pair_48_17": {
+            "metrics": {
+                "isolation_matrix": 0.0136986
+            }
+        },
+        "pair_48_41": {
+            "metrics": {
+                "isolation_matrix": 0.0616438
+            }
+        },
+        "pair_48_42": {
+            "metrics": {
+                "isolation_matrix": 0.130137
+            }
+        },
+        "pair_48_43": {
+            "metrics": {
+                "isolation_matrix": 0.0205479
+            }
+        },
+        "pair_48_45": {
+            "metrics": {
+                "isolation_matrix": 0.0890411
+            }
+        },
+        "pair_48_47": {
+            "metrics": {
+                "isolation_matrix": 0.0410959
+            }
+        },
+        "pair_48_50": {
+            "metrics": {
+                "isolation_matrix": 0.0410959
+            }
+        },
+        "pair_48_51": {
+            "metrics": {
+                "isolation_matrix": 0.0684932
+            }
+        },
+        "pair_49_2": {
+            "metrics": {
+                "isolation_matrix": 0.25
+            }
+        },
+        "pair_49_33": {
+            "metrics": {
+                "isolation_matrix": 0.25
+            }
+        },
+        "pair_4_10": {
+            "metrics": {
+                "isolation_matrix": 0.0108401
+            }
+        },
+        "pair_4_14": {
+            "metrics": {
+                "isolation_matrix": 0.0108401
+            }
+        },
+        "pair_4_5": {
+            "metrics": {
+                "isolation_matrix": 0.0135501
+            }
+        },
+        "pair_4_6": {
+            "metrics": {
+                "isolation_matrix": 0.0731707
+            }
+        },
+        "pair_4_7": {
+            "metrics": {
+                "isolation_matrix": 0.102981
+            }
+        },
+        "pair_4_9": {
+            "metrics": {
+                "isolation_matrix": 0.0216802
+            }
+        },
+        "pair_50_17": {
+            "metrics": {
+                "isolation_matrix": 0.01
+            }
+        },
+        "pair_50_30": {
+            "metrics": {
+                "isolation_matrix": 0.01
+            }
+        },
+        "pair_50_31": {
+            "metrics": {
+                "isolation_matrix": 0.02
+            }
+        },
+        "pair_50_43": {
+            "metrics": {
+                "isolation_matrix": 0.01
+            }
+        },
+        "pair_50_47": {
+            "metrics": {
+                "isolation_matrix": 0.08
+            }
+        },
+        "pair_50_48": {
+            "metrics": {
+                "isolation_matrix": 0.02
+            }
+        },
+        "pair_50_51": {
+            "metrics": {
+                "isolation_matrix": 0.27
+            }
+        },
+        "pair_51_17": {
+            "metrics": {
+                "isolation_matrix": 0.023559
+            }
+        },
+        "pair_51_37": {
+            "metrics": {
+                "isolation_matrix": 0.0179552
+            }
+        },
+        "pair_51_47": {
+            "metrics": {
+                "isolation_matrix": 0.0459744
+            }
+        },
+        "pair_52_17": {
+            "metrics": {
+                "isolation_matrix": 0.0100613
+            }
+        },
+        "pair_53_1": {
+            "metrics": {
+                "isolation_matrix": 0.166667
+            }
+        },
+        "pair_53_18": {
+            "metrics": {
+                "isolation_matrix": 0.166667
+            }
+        },
+        "pair_53_33": {
+            "metrics": {
+                "isolation_matrix": 0.166667
+            }
+        },
+        "pair_53_5": {
+            "metrics": {
+                "isolation_matrix": 0.166667
+            }
+        },
+        "pair_6_11": {
+            "metrics": {
+                "isolation_matrix": 0.0314136
+            }
+        },
+        "pair_6_13": {
+            "metrics": {
+                "isolation_matrix": 0.0104712
+            }
+        },
+        "pair_6_15": {
+            "metrics": {
+                "isolation_matrix": 0.0226876
+            }
+        },
+        "pair_6_17": {
+            "metrics": {
+                "isolation_matrix": 0.109948
+            }
+        },
+        "pair_6_4": {
+            "metrics": {
+                "isolation_matrix": 0.0296684
+            }
+        },
+        "pair_6_9": {
+            "metrics": {
+                "isolation_matrix": 0.069808
+            }
+        },
+        "pair_7_14": {
+            "metrics": {
+                "isolation_matrix": 0.0460779
+            }
+        },
+        "pair_7_30": {
+            "metrics": {
+                "isolation_matrix": 0.0131651
+            }
+        },
+        "pair_8_15": {
+            "metrics": {
+                "isolation_matrix": 0.0793651
+            }
+        },
+        "pair_8_16": {
+            "metrics": {
+                "isolation_matrix": 0.0952381
+            }
+        },
+        "pair_8_17": {
+            "metrics": {
+                "isolation_matrix": 0.010582
+            }
+        },
+        "pair_8_2": {
+            "metrics": {
+                "isolation_matrix": 0.015873
+            }
+        },
+        "pair_8_30": {
+            "metrics": {
+                "isolation_matrix": 0.010582
+            }
+        },
+        "pair_8_31": {
+            "metrics": {
+                "isolation_matrix": 0.010582
+            }
+        },
+        "pair_8_5": {
+            "metrics": {
+                "isolation_matrix": 0.031746
+            }
+        },
+        "pair_8_51": {
+            "metrics": {
+                "isolation_matrix": 0.010582
+            }
+        },
+        "pair_9_10": {
+            "metrics": {
+                "isolation_matrix": 0.0748663
+            }
+        },
+        "pair_9_13": {
+            "metrics": {
+                "isolation_matrix": 0.159358
+            }
+        },
+        "pair_9_17": {
+            "metrics": {
+                "isolation_matrix": 0.0256684
+            }
+        },
+        "pair_9_6": {
+            "metrics": {
+                "isolation_matrix": 0.0652406
+            }
+        },
+        "pair_9_7": {
+            "metrics": {
+                "isolation_matrix": 0.0128342
+            }
+        }
+    },
+    "clusters_subset": [
+    ],
+    "current_timeseries_name": "Preprocessed Data",
+    "electrode_geometry": {
+        "coordinates": [
+        ]
+    },
+    "firings": {
+        "original_checksum": "8f163c67095802408cd59078871ca0552ee756b1",
+        "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+        "original_path": "output/ms--npt/firings.mda",
+        "original_size": 5770364
+    },
+    "mlproxy_url": "",
+    "options": {
+        "amp_thresh_display": 3,
+        "cc_bin_size_msec": 0.5,
+        "cc_log_time_constant_msec": 1,
+        "cc_max_dt_msec": 100,
+        "cc_max_est_data_size": 10000,
+        "clip_size": 100,
+        "curation_program": "// Remove all rejected and MUA tags\nfor (var i in clusters) {\n\tclusters[i].removeTag('rejected');\n\tclusters[i].removeTag('MUA');\n}\n\n/*\nconsole.log('peak_amp');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('peak_amp')<5)\n\t\tclusters[i].addTag('rejected');\n}\n*/\n\nconsole.log('noise_overlap');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('noise_overlap')>0.1) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('peak_noise');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('peak_noise')>30) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('firing_rate');\nfor (var i in clusters) {\t\n\tif (clusters[i].metric('firing_rate')<0.1) {\n\t\tconsole.log('REJECT: '+clusters[i].k());\n\t\tclusters[i].addTag('rejected');\n\t}\n}\n\nconsole.log('\\nIsolation');\nfor (var i in clusterPairs) {\n\tvar CP=clusterPairs[i];\n\tvar iso=CP.metric('isolation_matrix');\n\tif (iso>0.15) {\n\t\t// Only mark it if at least one of the two clusters has not yet been rejected\n\t\tif ((!CP.cluster1().hasTag('rejected'))||(!CP.cluster1().hasTag('rejected'))) {\n\t\t\tconsole.log('MUA: '+CP.k1()+','+CP.k2()+' '+iso);\n\t\t\tCP.cluster1().addTag('MUA');\n\t\t\tCP.cluster2().addTag('MUA');\n\t\t}\n\t}\n}",
+        "discrim_hist_method": "svm",
+        "timeseries_for_spikespray": ""
+    },
+    "samplerate": 30000,
+    "timeseries": {
+        "Filtered Data": {
+            "data": {
+                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "f936e18694a2ea0f3ad595283c7cda53d0423bf6",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/tetrode/raw.mda.prv",
+                                "original_size": 218
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Filtered Data"
+        },
+        "Preprocessed Data": {
+            "data": {
+                "original_checksum": "2d38f234d30bc50b7b93aaefda4a8b668f3e5f46",
+                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "2d38f234d30bc50b7b93aaefda4a8b668f3e5f46",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                        },
+                        "processor_name": "whiten"
+                    },
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "f936e18694a2ea0f3ad595283c7cda53d0423bf6",
+                                "original_path": "/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/tetrode/raw.mda.prv",
+                                "original_size": 218
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Preprocessed Data"
+        },
+        "Raw Data": {
+            "data": {
+                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                "original_size": 666616580
+            },
+            "name": "Raw Data"
+        }
+    },
+    "view_merged": true,
+    "visibility_rule": {
+        "hide_rejected": true,
+        "subset": [
+        ],
+        "use_subset": false,
+        "view_all_tagged": true,
+        "view_all_untagged": true,
+        "view_tags": [
+        ]
+    },
+    "visible_channels": [
+    ]
+}

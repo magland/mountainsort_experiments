@@ -34,8 +34,8 @@ else
 end;
 [weighted_counts,bin_centers]=compute_hist(samples,weights,diameters,bin_width);
 num_bins=length(bin_centers);
-fprintf('isocut: Using %d bins\n',num_bins);
-interval=10;
+fprintf('isocut: Using %d bins, bin_width=%g\n',num_bins,bin_width);
+interval=4;
 critical_inds=get_critical_inds(weighted_counts,interval);
 
 dip_scores=[];
@@ -161,11 +161,6 @@ bin_spans=bin_ints_upper-bin_ints_lower+1;
 
 min_bin_int=min(bin_ints_lower);
 max_bin_int=max(bin_ints_upper);
-disp([min_bin_int,max_bin_int]);
-min(samples)
-max(samples)
-max(diameters)
-bin_width
 bin_centers=(min_bin_int:max_bin_int)*bin_width; % question: is it bad to snap to a grid here?
 num_bins=length(bin_centers);
 
