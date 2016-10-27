@@ -1,0 +1,185 @@
+{
+    "cluster_attributes": {
+        "1": {
+            "metrics": {
+                "firing_rate": 0.0824462,
+                "num_events": 229
+            }
+        },
+        "2": {
+            "metrics": {
+                "firing_rate": 0.478836,
+                "num_events": 1330
+            }
+        },
+        "3": {
+            "metrics": {
+                "firing_rate": 1.57728,
+                "num_events": 4381
+            }
+        },
+        "4": {
+            "metrics": {
+                "firing_rate": 0.919509,
+                "num_events": 2554
+            }
+        },
+        "5": {
+            "metrics": {
+                "firing_rate": 0.938591,
+                "num_events": 2607
+            }
+        },
+        "6": {
+            "metrics": {
+                "firing_rate": 0.109448,
+                "num_events": 304
+            }
+        }
+    },
+    "cluster_order_scores": [
+    ],
+    "cluster_order_scores_name": "",
+    "cluster_pair_attributes": {
+    },
+    "clusters_subset": [
+    ],
+    "current_timeseries_name": "Preprocessed Data",
+    "electrode_geometry": {
+        "coordinates": [
+        ]
+    },
+    "firings": {
+        "original_checksum": "92646232dd04cbf92ee1268c5925b06bba823dc2",
+        "original_checksum_1000": "",
+        "original_path": "/home/magland/dev/mountainsort_experiments/BIGFILES/neuron_paper/tetrode/manclust3_firings.mda",
+        "original_size": 3640196
+    },
+    "mlproxy_url": "",
+    "options": {
+        "amp_thresh_display": 3,
+        "cc_bin_size_msec": 0.5,
+        "cc_log_time_constant_msec": 1,
+        "cc_max_dt_msec": 100,
+        "cc_max_est_data_size": 10000,
+        "clip_size": 100,
+        "discrim_hist_method": "centroid",
+        "timeseries_for_spikespray": ""
+    },
+    "samplerate": 30000,
+    "timeseries": {
+        "Filtered Data": {
+            "data": {
+                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                "original_checksum_1000": "",
+                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_checksum_1000": "",
+                                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_checksum_1000": "",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Filtered Data"
+        },
+        "Preprocessed Data": {
+            "data": {
+                "original_checksum": "797f9c5a3d4975c991ed5ba8063c276022546cd8",
+                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                "original_size": 1333233140,
+                "processes": [
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_checksum_1000": "",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "797f9c5a3d4975c991ed5ba8063c276022546cd8",
+                                "original_checksum_1000": "da39a3ee5e6b4b0d3255bfef95601890afd80709",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/0b7a1e3e0a4d136643f45a5b63fb118948c2cc42-whiten-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                        },
+                        "processor_name": "whiten"
+                    },
+                    {
+                        "inputs": {
+                            "timeseries": {
+                                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                                "original_checksum_1000": "",
+                                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                                "original_size": 666616580
+                            }
+                        },
+                        "outputs": {
+                            "timeseries_out": {
+                                "original_checksum": "a9812ec96cbbbe94eb647b8d8005bcf4a43fba30",
+                                "original_checksum_1000": "",
+                                "original_path": "/tmp/mountainlab/tmp_long_term/8310d1164c8994dd439fa02bcdf0b93c3daff2ff-bandpass_filter-timeseries_out.tmp",
+                                "original_size": 1333233140
+                            }
+                        },
+                        "parameters": {
+                            "freq_max": "8000",
+                            "freq_min": "300",
+                            "samplerate": "30000"
+                        },
+                        "processor_name": "bandpass_filter"
+                    }
+                ]
+            },
+            "name": "Preprocessed Data"
+        },
+        "Raw Data": {
+            "data": {
+                "original_checksum": "9a42d2fb7d0e2cfd8c206c2ddc30640472ffab3d",
+                "original_checksum_1000": "",
+                "original_path": "/mnt/xfs1/home/jchung/neuron_paper/mountainsort_tetrode/raw/20160426_kanye_02_r1.nt16.mda",
+                "original_size": 666616580
+            },
+            "name": "Raw Data"
+        }
+    },
+    "view_merged": true,
+    "visibility_rule": {
+        "hide_rejected": true,
+        "subset": [
+        ],
+        "use_subset": false,
+        "view_all_tagged": true,
+        "view_all_untagged": true,
+        "view_tags": [
+        ]
+    },
+    "visible_channels": [
+    ]
+}
