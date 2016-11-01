@@ -1,7 +1,7 @@
 function [labels,info]=hisosplit(X,opts)
 if nargin<1, test_hisosplit; return; end;
 if nargin<2, opts=struct; end;
-if ~isfield(opts,'isocut_threshold') opts.isocut_threshold=1.2; end;
+if ~isfield(opts,'isocut_threshold') opts.isocut_threshold=1.5; end;
 if ~isfield(opts,'min_cluster_size') opts.min_cluster_size=10; end;
 if ~isfield(opts,'verbose') opts.verbose=0; end;
 
@@ -10,7 +10,8 @@ timers.compare_pairs=0;
 timers.compute_centers=0;
 
 [M,N]=size(X);
-data.labels=1:N; % each point in its own cluster
+%data.labels=1:N; % each point in its own cluster
+data.labels=initialize_labels(X);
 
 ttt=tic;
 data.centers=compute_centers(X,data.labels);
@@ -86,31 +87,33 @@ while 1
     
 end;
 
-active_labels_vec=zeros(1,N);
-active_labels_vec(data.labels)=1;
-active_labels=find(active_labels_vec);
-for i1=1:length(active_labels)
-    for i2=i1+1:length(active_labels)
-        k1=active_labels(i1);
-        k2=active_labels(i2);
-        
-        ttt=tic;
-        [new_labels,changes]=compare_pairs(X,data.labels,k1,k2,opts);
-        timers.compare_pairs=timers.compare_pairs+toc(ttt);
-        
-        data.labels=new_labels;
-        
-        if (opts.verbose)&&(length(find(changes==1))>0)
-            labels_map=zeros(1,N);
-            for ii=1:length(active_labels)
-                labels_map(active_labels(ii))=ii;
+for pass=1:10
+    active_labels_vec=zeros(1,N);
+    active_labels_vec(data.labels)=1;
+    active_labels=find(active_labels_vec);
+    for i1=1:length(active_labels)
+        for i2=i1+1:length(active_labels)
+            k1=active_labels(i1);
+            k2=active_labels(i2);
+
+            ttt=tic;
+            [new_labels,changes]=compare_pairs(X,data.labels,k1,k2,opts);
+            timers.compare_pairs=timers.compare_pairs+toc(ttt);
+
+            data.labels=new_labels;
+
+            if (opts.verbose)&&(length(find(changes==1))>0)
+                labels_map=zeros(1,N);
+                for ii=1:length(active_labels)
+                    labels_map(active_labels(ii))=ii;
+                end;
+                labels_mapped=labels_map(data.labels);
+                figure; ms_view_clusters(X,labels_mapped);
+                title(sprintf('k1/k2 = %d/%d',k1,k2));
+                pause(1);
             end;
-            labels_mapped=labels_map(data.labels);
-            figure; ms_view_clusters(X,labels_mapped);
-            title(sprintf('k1/k2 = %d/%d',k1,k2));
-            pause(1);
+
         end;
-                
     end;
 end;
 
@@ -180,6 +183,8 @@ projection2=V'*X2;
 projection12=cat(2,projection1,projection2);
 [dipscore,cutpoint]=isocut4_mat(projection12,ones(size(projection12)),struct('try_ranges',1));
 ret=(dipscore<opts.isocut_threshold);
+%cutpoint=isocut(projection12,opts.isocut_threshold);
+%ret=(cutpoint~=0);
 new_labels=ones(1,N1+N2);
 new_labels(find(projection12>=cutpoint))=2;
 
@@ -252,6 +257,38 @@ bad_guys=find(ismember(inds1,inds2));
 if (length(bad_guys)>0)
     error('Unexpected problem.');
 end;
+
+function labels=initialize_labels(X)
+[M,N]=size(X);
+labels1=initialize_labels_2(X);
+K=max(labels1);
+labels=zeros(1,N);
+for k=1:K
+    inds_k=find(labels1==k);
+    labels_k=initialize_labels_2(X(:,inds_k));
+    labels(inds_k)=max(labels)+labels_k;
+end;
+
+function labels=initialize_labels_2(X)
+[M,N]=size(X);
+K=10;
+K=min(K,N);
+centers=X(:,randsample(N,K));
+for pass=1:5
+    distsqrs=zeros(K,N);
+    for m=1:M
+        distsqrs=distsqrs+(repmat(X(m,:),K,1)-repmat(centers(m,:),N,1)').^2;
+    end;
+    [~,min_inds]=min(distsqrs,[],1);
+    labels=min_inds;
+    counts=accumarray(labels',1,[K,1])';
+    sums=zeros(M,K);
+    for m=1:M
+        sums(m,:)=accumarray(labels',X(m,:)',[K,1])';
+    end;
+    centers=sums./repmat(counts,M,1);
+end;
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function [X,labels]=create_multimodal_nd(A)
