@@ -185,7 +185,7 @@ V=V/sqrt(V'*V);
 projection1=V'*X1;
 projection2=V'*X2;
 projection12=cat(2,projection1,projection2);
-[dipscore,cutpoint]=isocut5(projection12,ones(size(projection12)),struct('try_ranges',1));
+[dipscore,cutpoint]=isocut5b(projection12,ones(size(projection12)),struct('try_ranges',1));
 ret=(dipscore<opts.isocut_threshold);
 %cutpoint=isocut(projection12,opts.isocut_threshold);
 %ret=(cutpoint~=0);
@@ -275,7 +275,7 @@ end;
 
 function labels=initialize_labels_2(X)
 [M,N]=size(X);
-K=100;
+K=10;
 K=min(K,N);
 centers=X(:,randsample(N,K));
 for pass=1:5
@@ -338,12 +338,21 @@ end;
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 function test_isosplit5
-rng(7);
+rng(2);
 close all;
 [X,true_labels]=generate_dataset;
 figure; ms_view_clusters(X(1:2,:),true_labels);
-[labels2,info]=isosplit5(X,struct('verbose',1));
+ttt=tic;
+[labels2,info]=isosplit5(X,struct('verbose',0));
+fprintf('Time for isosplit5: %g\n',toc(ttt));
 figure; ms_view_clusters(X(1:2,:),labels2);
 title('isosplit5');
-
 disp(info.timers);
+
+ttt=tic;
+labels_mex=isosplit5_mex(X);
+fprintf('Time for isosplit5_mex: %g\n',toc(ttt));
+figure; ms_view_clusters(X(1:2,:),labels_mex);
+title('isosplit5 mex');
+
+

@@ -27,6 +27,8 @@ ret=knn;
 
 function test_density_selective_thinning
 
+rng(1);
+
 close all;
 M=10;
 N0=1e4;
@@ -48,24 +50,35 @@ N=size(X,2);
 fprintf('N = %g\n',N);
 
 oo.cc=0.3;
-oo.ds=50;
+oo.ds=5;
 ttt=tic;
 X_thin=density_selective_thinning(X,oo);
 fprintf('Total time for dst: %g\n',toc(ttt));
 
 ttt=tic;
+labels_original=isosplit5_mex(X);
+fprintf('Time for isosplit5 of original data: %g\n',toc(ttt));
+
+ttt=tic;
 labels_thin=isosplit5(X_thin);
 fprintf('Time for isosplit5 of thinned data: %g\n',toc(ttt));
+
+ttt=tic;
+labels_thin_mex=isosplit5_mex(X_thin);
+fprintf('Time for isosplit5_mex of thinned data: %g\n',toc(ttt));
 
 figure;
 subplot(4,1,1);
 hist(X(1,:),100);
 subplot(4,1,2);
-%ms_view_clusters(X(1:2,:),labels);
-ms_view_clusters(X(1:2,:));
+ms_view_clusters(X(1:2,:),labels_original);
 title(sprintf('Original data: N = %d\n',size(X,2)));
 subplot(4,1,3);
 hist(X_thin(1,:),100);
 subplot(4,1,4);
 ms_view_clusters(X_thin(1:2,:),labels_thin);
 title(sprintf('Thinned data: N = %d\n',size(X_thin,2)));
+
+figure;
+ms_view_clusters(X_thin(1:2,:),labels_thin_mex);
+title(sprintf('Thinned data (mex): N = %d\n',size(X_thin,2)));

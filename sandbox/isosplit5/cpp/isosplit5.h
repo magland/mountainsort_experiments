@@ -8,4 +8,13 @@ struct isosplit5_opts {
 
 void isosplit5(int *labels_out,int M, long N,float *X,isosplit5_opts opts);
 
+/*
+ * MCWRAP [ labels_out[1,N] ] = isosplit5_mex(X[M,N])
+ * SET_INPUT M = size(X,1)
+ * SET_INPUT N = size(X,2)
+ * SOURCES isosplit5.cpp isocut5.cpp jisotonic.cpp
+ * HEADERS isosplit5.h isocut5.h jisotonic.h
+ */
+void isosplit5_mex(double *labels_out,int M,int N,double *X);
+
 #endif // ISOSPLIT5_H

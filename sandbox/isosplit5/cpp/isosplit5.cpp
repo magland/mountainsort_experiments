@@ -12,6 +12,7 @@ namespace ns_isosplit5 {
 
     int compute_max(long N,int *labels);
     void kmeans_multistep(int *labels,int M,long N,float *X,int K1,int K2,int K3,kmeans_opts opts);
+    void kmeans_maxsize(int *labels,int M,long N,float *X,int maxsize,kmeans_opts opts);
     void compare_clusters(double *dip_score,std::vector<int> *new_labels1,std::vector<int> *new_labels2,int M,long N1,long N2,float *X1,float *X2,float *centroid1,float *centroid2);
 }
 
@@ -68,7 +69,7 @@ public:
         }
     }
     void get_pairs_to_compare(std::vector<int> *k1s,std::vector<int> *k2s);
-    void compare_pairs(const std::vector<int> &k1s,const std::vector<int> &k2s,float isocut_threshold);
+    long compare_pairs(const std::vector<int> &k1s,const std::vector<int> &k2s,float isocut_threshold); //return number of changes
     std::vector<int> get_active_labels();
 
     float *X;
@@ -80,7 +81,25 @@ public:
     int* active_labels_vec=0;
 };
 
+void isosplit5_mex(double *labels_out, int M, int N, double *X)
+{
+    float *Xf=(float*)malloc(sizeof(float)*M*N);
+    int *labelsi=(int*)malloc(sizeof(int)*N);
+    for (long i=0; i<M*N; i++)
+        Xf[i]=X[i];
+    isosplit5_opts opts;
+    isosplit5(labelsi,M,N,Xf,opts);
+    for (long i=0; i<N; i++)
+        labels_out[i]=labelsi[i];
+    free(Xf);
+    free(labelsi);
+}
+
 void isosplit5(int *labels_out,int M, long N,float *X,isosplit5_opts opts) {
+    for (long i=0; i<N; i++) {
+        labels_out[i]=1;
+    }
+
     isosplit5_data DD(M,N,X);
 
     DD.initialize_labels();
@@ -94,17 +113,20 @@ void isosplit5(int *labels_out,int M, long N,float *X,isosplit5_opts opts) {
     while (true) {
         iteration_number++;
         if (iteration_number>max_iterations) {
-            printf("isosplit5: Exceeded maximum number of iterations. Breaking.");
+            printf ("isosplit5: Exceeded maximum number of iterations. Breaking.");
             break;
         }
+
+        printf("Number of active labels: %ld\n",DD.get_active_labels().size());
 
         std::vector<int> k1s,k2s;
         DD.get_pairs_to_compare(&k1s,&k2s);
 
-        printf("compare %ld pairs\n",k1s.size());
+        printf ("compare %ld pairs\n",k1s.size());
         std::vector<int> old_active_labels=DD.get_active_labels();
-        DD.compare_pairs(k1s,k2s,opts.isocut_threshold);
+        long num_changes=DD.compare_pairs(k1s,k2s,opts.isocut_threshold);
         std::vector<int> new_active_labels=DD.get_active_labels();
+        printf ("  %ld changes\n",num_changes);
 
         if (new_active_labels.size()==old_active_labels.size())
             num_iterations_without_merges++;
@@ -122,18 +144,20 @@ void isosplit5(int *labels_out,int M, long N,float *X,isosplit5_opts opts) {
                 int k1=active_labels[i1];
                 int k2=active_labels[i2];
                 if ((DD.active_labels_vec[k1-1])&&(DD.active_labels_vec[k2-1])) {
-                    printf("compare %d/%d (pass %d)\n",k1,k2,pass);
+                    printf("Number of active labels: %ld\n",DD.get_active_labels().size());
+                    printf ("compare %d/%d (pass %d)\n",k1,k2,pass);
                     std::vector<int> k1s,k2s;
                     k1s.push_back(k1);
                     k2s.push_back(k2);
-                    DD.compare_pairs(k1s,k2s,opts.isocut_threshold);
+                    long num_changes=DD.compare_pairs(k1s,k2s,opts.isocut_threshold);
+                    printf ("  %ld changes\n",num_changes);
                 }
             }
         }
     }
 
     std::vector<int> active_labels=DD.get_active_labels();
-    std::vector<int> labels_map(ns_isosplit5::compute_max(N,DD.labels));
+    std::vector<int> labels_map(ns_isosplit5::compute_max(N,DD.labels)+1);
     for (int i=0; i<(int)active_labels.size(); i++) {
         labels_map[active_labels[i]]=i+1;
     }
@@ -246,6 +270,39 @@ namespace ns_isosplit5 {
         }
     }
 
+    void kmeans_maxsize(int *labels,int M,long N,float *X,int maxsize,kmeans_opts opts) {
+        if (N<=maxsize) {
+            for (long i=0; i<N; i++)
+                labels[i]=1;
+            return;
+        }
+        int K=ceil(N*1.0/maxsize);
+        int *labels1=(int*)malloc(sizeof(int)*N);
+        kmeans(labels1,M,N,X,K,opts);
+        int L1=compute_max(N,labels1);
+        int current_max_k=0;
+        for (int k=1; k<=L1; k++) {
+            std::vector<long> inds_k;
+            for (long i=0; i<N; i++) {
+                if (labels1[i]==k)
+                    inds_k.push_back(i);
+            }
+            if (inds_k.size()>0) {
+                float *X2=(float*)malloc(sizeof(float)*M*inds_k.size());
+                int *labels2=(int*)malloc(sizeof(int)*inds_k.size());
+                extract_subarray(X2,M,X,inds_k);
+                kmeans_maxsize(labels2,M,inds_k.size(),X2,maxsize,opts);
+                for (long j=0; j<(long)inds_k.size(); j++) {
+                    labels[inds_k[j]]=current_max_k+labels2[j];
+                }
+                current_max_k+=compute_max(inds_k.size(),labels2);
+                free(X2);
+                free(labels2);
+            }
+        }
+        free(labels1);
+    }
+
     void kmeans_multistep(int *labels,int M,long N,float *X,int K1,int K2,int K3,kmeans_opts opts) {
         if (K2>1) {
             int *labels1=(int*)malloc(sizeof(int)*N);
@@ -327,7 +384,7 @@ namespace ns_isosplit5 {
     }
 }
 
-void get_pairs_to_compare2(std::vector<int> *i1s, std::vector<int> *i2s,int M,int N,double *centroids) {
+void get_pairs_to_compare3(std::vector<int> *i1s, std::vector<int> *i2s,int M,int N,double *centroids) {
     float distances[N][N];
     int used[N];
     for (int i=0; i<N; i++)
@@ -377,10 +434,48 @@ void get_pairs_to_compare2(std::vector<int> *i1s, std::vector<int> *i2s,int M,in
     }
 }
 
+void get_pairs_to_compare2(std::vector<int> *i1s, std::vector<int> *i2s,int M,int N,double *centroids) {
+    float *centroidsf=(float*)malloc(sizeof(float)*M*N);
+    for (long i=0; i<M*N; i++)
+        centroidsf[i]=centroids[i];
+    int *groups=(int*)malloc(sizeof(int)*N);
+    int maxsize=1000;
+    ns_isosplit5::kmeans_opts oo;
+    ns_isosplit5::kmeans_maxsize(groups,M,N,centroidsf,maxsize,oo);
+    int num_groups=ns_isosplit5::compute_max(N,groups);
+    printf("num_groups=%d, num_centroids=%d\n",num_groups,N);
+
+    for (int group_number=1; group_number<=num_groups; group_number++) {
+        std::vector<long> inds_group;
+        for (long i=0; i<N; i++)
+            if (groups[i]==group_number)
+                inds_group.push_back(i);
+        long N0=inds_group.size();
+        if (N0>0) {
+            float *centroids0f=(float*)malloc(sizeof(float)*M*N0);
+            double *centroids0=(double*)malloc(sizeof(double)*M*N0);
+            ns_isosplit5::extract_subarray(centroids0f,M,centroidsf,inds_group);
+            for (long i=0; i<M*N0; i++)
+                centroids0[i]=centroids0f[i];
+            std::vector<int> i1s0,i2s0;
+            get_pairs_to_compare3(&i1s0,&i2s0,M,N0,centroids0);
+            for (long jj=0; jj<(long)i1s0.size(); jj++) {
+                i1s->push_back(inds_group[i1s0[jj]]);
+                i2s->push_back(inds_group[i2s0[jj]]);
+            }
+            free(centroids0f);
+            free(centroids0);
+        }
+    }
+
+    free(groups);
+    free(centroidsf);
+}
+
 void isosplit5_data::initialize_labels()
 {
     ns_isosplit5::kmeans_opts oo;
-    ns_isosplit5::kmeans_multistep(labels,M,N,X,10,10,10,oo);
+    ns_isosplit5::kmeans_multistep(labels,M,N,X,10,10,0,oo);
     setKAndAllocate(ns_isosplit5::compute_max(N,labels));
 }
 
@@ -407,8 +502,9 @@ void isosplit5_data::get_pairs_to_compare(std::vector<int> *k1s, std::vector<int
     free(active_centroids);
 }
 
-void isosplit5_data::compare_pairs(const std::vector<int> &k1s, const std::vector<int> &k2s,float isocut_threshold)
+long isosplit5_data::compare_pairs(const std::vector<int> &k1s, const std::vector<int> &k2s,float isocut_threshold)
 {
+    long num_changes=0;
     for (int i=0; i<(int)k1s.size(); i++) {
         int k1=k1s[i];
         int k2=k2s[i];
@@ -426,6 +522,7 @@ void isosplit5_data::compare_pairs(const std::vector<int> &k1s, const std::vecto
         double dip_score=0;
         std::vector<int> new_labels1,new_labels2;
         ns_isosplit5::compare_clusters(&dip_score,&new_labels1,&new_labels2,M,inds_1.size(),inds_2.size(),X1,X2,&centroids[M*(k1-1)],&centroids[M*(k2-1)]);
+        if (k1s.size()==1) printf("dip score = %g\n",dip_score);
         if (dip_score<isocut_threshold) {
             //merge
             for (long a=0; a<(long)inds_2.size(); a++) {
@@ -433,20 +530,21 @@ void isosplit5_data::compare_pairs(const std::vector<int> &k1s, const std::vecto
             }
             this->active_labels_vec[k2-1]=0;
             this->recompute_centroid(k1);
+            num_changes+=inds_2.size();
         }
         else {
             //redistribute
             for (long a=0; a<(long)inds_1.size(); a++) {
-                if (new_labels1[a]==1)
-                    this->labels[inds_1[a]]=k1;
-                else
+                if (new_labels1[a]==2) {
                     this->labels[inds_1[a]]=k2;
+                    num_changes++;
+                }
             }
             for (long a=0; a<(long)inds_2.size(); a++) {
-                if (new_labels2[a]==1)
+                if (new_labels2[a]==1) {
                     this->labels[inds_2[a]]=k1;
-                else
-                    this->labels[inds_2[a]]=k2;
+                    num_changes++;
+                }
             }
             this->recompute_centroid(k1);
             this->recompute_centroid(k2);
@@ -454,6 +552,7 @@ void isosplit5_data::compare_pairs(const std::vector<int> &k1s, const std::vecto
         free(X1);
         free(X2);
     }
+    return num_changes;
 }
 
 std::vector<int> isosplit5_data::get_active_labels()
@@ -465,3 +564,5 @@ std::vector<int> isosplit5_data::get_active_labels()
     }
     return ret;
 }
+
+
