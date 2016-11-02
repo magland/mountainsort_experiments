@@ -1,24 +1,11 @@
-function X_thin=dst(X,opts)
+function X_thin=density_selective_thinning(X,opts)
 
-if nargin<1, test_dst; return; end;
+if nargin<1, test_density_selective_thinning; return; end;
 if nargin<2, opts=struct; end;
 if ~isfield(opts,'cc'), opts.cc=0.5; end;
 if ~isfield(opts,'ds'), opts.ds=2; end;
 
 [M,N]=size(X);
-
-% ttt=tic;
-% K_nn=1;
-% nearest_inds=knn(X,K_nn)';
-% fprintf('Time for knn: %g\n',toc(ttt));
-% X2=X(:,nearest_inds);
-% estlogdensities=-log2(sqrt(sum((X-X2).^2,1)))*M;
-
-% eps=sqrt(M)*1;
-% ttt=tic;
-% neighbor_counts=nbrcts(X(:,randsample(size(X,2),5000)),X,eps);
-% fprintf('Time for neighbor counts: %g\n',toc(ttt));
-% estlogdensities=log2(neighbor_counts);
 
 estdensities=kmdensity(X);
 inds0=find(estdensities==0);
@@ -26,7 +13,6 @@ inds1=find(estdensities>0);
 estlogdensities=zeros(1,N);
 estlogdensities(inds1)=log2(estdensities(inds1));
 
-targetlogdenities=zeros(1,N);
 targetlogdensities(inds1)=(estlogdensities(inds1)-mean(estlogdensities(inds1)))*opts.cc;
 probs=2.^(targetlogdensities-estlogdensities);
 probs=probs/(sum(probs))*N/opts.ds;
@@ -39,9 +25,7 @@ knn=knnsearch(X',X','K',K_nn+1)';
 knn=knn(K_nn+1,:);
 ret=knn;
 
-function test_dst
-
-rng(1);
+function test_density_selective_thinning
 
 close all;
 M=10;
@@ -66,16 +50,12 @@ fprintf('N = %g\n',N);
 oo.cc=0.3;
 oo.ds=50;
 ttt=tic;
-X_thin=dst(X,oo);
+X_thin=density_selective_thinning(X,oo);
 fprintf('Total time for dst: %g\n',toc(ttt));
 
 ttt=tic;
-labels_thin=hisosplit(X_thin);
-fprintf('Time for hisosplit of thinned data: %g\n',toc(ttt));
-
-%ttt=tic;
-%labels=hisosplit(X,struct('verbose',0));
-%fprintf('Time for hisosplit of original data: %g\n',toc(ttt));
+labels_thin=isosplit5(X_thin);
+fprintf('Time for isosplit5 of thinned data: %g\n',toc(ttt));
 
 figure;
 subplot(4,1,1);
