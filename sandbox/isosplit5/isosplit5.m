@@ -185,7 +185,7 @@ V=V/sqrt(V'*V);
 projection1=V'*X1;
 projection2=V'*X2;
 projection12=cat(2,projection1,projection2);
-[dipscore,cutpoint]=isocut5b(projection12,ones(size(projection12)),struct('try_ranges',1));
+[dipscore,cutpoint]=isocut5(projection12,ones(size(projection12)));
 ret=(dipscore<opts.isocut_threshold);
 %cutpoint=isocut(projection12,opts.isocut_threshold);
 %ret=(cutpoint~=0);
