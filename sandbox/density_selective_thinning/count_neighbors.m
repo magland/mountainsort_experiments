@@ -14,12 +14,15 @@ if ~isfield(opts,'recursion_level') opts.recursion_level=1; end;
 [M,NX]=size(X);
 [M,NY]=size(Y);
 
+if (opts.recursion_level>5)
+    ret=ones(1,NY)*NX;
+    return;
+end;
+
 if ((NX<=10)||(NY<=10))
     ret=exhaustive_count_neighbors(X,Y,eps);
     return;
 end;
-
-
 
 max_num_trials=opts.max_num_trials;
 
@@ -35,14 +38,10 @@ while 1
     Y_projection=V'*Y;
     
     % look to see which points are even candidates for counting
-    Y_noncandidate_inds=find((Y_projection<min(X_projection)-eps)|(Y_projection>max(X_projection)+eps));
     Y_candidate_inds=find((Y_projection>=min(X_projection)-eps)&(Y_projection<=max(X_projection)+eps));
-    if (length(Y_noncandidate_inds)>0)
-        % if there are non-candidates, let's given them zero counts and do
-        % the rest separately
+    if (length(Y_candidate_inds)==0)
+        % There are no candidates
         ret=zeros(1,NY);
-        
-        ret(Y_candidate_inds)=count_neighbors(X,Y(:,Y_candidate_inds),eps,opts2);
         return;
     end;
     
