@@ -1,5 +1,7 @@
-function [labels,parcels]=parcelate2(X,target_parcel_size,target_num_parcels)
+function [labels,parcels]=parcelate2(X,target_parcel_size,target_num_parcels,opts)
 if nargin<1, test_parcelate2; return; end;
+if nargin<4, opts=struct; end;
+if ~isfield(opts,'final_reassign'), opts.final_reassign=1; end;
 
 [M,N]=size(X);
 labels=zeros(1,N);
@@ -12,23 +14,28 @@ P.radius=compute_max_distance(P.centroid,X(:,P.indices));
 labels(P.indices)=1;
 parcels{end+1}=P;
 
+fprintf('Radius of initial cluster is %g\n',P.radius);
+
 split_factor=3; % split factor around 2.71 is in a sense ideal
 
 target_radius=P.radius;
 while (length(parcels)<target_num_parcels)
-    if (get_max_parcel_size(parcels)<target_parcel_size)
+    parcel_sizes=get_parcel_sizes(parcels);
+    parcel_radii=get_parcel_radii(parcels);
+    if (length(find((parcel_radii>0)&(parcel_sizes>target_parcel_size)))==0)
         % nothing else will ever be split
         break;
     end;
-    target_radius=target_radius*0.9;
+    target_radius=max(parcel_radii(find(parcel_sizes>target_parcel_size)))*0.95;
     
     p_index=1;
     while (p_index<=length(parcels))
         inds=parcels{p_index}.indices;
         rad=parcels{p_index}.radius;
         sz=length(inds);
-        if (sz>target_parcel_size)&&(rad>target_radius)
-            iii=randsample(sz,split_factor);
+        if (sz>target_parcel_size)&&(rad>=target_radius)
+            %iii=randsample(sz,split_factor);
+            iii=1:split_factor;
             pts=X(:,inds(iii));
             dm=distance_matrix(pts,X(:,inds));
             [~,assignments]=min(dm,[],1);
@@ -49,12 +56,30 @@ while (length(parcels)<target_num_parcels)
     end;
 end;
 
-function ret=get_max_parcel_size(parcels)
-tmp=zeros(1,length(parcels));
-for j=1:length(parcels)
-    tmp(j)=length(parcels{j}.indices);
+if (opts.final_reassign)
+    centroids=get_parcel_centroids(parcels);
+    labels=knnsearch(centroids',X','K',1)';
 end;
-ret=max(tmp);
+%dm=distance_matrix(centroids,X);
+%[~,labels]=min(dm,[],1);
+
+function ret=get_parcel_sizes(parcels)
+ret=zeros(1,length(parcels));
+for j=1:length(parcels)
+    ret(j)=length(parcels{j}.indices);
+end;
+
+function ret=get_parcel_radii(parcels)
+ret=zeros(1,length(parcels));
+for j=1:length(parcels)
+    ret(j)=parcels{j}.radius;
+end;
+
+function ret=get_parcel_centroids(parcels)
+ret=zeros(size(parcels{1}.centroid,1),length(parcels));
+for j=1:length(parcels)
+    ret(:,j)=parcels{j}.centroid;
+end;
 
 function ret=compute_max_distance(pt,X)
 dm=distance_matrix(pt,X);

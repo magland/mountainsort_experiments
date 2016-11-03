@@ -4,6 +4,9 @@
 struct isosplit5_opts {
     float isocut_threshold=1.5;
     int min_cluster_size=10;
+    int K_init=30;
+    bool refine_clusters=false;
+    int max_iterations_per_pass=500;
 };
 
 void isosplit5(int *labels_out,int M, long N,float *X,isosplit5_opts opts);

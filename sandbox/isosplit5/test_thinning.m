@@ -3,8 +3,10 @@ function test_thinning
 rng(6);
 
 close all;
-M=10;
-N0=1e5;
+M=50;
+N0=1e4;
+thinning_factor=10;
+thinning_param=0.3;
 
 % Create the data
 X1=randn(M,ceil(N0/4));
@@ -25,16 +27,16 @@ fprintf('N = %g\n',N);
 
 % Perform thinning
 ttt=tic;
-X_thin=thinning1(X,10,0.3);
+X_thin=thinning1(X,thinning_factor,thinning_param);
 fprintf('Total time for thinning: %g\n',toc(ttt));
 
 ttt=tic;
-labels_original=isosplit5_mex(X);
-fprintf('Time for isosplit5_mex of original data: %g\n',toc(ttt));
+labels_original=isosplit5(X,struct('verbose',0));
+fprintf('Time for isosplit5 of original data: %g\n',toc(ttt));
 
 ttt=tic;
-labels_thin=isosplit5_mex(X_thin);
-fprintf('Time for isosplit5_mex of thinned data: %g\n',toc(ttt));
+labels_thin=isosplit5(X_thin);
+fprintf('Time for isosplit5 of thinned data: %g\n',toc(ttt));
 
 figure;
 subplot(4,1,1);

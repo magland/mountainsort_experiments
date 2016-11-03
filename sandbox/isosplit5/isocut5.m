@@ -1,5 +1,5 @@
-function [dip_score,cutpoint,info]=isocut5b(samples,sample_weights,opts)
-if nargin<1, test_isocut5b; return; end;
+function [dip_score,cutpoint,info]=isocut5(samples,sample_weights,opts)
+if nargin<1, test_isocut5; return; end;
 if nargin<2, sample_weights=[]; end;
 if (nargin<3), opts=struct; end;
 
@@ -12,7 +12,7 @@ info=struct;
 
 [~,N]=size(samples);
 if (N==0)
-    error('Error in isocut5b: N is zero.');
+    error('Error in isocut5: N is zero.');
 end;
 num_bins_factor=1;
 num_bins=ceil(sqrt(N/2)*num_bins_factor);
@@ -119,7 +119,7 @@ bins=(i1:i2)*bin_width;
 ii=bin_ints-i1+1;
 counts=accumarray(ii',weights',[length(bins),1]);
 
-function test_isocut5b
+function test_isocut5
 close all;
 
 num_trials=100;
@@ -134,15 +134,15 @@ dip_scores_mex=[];
 
 for trial=1:num_trials;
 
-N0=1e4;
+N0=1e2;
 
-X=[randn(1,10*N0),randn(1,N0/2)+5];
-sample_weights=[1*ones(1,10*N0),1*ones(1,N0/2)];
+X=[randn(1,10*N0),randn(1,3*N0)+5];
+sample_weights=[1*ones(1,10*N0),1*ones(1,3*N0)];
 
 opts.return_info=(trial==1);
 
 tA=tic;
-[dip_score,cutpoint,info]=isocut5b(X,sample_weights,opts);
+[dip_score,cutpoint,info]=isocut5(X,sample_weights,opts);
 if compare_with_isocut5_mex
 [dip_score2,cutpoint2]=isocut5_mex(X);
 cutpoints_mex(end+1)=cutpoint2;
