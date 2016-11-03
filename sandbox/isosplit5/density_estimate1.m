@@ -4,7 +4,12 @@ if nargin<1, test_density_estimate1; return; end;
 [M,N]=size(X);
 densities=zeros(1,N);
 
-[~,parcels]=parcelate1(X,100);
+target_parcel_size=100;
+target_num_parcels=1000;
+
+%[~,parcels]=parcelate1(X,100);
+[~,parcels]=parcelate2(X,target_parcel_size,target_num_parcels);
+length(parcels)
 for k=1:length(parcels)
     inds_k=parcels{k}.indices;
     pts=X(:,inds_k);
@@ -27,7 +32,7 @@ X=randn(M,N);
 X=cat(2,X,randn(M,N/100)*0.1+3);
 densities=density_estimate1(X);
 
-figure; ms_view_clusters(X,1+(densities>mean(densities))+2*(densities<0.25*mean(densities)));
+figure; ms_view_clusters(X,1+(densities>mean(densities))+2*(densities<0.15*mean(densities)));
 
 norms=sqrt(sum(X.^2,1));
 figure; semilogy(norms,densities,'b.');

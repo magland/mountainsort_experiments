@@ -24,10 +24,10 @@ X_thin=X(:,inds_to_use);
 
 function test_thinning1
 
-M=10;
+M=2;
 N=1e6;
-ss=1e3;
-cc=0.5;
+ss=5e2;
+cc=0;
 
 X=randn(M,N);
 X=cat(2,X,randn(M,N/100)*0.1+3);
