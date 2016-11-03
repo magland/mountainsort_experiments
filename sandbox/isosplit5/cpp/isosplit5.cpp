@@ -7,7 +7,7 @@
 
 namespace ns_isosplit5 {
     struct kmeans_opts {
-        int num_iterations=5;
+        int num_iterations=0;
     };
 
     int compute_max(long N,int *labels);
@@ -475,7 +475,7 @@ void get_pairs_to_compare2(std::vector<int> *i1s, std::vector<int> *i2s,int M,in
 void isosplit5_data::initialize_labels()
 {
     ns_isosplit5::kmeans_opts oo;
-    ns_isosplit5::kmeans_multistep(labels,M,N,X,10,10,10,oo);
+    ns_isosplit5::kmeans_multistep(labels,M,N,X,1000,0,0,oo);
     //ns_isosplit5::kmeans_maxsize(labels,M,N,X,10000,oo);
     setKAndAllocate(ns_isosplit5::compute_max(N,labels));
 }

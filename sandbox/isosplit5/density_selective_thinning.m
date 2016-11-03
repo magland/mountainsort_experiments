@@ -27,7 +27,7 @@ ret=knn;
 
 function test_density_selective_thinning
 
-rng(2);
+rng(6);
 
 close all;
 M=10;

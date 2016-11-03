@@ -3,7 +3,7 @@ function ret=kmdensity(X,opts)
 if nargin<1, test_kmdensity; return; end;
 if nargin<2, opts=struct; end;
 if ~isfield(opts,'Ks'), opts.Ks=[10,10,10]; end;
-if ~isfield(opts,'num_kmeans_iterations'), opts.num_kmeans_iterations=5; end;
+if ~isfield(opts,'num_kmeans_iterations'), opts.num_kmeans_iterations=0; end;
 if ~isfield(opts,'K_nn'), opts.K_nn=4; end;
 
 [M,N]=size(X);
@@ -67,7 +67,12 @@ for pass=1:max_iterations
     end;
     centers=sums./repmat(counts,M,1);
 end;
-
+distsqrs=zeros(K,N);
+for m=1:M
+    distsqrs=distsqrs+(repmat(X(m,:),K,1)-repmat(centers(m,:),N,1)').^2;
+end;
+[~,min_inds]=min(distsqrs,[],1);
+labels=min_inds;
 
 function test_kmdensity
 

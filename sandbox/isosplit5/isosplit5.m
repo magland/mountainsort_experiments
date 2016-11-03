@@ -13,6 +13,7 @@ timers.compute_centers=0;
 [M,N]=size(X);
 %data.labels=1:N; % each point in its own cluster
 data.labels=initialize_labels(X);
+Kmax=max(data.labels);
 
 ttt=tic;
 data.centers=compute_centers(X,data.labels);
@@ -21,74 +22,88 @@ timers.compute_centers=timers.compute_centers+toc(ttt);
 max_iterations=500;
 max_iterations_without_merges=5;
 
-iteration_number=1;
-num_iterations_without_merges=0;
-while 1
-    iteration_number=iteration_number+1;
-    if (iteration_number>max_iterations)
-        break;
-    end;
-    active_labels_vec=zeros(1,N);
-    active_labels_vec(data.labels)=1;
-	active_labels=find(active_labels_vec);
-    fprintf('num active labels = %d\n',length(active_labels));
-    %if (length(active_labels)<=50);
-    %    figure; ms_view_clusters(X,data.labels);
-    %end;
-    active_centers=data.centers(:,active_labels);
-    
-    ttt=tic;
-    [inds1,inds2]=get_pairs_to_compare(active_centers);
-    timers.get_pairs_to_compare=timers.get_pairs_to_compare+toc(ttt);
-    
-    if (length(inds1)==0)
-        break;
-    end;
-    old_labels=data.labels;
-    
-    ttt=tic;
-    [data.labels,changes]=compare_pairs(X,data.labels,active_labels(inds1),active_labels(inds2),opts);
-    timers.compare_pairs=timers.compare_pairs+toc(ttt);
-    
-    ttt=tic;
-    data.centers=compute_centers(X,data.labels);
-    timers.compute_centers=timers.compute_centers+toc(ttt);
-    
-    total_num_label_changes=length(find(data.labels~=old_labels));
-    fprintf('total num label changes = %d\n',total_num_label_changes);
-%     if (total_num_label_changes<10)
-%         break;
-%     end;
-    new_active_labels_vec=zeros(1,N);
-    new_active_labels_vec(data.labels)=1;
-    new_active_labels=find(new_active_labels_vec);
-    if (length(new_active_labels)==length(active_labels))
-        num_iterations_without_merges=num_iterations_without_merges+1;
-        if (num_iterations_without_merges>max_iterations_without_merges)
+something_merged=1;
+while something_merged
+    something_merged=0;
+    data.comparisons_made=zeros(Kmax,Kmax);
+    iteration_number=1;
+    num_iterations_without_merges=0;
+    while 1
+        iteration_number=iteration_number+1;
+        if (iteration_number>max_iterations)
+            error('max iterations exceeded');
             break;
         end;
-    else
-        num_iterations_without_merges=0;
-    end;
-    
-    if (opts.verbose)&&(length(find(changes==1))>0)
-        if (length(new_active_labels)<50)
-            labels_map=zeros(1,N);
-            active_labels_vec=zeros(1,N);
-            active_labels_vec(data.labels)=1;
-            active_labels=find(active_labels_vec);
-            for ii=1:length(active_labels)
-                labels_map(active_labels(ii))=ii;
+        active_labels_vec=zeros(1,N);
+        active_labels_vec(data.labels)=1;
+        active_labels=find(active_labels_vec);
+        fprintf('num active labels = %d\n',length(active_labels));
+        %if (length(active_labels)<=50);
+        %    figure; ms_view_clusters(X,data.labels);
+        %end;
+        active_centers=data.centers(:,active_labels);
+
+        ttt=tic;
+        [inds1,inds2]=get_pairs_to_compare(active_centers,data.comparisons_made(active_labels,active_labels));
+        timers.get_pairs_to_compare=timers.get_pairs_to_compare+toc(ttt);
+
+        if (length(inds1)==0)
+            disp('Nothing else to compare.');
+            break;
+        end;
+        old_labels=data.labels;
+
+        ttt=tic;
+        [data.labels,changes]=compare_pairs(X,data.labels,active_labels(inds1),active_labels(inds2),opts);
+        timers.compare_pairs=timers.compare_pairs+toc(ttt);
+
+        for j=1:length(inds1)
+            data.comparisons_made(active_labels(inds1(j)),active_labels(inds2(j)))=1;
+            data.comparisons_made(active_labels(inds2(j)),active_labels(inds1(j)))=1;
+        end;
+
+        ttt=tic;
+        data.centers=compute_centers(X,data.labels);
+        timers.compute_centers=timers.compute_centers+toc(ttt);
+
+        total_num_label_changes=length(find(data.labels~=old_labels));
+        fprintf('total num label changes = %d\n',total_num_label_changes);
+    %     if (total_num_label_changes<10)
+    %         break;
+    %     end;
+        new_active_labels_vec=zeros(1,N);
+        new_active_labels_vec(data.labels)=1;
+        new_active_labels=find(new_active_labels_vec);
+        if (length(new_active_labels)<length(active_labels))
+            something_merged=1;
+        end;
+%         if (length(new_active_labels)==length(active_labels))
+%             num_iterations_without_merges=num_iterations_without_merges+1;
+%             if (num_iterations_without_merges>max_iterations_without_merges)
+%                 break;
+%             end;
+%         else
+%             num_iterations_without_merges=0;
+%         end;
+
+        if (opts.verbose)&&(length(find(changes==1))>0)
+            if (length(new_active_labels)<50)
+                labels_map=zeros(1,N);
+                active_labels_vec=zeros(1,N);
+                active_labels_vec(data.labels)=1;
+                active_labels=find(active_labels_vec);
+                for ii=1:length(active_labels)
+                    labels_map(active_labels(ii))=ii;
+                end;
+                labels_mapped=labels_map(data.labels);
+                figure; ms_view_clusters(X(1:2,:),labels_mapped);
+                pause(0.03);
             end;
-            labels_mapped=labels_map(data.labels);
-            figure; ms_view_clusters(X(1:2,:),labels_mapped);
-            pause(0.03);
         end;
     end;
-    
 end;
 
-for pass=1:2
+for pass=1:1
     active_labels_vec=zeros(1,N);
     active_labels_vec(data.labels)=1;
     active_labels=find(active_labels_vec);
@@ -102,7 +117,7 @@ for pass=1:2
             timers.compare_pairs=timers.compare_pairs+toc(ttt);
             
             total_num_label_changes=length(find(data.labels~=new_labels));
-            fprintf('total num label changes = %d\n',total_num_label_changes);
+            fprintf('total num label changes for %d/%d = %d (pass=%d,num_active=%d)\n',k1,k2,total_num_label_changes,pass,length(active_labels));
 
             data.labels=new_labels;
 
@@ -116,7 +131,6 @@ for pass=1:2
                 title(sprintf('k1/k2 = %d/%d (pass %d)',k1,k2,pass));
                 pause(0.03);
             end;
-
         end;
     end;
 end;
@@ -192,7 +206,46 @@ ret=(dipscore<opts.isocut_threshold);
 new_labels=ones(1,N1+N2);
 new_labels(find(projection12>=cutpoint))=2;
 
-function [inds1,inds2]=get_pairs_to_compare(centers)
+function dists=make_dists_matrix(centers)
+[M,N]=size(centers);
+dists=zeros(N,N);
+[aa,bb]=ndgrid(1:N,1:N);
+for m=1:M
+    dists=dists+reshape((centers(m,aa(:))-centers(m,bb(:))).^2,N,N);
+end;
+dists=sqrt(dists);
+
+function [inds1,inds2]=get_pairs_to_compare(centers,comparisons_made)
+[M,N]=size(centers);
+inds1=[];
+inds2=[];
+dists=make_dists_matrix(centers);
+dists(find(comparisons_made(:)))=inf;
+for j=1:N
+    dists(j,j)=inf;
+end;
+something_changed=1;
+while (something_changed)
+    something_changed=0;
+    [~,best_inds]=min(dists,[],1);
+    for j=1:N
+        if (best_inds(j)>j)
+            if (best_inds(best_inds(j))==j) % mutual
+                if (dists(j,best_inds(j))<inf)
+                    inds1(end+1)=j;
+                    inds2(end+1)=best_inds(j);
+                    dists(j,:)=inf;
+                    dists(:,j)=inf;
+                    dists(best_inds(j),:)=inf;
+                    dists(:,best_inds(j))=inf;
+                    something_changed=1;
+                end;
+            end;
+        end;        
+    end;
+end;
+
+function [inds1,inds2]=get_pairs_to_compare_old(centers)
 [M,N]=size(centers);
 inds1=[];
 inds2=[];
@@ -205,26 +258,6 @@ while 1
     if (length(i1)==0) break; end;
     inds1=[inds1,unused_inds(i1)];
     inds2=[inds2,unused_inds(i2)];
-end;
-
-% might want this later
-function nearest_inds=find_nearest_that_are_needed(pts,needed)
-[M,N]=size(pts);
-K=10;
-nearest=knnsearch(pts',pts','K',K+1)';
-nearest=nearest(2:end,:);
-nearest_inds=zeros(1,N);
-for k=1:size(nearest,1)
-    not_yet_handled=find(nearest_inds==0);
-    if (length(not_yet_handled)==0)
-        break;
-    end;
-    for j=1:length(not_yet_handled)
-        kkk=nearest(k,not_yet_handled(j));
-        if (needed(not_yet_handled(j),kkk))
-            nearest_inds(not_yet_handled(j))=kkk;
-        end;
-    end;
 end;
 
 function nearest_inds=find_nearest(pts)
@@ -275,10 +308,10 @@ end;
 
 function labels=initialize_labels_2(X)
 [M,N]=size(X);
-K=10;
+K=30;
 K=min(K,N);
 centers=X(:,randsample(N,K));
-for pass=1:5
+for pass=1:1
     distsqrs=zeros(K,N);
     for m=1:M
         distsqrs=distsqrs+(repmat(X(m,:),K,1)-repmat(centers(m,:),N,1)').^2;
