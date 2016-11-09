@@ -80,14 +80,14 @@ while 1
                 labels_map(active_labels(ii))=ii;
             end;
             labels_mapped=labels_map(data.labels);
-            figure; ms_view_clusters(X,labels_mapped);
-            pause(1);
+            figure; ms_view_clusters(X(1:2,:),labels_mapped);
+            pause(0.03);
         end;
     end;
     
 end;
 
-for pass=1:10
+for pass=1:2
     active_labels_vec=zeros(1,N);
     active_labels_vec(data.labels)=1;
     active_labels=find(active_labels_vec);
@@ -99,6 +99,9 @@ for pass=1:10
             ttt=tic;
             [new_labels,changes]=compare_pairs(X,data.labels,k1,k2,opts);
             timers.compare_pairs=timers.compare_pairs+toc(ttt);
+            
+            total_num_label_changes=length(find(data.labels~=new_labels));
+            fprintf('total num label changes = %d\n',total_num_label_changes);
 
             data.labels=new_labels;
 
@@ -108,9 +111,9 @@ for pass=1:10
                     labels_map(active_labels(ii))=ii;
                 end;
                 labels_mapped=labels_map(data.labels);
-                figure; ms_view_clusters(X,labels_mapped);
-                title(sprintf('k1/k2 = %d/%d',k1,k2));
-                pause(1);
+                figure; ms_view_clusters(X(1:2,:),labels_mapped);
+                title(sprintf('k1/k2 = %d/%d (pass %d)',k1,k2,pass));
+                pause(0.03);
             end;
 
         end;
@@ -153,7 +156,7 @@ for i1=1:length(k1s)
         else
             inds12=cat(2,inds1,inds2);
             L12_old=cat(2,ones(1,length(inds1)),2*ones(1,length(inds2)));
-            [do_merge,L12]=merge_test(X(:,inds1),X(:,inds2),opts);
+            [do_merge,L12,proj]=merge_test(X(:,inds1),X(:,inds2),opts);
         end;
         if (do_merge)
             new_labels(find(new_labels==k2))=k1;
@@ -169,7 +172,7 @@ for i1=1:length(k1s)
     end;
 end;
 
-function [ret,new_labels]=merge_test(X1,X2,opts)
+function [ret,new_labels,projection12]=merge_test(X1,X2,opts)
 [~,N1]=size(X1); [~,N2]=size(X2);
 if ((N1==0)||(N2==0))
     error('Error in merge test: N1 or N2 is zero');
@@ -271,7 +274,7 @@ end;
 
 function labels=initialize_labels_2(X)
 [M,N]=size(X);
-K=10;
+K=100;
 K=min(K,N);
 centers=X(:,randsample(N,K));
 for pass=1:5
