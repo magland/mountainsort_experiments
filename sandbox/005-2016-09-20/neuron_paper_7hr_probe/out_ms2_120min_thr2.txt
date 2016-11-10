@@ -1,0 +1,1210 @@
+Running mountainprocess queue-script /home/magland/dev/mountainlab/kron/../mountainsort/pipelines/mountainsort_002.pipeline /home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/params.json --raw=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/raw.mda.prv --geom=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/geom.csv --_force_run= --outpath=output/ms2_120min_thr2--np7 --_script_output=output/ms2_120min_thr2--np7/pipeline_output.json --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=2
+Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+Queuing process geom2adj
+Queuing process extract_raw
+
+geom2adj:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp geom2adj --input=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/geom.csv --output=/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp --channels= --radius=80 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("channels", QVariant(QString, ""))("input", QVariant(QString, "/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/geom.csv"))("output", QVariant(QString, "/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp"))("radius", QVariant(qlonglong, 80)))
+========================================================
+QJsonObject({"_request_num_threads":"2","channels":"","input":"/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/geom.csv","output":"/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp","radius":"80"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING geom2adj
+Elapsed time for processor geom2adj: 0 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: geom2adj
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.009 seconds.
+---------------------------------------------------------------
+
+Process finished: geom2adj
+
+Queuing process copy
+extract_raw:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp extract_raw --timeseries=/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/raw.mda.prv --timeseries_out=/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp --channels= --t1=1 --t2=2.16e+8 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("channels", QVariant(QString, ""))("t1", QVariant(qlonglong, 1))("t2", QVariant(float, 2.16e+08))("timeseries", QVariant(QString, "/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/raw.mda.prv"))("timeseries_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","channels":"","t1":"1","t2":"2.16e+8","timeseries":"/home/magland/dev/mountainsort_experiments/datasets/neuron_paper/7hr_probe/raw.mda.prv","timeseries_out":"/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING extract_raw
+
+copy:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/adjacency_matrix.mda --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("input", QVariant(QString, "/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp"))("output", QVariant(QString, "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/adjacency_matrix.mda")))
+========================================================
+QJsonObject({"_request_num_threads":"2","input":"/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp","output":"/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/adjacency_matrix.mda"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING copy
+Elapsed time for processor copy: 0 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.008 seconds.
+---------------------------------------------------------------
+
+Process finished: copy
+
+extract_raw:: extract raw 0/216000000 (0%)
+
+extract_raw:: extract raw 13750000/216000000 (6%)
+
+extract_raw:: extract raw 28000000/216000000 (12%)
+
+extract_raw:: extract raw 45187500/216000000 (20%)
+
+extract_raw:: extract raw 61562500/216000000 (28%)
+
+extract_raw:: extract raw 75187500/216000000 (34%)
+
+extract_raw:: extract raw 89250000/216000000 (41%)
+
+extract_raw:: extract raw 103812500/216000000 (48%)
+
+extract_raw:: extract raw 117937500/216000000 (54%)
+
+extract_raw:: extract raw 132375000/216000000 (61%)
+
+extract_raw:: extract raw 148937500/216000000 (68%)
+
+extract_raw:: extract raw 165750000/216000000 (76%)
+
+extract_raw:: extract raw 180250000/216000000 (83%)
+
+extract_raw:: extract raw 192500000/216000000 (89%)
+
+extract_raw:: extract raw 207125000/216000000 (95%)
+
+extract_raw:: Elapsed time for processor extract_raw: 77.128 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: extract_raw
+Peak RAM: 30 MB. Peak CPU: 104%. Avg CPU: 100.164%. Elapsed time: 77.137 seconds.
+---------------------------------------------------------------
+
+Process finished: extract_raw
+Queuing process bandpass_filter
+
+bandpass_filter:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp bandpass_filter --timeseries=/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp --freq_max=6000 --freq_min=300 --freq_wid= --samplerate=30000 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("freq_max", QVariant(qlonglong, 6000))("freq_min", QVariant(qlonglong, 300))("freq_wid", QVariant(QString, ""))("samplerate", QVariant(qlonglong, 30000))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp"))("timeseries_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","freq_max":"6000","freq_min":"300","freq_wid":"","samplerate":"30000","timeseries":"/tmp/mountainlab/tmp_long_term/7daf6f8442a668fc7275a0f4d491361e71dd5881-extract_raw-timeseries_out.tmp","timeseries_out":"/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING bandpass_filter
+************ Using chunk size / overlap size: 781250 / 156250 (num threads=2)
+781250/216000000 (0%) - Elapsed(s): RC:0.247, BPF:5.555, GC:0.026, WC:0.023, Total:7.733, 2 threads
+2343750/216000000 (1%) - Elapsed(s): RC:0.317, BPF:17.787, GC:0.078, WC:0.072, Total:11.445, 2 threads
+4687500/216000000 (2%) - Elapsed(s): RC:0.425, BPF:31.169, GC:0.156, WC:0.143, Total:19.288, 2 threads
+7812500/216000000 (3%) - Elapsed(s): RC:0.566, BPF:44.991, GC:0.265, WC:0.25, Total:27.283, 2 threads
+
+bandpass_filter:: 10937500/216000000 (5%) - Elapsed(s): RC:0.711, BPF:61.315, GC:0.377, WC:0.361, Total:34.525, 2 threads
+
+bandpass_filter:: 13281250/216000000 (6%) - Elapsed(s): RC:0.819, BPF:70.967, GC:0.454, WC:0.441, Total:40.476, 2 threads
+
+bandpass_filter:: 15625000/216000000 (7%) - Elapsed(s): RC:0.922, BPF:84.283, GC:0.531, WC:0.522, Total:46.579, 2 threads
+
+bandpass_filter:: 17968750/216000000 (8%) - Elapsed(s): RC:1.032, BPF:95.956, GC:0.612, WC:0.606, Total:52.008, 2 threads
+
+bandpass_filter:: 19531250/216000000 (9%) - Elapsed(s): RC:1.101, BPF:101.223, GC:0.662, WC:0.664, Total:57.467, 2 threads
+
+bandpass_filter:: 21875000/216000000 (10%) - Elapsed(s): RC:1.214, BPF:114.389, GC:0.739, WC:0.74, Total:63.128, 2 threads
+
+bandpass_filter:: 24218750/216000000 (11%) - Elapsed(s): RC:1.319, BPF:126.11, GC:0.816, WC:0.811, Total:68.587, 2 threads
+
+bandpass_filter:: 26562500/216000000 (12%) - Elapsed(s): RC:1.425, BPF:138.567, GC:0.892, WC:0.882, Total:74.168, 2 threads
+
+bandpass_filter:: 28906250/216000000 (13%) - Elapsed(s): RC:1.533, BPF:151.125, GC:0.973, WC:0.957, Total:79.651, 2 threads
+
+bandpass_filter:: 30468750/216000000 (14%) - Elapsed(s): RC:1.931, BPF:160.018, GC:1.025, WC:1.012, Total:85.301, 2 threads
+
+bandpass_filter:: 32812500/216000000 (15%) - Elapsed(s): RC:2.036, BPF:171.394, GC:1.108, WC:1.097, Total:91.268, 2 threads
+
+bandpass_filter:: 35156250/216000000 (16%) - Elapsed(s): RC:2.145, BPF:180.067, GC:1.183, WC:1.168, Total:97.32, 2 threads
+
+bandpass_filter:: 37500000/216000000 (17%) - Elapsed(s): RC:2.284, BPF:194.358, GC:1.259, WC:1.247, Total:103.187, 2 threads
+
+bandpass_filter:: 39843750/216000000 (18%) - Elapsed(s): RC:2.387, BPF:207.759, GC:1.335, WC:1.318, Total:109.562, 2 threads
+
+bandpass_filter:: 41406250/216000000 (19%) - Elapsed(s): RC:2.457, BPF:219.008, GC:1.387, WC:1.369, Total:115.706, 2 threads
+
+bandpass_filter:: 43750000/216000000 (20%) - Elapsed(s): RC:2.562, BPF:227.254, GC:1.461, WC:1.448, Total:121.176, 2 threads
+
+bandpass_filter:: 46093750/216000000 (21%) - Elapsed(s): RC:2.666, BPF:240.805, GC:1.538, WC:1.534, Total:126.648, 2 threads
+
+bandpass_filter:: 47656250/216000000 (22%) - Elapsed(s): RC:2.737, BPF:246.103, GC:1.588, WC:1.59, Total:132.134, 2 threads
+
+bandpass_filter:: 50000000/216000000 (23%) - Elapsed(s): RC:2.846, BPF:260.288, GC:1.675, WC:1.683, Total:138.261, 2 threads
+
+bandpass_filter:: 52343750/216000000 (24%) - Elapsed(s): RC:2.955, BPF:274.147, GC:1.753, WC:1.768, Total:143.977, 2 threads
+
+bandpass_filter:: 53906250/216000000 (24%) - Elapsed(s): RC:3.03, BPF:285.361, GC:1.81, WC:1.83, Total:149.242, 2 threads
+
+bandpass_filter:: 56250000/216000000 (26%) - Elapsed(s): RC:3.14, BPF:293.709, GC:1.889, WC:1.91, Total:155.616, 2 threads
+
+bandpass_filter:: 58593750/216000000 (27%) - Elapsed(s): RC:3.246, BPF:307.169, GC:1.967, WC:1.986, Total:161.021, 2 threads
+
+bandpass_filter:: 60937500/216000000 (28%) - Elapsed(s): RC:3.351, BPF:320.743, GC:2.045, WC:2.06, Total:166.483, 2 threads
+
+bandpass_filter:: 62500000/216000000 (28%) - Elapsed(s): RC:3.42, BPF:325.998, GC:2.095, WC:2.107, Total:171.911, 2 threads
+
+bandpass_filter:: 64843750/216000000 (30%) - Elapsed(s): RC:3.525, BPF:339.466, GC:2.171, WC:2.18, Total:177.339, 2 threads
+
+bandpass_filter:: 66406250/216000000 (30%) - Elapsed(s): RC:3.595, BPF:350.567, GC:2.223, WC:2.231, Total:182.76, 2 threads
+
+bandpass_filter:: 68750000/216000000 (31%) - Elapsed(s): RC:3.719, BPF:358.418, GC:2.298, WC:2.302, Total:188.267, 2 threads
+
+bandpass_filter:: 71093750/216000000 (32%) - Elapsed(s): RC:3.827, BPF:372.156, GC:2.38, WC:2.379, Total:193.696, 2 threads
+
+bandpass_filter:: 72656250/216000000 (33%) - Elapsed(s): RC:3.895, BPF:377.425, GC:2.434, WC:2.428, Total:199.141, 2 threads
+
+bandpass_filter:: 75000000/216000000 (34%) - Elapsed(s): RC:4.004, BPF:391.317, GC:2.51, WC:2.507, Total:205.551, 2 threads
+
+bandpass_filter:: 77343750/216000000 (35%) - Elapsed(s): RC:4.111, BPF:406.378, GC:2.59, WC:2.579, Total:210.881, 2 threads
+
+bandpass_filter:: 80468750/216000000 (37%) - Elapsed(s): RC:4.58, BPF:420.633, GC:2.914, WC:2.696, Total:219.565, 2 threads
+
+bandpass_filter:: 82812500/216000000 (38%) - Elapsed(s): RC:4.682, BPF:432.402, GC:2.992, WC:2.777, Total:225.838, 2 threads
+
+bandpass_filter:: 85156250/216000000 (39%) - Elapsed(s): RC:4.785, BPF:446.951, GC:3.086, WC:2.858, Total:232.177, 2 threads
+
+bandpass_filter:: 87500000/216000000 (40%) - Elapsed(s): RC:4.893, BPF:460.01, GC:3.18, WC:2.943, Total:238.505, 2 threads
+
+bandpass_filter:: 89843750/216000000 (41%) - Elapsed(s): RC:4.997, BPF:471.347, GC:3.26, WC:3.027, Total:244.795, 2 threads
+
+bandpass_filter:: 92187500/216000000 (42%) - Elapsed(s): RC:5.111, BPF:484.164, GC:3.361, WC:3.107, Total:251.043, 2 threads
+
+bandpass_filter:: 93750000/216000000 (43%) - Elapsed(s): RC:5.182, BPF:494.539, GC:3.432, WC:3.157, Total:256.569, 2 threads
+
+bandpass_filter:: 96875000/216000000 (44%) - Elapsed(s): RC:5.324, BPF:508.242, GC:3.707, WC:3.257, Total:263.803, 2 threads
+
+bandpass_filter:: 99218750/216000000 (45%) - Elapsed(s): RC:5.436, BPF:521.192, GC:3.811, WC:3.333, Total:270.097, 2 threads
+
+bandpass_filter:: 101562500/216000000 (47%) - Elapsed(s): RC:5.544, BPF:534.18, GC:3.913, WC:3.411, Total:276.47, 2 threads
+
+bandpass_filter:: 103125000/216000000 (47%) - Elapsed(s): RC:5.781, BPF:544.029, GC:3.984, WC:3.459, Total:281.797, 2 threads
+
+bandpass_filter:: 105468750/216000000 (48%) - Elapsed(s): RC:5.888, BPF:556.842, GC:4.079, WC:3.532, Total:288.625, 2 threads
+
+bandpass_filter:: 107812500/216000000 (49%) - Elapsed(s): RC:5.995, BPF:569.645, GC:4.176, WC:3.604, Total:295.389, 2 threads
+
+bandpass_filter:: 110156250/216000000 (50%) - Elapsed(s): RC:6.1, BPF:578.825, GC:4.251, WC:3.676, Total:301.927, 2 threads
+
+bandpass_filter:: 112500000/216000000 (52%) - Elapsed(s): RC:6.203, BPF:591.668, GC:4.352, WC:3.749, Total:308.191, 2 threads
+
+bandpass_filter:: 114843750/216000000 (53%) - Elapsed(s): RC:6.306, BPF:604.578, GC:4.614, WC:3.831, Total:314.745, 2 threads
+
+bandpass_filter:: 117968750/216000000 (54%) - Elapsed(s): RC:6.657, BPF:621.35, GC:4.724, WC:3.956, Total:322.848, 2 threads
+
+bandpass_filter:: 120312500/216000000 (55%) - Elapsed(s): RC:6.776, BPF:634.115, GC:4.84, WC:4.04, Total:329.226, 2 threads
+
+bandpass_filter:: 122656250/216000000 (56%) - Elapsed(s): RC:6.883, BPF:647.599, GC:4.954, WC:4.13, Total:335.493, 2 threads
+
+bandpass_filter:: 125000000/216000000 (57%) - Elapsed(s): RC:6.986, BPF:660.578, GC:5.061, WC:4.216, Total:341.836, 2 threads
+
+bandpass_filter:: 127343750/216000000 (58%) - Elapsed(s): RC:7.089, BPF:674.708, GC:5.142, WC:4.306, Total:349.299, 2 threads
+
+bandpass_filter:: 129687500/216000000 (60%) - Elapsed(s): RC:7.338, BPF:685.937, GC:5.258, WC:4.391, Total:355.945, 2 threads
+
+bandpass_filter:: 132031250/216000000 (61%) - Elapsed(s): RC:7.441, BPF:698.342, GC:5.334, WC:4.468, Total:362.251, 2 threads
+
+bandpass_filter:: 134375000/216000000 (62%) - Elapsed(s): RC:7.546, BPF:711.192, GC:5.445, WC:4.546, Total:368.527, 2 threads
+
+bandpass_filter:: 136718750/216000000 (63%) - Elapsed(s): RC:7.657, BPF:722.402, GC:5.558, WC:4.627, Total:373.928, 2 threads
+
+bandpass_filter:: 139062500/216000000 (64%) - Elapsed(s): RC:7.764, BPF:734.299, GC:5.672, WC:4.703, Total:379.306, 2 threads
+
+bandpass_filter:: 140625000/216000000 (65%) - Elapsed(s): RC:7.834, BPF:743.585, GC:5.76, WC:4.755, Total:384.516, 2 threads
+
+bandpass_filter:: 142968750/216000000 (66%) - Elapsed(s): RC:7.936, BPF:751.388, GC:5.836, WC:4.825, Total:390.055, 2 threads
+
+bandpass_filter:: 145312500/216000000 (67%) - Elapsed(s): RC:8.042, BPF:763.845, GC:5.949, WC:4.901, Total:395.884, 2 threads
+
+bandpass_filter:: 147656250/216000000 (68%) - Elapsed(s): RC:8.146, BPF:775.682, GC:6.061, WC:4.976, Total:402.147, 2 threads
+
+bandpass_filter:: 150000000/216000000 (69%) - Elapsed(s): RC:8.25, BPF:788.56, GC:6.173, WC:5.052, Total:408.373, 2 threads
+
+bandpass_filter:: 152343750/216000000 (70%) - Elapsed(s): RC:8.354, BPF:801.541, GC:6.284, WC:5.129, Total:414.725, 2 threads
+
+bandpass_filter:: 154687500/216000000 (71%) - Elapsed(s): RC:8.461, BPF:814.431, GC:6.399, WC:5.211, Total:421.026, 2 threads
+
+bandpass_filter:: 156625000/216000000 (72%) - Elapsed(s): RC:8.558, BPF:827.312, GC:6.513, WC:5.28, Total:427.283, 2 threads
+
+bandpass_filter:: 158187500/216000000 (73%) - Elapsed(s): RC:8.599, BPF:835.413, GC:6.575, WC:5.336, Total:433.316, 2 threads
+
+bandpass_filter:: 159750000/216000000 (73%) - Elapsed(s): RC:8.677, BPF:840.915, GC:6.627, WC:5.385, Total:438.999, 2 threads
+
+bandpass_filter:: 161312500/216000000 (74%) - Elapsed(s): RC:8.752, BPF:846.202, GC:6.678, WC:5.433, Total:444.462, 2 threads
+
+bandpass_filter:: 162875000/216000000 (75%) - Elapsed(s): RC:8.829, BPF:851.469, GC:6.73, WC:5.483, Total:449.908, 2 threads
+
+bandpass_filter:: 164437500/216000000 (76%) - Elapsed(s): RC:8.906, BPF:856.744, GC:6.782, WC:5.533, Total:455.364, 2 threads
+
+bandpass_filter:: 166000000/216000000 (76%) - Elapsed(s): RC:8.983, BPF:862, GC:6.834, WC:5.582, Total:460.8, 2 threads
+
+bandpass_filter:: 167562500/216000000 (77%) - Elapsed(s): RC:9.057, BPF:867.267, GC:6.885, WC:5.629, Total:466.241, 2 threads
+
+bandpass_filter:: 169125000/216000000 (78%) - Elapsed(s): RC:9.131, BPF:872.553, GC:6.938, WC:5.68, Total:471.707, 2 threads
+
+bandpass_filter:: 170687500/216000000 (79%) - Elapsed(s): RC:9.209, BPF:877.85, GC:6.99, WC:5.734, Total:477.191, 2 threads
+
+bandpass_filter:: 172250000/216000000 (79%) - Elapsed(s): RC:9.286, BPF:883.128, GC:7.042, WC:5.794, Total:482.66, 2 threads
+
+bandpass_filter:: 173812500/216000000 (80%) - Elapsed(s): RC:9.363, BPF:888.397, GC:7.094, WC:5.853, Total:488.12, 2 threads
+
+bandpass_filter:: 175375000/216000000 (81%) - Elapsed(s): RC:9.441, BPF:893.669, GC:7.145, WC:5.913, Total:493.581, 2 threads
+
+bandpass_filter:: 176937500/216000000 (81%) - Elapsed(s): RC:9.518, BPF:898.941, GC:7.196, WC:5.975, Total:499.046, 2 threads
+
+bandpass_filter:: 178500000/216000000 (82%) - Elapsed(s): RC:9.596, BPF:904.24, GC:7.247, WC:6.035, Total:504.537, 2 threads
+
+bandpass_filter:: 180062500/216000000 (83%) - Elapsed(s): RC:9.674, BPF:909.514, GC:7.299, WC:6.091, Total:509.997, 2 threads
+
+bandpass_filter:: 181625000/216000000 (84%) - Elapsed(s): RC:9.752, BPF:914.785, GC:7.351, WC:6.142, Total:515.45, 2 threads
+
+bandpass_filter:: 183187500/216000000 (84%) - Elapsed(s): RC:9.829, BPF:920.058, GC:7.402, WC:6.189, Total:520.899, 2 threads
+
+bandpass_filter:: 184750000/216000000 (85%) - Elapsed(s): RC:9.906, BPF:925.325, GC:7.454, WC:6.237, Total:526.345, 2 threads
+
+bandpass_filter:: 186312500/216000000 (86%) - Elapsed(s): RC:9.983, BPF:930.599, GC:7.506, WC:6.287, Total:531.799, 2 threads
+
+bandpass_filter:: 187875000/216000000 (86%) - Elapsed(s): RC:10.063, BPF:935.864, GC:7.557, WC:6.338, Total:537.246, 2 threads
+
+bandpass_filter:: 189437500/216000000 (87%) - Elapsed(s): RC:10.14, BPF:941.115, GC:7.609, WC:6.388, Total:542.678, 2 threads
+
+bandpass_filter:: 191000000/216000000 (88%) - Elapsed(s): RC:10.218, BPF:946.357, GC:7.661, WC:6.438, Total:548.1, 2 threads
+
+bandpass_filter:: 192562500/216000000 (89%) - Elapsed(s): RC:10.293, BPF:951.608, GC:7.712, WC:6.512, Total:553.555, 2 threads
+
+bandpass_filter:: 193343750/216000000 (89%) - Elapsed(s): RC:10.447, BPF:959.338, GC:7.744, WC:6.541, Total:561.501, 2 threads
+
+bandpass_filter:: 194906250/216000000 (90%) - Elapsed(s): RC:10.532, BPF:965.164, GC:7.799, WC:6.595, Total:567.525, 2 threads
+
+bandpass_filter:: 196468750/216000000 (90%) - Elapsed(s): RC:10.761, BPF:975.163, GC:7.856, WC:6.662, Total:577.878, 2 threads
+
+bandpass_filter:: 198031250/216000000 (91%) - Elapsed(s): RC:10.846, BPF:980.759, GC:7.912, WC:6.725, Total:583.683, 2 threads
+
+bandpass_filter:: 199593750/216000000 (92%) - Elapsed(s): RC:10.921, BPF:986.044, GC:7.964, WC:6.783, Total:589.156, 2 threads
+
+bandpass_filter:: 201156250/216000000 (93%) - Elapsed(s): RC:10.994, BPF:991.327, GC:8.016, WC:6.842, Total:594.625, 2 threads
+
+bandpass_filter:: 202718750/216000000 (93%) - Elapsed(s): RC:11.069, BPF:996.614, GC:8.067, WC:6.902, Total:600.1, 2 threads
+
+bandpass_filter:: 204281250/216000000 (94%) - Elapsed(s): RC:11.143, BPF:1001.91, GC:8.119, WC:6.961, Total:605.585, 2 threads
+
+bandpass_filter:: 205843750/216000000 (95%) - Elapsed(s): RC:11.218, BPF:1007.19, GC:8.17, WC:7.012, Total:611.042, 2 threads
+
+bandpass_filter:: 207406250/216000000 (96%) - Elapsed(s): RC:11.295, BPF:1012.48, GC:8.222, WC:7.062, Total:616.509, 2 threads
+
+bandpass_filter:: 208968750/216000000 (96%) - Elapsed(s): RC:11.373, BPF:1017.77, GC:8.275, WC:7.112, Total:621.99, 2 threads
+
+bandpass_filter:: 210531250/216000000 (97%) - Elapsed(s): RC:11.452, BPF:1023.09, GC:8.327, WC:7.163, Total:627.489, 2 threads
+
+bandpass_filter:: 212093750/216000000 (98%) - Elapsed(s): RC:11.53, BPF:1028.4, GC:8.379, WC:7.214, Total:632.977, 2 threads
+
+bandpass_filter:: 213656250/216000000 (98%) - Elapsed(s): RC:11.611, BPF:1033.67, GC:8.431, WC:7.265, Total:638.438, 2 threads
+
+bandpass_filter:: 215218750/216000000 (99%) - Elapsed(s): RC:11.689, BPF:1038.96, GC:8.483, WC:7.314, Total:643.903, 2 threads
+
+bandpass_filter:: 216000000/216000000 (100%) - Elapsed(s): RC:11.728, BPF:1041.63, GC:8.509, WC:7.339, Total:646.669, 2 threads
+Elapsed time for processor bandpass_filter: 646.671 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: bandpass_filter
+Peak RAM: 1705 MB. Peak CPU: 198%. Avg CPU: 188.914%. Elapsed time: 646.678 seconds.
+---------------------------------------------------------------
+
+Process finished: bandpass_filter
+
+Queuing process mask_out_artifacts
+
+mask_out_artifacts:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp mask_out_artifacts --timeseries=/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp --interval_size=100 --threshold=5 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("interval_size", QVariant(qlonglong, 100))("threshold", QVariant(qlonglong, 5))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp"))("timeseries_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","interval_size":"100","threshold":"5","timeseries":"/tmp/mountainlab/tmp_long_term/4ad8072d6206498cf219419006faf89f68129b98-bandpass_filter-timeseries_out.tmp","timeseries_out":"/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING mask_out_artifacts
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 21400000/216000000 (9%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 45000000/216000000 (20%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 69100000/216000000 (31%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 93400000/216000000 (43%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 117400000/216000000 (54%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 141500000/216000000 (65%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 165700000/216000000 (76%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 189900000/216000000 (87%)
+
+mask_out_artifacts:: mask_out_artifacts compute_norms: 214200000/216000000 (99%)
+
+mask_out_artifacts:: mask_out_artifacts write data: 38000000/216000000 (17%)
+
+mask_out_artifacts:: mask_out_artifacts write data: 101300000/216000000 (46%)
+
+mask_out_artifacts:: mask_out_artifacts write data: 160800000/216000000 (74%)
+
+mask_out_artifacts:: Using 95.09% of all timepoints
+Elapsed time for processor mask_out_artifacts: 64.483 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: mask_out_artifacts
+Peak RAM: 29 MB. Peak CPU: 104%. Avg CPU: 101.313%. Elapsed time: 64.49 seconds.
+---------------------------------------------------------------
+
+Process finished: mask_out_artifacts
+
+Queuing process whiten
+
+whiten:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp whiten --timeseries=/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp"))("timeseries_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","timeseries":"/tmp/mountainlab/tmp_long_term/879ebfac53d94b26b98d8659da6877a2daee8dc2-mask_out_artifacts-timeseries_out.tmp","timeseries_out":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING whiten
+23000000/216000000 (10%)
+40000000/216000000 (18%)
+57000000/216000000 (26%)
+76000000/216000000 (35%)
+93000000/216000000 (43%)
+113000000/216000000 (52%)
+130000000/216000000 (60%)
+149000000/216000000 (68%)
+166000000/216000000 (76%)
+187000000/216000000 (86%)
+204000000/216000000 (94%)
+216000000/216000000 (100%)
+
+whiten:: 14000000/216000000 (6%)
+
+whiten:: 29000000/216000000 (13%)
+
+whiten:: 45000000/216000000 (20%)
+
+whiten:: 64000000/216000000 (29%)
+
+whiten:: 88000000/216000000 (40%)
+
+whiten:: 112000000/216000000 (51%)
+
+whiten:: 136000000/216000000 (62%)
+
+whiten:: 159000000/216000000 (73%)
+
+whiten:: 181000000/216000000 (83%)
+
+whiten:: 201000000/216000000 (93%)
+
+whiten:: 212000000/216000000 (98%)
+
+whiten:: 216000000/216000000 (100%)
+Elapsed time for processor whiten: 120.028 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: whiten
+Peak RAM: 573 MB. Peak CPU: 192%. Avg CPU: 185.112%. Elapsed time: 120.035 seconds.
+---------------------------------------------------------------
+
+Process finished: whiten
+Queuing process detect
+
+detect:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp detect --timeseries=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --detect_out=/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp --clip_size=50 --detect_interval=10 --detect_threshold=3.5 --individual_channels=1 --sign=0 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("clip_size", QVariant(qlonglong, 50))("detect_interval", QVariant(qlonglong, 10))("detect_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp"))("detect_threshold", QVariant(float, 3.5))("individual_channels", QVariant(qlonglong, 1))("sign", QVariant(qlonglong, 0))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","clip_size":"50","detect_interval":"10","detect_out":"/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp","detect_threshold":"3.5","individual_channels":"1","sign":"0","timeseries":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING detect
+15000000/216000000 (6%)
+31000000/216000000 (14%)
+48000000/216000000 (22%)
+64000000/216000000 (29%)
+81000000/216000000 (37%)
+
+detect:: 96000000/216000000 (44%)
+
+detect:: 113000000/216000000 (52%)
+
+detect:: 129000000/216000000 (59%)
+
+detect:: 147000000/216000000 (68%)
+
+detect:: 164000000/216000000 (75%)
+
+detect:: 180000000/216000000 (83%)
+
+detect:: 196000000/216000000 (90%)
+
+detect:: 213000000/216000000 (98%)
+
+detect:: 216000000/216000000 (100%)
+Detected 3443028 events.
+Elapsed time for processor detect: 69.978 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: detect
+Peak RAM: 418 MB. Peak CPU: 203%. Avg CPU: 195.896%. Elapsed time: 69.984 seconds.
+---------------------------------------------------------------
+
+Process finished: detect
+
+Queuing process isocluster_v1
+
+isocluster_v1:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp isocluster_v1 --adjacency_matrix=/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp --detect=/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --firings_out=/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp --K_init=200 --clip_size=50 --consolidation_factor=0.8999999761581421 --detect_interval=10 --isocut_threshold=1 --num_features=10 --num_features2=10 --_request_num_threads=2 .
+QMap(("K_init", QVariant(qlonglong, 200))("_request_num_threads", QVariant(qlonglong, 2))("adjacency_matrix", QVariant(QString, "/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp"))("clip_size", QVariant(qlonglong, 50))("consolidation_factor", QVariant(float, 0.9))("detect", QVariant(QString, "/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp"))("detect_interval", QVariant(qlonglong, 10))("firings_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp"))("isocut_threshold", QVariant(qlonglong, 1))("num_features", QVariant(qlonglong, 10))("num_features2", QVariant(qlonglong, 10))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp")))
+========================================================
+QJsonObject({"K_init":"200","_request_num_threads":"2","adjacency_matrix":"/tmp/mountainlab/tmp_long_term/d966fe6f4852b6d46195b3693d376c1b0b9bd5b8-geom2adj-output.tmp","clip_size":"50","consolidation_factor":"0.8999999761581421","detect":"/tmp/mountainlab/tmp_long_term/594953db8440333deceb29feb926879063f63277-detect-detect_out.tmp","detect_interval":"10","firings_out":"/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp","isocut_threshold":"1","num_features":"10","num_features2":"10","timeseries":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING isocluster_v1
+
+isocluster_v1:: ISOCLUSTER.v1 channel 1 negatives: 4x50x117482
+
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x1261
+ISOCLUSTER.v1 channel 1: 4x50x105294
+
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x104149
+
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x1145
+ISOCLUSTER.v1 channel 1: 4x50x1046
+ISOCLUSTER.v1 channel 1: 4x50x99
+ISOCLUSTER.v1 channel 1: 4x50x2894
+ISOCLUSTER.v1 channel 1: 4x50x3519
+
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x4514
+ISOCLUSTER.v1 channel 1 positives: 4x50x63693
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9 negatives: 5x50x214736
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x90535
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x123991
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x116310
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x7681
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x3701
+ISOCLUSTER.v1 channel 9: 5x50x3980
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x210
+ISOCLUSTER.v1 channel 9: 5x50x200
+ISOCLUSTER.v1 channel 9: 5x50x10
+ISOCLUSTER.v1 channel 9 positives: 5x50x50283
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x5689
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x39803
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x4271
+
+isocluster_v1:: ISOCLUSTER.v1 channel 9: 5x50x130
+ISOCLUSTER.v1 channel 9: 5x50x390
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2 negatives: 6x50x147298
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x135229
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x129844
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x5385
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x559
+ISOCLUSTER.v1 channel 2: 6x50x526
+ISOCLUSTER.v1 channel 2: 6x50x33
+ISOCLUSTER.v1 channel 2: 6x50x5142
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x4601
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x541
+ISOCLUSTER.v1 channel 2: 6x50x6368
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x5884
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x484
+ISOCLUSTER.v1 channel 2 positives: 6x50x66855
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10 negatives: 6x50x117038
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x57444
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x4007
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x1679
+ISOCLUSTER.v1 channel 2: 6x50x2328
+ISOCLUSTER.v1 channel 2: 6x50x5404
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x4387
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x781
+ISOCLUSTER.v1 channel 2: 6x50x359
+ISOCLUSTER.v1 channel 2: 6x50x422
+ISOCLUSTER.v1 channel 2: 6x50x236
+ISOCLUSTER.v1 channel 10: 6x50x2912
+ISOCLUSTER.v1 channel 10: 6x50x1408
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x1504
+ISOCLUSTER.v1 channel 10: 6x50x110709
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x2873
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x2812
+ISOCLUSTER.v1 channel 10: 6x50x61
+ISOCLUSTER.v1 channel 10: 6x50x544
+ISOCLUSTER.v1 channel 10 positives: 6x50x50649
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x46572
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x43919
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x40906
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x2461
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x1397
+ISOCLUSTER.v1 channel 10: 6x50x1064
+ISOCLUSTER.v1 channel 10: 6x50x552
+ISOCLUSTER.v1 channel 10: 6x50x278
+ISOCLUSTER.v1 channel 10: 6x50x262
+ISOCLUSTER.v1 channel 10: 6x50x16
+ISOCLUSTER.v1 channel 10: 6x50x274
+ISOCLUSTER.v1 channel 10: 6x50x1265
+ISOCLUSTER.v1 channel 10: 6x50x1388
+ISOCLUSTER.v1 channel 10: 6x50x2349
+
+isocluster_v1:: ISOCLUSTER.v1 channel 10: 6x50x1728
+ISOCLUSTER.v1 channel 10: 6x50x1589
+ISOCLUSTER.v1 channel 10: 6x50x139
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3 negatives: 7x50x120586
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x113633
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x4064
+ISOCLUSTER.v1 channel 3: 7x50x3886
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x178
+ISOCLUSTER.v1 channel 3: 7x50x2889
+ISOCLUSTER.v1 channel 3: 7x50x2433
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x456
+ISOCLUSTER.v1 channel 3 positives: 7x50x43106
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x35391
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x195
+ISOCLUSTER.v1 channel 3: 7x50x35126
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x70
+ISOCLUSTER.v1 channel 3: 7x50x2122
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x572
+ISOCLUSTER.v1 channel 3: 7x50x349
+ISOCLUSTER.v1 channel 3: 7x50x223
+ISOCLUSTER.v1 channel 3: 7x50x5021
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 7x50x4883
+ISOCLUSTER.v1 channel 3: 7x50x138
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11 negatives: 7x50x196324
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x90263
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x102246
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x98944
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x3302
+ISOCLUSTER.v1 channel 11: 7x50x2668
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x2294
+ISOCLUSTER.v1 channel 11: 7x50x374
+ISOCLUSTER.v1 channel 11: 7x50x1147
+ISOCLUSTER.v1 channel 11 positives: 7x50x78888
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x37906
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x205
+ISOCLUSTER.v1 channel 11: 7x50x38711
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x37599
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x996
+ISOCLUSTER.v1 channel 11: 7x50x36603
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x27947
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x6588
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x4756
+ISOCLUSTER.v1 channel 11: 7x50x1832
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x2068
+ISOCLUSTER.v1 channel 11: 7x50x1112
+ISOCLUSTER.v1 channel 11: 7x50x2066
+ISOCLUSTER.v1 channel 11: 7x50x755
+
+isocluster_v1:: ISOCLUSTER.v1 channel 11: 7x50x149
+ISOCLUSTER.v1 channel 11: 7x50x1162
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4 negatives: 7x50x237400
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x84330
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x79501
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x4829
+ISOCLUSTER.v1 channel 4: 7x50x1980
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x2487
+ISOCLUSTER.v1 channel 4: 7x50x362
+ISOCLUSTER.v1 channel 4: 7x50x6856
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x5505
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x981
+ISOCLUSTER.v1 channel 4: 7x50x370
+ISOCLUSTER.v1 channel 4: 7x50x6412
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x4462
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x462
+ISOCLUSTER.v1 channel 4: 7x50x374
+ISOCLUSTER.v1 channel 4: 7x50x88
+ISOCLUSTER.v1 channel 4: 7x50x967
+ISOCLUSTER.v1 channel 4: 7x50x521
+ISOCLUSTER.v1 channel 4: 7x50x134254
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x5548
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x1277
+ISOCLUSTER.v1 channel 4: 7x50x3648
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x623
+ISOCLUSTER.v1 channel 4 positives: 7x50x56858
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x51924
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x49687
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x1916
+ISOCLUSTER.v1 channel 4: 7x50x1364
+ISOCLUSTER.v1 channel 4: 7x50x552
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x321
+ISOCLUSTER.v1 channel 4: 7x50x192
+ISOCLUSTER.v1 channel 4: 7x50x79
+ISOCLUSTER.v1 channel 4: 7x50x50
+ISOCLUSTER.v1 channel 4: 7x50x1411
+ISOCLUSTER.v1 channel 4: 7x50x3523
+ISOCLUSTER.v1 channel 4: 7x50x2898
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 7x50x2718
+ISOCLUSTER.v1 channel 4: 7x50x180
+ISOCLUSTER.v1 channel 4: 7x50x625
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12 negatives: 7x50x130246
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x88924
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x40178
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x1144
+ISOCLUSTER.v1 channel 12 positives: 7x50x56652
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x192
+ISOCLUSTER.v1 channel 12: 7x50x56460
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x54738
+
+isocluster_v1:: ISOCLUSTER.v1 channel 12: 7x50x1722
+ISOCLUSTER.v1 channel 12: 7x50x1691
+ISOCLUSTER.v1 channel 12: 7x50x31
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5 negatives: 7x50x91773
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 7x50x85507
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 7x50x1740
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 7x50x1503
+ISOCLUSTER.v1 channel 5: 7x50x237
+ISOCLUSTER.v1 channel 5: 7x50x4526
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5 positives: 7x50x43363
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 7x50x40855
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 7x50x2508
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13 negatives: 7x50x177995
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13 positives: 7x50x69826
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13: 7x50x68935
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13: 7x50x68457
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13: 7x50x478
+
+isocluster_v1:: ISOCLUSTER.v1 channel 13: 7x50x891
+ISOCLUSTER.v1 channel 13: 7x50x175
+ISOCLUSTER.v1 channel 13: 7x50x716
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6 negatives: 7x50x175515
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x170104
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x5411
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x5042
+ISOCLUSTER.v1 channel 6: 7x50x369
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6 positives: 7x50x76931
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x70670
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x5687
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x4953
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 7x50x638
+ISOCLUSTER.v1 channel 6: 7x50x96
+ISOCLUSTER.v1 channel 6: 7x50x574
+ISOCLUSTER.v1 channel 6: 7x50x31
+ISOCLUSTER.v1 channel 6: 7x50x543
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14 negatives: 7x50x130853
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x37125
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x80432
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x13296
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x4182
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x7173
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x952
+ISOCLUSTER.v1 channel 14: 7x50x197
+ISOCLUSTER.v1 channel 14: 7x50x127
+ISOCLUSTER.v1 channel 14: 7x50x70
+ISOCLUSTER.v1 channel 14: 7x50x792
+ISOCLUSTER.v1 channel 14 positives: 7x50x60348
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x39180
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x15199
+
+isocluster_v1:: ISOCLUSTER.v1 channel 14: 7x50x5969
+
+isocluster_v1:: ISOCLUSTER.v1 channel 7 negatives: 6x50x132400
+
+isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x127819
+
+isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x1271
+ISOCLUSTER.v1 channel 7: 6x50x3310
+ISOCLUSTER.v1 channel 7: 6x50x2224
+ISOCLUSTER.v1 channel 7: 6x50x1086
+
+isocluster_v1:: ISOCLUSTER.v1 channel 7 positives: 6x50x80421
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15 negatives: 6x50x144362
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8 negatives: 5x50x113776
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15: 6x50x63859
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 5x50x108385
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15: 6x50x53414
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15: 6x50x1269
+ISOCLUSTER.v1 channel 15: 6x50x458
+ISOCLUSTER.v1 channel 15: 6x50x785
+ISOCLUSTER.v1 channel 15: 6x50x7933
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15: 6x50x80503
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 5x50x1576
+ISOCLUSTER.v1 channel 8: 5x50x1061
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 5x50x300
+ISOCLUSTER.v1 channel 8: 5x50x215
+ISOCLUSTER.v1 channel 8: 5x50x3815
+ISOCLUSTER.v1 channel 8 positives: 5x50x43945
+
+isocluster_v1:: ISOCLUSTER.v1 channel 15 positives: 6x50x98142
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16 negatives: 4x50x205617
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16: 4x50x1144
+ISOCLUSTER.v1 channel 16: 4x50x970
+ISOCLUSTER.v1 channel 16: 4x50x102
+ISOCLUSTER.v1 channel 16: 4x50x72
+isocluster_v1:: ISOCLUSTER.v1 channel 16: 4x50x204473
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16 positives: 4x50x49667
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16: 4x50x47404
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16: 4x50x2263
+ISOCLUSTER.v1 channel 16: 4x50x2085
+
+isocluster_v1:: ISOCLUSTER.v1 channel 16: 4x50x178
+ISOCLUSTER.v1 channel 16: 4x50x97
+ISOCLUSTER.v1 channel 16: 4x50x81
+
+isocluster_v1:: Elapsed time for processor isocluster_v1: 306.255 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: isocluster_v1
+Peak RAM: 1725 MB. Peak CPU: 202%. Avg CPU: 197.464%. Elapsed time: 306.271 seconds.
+---------------------------------------------------------------
+
+Process finished: isocluster_v1
+
+Queuing process merge_across_channels_v2
+
+merge_across_channels_v2:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp merge_across_channels_v2 --firings=/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --firings_out=/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp --clip_size=50 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("clip_size", QVariant(qlonglong, 50))("firings", QVariant(QString, "/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp"))("firings_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp"))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","clip_size":"50","firings":"/tmp/mountainlab/tmp_long_term/5c64aa188fcd8cc8aa444472ae97280b5eceb468-isocluster_v1-firings_out.tmp","firings_out":"/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp","timeseries":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING merge_across_channels_v2
+
+merge_across_channels_v2:: Within range to consider: m=(1,5) k=(1,25) -12.5762,-13.9293,-11.8939,-14.6385
+
+merge_across_channels_v2:: Within range to consider: m=(5,1) k=(25,1) -14.6385,-11.8939,-13.9293,-12.5762
+
+merge_across_channels_v2:: Within range to consider: m=(14,16) k=(61,71) -10.1287,-9.19885,-8.7993,-8.90133
+
+merge_across_channels_v2:: Within range to consider: m=(16,14) k=(71,61) -8.90133,-8.7993,-9.19885,-10.1287
+
+merge_across_channels_v2:: Merge candidate pair: 26,2
+Merge candidate pair: 62,72
+Merge candidate pair: 72,62
+Cluster is already being used: frac=0.958333, dt=-2!
+(0, 0, 0, 0, 0, 28, 41)
+
+merge_across_channels_v2:: Merge candidate pair: 2,26
+Cluster is already being used: frac=0.973638, dt=-4!
+(0, 0, 7, 43, 1003, 3209, 133)
+
+merge_across_channels_v2:: Using 3134917 of 3139503 events after 2 redundant clusters removed
+Elapsed time for processor merge_across_channels_v2: 30.754 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: merge_across_channels_v2
+Peak RAM: 246 MB. Peak CPU: 100%. Avg CPU: 92.3759%. Elapsed time: 30.762 seconds.
+---------------------------------------------------------------
+
+Process finished: merge_across_channels_v2
+Queuing process fit_stage
+
+fit_stage:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp fit_stage --firings=/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --firings_out=/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp --clip_size=50 --min_shell_size=150 --neglogprior= --shell_increment=0 --use_old= --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("clip_size", QVariant(qlonglong, 50))("firings", QVariant(QString, "/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp"))("firings_out", QVariant(QString, "/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp"))("min_shell_size", QVariant(qlonglong, 150))("neglogprior", QVariant(QString, ""))("shell_increment", QVariant(qlonglong, 0))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"))("use_old", QVariant(QString, "")))
+========================================================
+QJsonObject({"_request_num_threads":"2","clip_size":"50","firings":"/tmp/mountainlab/tmp_long_term/1cfbdd4bd914ecef44c37bdbb07f31bd0924fe9d-merge_across_channels_v2-firings_out.tmp","firings_out":"/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp","min_shell_size":"150","neglogprior":"","shell_increment":"0","timeseries":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp","use_old":""})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING fit_stage
+
+fit_stage:: Starting fit stage
+
+fit_stage:: 2000000/216000000 (0%) - Elapsed(s): RC:0.308, SLD:0.037, KERNEL:3.27, GLD:0, Total:13.118, 2 threads
+
+fit_stage:: 8000000/216000000 (3%) - Elapsed(s): RC:0.828, SLD:0.115, KERNEL:11.615, GLD:0, Total:18.155, 2 threads
+
+fit_stage:: 14000000/216000000 (6%) - Elapsed(s): RC:1.304, SLD:0.188, KERNEL:22.567, GLD:0, Total:23.583, 2 threads
+
+fit_stage:: 21000000/216000000 (9%) - Elapsed(s): RC:1.892, SLD:0.271, KERNEL:33.051, GLD:0, Total:29.747, 2 threads
+
+fit_stage:: 28000000/216000000 (12%) - Elapsed(s): RC:2.448, SLD:0.345, KERNEL:43.766, GLD:0, Total:35.144, 2 threads
+
+fit_stage:: 35000000/216000000 (16%) - Elapsed(s): RC:3.013, SLD:0.423, KERNEL:54.602, GLD:0, Total:40.944, 2 threads
+
+fit_stage:: 42000000/216000000 (19%) - Elapsed(s): RC:3.573, SLD:0.5, KERNEL:64.989, GLD:0, Total:46.399, 2 threads
+
+fit_stage:: 49000000/216000000 (22%) - Elapsed(s): RC:4.136, SLD:0.578, KERNEL:76.285, GLD:0, Total:52.555, 2 threads
+
+fit_stage:: 55000000/216000000 (25%) - Elapsed(s): RC:4.622, SLD:0.643, KERNEL:87.722, GLD:0, Total:58.005, 2 threads
+
+fit_stage:: 60000000/216000000 (27%) - Elapsed(s): RC:5.029, SLD:0.701, KERNEL:97.096, GLD:0, Total:63.739, 2 threads
+
+fit_stage:: 68000000/216000000 (31%) - Elapsed(s): RC:5.668, SLD:0.792, KERNEL:108.898, GLD:0, Total:69.055, 2 threads
+
+fit_stage:: 74000000/216000000 (34%) - Elapsed(s): RC:6.136, SLD:0.858, KERNEL:118.152, GLD:0, Total:74.179, 2 threads
+
+fit_stage:: 81000000/216000000 (37%) - Elapsed(s): RC:6.699, SLD:0.937, KERNEL:127.493, GLD:0, Total:79.237, 2 threads
+
+fit_stage:: 89000000/216000000 (41%) - Elapsed(s): RC:7.377, SLD:1.027, KERNEL:137.752, GLD:0, Total:84.485, 2 threads
+
+fit_stage:: 95000000/216000000 (43%) - Elapsed(s): RC:7.892, SLD:1.097, KERNEL:148.343, GLD:0, Total:90.695, 2 threads
+
+fit_stage:: 104000000/216000000 (48%) - Elapsed(s): RC:8.599, SLD:1.193, KERNEL:159.815, GLD:0, Total:96.465, 2 threads
+
+fit_stage:: 112000000/216000000 (51%) - Elapsed(s): RC:9.22, SLD:1.274, KERNEL:169.113, GLD:0, Total:101.513, 2 threads
+
+fit_stage:: 120000000/216000000 (55%) - Elapsed(s): RC:9.856, SLD:1.355, KERNEL:179.619, GLD:0, Total:107.237, 2 threads
+
+fit_stage:: 128000000/216000000 (59%) - Elapsed(s): RC:10.501, SLD:1.433, KERNEL:189.678, GLD:0, Total:112.777, 2 threads
+
+fit_stage:: 136000000/216000000 (62%) - Elapsed(s): RC:11.124, SLD:1.51, KERNEL:199.964, GLD:0, Total:117.95, 2 threads
+
+fit_stage:: 143000000/216000000 (66%) - Elapsed(s): RC:11.686, SLD:1.577, KERNEL:209.374, GLD:0, Total:123.216, 2 threads
+
+fit_stage:: 150000000/216000000 (69%) - Elapsed(s): RC:12.265, SLD:1.647, KERNEL:218.374, GLD:0, Total:128.289, 2 threads
+
+fit_stage:: 157000000/216000000 (72%) - Elapsed(s): RC:12.856, SLD:1.718, KERNEL:229.361, GLD:0, Total:133.729, 2 threads
+
+fit_stage:: 165000000/216000000 (76%) - Elapsed(s): RC:13.523, SLD:1.795, KERNEL:239.189, GLD:0, Total:138.883, 2 threads
+
+fit_stage:: 171000000/216000000 (79%) - Elapsed(s): RC:14.019, SLD:1.855, KERNEL:249.137, GLD:0, Total:144.103, 2 threads
+
+fit_stage:: 179000000/216000000 (82%) - Elapsed(s): RC:14.656, SLD:1.93, KERNEL:258.676, GLD:0, Total:149.207, 2 threads
+
+fit_stage:: 186000000/216000000 (86%) - Elapsed(s): RC:15.208, SLD:1.99, KERNEL:269.096, GLD:0, Total:155.33, 2 threads
+
+fit_stage:: 192000000/216000000 (88%) - Elapsed(s): RC:15.682, SLD:2.048, KERNEL:278.92, GLD:0, Total:160.655, 2 threads
+
+fit_stage:: 202000000/216000000 (93%) - Elapsed(s): RC:16.462, SLD:2.131, KERNEL:289.893, GLD:0, Total:166.665, 2 threads
+
+fit_stage:: 211000000/216000000 (97%) - Elapsed(s): RC:17.11, SLD:2.202, KERNEL:300.819, GLD:0, Total:172.079, 2 threads
+
+fit_stage:: 215000000/216000000 (99%) - Elapsed(s): RC:17.441, SLD:2.242, KERNEL:306.135, GLD:0, Total:177.777, 2 threads
+
+fit_stage:: 216000000/216000000 (100%) - Elapsed(s): RC:17.525, SLD:2.252, KERNEL:307.341, GLD:0, Total:179.078, 2 threads
+
+fit_stage:: using 2146196/3134917 events (68.461%)
+
+fit_stage:: Elapsed time for processor fit_stage: 179.772 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: fit_stage
+Peak RAM: 767 MB. Peak CPU: 193%. Avg CPU: 175.617%. Elapsed time: 179.791 seconds.
+---------------------------------------------------------------
+
+Process finished: fit_stage
+Queuing process ms_metrics
+Queuing process copy
+
+copy:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/firings.mda --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("input", QVariant(QString, "/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp"))("output", QVariant(QString, "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/firings.mda")))
+========================================================
+QJsonObject({"_request_num_threads":"2","input":"/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp","output":"/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/firings.mda"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING copy
+Elapsed time for processor copy: 0.084 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.091 seconds.
+---------------------------------------------------------------
+
+Process finished: copy
+
+ms_metrics:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp ms_metrics --firings=/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp --cluster_metrics=/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp --cluster_pair_metrics=/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp --clip_size=50 --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("clip_size", QVariant(qlonglong, 50))("cluster_metrics", QVariant(QString, "/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp"))("cluster_pair_metrics", QVariant(QString, "/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp"))("firings", QVariant(QString, "/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp"))("timeseries", QVariant(QString, "/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp")))
+========================================================
+QJsonObject({"_request_num_threads":"2","clip_size":"50","cluster_metrics":"/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp","cluster_pair_metrics":"/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp","firings":"/tmp/mountainlab/tmp_long_term/1cea79d509c0b0bad3b2f2afeae61adac3e508ab-fit_stage-firings_out.tmp","timeseries":"/tmp/mountainlab/tmp_long_term/345441535052e452064415247b4d916f0c838f9c-whiten-timeseries_out.tmp"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING ms_metrics
+Using cluster numbers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45, 46, 47, 48, 49, 50, 51, 52, 53, 54, 55, 56, 57, 58, 59, 60, 61, 62, 63, 64, 65, 66, 67, 68, 69, 70, 71, 72, 73, 74)
+Extracting times and labels...
+
+ms_metrics:: Cluster metrics...
+
+ms_metrics:: Computing cluster metrics: completed 16 of 74 (21%)
+
+ms_metrics:: Computing cluster metrics: completed 33 of 74 (44%)
+
+ms_metrics:: Computing cluster metrics: completed 45 of 74 (60%)
+
+ms_metrics:: Computing cluster metrics: completed 62 of 74 (83%)
+
+ms_metrics:: get pairs to compare...
+
+ms_metrics:: Computing pair metrics...
+
+ms_metrics:: Computing pair metrics: completed 41 of 740 (5%)
+
+ms_metrics:: Computing pair metrics: completed 86 of 740 (11%)
+
+ms_metrics:: Computing pair metrics: completed 129 of 740 (17%)
+
+ms_metrics:: Computing pair metrics: completed 170 of 740 (22%)
+
+ms_metrics:: Computing pair metrics: completed 208 of 740 (28%)
+
+ms_metrics:: Computing pair metrics: completed 249 of 740 (33%)
+
+ms_metrics:: Computing pair metrics: completed 294 of 740 (39%)
+
+ms_metrics:: Computing pair metrics: completed 334 of 740 (45%)
+
+ms_metrics:: Computing pair metrics: completed 376 of 740 (50%)
+
+ms_metrics:: Computing pair metrics: completed 424 of 740 (57%)
+
+ms_metrics:: Computing pair metrics: completed 466 of 740 (62%)
+
+ms_metrics:: Computing pair metrics: completed 506 of 740 (68%)
+
+ms_metrics:: Computing pair metrics: completed 545 of 740 (73%)
+
+ms_metrics:: Computing pair metrics: completed 582 of 740 (78%)
+
+ms_metrics:: Computing pair metrics: completed 626 of 740 (84%)
+
+ms_metrics:: Computing pair metrics: completed 667 of 740 (90%)
+
+ms_metrics:: Computing pair metrics: completed 709 of 740 (95%)
+
+ms_metrics:: Computing pair metrics: completed 734 of 740 (99%)
+
+ms_metrics:: Elapsed time for processor ms_metrics: 123.792 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: ms_metrics
+Peak RAM: 890 MB. Peak CPU: 202%. Avg CPU: 190.35%. Elapsed time: 123.801 seconds.
+---------------------------------------------------------------
+
+Process finished: ms_metrics
+Queuing process copy
+Queuing process copy
+
+copy:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_metrics.csv --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("input", QVariant(QString, "/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp"))("output", QVariant(QString, "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_metrics.csv")))
+========================================================
+QJsonObject({"_request_num_threads":"2","input":"/tmp/mountainlab/tmp_long_term/2885fe8e3476f2f5193c5c6cbeba6ed3d0e02338-ms_metrics-cluster_metrics.tmp","output":"/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_metrics.csv"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING copy
+Elapsed time for processor copy: 0.001 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.009 seconds.
+---------------------------------------------------------------
+
+Process finished: copy
+copy:: Loaded 48 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 48 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_pair_metrics.csv --_request_num_threads=2 .
+QMap(("_request_num_threads", QVariant(qlonglong, 2))("input", QVariant(QString, "/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp"))("output", QVariant(QString, "/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_pair_metrics.csv")))
+========================================================
+QJsonObject({"_request_num_threads":"2","input":"/tmp/mountainlab/tmp_long_term/a1b554e344ff3720fb9f55bfdc2e1824129f60fb-ms_metrics-cluster_pair_metrics.tmp","output":"/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_thr2--np7/cluster_pair_metrics.csv"})
+QJsonValue(string, "2")
+request_num_threads= 2
+1
+RUNNING copy
+Elapsed time for processor copy: 0 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: copy
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.006 seconds.
+---------------------------------------------------------------
+
+Process finished: copy
+
+Peak Memory (MB):
+  0 (geom2adj)
+  0 (copy)
+  30.824 (extract_raw)
+  1705.51 (bandpass_filter)
+  29.916 (mask_out_artifacts)
+  573.896 (whiten)
+  418.776 (detect)
+  1725.12 (isocluster_v1)
+  246.676 (merge_across_channels_v2)
+  767.74 (fit_stage)
+  890.376 (ms_metrics)
+  0 (copy)
+  0 (copy)
+  0 (copy)
+
+Peak CPU percent:
+  0 (geom2adj)
+  0 (copy)
+  104 (extract_raw)
+  198 (bandpass_filter)
+  104 (mask_out_artifacts)
+  192 (whiten)
+  203 (detect)
+  202 (isocluster_v1)
+  100 (merge_across_channels_v2)
+  193 (fit_stage)
+  202 (ms_metrics)
+  0 (copy)
+  0 (copy)
+  0 (copy)
+
+Avg CPU (pct):
+  0 (geom2adj)
+  0 (copy)
+  100.164 (extract_raw)
+  188.914 (bandpass_filter)
+  101.313 (mask_out_artifacts)
+  185.112 (whiten)
+  195.896 (detect)
+  197.464 (isocluster_v1)
+  92.3759 (merge_across_channels_v2)
+  175.617 (fit_stage)
+  190.35 (ms_metrics)
+  0 (copy)
+  0 (copy)
+  0 (copy)
+
+Elapsed time (sec):
+  0.009 (geom2adj)
+  0.008 (copy)
+  77.137 (extract_raw)
+  646.678 (bandpass_filter)
+  64.49 (mask_out_artifacts)
+  120.035 (whiten)
+  69.984 (detect)
+  306.271 (isocluster_v1)
+  30.762 (merge_across_channels_v2)
+  179.791 (fit_stage)
+  123.801 (ms_metrics)
+  0.009 (copy)
+  0.006 (copy)
+  0.091 (copy)
+

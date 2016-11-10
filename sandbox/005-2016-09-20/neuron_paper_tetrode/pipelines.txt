@@ -1,5 +1,2 @@
-ms mountainsort_001.pipeline --curation=curation.script
-ms2 mountainsort_002.pipeline --curation=curation.script
-ms2-1.2 mountainsort_002.pipeline --curation=curation.script --isocut_threshold=1.2
-ms2-1.0 mountainsort_002.pipeline --curation=curation.script --isocut_threshold=1.0
-#msb mountainsort_001b.pipeline --curation=curation.script --mask_out_artifacts_threshold=6 --mask_out_artifacts_interval=100
+ms mountainsort_001b.pipeline --curation=curation.script
+ms2 mountainsort_002.pipeline --curation=curation.script --mask_out_artifacts_threshold=3
