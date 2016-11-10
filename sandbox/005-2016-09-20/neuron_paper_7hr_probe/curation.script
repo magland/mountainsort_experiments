@@ -1,0 +1,67 @@
+// Initialize
+for (var i in clusters) {
+	clusters[i].removeTag('rejected');
+	clusters[i].removeTag('MUA');
+	clusters[i].removeTag('rare');
+	clusters[i].removeTag('low_snr');
+	clusters[i].removeTag('noise');
+	clusters[i].setMetric('isolation',1);
+	clusters[i].setMetric('overlap_cluster',0);
+}
+
+var thresholds={
+	noise_overlap:0.03,
+	peak_amp_over_noise:2,
+	firing_rate:0.05,
+	isolation:0.96
+};
+
+console.log('\nnoise_overlap');
+
+for (var i in clusters) {	
+	if (clusters[i].metric('noise_overlap')>thresholds.noise_overlap) {
+		console.log('REJECT: '+clusters[i].k());
+		clusters[i].addTag('noise');
+		clusters[i].addTag('rejected');
+	}
+}
+
+console.log('\nSNR');
+for (var i in clusters) {	
+	var denom=clusters[i].metric('peak_noise')||1;
+	var snr=clusters[i].metric('peak_amp')/denom;
+	clusters[i].setMetric('SNR',snr);
+	if (snr<thresholds.peak_amp_over_noise) {
+		console.log('REJECT: '+clusters[i].k());
+		clusters[i].addTag('low_snr');
+		clusters[i].addTag('rejected');
+	}
+}
+
+console.log('\nfiring_rate');
+for (var i in clusters) {	
+	if (clusters[i].metric('firing_rate')<thresholds.firing_rate) {
+		console.log('REJECT: '+clusters[i].k());
+		clusters[i].addTag('rare');
+		clusters[i].addTag('rejected');
+	}
+}
+
+console.log('\nIsolation');
+for (var i in clusterPairs) {
+	var CP=clusterPairs[i];
+	var overlap=CP.metric('overlap');
+	if (1-overlap<CP.cluster1().metric('isolation')) {
+		CP.cluster1().setMetric('isolation',1-overlap);
+		CP.cluster1().setMetric('overlap_cluster',CP.cluster2().k());
+	}
+}
+
+console.log('\nMUA');
+for (var i in clusters) {	
+	var iso=clusters[i].metric('isolation');
+	if (iso<thresholds.isolation) {
+		console.log('MUA: '+clusters[i].k()+' <--> '+clusters[i].metric('overlap_cluster')+' ('+iso+')');
+		clusters[i].addTag('MUA');
+	}
+}

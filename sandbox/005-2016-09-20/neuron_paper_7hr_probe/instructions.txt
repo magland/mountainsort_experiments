@@ -1,0 +1,3 @@
+
+kron-run ms2 np7
+kron-view results ms2 np7
