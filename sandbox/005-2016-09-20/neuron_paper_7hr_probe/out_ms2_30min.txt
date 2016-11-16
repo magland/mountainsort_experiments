@@ -126,3 +126,99 @@ Process finished: mask_out_artifacts
 
 Queuing process whiten
 
+whiten:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp whiten --timeseries=/tmp/mountainlab/tmp_long_term/382fddfef66c9fa4be94bd61864f4d4289f98d41-mask_out_artifacts-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/28a3c99db9b2ae4a8193d228db82a9098c7a18d2-whiten-timeseries_out.tmp --_request_num_threads=32 .
+RUNNING whiten
+54000000/54000000 (100%)
+54000000/54000000 (100%)
+
+whiten:: Elapsed time for processor whiten: 16.816 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: whiten
+Peak RAM: 1378 MB. Peak CPU: 451%. Avg CPU: 385.562%. Elapsed time: 16.822 seconds.
+---------------------------------------------------------------
+
+Process finished: whiten
+
+Queuing process detect
+
+detect:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp detect --timeseries=/tmp/mountainlab/tmp_long_term/28a3c99db9b2ae4a8193d228db82a9098c7a18d2-whiten-timeseries_out.tmp --detect_out=/tmp/mountainlab/tmp_long_term/a959da7a401f5995f8750b7b59b9186fa227f5a6-detect-detect_out.tmp --clip_size=50 --detect_interval=10 --detect_threshold=3.5 --individual_channels=1 --sign=0 --_request_num_threads=32 .
+RUNNING detect
+46000000/54000000 (85%)
+54000000/54000000 (100%)
+Detected 872227 events.
+Elapsed time for processor detect: 5.58 sec
+---------------------------------------------------------------
+PROCESS COMPLETED: detect
+Peak RAM: 1349 MB. Peak CPU: 872%. Avg CPU: 785.6%. Elapsed time: 5.59 seconds.
+---------------------------------------------------------------
+
+Process finished: detect
+Queuing process isocluster_v1
+
+isocluster_v1:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
+Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp isocluster_v1 --adjacency_matrix=/tmp/mountainlab/tmp_long_term/34d00a03e5b4c4cb6431d4ab0cb1b325df0979de-geom2adj-output.tmp --detect=/tmp/mountainlab/tmp_long_term/a959da7a401f5995f8750b7b59b9186fa227f5a6-detect-detect_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/28a3c99db9b2ae4a8193d228db82a9098c7a18d2-whiten-timeseries_out.tmp --firings_out=/tmp/mountainlab/tmp_long_term/8a3526a9eb8f4424ec82b30072e3bb14442911e3-isocluster_v1-firings_out.tmp --K_init=200 --clip_size=50 --consolidation_factor=0.8999999761581421 --detect_interval=10 --isocut_threshold=1 --num_features=10 --num_features2=10 --_request_num_threads=32 .
+RUNNING isocluster_v1
+mda_read_header: Problem reading input file **.
+"Problem reading mda file: /tmp/mountainlab/tmp_long_term/34d00a03e5b4c4cb6431d4ab0cb1b325df0979de-geom2adj-output.tmp"
+Error: incompatible dimensions between AM and X 1x1 16, /tmp/mountainlab/tmp_long_term/34d00a03e5b4c4cb6431d4ab0cb1b325df0979de-geom2adj-output.tmp
+Error in processor->run "isocluster_v1"
+Problem running processor: isocluster_v1
+---------------------------------------------------------------
+PROCESS COMPLETED: isocluster_v1
+ERROR: Exit code is non-zero: isocluster_v1
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.008 seconds.
+---------------------------------------------------------------
+Critical: Error in mountainprocessmain "Exit code is non-zero: isocluster_v1"
+Critical: Error in process isocluster_v1 37XA38CIKJFG9QD1FL4Q: Exit code is non-zero: isocluster_v1
+Process finished: isocluster_v1
+Warning: "Process returned with non-zero exit code: isocluster_v1"
+
+Peak Memory (MB):
+  0 (extract_geom)
+  0 (geom2adj)
+  0 (copy)
+  30.732 (extract_raw)
+  1726.41 (bandpass_filter)
+  29.82 (mask_out_artifacts)
+  1378.35 (whiten)
+  1349.44 (detect)
+  0 (copy)
+
+Peak CPU percent:
+  0 (extract_geom)
+  0 (geom2adj)
+  0 (copy)
+  107 (extract_raw)
+  3105 (bandpass_filter)
+  103 (mask_out_artifacts)
+  451 (whiten)
+  872 (detect)
+  0 (copy)
+
+Avg CPU (pct):
+  0 (extract_geom)
+  0 (geom2adj)
+  0 (copy)
+  96.72 (extract_raw)
+  2831.75 (bandpass_filter)
+  92.9571 (mask_out_artifacts)
+  385.563 (whiten)
+  785.6 (detect)
+  0 (copy)
+
+Elapsed time (sec):
+  0.009 (extract_geom)
+  0.007 (geom2adj)
+  0.007 (copy)
+  26.094 (extract_raw)
+  25.838 (bandpass_filter)
+  15.061 (mask_out_artifacts)
+  16.822 (whiten)
+  5.59 (detect)
+  0.007 (copy)
+
