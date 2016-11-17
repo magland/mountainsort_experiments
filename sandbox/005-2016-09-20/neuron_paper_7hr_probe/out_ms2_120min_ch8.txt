@@ -15,7 +15,7 @@ RUNNING extract_geom
 Elapsed time for processor extract_geom: 0.001 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: extract_geom
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.009 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.007 seconds.
 ---------------------------------------------------------------
 
 Process finished: extract_geom
@@ -35,52 +35,52 @@ RUNNING copy
 Elapsed time for processor copy: 0 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: copy
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.005 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.007 seconds.
 ---------------------------------------------------------------
 
 Process finished: copy
-
 geom2adj:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp geom2adj --input=/tmp/mountainlab/tmp_long_term/446cf631b881762e7985d42c5fd0746acf63643a-extract_geom-output.tmp --output=/tmp/mountainlab/tmp_long_term/5957520b6ca6cc7d3c938681bcd17e3310d94600-geom2adj-output.tmp --channels= --radius=80 --_request_num_threads=32 .
 RUNNING geom2adj
-Elapsed time for processor geom2adj: 0.001 sec
+Elapsed time for processor geom2adj: 0 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: geom2adj
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.005 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.006 seconds.
 ---------------------------------------------------------------
 
 Process finished: geom2adj
+
 Queuing process copy
 
 copy:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/5957520b6ca6cc7d3c938681bcd17e3310d94600-geom2adj-output.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/adjacency_matrix.mda --_request_num_threads=32 .
 RUNNING copy
-Elapsed time for processor copy: 0.001 sec
+Elapsed time for processor copy: 0 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: copy
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.004 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.006 seconds.
 ---------------------------------------------------------------
 
 Process finished: copy
 
-extract_raw:: extract raw 31187500/216000000 (14%)
+extract_raw:: extract raw 31562500/216000000 (14%)
 
 extract_raw:: extract raw 62000000/216000000 (28%)
 
-extract_raw:: extract raw 94375000/216000000 (43%)
+extract_raw:: extract raw 95687500/216000000 (44%)
 
-extract_raw:: extract raw 131000000/216000000 (60%)
+extract_raw:: extract raw 128375000/216000000 (59%)
 
-extract_raw:: extract raw 162750000/216000000 (75%)
+extract_raw:: extract raw 160437500/216000000 (74%)
 
-extract_raw:: extract raw 193437500/216000000 (89%)
+extract_raw:: extract raw 193312500/216000000 (89%)
 
-extract_raw:: Elapsed time for processor extract_raw: 33.73 sec
+extract_raw:: Elapsed time for processor extract_raw: 33.969 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: extract_raw
-Peak RAM: 24 MB. Peak CPU: 103%. Avg CPU: 99.925%. Elapsed time: 33.738 seconds.
+Peak RAM: 24 MB. Peak CPU: 104%. Avg CPU: 102.212%. Elapsed time: 33.976 seconds.
 ---------------------------------------------------------------
 
 Process finished: extract_raw
@@ -91,35 +91,31 @@ Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp bandpass_filter --timeseries=/tmp/mountainlab/tmp_long_term/f96de0235313b6b0b3ddcf7102a600e49e3c970f-extract_raw-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/f3791d4edb19adaccc02262d66b0e68d715714d8-bandpass_filter-timeseries_out.tmp --freq_max=6000 --freq_min=300 --freq_wid= --samplerate=30000 --_request_num_threads=32 .
 RUNNING bandpass_filter
 ************ Using chunk size / overlap size: 97656 / 19531 (num threads=32)
-683592/216000000 (0%) - Elapsed(s): RC:1.7, BPF:17.302, GC:0.012, WC:0.016, Total:2.58, 32 threads
-18164016/216000000 (8%) - Elapsed(s): RC:2.36, BPF:204.238, GC:0.609, WC:0.643, Total:7.581, 32 threads
-37890528/216000000 (17%) - Elapsed(s): RC:3.007, BPF:360.625, GC:1.11, WC:1.381, Total:12.592, 32 threads
-58691256/216000000 (27%) - Elapsed(s): RC:3.695, BPF:521.389, GC:1.607, WC:2.111, Total:17.594, 32 threads
-79491984/216000000 (36%) - Elapsed(s): RC:4.391, BPF:679.828, GC:2.112, WC:2.871, Total:22.615, 32 threads
+1367184/216000000 (0%) - Elapsed(s): RC:0.211, BPF:10.889, GC:0.039, WC:0.055, Total:0.905, 32 threads
+21484320/216000000 (9%) - Elapsed(s): RC:0.994, BPF:172.327, GC:0.592, WC:0.815, Total:5.918, 32 threads
+41601456/216000000 (19%) - Elapsed(s): RC:1.745, BPF:329.694, GC:1.127, WC:1.552, Total:10.927, 32 threads
+61620936/216000000 (28%) - Elapsed(s): RC:2.469, BPF:486.258, GC:1.664, WC:2.294, Total:15.963, 32 threads
+81933384/216000000 (37%) - Elapsed(s): RC:3.194, BPF:645.393, GC:2.221, WC:3.019, Total:20.965, 32 threads
+101952864/216000000 (47%) - Elapsed(s): RC:3.944, BPF:802.463, GC:2.778, WC:3.776, Total:26.075, 32 threads
 
-bandpass_filter:: 100292712/216000000 (46%) - Elapsed(s): RC:5.083, BPF:837.314, GC:2.62, WC:3.592, Total:27.623, 32 threads
+bandpass_filter:: 122070000/216000000 (56%) - Elapsed(s): RC:4.697, BPF:961.368, GC:3.339, WC:4.535, Total:31.1, 32 threads
 
-bandpass_filter:: 121093440/216000000 (56%) - Elapsed(s): RC:5.771, BPF:993.408, GC:3.124, WC:4.312, Total:32.653, 32 threads
+bandpass_filter:: 142089480/216000000 (65%) - Elapsed(s): RC:5.451, BPF:1120.91, GC:3.901, WC:5.598, Total:36.114, 32 threads
 
-bandpass_filter:: 142284792/216000000 (65%) - Elapsed(s): RC:6.495, BPF:1153.09, GC:3.661, WC:5.103, Total:37.665, 32 threads
+bandpass_filter:: 161620680/216000000 (74%) - Elapsed(s): RC:6.18, BPF:1276.35, GC:4.426, WC:6.595, Total:41.163, 32 threads
 
-bandpass_filter:: 162987864/216000000 (75%) - Elapsed(s): RC:7.202, BPF:1312.2, GC:4.178, WC:5.967, Total:42.701, 32 threads
+bandpass_filter:: 181542504/216000000 (84%) - Elapsed(s): RC:6.907, BPF:1435.39, GC:4.969, WC:7.362, Total:46.185, 32 threads
 
-bandpass_filter:: 183300312/216000000 (84%) - Elapsed(s): RC:7.903, BPF:1467.31, GC:4.699, WC:7.066, Total:47.717, 32 threads
+bandpass_filter:: 200780736/216000000 (92%) - Elapsed(s): RC:7.619, BPF:1586.77, GC:5.501, WC:8.356, Total:51.192, 32 threads
 
-bandpass_filter:: 203011752/216000000 (93%) - Elapsed(s): RC:8.54, BPF:1621.65, GC:5.203, WC:7.79, Total:52.753, 32 threads
-
-bandpass_filter:: 213851568/216000000 (99%) - Elapsed(s): RC:8.726, BPF:1681.4, GC:5.391, WC:8.234, Total:57.819, 32 threads
-
-bandpass_filter:: 216000000/216000000 (100%) - Elapsed(s): RC:8.749, BPF:1688.61, GC:5.415, WC:8.261, Total:60.895, 32 threads
-Elapsed time for processor bandpass_filter: 60.896 sec
+bandpass_filter:: 216000000/216000000 (100%) - Elapsed(s): RC:8.021, BPF:1692.79, GC:5.861, WC:8.844, Total:55.51, 32 threads
+Elapsed time for processor bandpass_filter: 55.51 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: bandpass_filter
-Peak RAM: 1665 MB. Peak CPU: 3002%. Avg CPU: 2616.91%. Elapsed time: 60.941 seconds.
+Peak RAM: 1669 MB. Peak CPU: 3265%. Avg CPU: 3150.4%. Elapsed time: 55.53 seconds.
 ---------------------------------------------------------------
 
 Process finished: bandpass_filter
-
 Queuing process mask_out_artifacts
 
 mask_out_artifacts:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
@@ -127,126 +123,61 @@ Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp mask_out_artifacts --timeseries=/tmp/mountainlab/tmp_long_term/f3791d4edb19adaccc02262d66b0e68d715714d8-bandpass_filter-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/244b8868cae014ecc9b8ff829dd31ff81213c0c9-mask_out_artifacts-timeseries_out.tmp --interval_size=100 --threshold=5 --_request_num_threads=32 .
 RUNNING mask_out_artifacts
 
-mask_out_artifacts:: mask_out_artifacts compute_norms: 38800000/216000000 (17%)
+mask_out_artifacts:: mask_out_artifacts compute_norms: 46000000/216000000 (21%)
 
-mask_out_artifacts:: mask_out_artifacts compute_norms: 77400000/216000000 (35%)
+mask_out_artifacts:: mask_out_artifacts compute_norms: 92200000/216000000 (42%)
 
-mask_out_artifacts:: mask_out_artifacts compute_norms: 116400000/216000000 (53%)
+mask_out_artifacts:: mask_out_artifacts compute_norms: 138600000/216000000 (64%)
 
-mask_out_artifacts:: mask_out_artifacts compute_norms: 154800000/216000000 (71%)
+mask_out_artifacts:: mask_out_artifacts compute_norms: 184700000/216000000 (85%)
 
-mask_out_artifacts:: mask_out_artifacts compute_norms: 193700000/216000000 (89%)
+mask_out_artifacts:: mask_out_artifacts write data: 43100000/216000000 (19%)
 
-mask_out_artifacts:: mask_out_artifacts write data: 46400000/216000000 (21%)
-
-mask_out_artifacts:: mask_out_artifacts write data: 150000000/216000000 (69%)
+mask_out_artifacts:: mask_out_artifacts write data: 174100000/216000000 (80%)
 
 mask_out_artifacts:: Using 96.34% of all timepoints
-Elapsed time for processor mask_out_artifacts: 38.262 sec
+Elapsed time for processor mask_out_artifacts: 31.795 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: mask_out_artifacts
-Peak RAM: 20 MB. Peak CPU: 104%. Avg CPU: 102.486%. Elapsed time: 38.268 seconds.
+Peak RAM: 20 MB. Peak CPU: 104%. Avg CPU: 100.113%. Elapsed time: 31.802 seconds.
 ---------------------------------------------------------------
 
 Process finished: mask_out_artifacts
-
 Queuing process whiten
 
 whiten:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp whiten --timeseries=/tmp/mountainlab/tmp_long_term/244b8868cae014ecc9b8ff829dd31ff81213c0c9-mask_out_artifacts-timeseries_out.tmp --timeseries_out=/tmp/mountainlab/tmp_long_term/a83192f3fdd47bc7c4f5cdccf78da06066cbb080-whiten-timeseries_out.tmp --_request_num_threads=32 .
 RUNNING whiten
-10000000/216000000 (4%)
-21000000/216000000 (9%)
-31000000/216000000 (14%)
-45000000/216000000 (20%)
-62000000/216000000 (28%)
-79000000/216000000 (36%)
-
-whiten:: 95000000/216000000 (43%)
-
-whiten:: 111000000/216000000 (51%)
-
-whiten:: 127000000/216000000 (58%)
-
-whiten:: 147000000/216000000 (68%)
-
-whiten:: 170000000/216000000 (78%)
-
-whiten:: 194000000/216000000 (89%)
-
-whiten:: 216000000/216000000 (100%)
-
-whiten:: 16000000/216000000 (7%)
-
-whiten:: 34000000/216000000 (15%)
-
-whiten:: 50000000/216000000 (23%)
-
-whiten:: 67000000/216000000 (31%)
-
-whiten:: 86000000/216000000 (39%)
-
-whiten:: 104000000/216000000 (48%)
-
-whiten:: 122000000/216000000 (56%)
-
-whiten:: 139000000/216000000 (64%)
-
-whiten:: 155000000/216000000 (71%)
-
-whiten:: 171000000/216000000 (79%)
-
-whiten:: 188000000/216000000 (87%)
-
-whiten:: 205000000/216000000 (94%)
-
-whiten:: 216000000/216000000 (100%)
-Elapsed time for processor whiten: 131.76 sec
+123000000/216000000 (56%)
+216000000/216000000 (100%)
+119000000/216000000 (55%)
+216000000/216000000 (100%)
+Elapsed time for processor whiten: 17.216 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: whiten
-Peak RAM: 1270 MB. Peak CPU: 170%. Avg CPU: 133.291%. Elapsed time: 131.835 seconds.
+Peak RAM: 1699 MB. Peak CPU: 417%. Avg CPU: 321.5%. Elapsed time: 17.227 seconds.
 ---------------------------------------------------------------
 
 Process finished: whiten
+
 Queuing process detect
 
 detect:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp detect --timeseries=/tmp/mountainlab/tmp_long_term/a83192f3fdd47bc7c4f5cdccf78da06066cbb080-whiten-timeseries_out.tmp --detect_out=/tmp/mountainlab/tmp_long_term/7312fffa3614b5e6db469acc3bd3b43e0db3931e-detect-detect_out.tmp --clip_size=50 --detect_interval=10 --detect_threshold=3.5 --individual_channels=1 --sign=0 --_request_num_threads=32 .
 RUNNING detect
-12000000/216000000 (5%)
-25000000/216000000 (11%)
-41000000/216000000 (18%)
-
-detect:: 60000000/216000000 (27%)
-
-detect:: 77000000/216000000 (35%)
-
-detect:: 93000000/216000000 (43%)
-
-detect:: 111000000/216000000 (51%)
-
-detect:: 129000000/216000000 (59%)
-
-detect:: 148000000/216000000 (68%)
-
-detect:: 166000000/216000000 (76%)
-
-detect:: 185000000/216000000 (85%)
-
-detect:: 204000000/216000000 (94%)
-
-detect:: 216000000/216000000 (100%)
-
-detect:: Detected 1824098 events.
-Elapsed time for processor detect: 65.166 sec
+108000000/216000000 (50%)
+216000000/216000000 (100%)
+Detected 1824098 events.
+Elapsed time for processor detect: 9.601 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: detect
-Peak RAM: 1198 MB. Peak CPU: 174%. Avg CPU: 166.403%. Elapsed time: 65.232 seconds.
+Peak RAM: 1517 MB. Peak CPU: 632%. Avg CPU: 607.556%. Elapsed time: 9.614 seconds.
 ---------------------------------------------------------------
 
 Process finished: detect
+
 Queuing process isocluster_v1
 
 isocluster_v1:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
@@ -256,180 +187,191 @@ RUNNING isocluster_v1
 
 isocluster_v1:: ISOCLUSTER.v1 channel 1 negatives: 4x50x134612
 
-isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x126966
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x126960
 
-isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x7646
-
-isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x2209
-ISOCLUSTER.v1 channel 1: 4x50x5437
-
-isocluster_v1:: ISOCLUSTER.v1 channel 1 positives: 4x50x92348
+isocluster_v1:: ISOCLUSTER.v1 channel 8 negatives: 4x50x127829
 
 isocluster_v1:: ISOCLUSTER.v1 channel 7 negatives: 6x50x133733
 
 isocluster_v1:: ISOCLUSTER.v1 channel 6 negatives: 6x50x130822
 
-isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x92019
+isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x7652
+ISOCLUSTER.v1 channel 1 positives: 4x50x92348
 
-isocluster_v1:: ISOCLUSTER.v1 channel 1: 4x50x329
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x122710
 
-isocluster_v1:: ISOCLUSTER.v1 channel 5 negatives: 5x50x198836
+isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x92861
+ISOCLUSTER.v1 channel 6: 6x50x36541
 
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x92864
+isocluster_v1:: ISOCLUSTER.v1 channel 4 negatives: 5x50x220547
 
-isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x36564
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x647
+ISOCLUSTER.v1 channel 8: 4x50x119
+ISOCLUSTER.v1 channel 8: 4x50x528
+ISOCLUSTER.v1 channel 8: 4x50x1430
 
-isocluster_v1:: ISOCLUSTER.v1 channel 8 negatives: 4x50x127829
-
-isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x904
-ISOCLUSTER.v1 channel 6: 6x50x741
-ISOCLUSTER.v1 channel 6: 6x50x163
-ISOCLUSTER.v1 channel 6: 6x50x56
-ISOCLUSTER.v1 channel 6: 6x50x107
-ISOCLUSTER.v1 channel 6: 6x50x93354
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x91746
-
-isocluster_v1:: ISOCLUSTER.v1 channel 6 positives: 6x50x60765
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x560
-ISOCLUSTER.v1 channel 8: 4x50x122854
-
-isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x1139
-ISOCLUSTER.v1 channel 5: 5x50x193884
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x1118
-ISOCLUSTER.v1 channel 7: 6x50x38778
-
-isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x40662
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x2091
-ISOCLUSTER.v1 channel 6: 6x50x40403
-ISOCLUSTER.v1 channel 7: 6x50x1384
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x707
-ISOCLUSTER.v1 channel 7: 6x50x643
-ISOCLUSTER.v1 channel 7: 6x50x64
-ISOCLUSTER.v1 channel 7 positives: 6x50x61893
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x1429
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x1537
-ISOCLUSTER.v1 channel 8: 4x50x1449
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x1448
+ISOCLUSTER.v1 channel 8: 4x50x1594
 ISOCLUSTER.v1 channel 8 positives: 4x50x62126
 
-isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x259
-ISOCLUSTER.v1 channel 6: 6x50x244
-ISOCLUSTER.v1 channel 6: 6x50x15
-ISOCLUSTER.v1 channel 6: 6x50x1300
-ISOCLUSTER.v1 channel 6: 6x50x13138
-
-isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x5665
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x197
-ISOCLUSTER.v1 channel 8: 4x50x38430
-ISOCLUSTER.v1 channel 7: 6x50x58871
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x37161
-ISOCLUSTER.v1 channel 4 negatives: 5x50x220547
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x1751
-
-isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x136
-ISOCLUSTER.v1 channel 7: 6x50x263
-ISOCLUSTER.v1 channel 7: 6x50x872
-ISOCLUSTER.v1 channel 7: 6x50x685
-ISOCLUSTER.v1 channel 8: 4x50x1269
-ISOCLUSTER.v1 channel 7: 6x50x187
-ISOCLUSTER.v1 channel 7: 6x50x75
-ISOCLUSTER.v1 channel 7: 6x50x112
-ISOCLUSTER.v1 channel 8: 4x50x3777
-ISOCLUSTER.v1 channel 8: 4x50x186
-ISOCLUSTER.v1 channel 8: 4x50x18120
-
-isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x3813
-
-isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x3681
-ISOCLUSTER.v1 channel 5: 5x50x132
-ISOCLUSTER.v1 channel 5 positives: 5x50x51644
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x17740
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x16875
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x865
-
-isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x380
-ISOCLUSTER.v1 channel 8: 4x50x1416
-
-isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x48772
-
-isocluster_v1:: ISOCLUSTER.v1 channel 3 negatives: 6x50x212139
-
-isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x2872
-
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x89502
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x94281
+ISOCLUSTER.v1 channel 5 negatives: 5x50x198836
 
 isocluster_v1:: ISOCLUSTER.v1 channel 2 negatives: 6x50x161076
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x476
-ISOCLUSTER.v1 channel 3: 6x50x91744
-ISOCLUSTER.v1 channel 4: 5x50x125476
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x202
+ISOCLUSTER.v1 channel 8: 4x50x39000
+
+isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x91744
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x38852
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x754
+ISOCLUSTER.v1 channel 6: 6x50x92847
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x36443
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x985
+ISOCLUSTER.v1 channel 8: 4x50x1424
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x148
+ISOCLUSTER.v1 channel 8: 4x50x3723
+ISOCLUSTER.v1 channel 7: 6x50x1117
+ISOCLUSTER.v1 channel 8: 4x50x187
+ISOCLUSTER.v1 channel 8: 4x50x1401
+ISOCLUSTER.v1 channel 7: 6x50x38783
+ISOCLUSTER.v1 channel 8: 4x50x17613
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x89556
+ISOCLUSTER.v1 channel 8: 4x50x17296
+
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x16409
 
 isocluster_v1:: ISOCLUSTER.v1 channel 2 positives: 6x50x61980
+ISOCLUSTER.v1 channel 7: 6x50x2089
 
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x120395
+isocluster_v1:: ISOCLUSTER.v1 channel 8: 4x50x887
+ISOCLUSTER.v1 channel 7: 6x50x1383
+ISOCLUSTER.v1 channel 8: 4x50x317
+ISOCLUSTER.v1 channel 7: 6x50x706
+ISOCLUSTER.v1 channel 7 positives: 6x50x61893
+ISOCLUSTER.v1 channel 6: 6x50x91789
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x4842
-ISOCLUSTER.v1 channel 4: 5x50x3880
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x1030
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x962
-ISOCLUSTER.v1 channel 4: 5x50x251
-ISOCLUSTER.v1 channel 4: 5x50x218
-ISOCLUSTER.v1 channel 4: 5x50x33
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x194012
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4 positives: 5x50x44909
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x125625
 
-isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x785
-ISOCLUSTER.v1 channel 2: 6x50x59967
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x1155
+ISOCLUSTER.v1 channel 2: 6x50x347
+ISOCLUSTER.v1 channel 2: 6x50x808
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x41348
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x60044
+ISOCLUSTER.v1 channel 7: 6x50x58747
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x40771
-ISOCLUSTER.v1 channel 2: 6x50x733
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x80744
 
-isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x495
-ISOCLUSTER.v1 channel 2: 6x50x398
-ISOCLUSTER.v1 channel 2: 6x50x97
+isocluster_v1:: ISOCLUSTER.v1 channel 7: 6x50x1878
+ISOCLUSTER.v1 channel 7: 6x50x131
+ISOCLUSTER.v1 channel 7: 6x50x307
+ISOCLUSTER.v1 channel 7: 6x50x644
+ISOCLUSTER.v1 channel 7: 6x50x186
+ISOCLUSTER.v1 channel 7: 6x50x113
+ISOCLUSTER.v1 channel 7: 6x50x73
+ISOCLUSTER.v1 channel 2: 6x50x59478
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3 negatives: 6x50x212139
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x73431
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x5102
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x3816
+ISOCLUSTER.v1 channel 5: 5x50x191533
+ISOCLUSTER.v1 channel 4: 5x50x1101
+ISOCLUSTER.v1 channel 2: 6x50x566
+ISOCLUSTER.v1 channel 2: 6x50x781
+ISOCLUSTER.v1 channel 4: 5x50x185
+ISOCLUSTER.v1 channel 4: 5x50x264
+ISOCLUSTER.v1 channel 4: 5x50x59
+ISOCLUSTER.v1 channel 4: 5x50x205
+ISOCLUSTER.v1 channel 2: 6x50x691
+ISOCLUSTER.v1 channel 4 positives: 5x50x44909
+
+isocluster_v1:: ISOCLUSTER.v1 channel 2: 6x50x90
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x40775
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x7313
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x11045
+
+isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x2638
+ISOCLUSTER.v1 channel 4: 5x50x917
+ISOCLUSTER.v1 channel 4: 5x50x579
+ISOCLUSTER.v1 channel 4: 5x50x320
+ISOCLUSTER.v1 channel 4: 5x50x259
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x5225
+ISOCLUSTER.v1 channel 6: 6x50x4386
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x839
+ISOCLUSTER.v1 channel 6: 6x50x5820
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x187
+ISOCLUSTER.v1 channel 6: 6x50x115
+ISOCLUSTER.v1 channel 6: 6x50x72
+ISOCLUSTER.v1 channel 6: 6x50x871
+ISOCLUSTER.v1 channel 6: 6x50x680
+ISOCLUSTER.v1 channel 6 positives: 6x50x60765
+
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x91740
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x40395
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x2479
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x2416
+ISOCLUSTER.v1 channel 5: 5x50x637
+ISOCLUSTER.v1 channel 5: 5x50x1779
+ISOCLUSTER.v1 channel 5: 5x50x63
+ISOCLUSTER.v1 channel 5: 5x50x3794
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x3694
+ISOCLUSTER.v1 channel 5: 5x50x100
+ISOCLUSTER.v1 channel 5 positives: 5x50x51644
+ISOCLUSTER.v1 channel 6: 6x50x40140
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x255
+ISOCLUSTER.v1 channel 6: 6x50x13329
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x48335
+ISOCLUSTER.v1 channel 3: 6x50x120399
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x13006
+
+isocluster_v1:: ISOCLUSTER.v1 channel 6: 6x50x323
+ISOCLUSTER.v1 channel 6: 6x50x1418
+ISOCLUSTER.v1 channel 6: 6x50x171
+ISOCLUSTER.v1 channel 6: 6x50x1247
+ISOCLUSTER.v1 channel 6: 6x50x5623
+
+isocluster_v1:: ISOCLUSTER.v1 channel 5: 5x50x3309
 
 isocluster_v1:: ISOCLUSTER.v1 channel 3 positives: 6x50x68839
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x35955
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x25138
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x4816
-ISOCLUSTER.v1 channel 4: 5x50x577
-ISOCLUSTER.v1 channel 4: 5x50x288
-ISOCLUSTER.v1 channel 4: 5x50x289
-ISOCLUSTER.v1 channel 4: 5x50x2643
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x41896
 
-isocluster_v1:: ISOCLUSTER.v1 channel 4: 5x50x918
+isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x1572
+ISOCLUSTER.v1 channel 3: 6x50x233
 
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x25091
-
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x39748
-
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x1911
-ISOCLUSTER.v1 channel 3: 6x50x37837
-
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x2263
-ISOCLUSTER.v1 channel 3: 6x50x1489
-
-isocluster_v1:: ISOCLUSTER.v1 channel 3: 6x50x248
-
-isocluster_v1:: Elapsed time for processor isocluster_v1: 63.879 sec
+isocluster_v1:: Elapsed time for processor isocluster_v1: 53.494 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: isocluster_v1
-Peak RAM: 3243 MB. Peak CPU: 603%. Avg CPU: 462.311%. Elapsed time: 63.922 seconds.
+Peak RAM: 3225 MB. Peak CPU: 697%. Avg CPU: 585.863%. Elapsed time: 53.513 seconds.
 ---------------------------------------------------------------
 
 Process finished: isocluster_v1
@@ -440,13 +382,12 @@ Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp merge_across_channels_v2 --firings=/tmp/mountainlab/tmp_long_term/64c2836622090c17f8231e4560749f636be2b74d-isocluster_v1-firings_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/a83192f3fdd47bc7c4f5cdccf78da06066cbb080-whiten-timeseries_out.tmp --firings_out=/tmp/mountainlab/tmp_long_term/12c4756b244644cda22179481e121c57b26424af-merge_across_channels_v2-firings_out.tmp --clip_size=50 --_request_num_threads=32 .
 RUNNING merge_across_channels_v2
 
-merge_across_channels_v2:: Using 1592728 of 1592728 events after 0 redundant clusters removed
-Elapsed time for processor merge_across_channels_v2: 6.917 sec
+merge_across_channels_v2:: Using 1591364 of 1591364 events after 0 redundant clusters removed
+Elapsed time for processor merge_across_channels_v2: 7.417 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: merge_across_channels_v2
-Peak RAM: 131 MB. Peak CPU: 102%. Avg CPU: 101.667%. Elapsed time: 6.922 seconds.
+Peak RAM: 131 MB. Peak CPU: 104%. Avg CPU: 103.143%. Elapsed time: 7.423 seconds.
 ---------------------------------------------------------------
-
 
 Process finished: merge_across_channels_v2
 Queuing process fit_stage
@@ -458,35 +399,17 @@ RUNNING fit_stage
 
 fit_stage:: Starting fit stage
 
-fit_stage:: 2000000/216000000 (0%) - Elapsed(s): RC:11.557, SLD:0.193, KERNEL:1.011, GLD:0, Total:16.225, 32 threads
+fit_stage:: 22000000/216000000 (10%) - Elapsed(s): RC:2.331, SLD:0.3, KERNEL:13.889, GLD:0, Total:6.49, 32 threads
 
-fit_stage:: 3000000/216000000 (1%) - Elapsed(s): RC:12.182, SLD:0.205, KERNEL:2.337, GLD:0, Total:16.863, 32 threads
+fit_stage:: 124000000/216000000 (57%) - Elapsed(s): RC:6.724, SLD:0.905, KERNEL:74.933, GLD:0, Total:11.528, 32 threads
 
-fit_stage:: 32000000/216000000 (14%) - Elapsed(s): RC:17.789, SLD:0.322, KERNEL:27.233, GLD:0, Total:22.627, 32 threads
+fit_stage:: 216000000/216000000 (100%) - Elapsed(s): RC:9.6, SLD:1.331, KERNEL:129.963, GLD:0, Total:15.916, 32 threads
 
-fit_stage:: 53000000/216000000 (24%) - Elapsed(s): RC:22.736, SLD:0.427, KERNEL:44.382, GLD:0, Total:27.782, 32 threads
-
-fit_stage:: 70000000/216000000 (32%) - Elapsed(s): RC:27.731, SLD:0.532, KERNEL:57.867, GLD:0, Total:32.968, 32 threads
-
-fit_stage:: 92000000/216000000 (42%) - Elapsed(s): RC:32.545, SLD:0.637, KERNEL:74.746, GLD:0, Total:37.998, 32 threads
-
-fit_stage:: 109000000/216000000 (50%) - Elapsed(s): RC:37.531, SLD:0.742, KERNEL:87.881, GLD:0, Total:43.164, 32 threads
-
-fit_stage:: 128000000/216000000 (59%) - Elapsed(s): RC:42.421, SLD:0.852, KERNEL:103.946, GLD:0, Total:48.275, 32 threads
-
-fit_stage:: 150000000/216000000 (69%) - Elapsed(s): RC:47.629, SLD:0.965, KERNEL:122.036, GLD:0, Total:53.676, 32 threads
-
-fit_stage:: 171000000/216000000 (79%) - Elapsed(s): RC:52.529, SLD:1.08, KERNEL:138.932, GLD:0, Total:58.788, 32 threads
-
-fit_stage:: 200000000/216000000 (92%) - Elapsed(s): RC:57.506, SLD:1.194, KERNEL:161.49, GLD:0, Total:63.9, 32 threads
-
-fit_stage:: 216000000/216000000 (100%) - Elapsed(s): RC:59.44, SLD:1.235, KERNEL:173.695, GLD:0, Total:66.431, 32 threads
-
-fit_stage:: using 1232099/1592728 events (77.3578%)
-Elapsed time for processor fit_stage: 66.608 sec
+fit_stage:: using 1238062/1591364 events (77.7988%)
+Elapsed time for processor fit_stage: 16.171 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: fit_stage
-Peak RAM: 3119 MB. Peak CPU: 361%. Avg CPU: 294.703%. Elapsed time: 66.67 seconds.
+Peak RAM: 3574 MB. Peak CPU: 974%. Avg CPU: 586.733%. Elapsed time: 16.187 seconds.
 ---------------------------------------------------------------
 
 Process finished: fit_stage
@@ -497,10 +420,10 @@ copy:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/pro
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/871ae2c7fffcb7491519507ee62e03423d71bf98-fit_stage-firings_out.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/firings.mda --_request_num_threads=32 .
 RUNNING copy
-Elapsed time for processor copy: 0.039 sec
+Elapsed time for processor copy: 0.031 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: copy
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.044 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.036 seconds.
 ---------------------------------------------------------------
 
 Process finished: copy
@@ -508,7 +431,7 @@ ms_metrics:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainproce
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
 STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp ms_metrics --firings=/tmp/mountainlab/tmp_long_term/871ae2c7fffcb7491519507ee62e03423d71bf98-fit_stage-firings_out.tmp --timeseries=/tmp/mountainlab/tmp_long_term/a83192f3fdd47bc7c4f5cdccf78da06066cbb080-whiten-timeseries_out.tmp --cluster_metrics=/tmp/mountainlab/tmp_long_term/470aa59953680264d287cd28c8dda49e67e7f379-ms_metrics-cluster_metrics.tmp --cluster_pair_metrics=/tmp/mountainlab/tmp_long_term/03e24e935eccbd28d738a1d96c781c2ac0b22705-ms_metrics-cluster_pair_metrics.tmp --clip_size=50 --_request_num_threads=32 .
 RUNNING ms_metrics
-Using cluster numbers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31)
+Using cluster numbers: (1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34)
 Extracting times and labels...
 
 ms_metrics:: Cluster metrics...
@@ -517,10 +440,10 @@ ms_metrics:: get pairs to compare...
 
 ms_metrics:: Computing pair metrics...
 
-ms_metrics:: Elapsed time for processor ms_metrics: 9.998 sec
+ms_metrics:: Elapsed time for processor ms_metrics: 7.887 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: ms_metrics
-Peak RAM: 1279 MB. Peak CPU: 1089%. Avg CPU: 743.556%. Elapsed time: 10.029 seconds.
+Peak RAM: 1677 MB. Peak CPU: 1501%. Avg CPU: 1018.29%. Elapsed time: 7.915 seconds.
 ---------------------------------------------------------------
 
 Process finished: ms_metrics
@@ -530,9 +453,9 @@ Queuing process copy
 
 copy:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
-STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/470aa59953680264d287cd28c8dda49e67e7f379-ms_metrics-cluster_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/cluster_metrics.csv --_request_num_threads=32 .
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/03e24e935eccbd28d738a1d96c781c2ac0b22705-ms_metrics-cluster_pair_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/cluster_pair_metrics.csv --_request_num_threads=32 .
 RUNNING copy
-Elapsed time for processor copy: 0.001 sec
+Elapsed time for processor copy: 0 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: copy
 Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.007 seconds.
@@ -542,12 +465,12 @@ Process finished: copy
 
 copy:: Loaded 53 processors in /home/magland/dev/mountainlab/mountainprocess/processors
 Loaded 53 processors in /home/magland/dev/mountainlab/user/processors
-STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/03e24e935eccbd28d738a1d96c781c2ac0b22705-ms_metrics-cluster_pair_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/cluster_pair_metrics.csv --_request_num_threads=32 .
+STARTING: /home/magland/dev/mountainlab/mountainprocess/processors/mountainsort.mp copy --input=/tmp/mountainlab/tmp_long_term/470aa59953680264d287cd28c8dda49e67e7f379-ms_metrics-cluster_metrics.tmp --output=/home/magland/dev/mountainsort_experiments/sandbox/005-2016-09-20/neuron_paper_7hr_probe/output/ms2_120min_ch8--np7/cluster_metrics.csv --_request_num_threads=32 .
 RUNNING copy
 Elapsed time for processor copy: 0 sec
 ---------------------------------------------------------------
 PROCESS COMPLETED: copy
-Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.005 seconds.
+Peak RAM: 0 MB. Peak CPU: 0%. Avg CPU: 0%. Elapsed time: 0.008 seconds.
 ---------------------------------------------------------------
 
 Process finished: copy
@@ -556,15 +479,15 @@ Peak Memory (MB):
   0 (extract_geom)
   0 (geom2adj)
   0 (copy)
-  24.896 (extract_raw)
-  1665.61 (bandpass_filter)
-  20.652 (mask_out_artifacts)
-  1270.71 (whiten)
-  1198.49 (detect)
-  3243.91 (isocluster_v1)
-  131.824 (merge_across_channels_v2)
-  3119.64 (fit_stage)
-  1279.05 (ms_metrics)
+  24.492 (extract_raw)
+  1669.4 (bandpass_filter)
+  20.272 (mask_out_artifacts)
+  1699.38 (whiten)
+  1517.46 (detect)
+  3225.5 (isocluster_v1)
+  131.26 (merge_across_channels_v2)
+  3574.03 (fit_stage)
+  1677.92 (ms_metrics)
   0 (copy)
   0 (copy)
   0 (copy)
@@ -574,15 +497,15 @@ Peak CPU percent:
   0 (extract_geom)
   0 (geom2adj)
   0 (copy)
-  103 (extract_raw)
-  3002 (bandpass_filter)
+  104 (extract_raw)
+  3265 (bandpass_filter)
   104 (mask_out_artifacts)
-  170 (whiten)
-  174 (detect)
-  603 (isocluster_v1)
-  102 (merge_across_channels_v2)
-  361 (fit_stage)
-  1089 (ms_metrics)
+  417 (whiten)
+  632 (detect)
+  697 (isocluster_v1)
+  104 (merge_across_channels_v2)
+  974 (fit_stage)
+  1501 (ms_metrics)
   0 (copy)
   0 (copy)
   0 (copy)
@@ -592,35 +515,35 @@ Avg CPU (pct):
   0 (extract_geom)
   0 (geom2adj)
   0 (copy)
-  99.925 (extract_raw)
-  2616.91 (bandpass_filter)
-  102.486 (mask_out_artifacts)
-  133.291 (whiten)
-  166.403 (detect)
-  462.311 (isocluster_v1)
-  101.667 (merge_across_channels_v2)
-  294.703 (fit_stage)
-  743.556 (ms_metrics)
+  102.212 (extract_raw)
+  3150.4 (bandpass_filter)
+  100.113 (mask_out_artifacts)
+  321.5 (whiten)
+  607.556 (detect)
+  585.863 (isocluster_v1)
+  103.143 (merge_across_channels_v2)
+  586.733 (fit_stage)
+  1018.29 (ms_metrics)
   0 (copy)
   0 (copy)
   0 (copy)
   0 (copy)
 
 Elapsed time (sec):
-  0.009 (extract_geom)
-  0.005 (geom2adj)
-  0.004 (copy)
-  33.738 (extract_raw)
-  60.941 (bandpass_filter)
-  38.268 (mask_out_artifacts)
-  131.835 (whiten)
-  65.232 (detect)
-  63.922 (isocluster_v1)
-  6.922 (merge_across_channels_v2)
-  66.67 (fit_stage)
-  10.029 (ms_metrics)
+  0.007 (extract_geom)
+  0.006 (geom2adj)
+  0.006 (copy)
+  33.976 (extract_raw)
+  55.53 (bandpass_filter)
+  31.802 (mask_out_artifacts)
+  17.227 (whiten)
+  9.614 (detect)
+  53.513 (isocluster_v1)
+  7.423 (merge_across_channels_v2)
+  16.187 (fit_stage)
+  7.915 (ms_metrics)
+  0.008 (copy)
   0.007 (copy)
-  0.005 (copy)
-  0.044 (copy)
-  0.005 (copy)
+  0.036 (copy)
+  0.007 (copy)
 

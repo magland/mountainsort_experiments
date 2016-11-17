@@ -9,8 +9,8 @@ ms2_120min_ch4 mountainsort_002.pipeline --curation=curation.script --extract_ra
 ms2_120min_ch8 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=32 --extract_raw_channels=15,13,11,9,16,14,12,10
 ms2_120min_ch12 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=32 --extract_raw_channels=15,13,11,9,7,5,16,14,12,10,8,6
 
+ms2_120min_thr1 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=1 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
 ms2_120min_thr2 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=2 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
 ms2_120min_thr4 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=4 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
 ms2_120min_thr8 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=8 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
 ms2_120min_thr16 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=16 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
-ms2_120min_thr32 mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=eval(30000*60*120) --num_threads=32 --extract_raw_channels=15,13,11,9,7,5,3,1,16,14,12,10,8,6,4,2
