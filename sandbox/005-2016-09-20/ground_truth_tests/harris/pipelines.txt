@@ -1,0 +1,2 @@
+ms2 mountainsort_002.pipeline
+ms2b mountainsort_002.pipeline --mask_out_artifacts_threshold=0 --mask_out_artifacts_interval=0 --whiten=0 --detect_threshold=3
