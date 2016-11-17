@@ -4,8 +4,8 @@ close all;
 
 rng(1);
 
-demo1;
-%demo2;
+%demo1;
+demo2;
 
 end
 
