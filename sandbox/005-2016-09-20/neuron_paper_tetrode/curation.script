@@ -11,8 +11,8 @@ for (var i in clusters) {
 
 var thresholds={
 	noise_overlap:0.03,
-	peak_amp_over_noise:2,
-	firing_rate:0.05,
+	peak_amp_over_noise:1.5,
+	firing_rate:0.1,
 	isolation:0.96
 };
 
@@ -63,5 +63,8 @@ for (var i in clusters) {
 	if (iso<thresholds.isolation) {
 		console.log('MUA: '+clusters[i].k()+' <--> '+clusters[i].metric('overlap_cluster')+' ('+iso+')');
 		clusters[i].addTag('MUA');
+		clusters[i].addTag('rejected');
 	}
 }
+
+
