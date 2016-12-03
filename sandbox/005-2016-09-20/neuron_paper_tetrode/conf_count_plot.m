@@ -21,13 +21,19 @@ for column=1:size(counts,2)
 end
 columnnorm(end)=NaN;
 
-if rownorm==1
-    normconfmatrix=rownorm;
-    disp('row normalized');
-else
-    normconfmatrix=columnnorm;
-    disp('column normalized');
-end
+rownorm(end,:)=columnnorm(end,:);
+columnnorm(:,end)=rownorm(:,end);
+
+%if rownorm==1
+%    normconfmatrix=rownorm;
+%    disp('row normalized');
+%else
+%    normconfmatrix=columnnorm;
+%    disp('column normalized');
+%end
+
+normconfmatrix=columnnorm;
+
 
 xlabels=rawcounts(size(rawcounts,1),:);
 xlabels(1)=[];
@@ -42,6 +48,8 @@ text_counts=counts(find(counts));
 [nr,nc] = size(normconfmatrix);
 shiftedXtick=[1:size(counts,2)]+.5;
 shiftedYtick=[1:size(counts,1)]+.5;
+
+
 
 figure
 subplot(2,1,1)
