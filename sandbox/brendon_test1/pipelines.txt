@@ -1,0 +1,2 @@
+ms2_2min mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=3600000 --adjacency_radius=150
+ms2_20min mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=36000000 --adjacency_radius=150

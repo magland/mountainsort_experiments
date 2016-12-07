@@ -1,0 +1,7 @@
+*** Install and configure mountainlab
+
+Make sure that you put the raw data files somewhere in a directory that is searched by prv
+(see mountainlab.user.json)
+
+kron-run ms2_20min a1
+kron-view results ms2_20min a1
