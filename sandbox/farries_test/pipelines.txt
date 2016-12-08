@@ -1,0 +1,1 @@
+ms2 mountainsort_002.pipeline --curation=curation.script --mask_out_artifacts_threshold=3 --mask_out_artifacts_interval=30
