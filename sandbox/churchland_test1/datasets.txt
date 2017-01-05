@@ -1,0 +1,3 @@
+csc1 datasets/csc1
+csc6 datasets/csc6
+csc26 datasets/csc26
