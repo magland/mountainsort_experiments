@@ -1,8 +1,7 @@
-%L=load('test_handle_drift.mat');
+L=load('test_handle_drift.mat');
 clips=L.data.clips;
 labels=L.data.labels;
 times0=L.data.times;
-
 
 num_features=20;
 num_neighbors=10;
@@ -22,11 +21,13 @@ for j=1:length(t1s)
     else
         S.t2=N;
     end;
-    S.clips=extract_segment_of_clips(clips,times0,S.t1,S.t2);
+    S.inds=find((S.t1<=times0)&(times0<=S.t2));
+    S.clips=clips(:,:,S.inds);
     segments{j}=S;
 end;
 
-segments{1}.clips_traced=segments{1}.clips;
+S1=segments{1};
+segments{1}.labels=labels(S1.inds);
 for j=2:length(segments)
     fprintf('Segment %d/%d\n',j,length(segments));
     clips1=segments{j-1}.clips;
@@ -37,28 +38,16 @@ for j=2:length(segments)
     FF1=FF(:,1:N1);
     FF2=FF(:,N1+1:N1+N2);
 
-    idx1=knnsearch(FF1',FF2','K',num_neighbors);
-    clips2_1=zeros(size(clips2));
-    for ii=1:num_neighbors
-        clips2_1=clips2_1+clips1(:,:,idx1(:,ii));
-    end;
-    clips2_1=clips2_1/num_neighbors;
-    
-    idx2=knnsearch(FF2',FF2','K',num_neighbors+1);
-    clips2_2=zeros(size(clips2));
-    for ii=2:num_neighbors+1
-        clips2_2=clips2_2+clips2(:,:,idx2(:,ii));
-    end;
-    clips2_2=clips2_2/num_neighbors;
-
-    segments{j}.clips_traced=clips2+clips2_1-clips2_2;
+    idx1=knnsearch(FF1',FF2','K',1);
+    segments{j}.labels=segments{j-1}.labels(idx1);
 end;
 
-clips_traced=zeros(size(clips,1),size(clips,2),0);
+new_labels=zeros(size(labels));
 for j=1:length(segments)
-    clips_traced=cat(3,clips_traced,segments{j}.clips_traced);
+    new_labels(segments{j}.inds)=segments{j}.labels;
 end;
 
 FF=ms_event_features(clips,num_features);
-FF_traced=ms_event_features(clips_traced,num_features);
+figure; ms_view_clusters(FF,labels);
+figure; ms_view_clusters(FF,new_labels);
 
