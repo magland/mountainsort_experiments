@@ -4,3 +4,4 @@ ms2_shank1 mountainsort_002.pipeline --curation=curation.script --adjacency_radi
 ms2_shank2 mountainsort_002.pipeline --curation=curation.script --adjacency_radius=150 --extract_raw_channels=33,34,35,36,37,38,39,40,41,42,43,44,45,46,47,48,49,50,51,52,53,54,55,56,57,58,59,60,61,62,63,64
 ms2_2min mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=3600000 --adjacency_radius=150
 ms2_20min mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=36000000 --adjacency_radius=150
+ms2_60min mountainsort_002.pipeline --curation=curation.script --extract_raw_t1=1 --extract_raw_t2=108000000 --adjacency_radius=150

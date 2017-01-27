@@ -1,5 +1,9 @@
+<<<<<<< HEAD
 %fprintf('Loading...\n');
 %L=load('test_handle_drift.mat');
+=======
+L=load('test_handle_drift.mat');
+>>>>>>> 73e82b53f55d11cfc7cf9250c6235ca10eccd310
 clips=L.data.clips;
 labels=L.data.labels;
 times0=L.data.times;
@@ -31,10 +35,15 @@ for j=1:length(t1s)
         S.t2=N;
     end;
     S.inds=find((S.t1<=times0)&(times0<=S.t2));
+<<<<<<< HEAD
+=======
+    S.clips=clips(:,:,S.inds);
+>>>>>>> 73e82b53f55d11cfc7cf9250c6235ca10eccd310
     segments{j}=S;
 end;
 
 S1=segments{1};
+<<<<<<< HEAD
 features1=features(:,S1.inds);
 %labels1=isosplit5(features1);
 labels(S1.inds)=labels1;
@@ -55,3 +64,29 @@ for kk=2:3
     figure; ms_view_templates_from_clips(clips(:,:,S_kk.inds),labels_kk)
 end;
 
+=======
+segments{1}.labels=labels(S1.inds);
+for j=2:length(segments)
+    fprintf('Segment %d/%d\n',j,length(segments));
+    clips1=segments{j-1}.clips;
+    clips2=segments{j}.clips;
+    N1=size(clips1,3);
+    N2=size(clips2,3);
+    FF=ms_event_features(cat(3,clips1,clips2),num_features);
+    FF1=FF(:,1:N1);
+    FF2=FF(:,N1+1:N1+N2);
+
+    idx1=knnsearch(FF1',FF2','K',1);
+    segments{j}.labels=segments{j-1}.labels(idx1);
+end;
+
+new_labels=zeros(size(labels));
+for j=1:length(segments)
+    new_labels(segments{j}.inds)=segments{j}.labels;
+end;
+
+FF=ms_event_features(clips,num_features);
+figure; ms_view_clusters(FF,labels);
+figure; ms_view_clusters(FF,new_labels);
+
+>>>>>>> 73e82b53f55d11cfc7cf9250c6235ca10eccd310
