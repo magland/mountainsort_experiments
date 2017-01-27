@@ -1,2 +1,3 @@
 ms2 mountainsort_002.pipeline --curation=curation.script
 ms2dr mountainsort_002_drift.pipeline --curation=curation.script
+ms2dr_test mountainsort_002_drift.pipeline --curation=curation.script --drift_segment_duration=1800
