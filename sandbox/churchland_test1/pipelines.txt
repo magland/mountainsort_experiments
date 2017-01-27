@@ -1,1 +1,1 @@
-ms2 mountainsort_002.pipeline --curation=curation.script --sign=1
+ms2 mountainsort_002.pipeline --sign=1

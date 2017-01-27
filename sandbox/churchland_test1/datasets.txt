@@ -1,3 +1,7 @@
 csc1 datasets/csc1
 csc6 datasets/csc6
 csc26 datasets/csc26
+
+lc35_tet5 datasets/lc35_tet5
+lc35_tet7 datasets/lc35_tet7
+lc35_ch_17-31 datasets/lc35_ch_17-31
