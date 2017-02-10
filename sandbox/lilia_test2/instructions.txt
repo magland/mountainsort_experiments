@@ -1,0 +1,7 @@
+You must have the raw data in .mda format somewhere on the system
+And it must be somewhere in the prv search paths specified mountainlab.user.json
+If you need to create the raw.mda.prv files, use prv-create
+For example, datasets/tetrode8/raw.mda.prv
+
+kron-run ms2 tetrode8
+kron-view results ms2 tetrode8
